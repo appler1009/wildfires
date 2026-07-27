@@ -448,6 +448,9 @@ export function FireMap() {
           historicalCache.current.set(key, data.points);
           setHistoricalPoints(data.points);
         })
+        // A failed fetch shouldn't leave the previous month's markers on
+        // screen mislabelled as this one - show "no data" instead.
+        .catch(() => setHistoricalPoints([]))
         .finally(() => setLoading(false));
     } else if (activeEntry?.kind === "daily") {
       const cached = dailyCache.current.get(activeEntry.date);
@@ -461,6 +464,7 @@ export function FireMap() {
           dailyCache.current.set(activeEntry.date, pts);
           setDailyPoints(pts);
         })
+        .catch(() => setDailyPoints([]))
         .finally(() => setLoading(false));
     }
   }, [activeEntry]);
