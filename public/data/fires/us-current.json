@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-07-27T12:10:25.967Z",
+  "generatedAt": "2026-07-27T12:21:18.825Z",
   "points": [
     {
       "fireNumber": "2026-MTLG13-000069",
@@ -2226,6 +2226,17 @@
       "discoveryDate": "2026-07-26T18:54:18.000Z",
       "lat": 48.33708800000005,
       "lon": -105.42759699999999
+    },
+    {
+      "fireNumber": "2026-MIMIS-2026010019",
+      "name": "Alcona-19 Huron Shore Dr Fire",
+      "state": "MI",
+      "hectares": 0.1,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-07-25T19:20:00.000Z",
+      "lat": 44.69815743000004,
+      "lon": -83.27644327999997
     }
   ]
 }
