@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-07-27T13:46:49.892Z",
+  "generatedAt": "2026-07-27T14:22:17.852Z",
   "points": [
     {
       "fireNumber": "2026-MTLG13-000069",
@@ -1630,8 +1630,8 @@
       "percentContained": 0,
       "cause": "Natural",
       "discoveryDate": "2026-07-25T00:49:00.000Z",
-      "lat": 46.162100000000066,
-      "lon": -114.33683299999996
+      "lat": 46.14166700000004,
+      "lon": -114.21171699999996
     },
     {
       "fireNumber": "2026-IDIPF-000495",
@@ -2041,17 +2041,6 @@
       "lon": -106.96704999999997
     },
     {
-      "fireNumber": "2026-MTNWS-000290",
-      "name": "Gordon",
-      "state": "MT",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-07-26T18:15:57.000Z",
-      "lat": 47.42293300000006,
-      "lon": -113.64686699999999
-    },
-    {
       "fireNumber": "2026-WAGNRN-260532",
       "name": "RX - ROAD A",
       "state": "WA",
@@ -2240,14 +2229,14 @@
     },
     {
       "fireNumber": "2026-IDSCC-000158",
-      "name": "IA 1",
+      "name": "Crestview",
       "state": "ID",
       "hectares": 0,
       "percentContained": null,
       "cause": "Undetermined",
       "discoveryDate": "2026-07-27T12:52:23.000Z",
-      "lat": 42.51956900000005,
-      "lon": -113.99557699999997
+      "lat": 42.52038300000004,
+      "lon": -113.98171699999995
     }
   ]
 }
