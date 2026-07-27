@@ -9,7 +9,7 @@ import path from "node:path";
 const WFS_BASE =
   "https://openmaps.gov.bc.ca/geo/pub/WHSE_LAND_AND_NATURAL_RESOURCE.PROT_HISTORICAL_FIRE_POLYS_SP/ows";
 const TYPE_NAME = "pub:WHSE_LAND_AND_NATURAL_RESOURCE.PROT_HISTORICAL_FIRE_POLYS_SP";
-const PROPERTIES = ["FIRE_YEAR", "FIRE_SIZE_HECTARES", "FIRE_CAUSE", "FIRE_NUMBER"];
+const PROPERTIES = ["FIRE_YEAR", "FIRE_DATE", "FIRE_SIZE_HECTARES", "FIRE_CAUSE", "FIRE_NUMBER"];
 const PAGE_SIZE = 10_000; // server-enforced max per request
 
 const OUTPUT_PATH = path.join(

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import yearlyFireTotals from "@/data/yearly-fire-totals.json";
 
 type YearRow = {
@@ -85,6 +86,13 @@ export default function Home() {
           </p>
           <p>Data last refreshed: {lastUpdated.toLocaleString("en-CA")}</p>
         </footer>
+
+        <Link
+          href="/monthly"
+          className="w-fit text-sm font-medium text-orange-700 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-300"
+        >
+          View monthly heatmap →
+        </Link>
       </main>
     </div>
   );

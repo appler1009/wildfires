@@ -1,0 +1,4879 @@
+{
+  "source": "BC Data Catalogue - Historical Fire Perimeters (WHSE_LAND_AND_NATURAL_RESOURCE.PROT_HISTORICAL_FIRE_POLYS_SP)",
+  "licence": "Open Government Licence - British Columbia",
+  "metric": "Hectares burned per month, grouped by the fire's FIRE_DATE (reported fire date).",
+  "generatedAt": "2026-07-27T05:15:44.687Z",
+  "kind": "historical_summary",
+  "excludedRecordsMissingDate": 4,
+  "years": [
+    1917,
+    1918,
+    1919,
+    1920,
+    1921,
+    1922,
+    1923,
+    1924,
+    1925,
+    1926,
+    1927,
+    1928,
+    1929,
+    1930,
+    1931,
+    1932,
+    1933,
+    1934,
+    1935,
+    1936,
+    1937,
+    1938,
+    1939,
+    1940,
+    1941,
+    1942,
+    1943,
+    1944,
+    1945,
+    1946,
+    1947,
+    1948,
+    1949,
+    1950,
+    1951,
+    1952,
+    1953,
+    1954,
+    1955,
+    1956,
+    1957,
+    1958,
+    1959,
+    1960,
+    1961,
+    1962,
+    1963,
+    1964,
+    1965,
+    1966,
+    1967,
+    1968,
+    1969,
+    1970,
+    1971,
+    1972,
+    1973,
+    1974,
+    1975,
+    1976,
+    1977,
+    1978,
+    1979,
+    1980,
+    1981,
+    1982,
+    1983,
+    1984,
+    1985,
+    1986,
+    1987,
+    1988,
+    1989,
+    1990,
+    1991,
+    1992,
+    1993,
+    1994,
+    1995,
+    1996,
+    1997,
+    1998,
+    1999,
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "rows": [
+    {
+      "year": 1917,
+      "month": 7,
+      "fire_count": 1,
+      "hectares_burned": 368.7
+    },
+    {
+      "year": 1918,
+      "month": 5,
+      "fire_count": 1,
+      "hectares_burned": 87.6
+    },
+    {
+      "year": 1918,
+      "month": 6,
+      "fire_count": 1,
+      "hectares_burned": 69.2
+    },
+    {
+      "year": 1918,
+      "month": 9,
+      "fire_count": 1,
+      "hectares_burned": 64.7
+    },
+    {
+      "year": 1919,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 240.7
+    },
+    {
+      "year": 1919,
+      "month": 5,
+      "fire_count": 14,
+      "hectares_burned": 2004.5
+    },
+    {
+      "year": 1919,
+      "month": 6,
+      "fire_count": 23,
+      "hectares_burned": 13915.7
+    },
+    {
+      "year": 1919,
+      "month": 7,
+      "fire_count": 90,
+      "hectares_burned": 104417.5
+    },
+    {
+      "year": 1919,
+      "month": 8,
+      "fire_count": 92,
+      "hectares_burned": 47836
+    },
+    {
+      "year": 1919,
+      "month": 9,
+      "fire_count": 37,
+      "hectares_burned": 15702.6
+    },
+    {
+      "year": 1919,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 162.7
+    },
+    {
+      "year": 1920,
+      "month": 4,
+      "fire_count": 1,
+      "hectares_burned": 168.8
+    },
+    {
+      "year": 1920,
+      "month": 5,
+      "fire_count": 16,
+      "hectares_burned": 1372.7
+    },
+    {
+      "year": 1920,
+      "month": 6,
+      "fire_count": 23,
+      "hectares_burned": 3181.7
+    },
+    {
+      "year": 1920,
+      "month": 7,
+      "fire_count": 130,
+      "hectares_burned": 66826.5
+    },
+    {
+      "year": 1920,
+      "month": 8,
+      "fire_count": 149,
+      "hectares_burned": 77148.3
+    },
+    {
+      "year": 1920,
+      "month": 9,
+      "fire_count": 10,
+      "hectares_burned": 1112.1
+    },
+    {
+      "year": 1921,
+      "month": 5,
+      "fire_count": 34,
+      "hectares_burned": 3947.2
+    },
+    {
+      "year": 1921,
+      "month": 6,
+      "fire_count": 27,
+      "hectares_burned": 4029
+    },
+    {
+      "year": 1921,
+      "month": 7,
+      "fire_count": 47,
+      "hectares_burned": 19819.3
+    },
+    {
+      "year": 1921,
+      "month": 8,
+      "fire_count": 81,
+      "hectares_burned": 42017.6
+    },
+    {
+      "year": 1921,
+      "month": 9,
+      "fire_count": 5,
+      "hectares_burned": 7362.9
+    },
+    {
+      "year": 1921,
+      "month": 10,
+      "fire_count": 5,
+      "hectares_burned": 368.6
+    },
+    {
+      "year": 1922,
+      "month": 4,
+      "fire_count": 7,
+      "hectares_burned": 592
+    },
+    {
+      "year": 1922,
+      "month": 5,
+      "fire_count": 109,
+      "hectares_burned": 116960.8
+    },
+    {
+      "year": 1922,
+      "month": 6,
+      "fire_count": 241,
+      "hectares_burned": 243019.4
+    },
+    {
+      "year": 1922,
+      "month": 7,
+      "fire_count": 234,
+      "hectares_burned": 245117.1
+    },
+    {
+      "year": 1922,
+      "month": 8,
+      "fire_count": 136,
+      "hectares_burned": 60960.8
+    },
+    {
+      "year": 1922,
+      "month": 9,
+      "fire_count": 11,
+      "hectares_burned": 2016.1
+    },
+    {
+      "year": 1922,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 1999.4
+    },
+    {
+      "year": 1923,
+      "month": 4,
+      "fire_count": 29,
+      "hectares_burned": 3105.9
+    },
+    {
+      "year": 1923,
+      "month": 5,
+      "fire_count": 73,
+      "hectares_burned": 19881.9
+    },
+    {
+      "year": 1923,
+      "month": 6,
+      "fire_count": 32,
+      "hectares_burned": 3997.7
+    },
+    {
+      "year": 1923,
+      "month": 7,
+      "fire_count": 59,
+      "hectares_burned": 15476
+    },
+    {
+      "year": 1923,
+      "month": 8,
+      "fire_count": 51,
+      "hectares_burned": 13220.7
+    },
+    {
+      "year": 1923,
+      "month": 9,
+      "fire_count": 49,
+      "hectares_burned": 17498.5
+    },
+    {
+      "year": 1923,
+      "month": 10,
+      "fire_count": 7,
+      "hectares_burned": 381.6
+    },
+    {
+      "year": 1924,
+      "month": 4,
+      "fire_count": 37,
+      "hectares_burned": 2483.7
+    },
+    {
+      "year": 1924,
+      "month": 5,
+      "fire_count": 234,
+      "hectares_burned": 63972.9
+    },
+    {
+      "year": 1924,
+      "month": 6,
+      "fire_count": 60,
+      "hectares_burned": 16350.6
+    },
+    {
+      "year": 1924,
+      "month": 7,
+      "fire_count": 124,
+      "hectares_burned": 81846.2
+    },
+    {
+      "year": 1924,
+      "month": 8,
+      "fire_count": 77,
+      "hectares_burned": 15171.7
+    },
+    {
+      "year": 1924,
+      "month": 9,
+      "fire_count": 46,
+      "hectares_burned": 5566.1
+    },
+    {
+      "year": 1925,
+      "month": 4,
+      "fire_count": 11,
+      "hectares_burned": 809.8
+    },
+    {
+      "year": 1925,
+      "month": 5,
+      "fire_count": 109,
+      "hectares_burned": 31989.6
+    },
+    {
+      "year": 1925,
+      "month": 6,
+      "fire_count": 62,
+      "hectares_burned": 103077.4
+    },
+    {
+      "year": 1925,
+      "month": 7,
+      "fire_count": 212,
+      "hectares_burned": 227191.2
+    },
+    {
+      "year": 1925,
+      "month": 8,
+      "fire_count": 197,
+      "hectares_burned": 93526.4
+    },
+    {
+      "year": 1925,
+      "month": 9,
+      "fire_count": 56,
+      "hectares_burned": 10120.6
+    },
+    {
+      "year": 1925,
+      "month": 10,
+      "fire_count": 38,
+      "hectares_burned": 2257.6
+    },
+    {
+      "year": 1926,
+      "month": 3,
+      "fire_count": 3,
+      "hectares_burned": 81.2
+    },
+    {
+      "year": 1926,
+      "month": 4,
+      "fire_count": 38,
+      "hectares_burned": 3564.9
+    },
+    {
+      "year": 1926,
+      "month": 5,
+      "fire_count": 31,
+      "hectares_burned": 10415.4
+    },
+    {
+      "year": 1926,
+      "month": 6,
+      "fire_count": 16,
+      "hectares_burned": 17234.6
+    },
+    {
+      "year": 1926,
+      "month": 7,
+      "fire_count": 210,
+      "hectares_burned": 220760.1
+    },
+    {
+      "year": 1926,
+      "month": 8,
+      "fire_count": 97,
+      "hectares_burned": 25519.2
+    },
+    {
+      "year": 1926,
+      "month": 9,
+      "fire_count": 26,
+      "hectares_burned": 6421.8
+    },
+    {
+      "year": 1926,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 36.8
+    },
+    {
+      "year": 1927,
+      "month": 4,
+      "fire_count": 3,
+      "hectares_burned": 139.3
+    },
+    {
+      "year": 1927,
+      "month": 5,
+      "fire_count": 9,
+      "hectares_burned": 429.7
+    },
+    {
+      "year": 1927,
+      "month": 6,
+      "fire_count": 7,
+      "hectares_burned": 395.2
+    },
+    {
+      "year": 1927,
+      "month": 7,
+      "fire_count": 25,
+      "hectares_burned": 17126.6
+    },
+    {
+      "year": 1927,
+      "month": 8,
+      "fire_count": 76,
+      "hectares_burned": 32812.3
+    },
+    {
+      "year": 1927,
+      "month": 9,
+      "fire_count": 5,
+      "hectares_burned": 617.5
+    },
+    {
+      "year": 1928,
+      "month": 5,
+      "fire_count": 47,
+      "hectares_burned": 22778.8
+    },
+    {
+      "year": 1928,
+      "month": 6,
+      "fire_count": 15,
+      "hectares_burned": 3726
+    },
+    {
+      "year": 1928,
+      "month": 7,
+      "fire_count": 28,
+      "hectares_burned": 7286.6
+    },
+    {
+      "year": 1928,
+      "month": 8,
+      "fire_count": 50,
+      "hectares_burned": 12093.8
+    },
+    {
+      "year": 1928,
+      "month": 9,
+      "fire_count": 66,
+      "hectares_burned": 11370.8
+    },
+    {
+      "year": 1929,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 140.7
+    },
+    {
+      "year": 1929,
+      "month": 4,
+      "fire_count": 34,
+      "hectares_burned": 3967.8
+    },
+    {
+      "year": 1929,
+      "month": 5,
+      "fire_count": 51,
+      "hectares_burned": 9647.1
+    },
+    {
+      "year": 1929,
+      "month": 6,
+      "fire_count": 7,
+      "hectares_burned": 19411.8
+    },
+    {
+      "year": 1929,
+      "month": 7,
+      "fire_count": 88,
+      "hectares_burned": 71039.3
+    },
+    {
+      "year": 1929,
+      "month": 8,
+      "fire_count": 163,
+      "hectares_burned": 239720.3
+    },
+    {
+      "year": 1929,
+      "month": 9,
+      "fire_count": 59,
+      "hectares_burned": 11699.9
+    },
+    {
+      "year": 1929,
+      "month": 10,
+      "fire_count": 5,
+      "hectares_burned": 231.5
+    },
+    {
+      "year": 1930,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 13.2
+    },
+    {
+      "year": 1930,
+      "month": 4,
+      "fire_count": 14,
+      "hectares_burned": 1241
+    },
+    {
+      "year": 1930,
+      "month": 5,
+      "fire_count": 110,
+      "hectares_burned": 41880.7
+    },
+    {
+      "year": 1930,
+      "month": 6,
+      "fire_count": 14,
+      "hectares_burned": 20954.4
+    },
+    {
+      "year": 1930,
+      "month": 7,
+      "fire_count": 133,
+      "hectares_burned": 62622.2
+    },
+    {
+      "year": 1930,
+      "month": 8,
+      "fire_count": 181,
+      "hectares_burned": 156916.3
+    },
+    {
+      "year": 1930,
+      "month": 9,
+      "fire_count": 43,
+      "hectares_burned": 8280
+    },
+    {
+      "year": 1930,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 19
+    },
+    {
+      "year": 1931,
+      "month": 1,
+      "fire_count": 1,
+      "hectares_burned": 71.8
+    },
+    {
+      "year": 1931,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 15.6
+    },
+    {
+      "year": 1931,
+      "month": 4,
+      "fire_count": 122,
+      "hectares_burned": 14366.2
+    },
+    {
+      "year": 1931,
+      "month": 5,
+      "fire_count": 87,
+      "hectares_burned": 30448.7
+    },
+    {
+      "year": 1931,
+      "month": 6,
+      "fire_count": 63,
+      "hectares_burned": 23738.9
+    },
+    {
+      "year": 1931,
+      "month": 7,
+      "fire_count": 114,
+      "hectares_burned": 181566.5
+    },
+    {
+      "year": 1931,
+      "month": 8,
+      "fire_count": 173,
+      "hectares_burned": 188167.9
+    },
+    {
+      "year": 1931,
+      "month": 9,
+      "fire_count": 8,
+      "hectares_burned": 891.9
+    },
+    {
+      "year": 1931,
+      "month": 10,
+      "fire_count": 4,
+      "hectares_burned": 283.8
+    },
+    {
+      "year": 1932,
+      "month": 4,
+      "fire_count": 12,
+      "hectares_burned": 713.7
+    },
+    {
+      "year": 1932,
+      "month": 5,
+      "fire_count": 77,
+      "hectares_burned": 63545.7
+    },
+    {
+      "year": 1932,
+      "month": 6,
+      "fire_count": 115,
+      "hectares_burned": 47700.5
+    },
+    {
+      "year": 1932,
+      "month": 7,
+      "fire_count": 65,
+      "hectares_burned": 28423.5
+    },
+    {
+      "year": 1932,
+      "month": 8,
+      "fire_count": 72,
+      "hectares_burned": 8289.9
+    },
+    {
+      "year": 1932,
+      "month": 9,
+      "fire_count": 33,
+      "hectares_burned": 4658.6
+    },
+    {
+      "year": 1932,
+      "month": 10,
+      "fire_count": 12,
+      "hectares_burned": 357.1
+    },
+    {
+      "year": 1933,
+      "month": 4,
+      "fire_count": 12,
+      "hectares_burned": 839.4
+    },
+    {
+      "year": 1933,
+      "month": 5,
+      "fire_count": 13,
+      "hectares_burned": 798.6
+    },
+    {
+      "year": 1933,
+      "month": 6,
+      "fire_count": 14,
+      "hectares_burned": 158.7
+    },
+    {
+      "year": 1933,
+      "month": 7,
+      "fire_count": 115,
+      "hectares_burned": 70359.6
+    },
+    {
+      "year": 1933,
+      "month": 8,
+      "fire_count": 185,
+      "hectares_burned": 47933.9
+    },
+    {
+      "year": 1933,
+      "month": 9,
+      "fire_count": 4,
+      "hectares_burned": 196.2
+    },
+    {
+      "year": 1934,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 5.7
+    },
+    {
+      "year": 1934,
+      "month": 4,
+      "fire_count": 41,
+      "hectares_burned": 3744
+    },
+    {
+      "year": 1934,
+      "month": 5,
+      "fire_count": 47,
+      "hectares_burned": 705.5
+    },
+    {
+      "year": 1934,
+      "month": 6,
+      "fire_count": 31,
+      "hectares_burned": 945
+    },
+    {
+      "year": 1934,
+      "month": 7,
+      "fire_count": 107,
+      "hectares_burned": 139423.9
+    },
+    {
+      "year": 1934,
+      "month": 8,
+      "fire_count": 196,
+      "hectares_burned": 130744
+    },
+    {
+      "year": 1934,
+      "month": 9,
+      "fire_count": 55,
+      "hectares_burned": 3696
+    },
+    {
+      "year": 1934,
+      "month": 10,
+      "fire_count": 9,
+      "hectares_burned": 212.2
+    },
+    {
+      "year": 1935,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 68.4
+    },
+    {
+      "year": 1935,
+      "month": 4,
+      "fire_count": 18,
+      "hectares_burned": 2520.2
+    },
+    {
+      "year": 1935,
+      "month": 5,
+      "fire_count": 77,
+      "hectares_burned": 5436
+    },
+    {
+      "year": 1935,
+      "month": 6,
+      "fire_count": 36,
+      "hectares_burned": 5976.5
+    },
+    {
+      "year": 1935,
+      "month": 7,
+      "fire_count": 16,
+      "hectares_burned": 260.7
+    },
+    {
+      "year": 1935,
+      "month": 8,
+      "fire_count": 32,
+      "hectares_burned": 3247.4
+    },
+    {
+      "year": 1935,
+      "month": 9,
+      "fire_count": 35,
+      "hectares_burned": 3189.9
+    },
+    {
+      "year": 1935,
+      "month": 10,
+      "fire_count": 6,
+      "hectares_burned": 206.5
+    },
+    {
+      "year": 1936,
+      "month": 4,
+      "fire_count": 10,
+      "hectares_burned": 279.6
+    },
+    {
+      "year": 1936,
+      "month": 5,
+      "fire_count": 54,
+      "hectares_burned": 6979.2
+    },
+    {
+      "year": 1936,
+      "month": 6,
+      "fire_count": 53,
+      "hectares_burned": 52962.6
+    },
+    {
+      "year": 1936,
+      "month": 7,
+      "fire_count": 95,
+      "hectares_burned": 83720.6
+    },
+    {
+      "year": 1936,
+      "month": 8,
+      "fire_count": 123,
+      "hectares_burned": 53021.3
+    },
+    {
+      "year": 1936,
+      "month": 9,
+      "fire_count": 17,
+      "hectares_burned": 1150.9
+    },
+    {
+      "year": 1936,
+      "month": 10,
+      "fire_count": 11,
+      "hectares_burned": 578.9
+    },
+    {
+      "year": 1937,
+      "month": 2,
+      "fire_count": 1,
+      "hectares_burned": 1.2
+    },
+    {
+      "year": 1937,
+      "month": 4,
+      "fire_count": 7,
+      "hectares_burned": 146.8
+    },
+    {
+      "year": 1937,
+      "month": 5,
+      "fire_count": 74,
+      "hectares_burned": 9376.8
+    },
+    {
+      "year": 1937,
+      "month": 6,
+      "fire_count": 67,
+      "hectares_burned": 6539.5
+    },
+    {
+      "year": 1937,
+      "month": 7,
+      "fire_count": 34,
+      "hectares_burned": 3437
+    },
+    {
+      "year": 1937,
+      "month": 8,
+      "fire_count": 15,
+      "hectares_burned": 335.2
+    },
+    {
+      "year": 1937,
+      "month": 9,
+      "fire_count": 39,
+      "hectares_burned": 3102.8
+    },
+    {
+      "year": 1938,
+      "month": 2,
+      "fire_count": 1,
+      "hectares_burned": 129.8
+    },
+    {
+      "year": 1938,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 34.9
+    },
+    {
+      "year": 1938,
+      "month": 4,
+      "fire_count": 14,
+      "hectares_burned": 183.5
+    },
+    {
+      "year": 1938,
+      "month": 5,
+      "fire_count": 199,
+      "hectares_burned": 53971.3
+    },
+    {
+      "year": 1938,
+      "month": 6,
+      "fire_count": 159,
+      "hectares_burned": 39121.4
+    },
+    {
+      "year": 1938,
+      "month": 7,
+      "fire_count": 182,
+      "hectares_burned": 133106.8
+    },
+    {
+      "year": 1938,
+      "month": 8,
+      "fire_count": 84,
+      "hectares_burned": 33129.6
+    },
+    {
+      "year": 1938,
+      "month": 9,
+      "fire_count": 85,
+      "hectares_burned": 16351
+    },
+    {
+      "year": 1938,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 6.7
+    },
+    {
+      "year": 1939,
+      "month": 4,
+      "fire_count": 39,
+      "hectares_burned": 4459.2
+    },
+    {
+      "year": 1939,
+      "month": 5,
+      "fire_count": 70,
+      "hectares_burned": 8733.5
+    },
+    {
+      "year": 1939,
+      "month": 6,
+      "fire_count": 3,
+      "hectares_burned": 49.5
+    },
+    {
+      "year": 1939,
+      "month": 7,
+      "fire_count": 41,
+      "hectares_burned": 21663.2
+    },
+    {
+      "year": 1939,
+      "month": 8,
+      "fire_count": 113,
+      "hectares_burned": 40443.2
+    },
+    {
+      "year": 1939,
+      "month": 9,
+      "fire_count": 14,
+      "hectares_burned": 395.2
+    },
+    {
+      "year": 1939,
+      "month": 10,
+      "fire_count": 4,
+      "hectares_burned": 141.8
+    },
+    {
+      "year": 1940,
+      "month": 4,
+      "fire_count": 1,
+      "hectares_burned": 8.8
+    },
+    {
+      "year": 1940,
+      "month": 5,
+      "fire_count": 44,
+      "hectares_burned": 13763
+    },
+    {
+      "year": 1940,
+      "month": 6,
+      "fire_count": 38,
+      "hectares_burned": 32142.6
+    },
+    {
+      "year": 1940,
+      "month": 7,
+      "fire_count": 153,
+      "hectares_burned": 108867.3
+    },
+    {
+      "year": 1940,
+      "month": 8,
+      "fire_count": 80,
+      "hectares_burned": 44231
+    },
+    {
+      "year": 1940,
+      "month": 9,
+      "fire_count": 12,
+      "hectares_burned": 3623.5
+    },
+    {
+      "year": 1940,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 409.8
+    },
+    {
+      "year": 1941,
+      "month": 4,
+      "fire_count": 24,
+      "hectares_burned": 2985.1
+    },
+    {
+      "year": 1941,
+      "month": 5,
+      "fire_count": 55,
+      "hectares_burned": 20171.2
+    },
+    {
+      "year": 1941,
+      "month": 6,
+      "fire_count": 2,
+      "hectares_burned": 38
+    },
+    {
+      "year": 1941,
+      "month": 7,
+      "fire_count": 53,
+      "hectares_burned": 32840.7
+    },
+    {
+      "year": 1941,
+      "month": 8,
+      "fire_count": 30,
+      "hectares_burned": 5903.4
+    },
+    {
+      "year": 1942,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 72.6
+    },
+    {
+      "year": 1942,
+      "month": 5,
+      "fire_count": 49,
+      "hectares_burned": 64123.1
+    },
+    {
+      "year": 1942,
+      "month": 6,
+      "fire_count": 2,
+      "hectares_burned": 7106.3
+    },
+    {
+      "year": 1942,
+      "month": 7,
+      "fire_count": 42,
+      "hectares_burned": 49689
+    },
+    {
+      "year": 1942,
+      "month": 8,
+      "fire_count": 43,
+      "hectares_burned": 9720.8
+    },
+    {
+      "year": 1942,
+      "month": 9,
+      "fire_count": 21,
+      "hectares_burned": 3044.7
+    },
+    {
+      "year": 1942,
+      "month": 10,
+      "fire_count": 5,
+      "hectares_burned": 264.6
+    },
+    {
+      "year": 1943,
+      "month": 4,
+      "fire_count": 3,
+      "hectares_burned": 243.7
+    },
+    {
+      "year": 1943,
+      "month": 5,
+      "fire_count": 37,
+      "hectares_burned": 8601
+    },
+    {
+      "year": 1943,
+      "month": 6,
+      "fire_count": 10,
+      "hectares_burned": 3473.1
+    },
+    {
+      "year": 1943,
+      "month": 7,
+      "fire_count": 17,
+      "hectares_burned": 2175.9
+    },
+    {
+      "year": 1943,
+      "month": 8,
+      "fire_count": 15,
+      "hectares_burned": 6489.7
+    },
+    {
+      "year": 1943,
+      "month": 9,
+      "fire_count": 16,
+      "hectares_burned": 16986.2
+    },
+    {
+      "year": 1943,
+      "month": 10,
+      "fire_count": 5,
+      "hectares_burned": 1159.9
+    },
+    {
+      "year": 1944,
+      "month": 4,
+      "fire_count": 20,
+      "hectares_burned": 28725.2
+    },
+    {
+      "year": 1944,
+      "month": 5,
+      "fire_count": 116,
+      "hectares_burned": 222217.9
+    },
+    {
+      "year": 1944,
+      "month": 6,
+      "fire_count": 21,
+      "hectares_burned": 31016.2
+    },
+    {
+      "year": 1944,
+      "month": 7,
+      "fire_count": 36,
+      "hectares_burned": 20926.1
+    },
+    {
+      "year": 1944,
+      "month": 8,
+      "fire_count": 21,
+      "hectares_burned": 2086.5
+    },
+    {
+      "year": 1944,
+      "month": 9,
+      "fire_count": 28,
+      "hectares_burned": 4639
+    },
+    {
+      "year": 1945,
+      "month": 4,
+      "fire_count": 1,
+      "hectares_burned": 28.7
+    },
+    {
+      "year": 1945,
+      "month": 5,
+      "fire_count": 65,
+      "hectares_burned": 21575
+    },
+    {
+      "year": 1945,
+      "month": 6,
+      "fire_count": 4,
+      "hectares_burned": 1236.5
+    },
+    {
+      "year": 1945,
+      "month": 7,
+      "fire_count": 50,
+      "hectares_burned": 43691
+    },
+    {
+      "year": 1945,
+      "month": 8,
+      "fire_count": 122,
+      "hectares_burned": 80810.6
+    },
+    {
+      "year": 1945,
+      "month": 9,
+      "fire_count": 5,
+      "hectares_burned": 827
+    },
+    {
+      "year": 1945,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 368.5
+    },
+    {
+      "year": 1946,
+      "month": 4,
+      "fire_count": 5,
+      "hectares_burned": 13954.2
+    },
+    {
+      "year": 1946,
+      "month": 5,
+      "fire_count": 145,
+      "hectares_burned": 75538.5
+    },
+    {
+      "year": 1946,
+      "month": 6,
+      "fire_count": 12,
+      "hectares_burned": 5910.4
+    },
+    {
+      "year": 1946,
+      "month": 7,
+      "fire_count": 61,
+      "hectares_burned": 3802.7
+    },
+    {
+      "year": 1946,
+      "month": 8,
+      "fire_count": 89,
+      "hectares_burned": 14367.9
+    },
+    {
+      "year": 1946,
+      "month": 9,
+      "fire_count": 12,
+      "hectares_burned": 1151.9
+    },
+    {
+      "year": 1947,
+      "month": 4,
+      "fire_count": 7,
+      "hectares_burned": 424.4
+    },
+    {
+      "year": 1947,
+      "month": 5,
+      "fire_count": 126,
+      "hectares_burned": 24331.2
+    },
+    {
+      "year": 1947,
+      "month": 6,
+      "fire_count": 5,
+      "hectares_burned": 1202.2
+    },
+    {
+      "year": 1947,
+      "month": 7,
+      "fire_count": 11,
+      "hectares_burned": 831.2
+    },
+    {
+      "year": 1947,
+      "month": 8,
+      "fire_count": 5,
+      "hectares_burned": 525
+    },
+    {
+      "year": 1947,
+      "month": 9,
+      "fire_count": 6,
+      "hectares_burned": 571.1
+    },
+    {
+      "year": 1948,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 235.3
+    },
+    {
+      "year": 1948,
+      "month": 5,
+      "fire_count": 27,
+      "hectares_burned": 143189.5
+    },
+    {
+      "year": 1948,
+      "month": 6,
+      "fire_count": 37,
+      "hectares_burned": 27695.3
+    },
+    {
+      "year": 1948,
+      "month": 7,
+      "fire_count": 3,
+      "hectares_burned": 15202.7
+    },
+    {
+      "year": 1948,
+      "month": 8,
+      "fire_count": 9,
+      "hectares_burned": 516.2
+    },
+    {
+      "year": 1949,
+      "month": 4,
+      "fire_count": 6,
+      "hectares_burned": 601
+    },
+    {
+      "year": 1949,
+      "month": 5,
+      "fire_count": 44,
+      "hectares_burned": 46363.9
+    },
+    {
+      "year": 1949,
+      "month": 6,
+      "fire_count": 8,
+      "hectares_burned": 623.2
+    },
+    {
+      "year": 1949,
+      "month": 7,
+      "fire_count": 11,
+      "hectares_burned": 1291.1
+    },
+    {
+      "year": 1949,
+      "month": 8,
+      "fire_count": 13,
+      "hectares_burned": 2057.7
+    },
+    {
+      "year": 1949,
+      "month": 9,
+      "fire_count": 5,
+      "hectares_burned": 620.3
+    },
+    {
+      "year": 1950,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 12.5
+    },
+    {
+      "year": 1950,
+      "month": 4,
+      "fire_count": 1,
+      "hectares_burned": 23.9
+    },
+    {
+      "year": 1950,
+      "month": 5,
+      "fire_count": 8,
+      "hectares_burned": 2360.7
+    },
+    {
+      "year": 1950,
+      "month": 6,
+      "fire_count": 45,
+      "hectares_burned": 148124.9
+    },
+    {
+      "year": 1950,
+      "month": 7,
+      "fire_count": 30,
+      "hectares_burned": 124940.8
+    },
+    {
+      "year": 1950,
+      "month": 8,
+      "fire_count": 14,
+      "hectares_burned": 64636.2
+    },
+    {
+      "year": 1950,
+      "month": 9,
+      "fire_count": 48,
+      "hectares_burned": 53096.3
+    },
+    {
+      "year": 1951,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 84.5
+    },
+    {
+      "year": 1951,
+      "month": 4,
+      "fire_count": 36,
+      "hectares_burned": 6592.6
+    },
+    {
+      "year": 1951,
+      "month": 5,
+      "fire_count": 6,
+      "hectares_burned": 57311.6
+    },
+    {
+      "year": 1951,
+      "month": 6,
+      "fire_count": 29,
+      "hectares_burned": 23041
+    },
+    {
+      "year": 1951,
+      "month": 7,
+      "fire_count": 55,
+      "hectares_burned": 25476.1
+    },
+    {
+      "year": 1951,
+      "month": 8,
+      "fire_count": 62,
+      "hectares_burned": 44999.6
+    },
+    {
+      "year": 1951,
+      "month": 9,
+      "fire_count": 32,
+      "hectares_burned": 16549
+    },
+    {
+      "year": 1951,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 37.7
+    },
+    {
+      "year": 1952,
+      "month": 4,
+      "fire_count": 4,
+      "hectares_burned": 18556.1
+    },
+    {
+      "year": 1952,
+      "month": 5,
+      "fire_count": 44,
+      "hectares_burned": 8512.6
+    },
+    {
+      "year": 1952,
+      "month": 6,
+      "fire_count": 3,
+      "hectares_burned": 3255.8
+    },
+    {
+      "year": 1952,
+      "month": 7,
+      "fire_count": 35,
+      "hectares_burned": 7204.4
+    },
+    {
+      "year": 1952,
+      "month": 8,
+      "fire_count": 44,
+      "hectares_burned": 19769
+    },
+    {
+      "year": 1952,
+      "month": 9,
+      "fire_count": 29,
+      "hectares_burned": 7835
+    },
+    {
+      "year": 1952,
+      "month": 10,
+      "fire_count": 29,
+      "hectares_burned": 3738.1
+    },
+    {
+      "year": 1952,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 10.3
+    },
+    {
+      "year": 1953,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 65.2
+    },
+    {
+      "year": 1953,
+      "month": 5,
+      "fire_count": 22,
+      "hectares_burned": 22365.5
+    },
+    {
+      "year": 1953,
+      "month": 6,
+      "fire_count": 1,
+      "hectares_burned": 77
+    },
+    {
+      "year": 1953,
+      "month": 7,
+      "fire_count": 11,
+      "hectares_burned": 2555.9
+    },
+    {
+      "year": 1953,
+      "month": 8,
+      "fire_count": 8,
+      "hectares_burned": 471
+    },
+    {
+      "year": 1954,
+      "month": 3,
+      "fire_count": 4,
+      "hectares_burned": 1221.1
+    },
+    {
+      "year": 1954,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 46.3
+    },
+    {
+      "year": 1954,
+      "month": 5,
+      "fire_count": 17,
+      "hectares_burned": 1235
+    },
+    {
+      "year": 1954,
+      "month": 6,
+      "fire_count": 6,
+      "hectares_burned": 858.9
+    },
+    {
+      "year": 1954,
+      "month": 7,
+      "fire_count": 6,
+      "hectares_burned": 343.7
+    },
+    {
+      "year": 1954,
+      "month": 8,
+      "fire_count": 1,
+      "hectares_burned": 92
+    },
+    {
+      "year": 1955,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 187.1
+    },
+    {
+      "year": 1955,
+      "month": 5,
+      "fire_count": 17,
+      "hectares_burned": 5555.2
+    },
+    {
+      "year": 1955,
+      "month": 6,
+      "fire_count": 24,
+      "hectares_burned": 12642.4
+    },
+    {
+      "year": 1955,
+      "month": 7,
+      "fire_count": 10,
+      "hectares_burned": 882.5
+    },
+    {
+      "year": 1955,
+      "month": 8,
+      "fire_count": 9,
+      "hectares_burned": 1121.4
+    },
+    {
+      "year": 1955,
+      "month": 9,
+      "fire_count": 7,
+      "hectares_burned": 2099.5
+    },
+    {
+      "year": 1956,
+      "month": 4,
+      "fire_count": 15,
+      "hectares_burned": 1210.1
+    },
+    {
+      "year": 1956,
+      "month": 5,
+      "fire_count": 122,
+      "hectares_burned": 206141.8
+    },
+    {
+      "year": 1956,
+      "month": 6,
+      "fire_count": 1,
+      "hectares_burned": 277.8
+    },
+    {
+      "year": 1956,
+      "month": 7,
+      "fire_count": 27,
+      "hectares_burned": 3899.9
+    },
+    {
+      "year": 1956,
+      "month": 8,
+      "fire_count": 15,
+      "hectares_burned": 2001.2
+    },
+    {
+      "year": 1956,
+      "month": 9,
+      "fire_count": 9,
+      "hectares_burned": 1057.1
+    },
+    {
+      "year": 1956,
+      "month": 12,
+      "fire_count": 5,
+      "hectares_burned": 3035.5
+    },
+    {
+      "year": 1957,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 43.7
+    },
+    {
+      "year": 1957,
+      "month": 4,
+      "fire_count": 11,
+      "hectares_burned": 17395.4
+    },
+    {
+      "year": 1957,
+      "month": 5,
+      "fire_count": 29,
+      "hectares_burned": 2372.8
+    },
+    {
+      "year": 1957,
+      "month": 6,
+      "fire_count": 18,
+      "hectares_burned": 5322.4
+    },
+    {
+      "year": 1957,
+      "month": 7,
+      "fire_count": 5,
+      "hectares_burned": 473.6
+    },
+    {
+      "year": 1957,
+      "month": 8,
+      "fire_count": 3,
+      "hectares_burned": 1665.5
+    },
+    {
+      "year": 1957,
+      "month": 9,
+      "fire_count": 7,
+      "hectares_burned": 1134
+    },
+    {
+      "year": 1957,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 80.2
+    },
+    {
+      "year": 1958,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 50.2
+    },
+    {
+      "year": 1958,
+      "month": 4,
+      "fire_count": 16,
+      "hectares_burned": 4306.5
+    },
+    {
+      "year": 1958,
+      "month": 5,
+      "fire_count": 116,
+      "hectares_burned": 400535.9
+    },
+    {
+      "year": 1958,
+      "month": 6,
+      "fire_count": 25,
+      "hectares_burned": 98839.3
+    },
+    {
+      "year": 1958,
+      "month": 7,
+      "fire_count": 164,
+      "hectares_burned": 313114.7
+    },
+    {
+      "year": 1958,
+      "month": 8,
+      "fire_count": 66,
+      "hectares_burned": 40656.4
+    },
+    {
+      "year": 1958,
+      "month": 9,
+      "fire_count": 5,
+      "hectares_burned": 3479.8
+    },
+    {
+      "year": 1958,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 83.7
+    },
+    {
+      "year": 1959,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 170.4
+    },
+    {
+      "year": 1959,
+      "month": 4,
+      "fire_count": 13,
+      "hectares_burned": 5126.9
+    },
+    {
+      "year": 1959,
+      "month": 5,
+      "fire_count": 75,
+      "hectares_burned": 41158.7
+    },
+    {
+      "year": 1959,
+      "month": 6,
+      "fire_count": 12,
+      "hectares_burned": 1804.3
+    },
+    {
+      "year": 1959,
+      "month": 7,
+      "fire_count": 48,
+      "hectares_burned": 71647.2
+    },
+    {
+      "year": 1959,
+      "month": 8,
+      "fire_count": 9,
+      "hectares_burned": 1322.1
+    },
+    {
+      "year": 1960,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 187.6
+    },
+    {
+      "year": 1960,
+      "month": 4,
+      "fire_count": 24,
+      "hectares_burned": 3264.4
+    },
+    {
+      "year": 1960,
+      "month": 5,
+      "fire_count": 8,
+      "hectares_burned": 1151.3
+    },
+    {
+      "year": 1960,
+      "month": 6,
+      "fire_count": 7,
+      "hectares_burned": 1072
+    },
+    {
+      "year": 1960,
+      "month": 7,
+      "fire_count": 170,
+      "hectares_burned": 108262.7
+    },
+    {
+      "year": 1960,
+      "month": 8,
+      "fire_count": 57,
+      "hectares_burned": 12190.7
+    },
+    {
+      "year": 1960,
+      "month": 9,
+      "fire_count": 9,
+      "hectares_burned": 482.3
+    },
+    {
+      "year": 1960,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 314.4
+    },
+    {
+      "year": 1961,
+      "month": 4,
+      "fire_count": 9,
+      "hectares_burned": 605.3
+    },
+    {
+      "year": 1961,
+      "month": 5,
+      "fire_count": 42,
+      "hectares_burned": 30970.2
+    },
+    {
+      "year": 1961,
+      "month": 6,
+      "fire_count": 41,
+      "hectares_burned": 23775.1
+    },
+    {
+      "year": 1961,
+      "month": 7,
+      "fire_count": 74,
+      "hectares_burned": 238435.3
+    },
+    {
+      "year": 1961,
+      "month": 8,
+      "fire_count": 150,
+      "hectares_burned": 215059.3
+    },
+    {
+      "year": 1961,
+      "month": 9,
+      "fire_count": 8,
+      "hectares_burned": 801.1
+    },
+    {
+      "year": 1961,
+      "month": 10,
+      "fire_count": 4,
+      "hectares_burned": 152.8
+    },
+    {
+      "year": 1962,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 40.5
+    },
+    {
+      "year": 1962,
+      "month": 4,
+      "fire_count": 4,
+      "hectares_burned": 329.1
+    },
+    {
+      "year": 1962,
+      "month": 5,
+      "fire_count": 19,
+      "hectares_burned": 6996.6
+    },
+    {
+      "year": 1962,
+      "month": 6,
+      "fire_count": 15,
+      "hectares_burned": 4694.8
+    },
+    {
+      "year": 1962,
+      "month": 7,
+      "fire_count": 21,
+      "hectares_burned": 4130.4
+    },
+    {
+      "year": 1962,
+      "month": 8,
+      "fire_count": 4,
+      "hectares_burned": 74.2
+    },
+    {
+      "year": 1962,
+      "month": 9,
+      "fire_count": 8,
+      "hectares_burned": 939.9
+    },
+    {
+      "year": 1963,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 45.3
+    },
+    {
+      "year": 1963,
+      "month": 4,
+      "fire_count": 3,
+      "hectares_burned": 176.5
+    },
+    {
+      "year": 1963,
+      "month": 5,
+      "fire_count": 31,
+      "hectares_burned": 7124.2
+    },
+    {
+      "year": 1963,
+      "month": 6,
+      "fire_count": 30,
+      "hectares_burned": 5625.6
+    },
+    {
+      "year": 1963,
+      "month": 7,
+      "fire_count": 9,
+      "hectares_burned": 634.8
+    },
+    {
+      "year": 1963,
+      "month": 8,
+      "fire_count": 9,
+      "hectares_burned": 5784.6
+    },
+    {
+      "year": 1963,
+      "month": 9,
+      "fire_count": 6,
+      "hectares_burned": 688
+    },
+    {
+      "year": 1963,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 33.6
+    },
+    {
+      "year": 1964,
+      "month": 4,
+      "fire_count": 5,
+      "hectares_burned": 1592.1
+    },
+    {
+      "year": 1964,
+      "month": 5,
+      "fire_count": 10,
+      "hectares_burned": 613.1
+    },
+    {
+      "year": 1964,
+      "month": 6,
+      "fire_count": 7,
+      "hectares_burned": 553.3
+    },
+    {
+      "year": 1964,
+      "month": 7,
+      "fire_count": 2,
+      "hectares_burned": 57.2
+    },
+    {
+      "year": 1964,
+      "month": 8,
+      "fire_count": 3,
+      "hectares_burned": 151.9
+    },
+    {
+      "year": 1964,
+      "month": 10,
+      "fire_count": 4,
+      "hectares_burned": 112.1
+    },
+    {
+      "year": 1965,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 103.9
+    },
+    {
+      "year": 1965,
+      "month": 4,
+      "fire_count": 3,
+      "hectares_burned": 143.3
+    },
+    {
+      "year": 1965,
+      "month": 5,
+      "fire_count": 26,
+      "hectares_burned": 5395.5
+    },
+    {
+      "year": 1965,
+      "month": 6,
+      "fire_count": 26,
+      "hectares_burned": 7408.3
+    },
+    {
+      "year": 1965,
+      "month": 7,
+      "fire_count": 49,
+      "hectares_burned": 65851.6
+    },
+    {
+      "year": 1965,
+      "month": 8,
+      "fire_count": 17,
+      "hectares_burned": 45207
+    },
+    {
+      "year": 1965,
+      "month": 9,
+      "fire_count": 61,
+      "hectares_burned": 6976.4
+    },
+    {
+      "year": 1965,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 132.6
+    },
+    {
+      "year": 1966,
+      "month": 4,
+      "fire_count": 8,
+      "hectares_burned": 447.9
+    },
+    {
+      "year": 1966,
+      "month": 5,
+      "fire_count": 36,
+      "hectares_burned": 5217.6
+    },
+    {
+      "year": 1966,
+      "month": 6,
+      "fire_count": 17,
+      "hectares_burned": 14730.5
+    },
+    {
+      "year": 1966,
+      "month": 7,
+      "fire_count": 7,
+      "hectares_burned": 638.8
+    },
+    {
+      "year": 1966,
+      "month": 8,
+      "fire_count": 9,
+      "hectares_burned": 1136.6
+    },
+    {
+      "year": 1966,
+      "month": 9,
+      "fire_count": 5,
+      "hectares_burned": 1037.1
+    },
+    {
+      "year": 1967,
+      "month": 4,
+      "fire_count": 3,
+      "hectares_burned": 156
+    },
+    {
+      "year": 1967,
+      "month": 5,
+      "fire_count": 21,
+      "hectares_burned": 3619.1
+    },
+    {
+      "year": 1967,
+      "month": 6,
+      "fire_count": 28,
+      "hectares_burned": 12922.2
+    },
+    {
+      "year": 1967,
+      "month": 7,
+      "fire_count": 28,
+      "hectares_burned": 14836.2
+    },
+    {
+      "year": 1967,
+      "month": 8,
+      "fire_count": 86,
+      "hectares_burned": 61789
+    },
+    {
+      "year": 1967,
+      "month": 9,
+      "fire_count": 91,
+      "hectares_burned": 17951.8
+    },
+    {
+      "year": 1967,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 20.2
+    },
+    {
+      "year": 1968,
+      "month": 4,
+      "fire_count": 5,
+      "hectares_burned": 1592.3
+    },
+    {
+      "year": 1968,
+      "month": 5,
+      "fire_count": 27,
+      "hectares_burned": 5903.7
+    },
+    {
+      "year": 1968,
+      "month": 6,
+      "fire_count": 2,
+      "hectares_burned": 662.4
+    },
+    {
+      "year": 1968,
+      "month": 7,
+      "fire_count": 14,
+      "hectares_burned": 6994.8
+    },
+    {
+      "year": 1968,
+      "month": 8,
+      "fire_count": 7,
+      "hectares_burned": 1924.9
+    },
+    {
+      "year": 1968,
+      "month": 9,
+      "fire_count": 2,
+      "hectares_burned": 309.5
+    },
+    {
+      "year": 1968,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 408.2
+    },
+    {
+      "year": 1969,
+      "month": 3,
+      "fire_count": 3,
+      "hectares_burned": 273.9
+    },
+    {
+      "year": 1969,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 535.2
+    },
+    {
+      "year": 1969,
+      "month": 5,
+      "fire_count": 73,
+      "hectares_burned": 22536.1
+    },
+    {
+      "year": 1969,
+      "month": 6,
+      "fire_count": 60,
+      "hectares_burned": 127445.2
+    },
+    {
+      "year": 1969,
+      "month": 7,
+      "fire_count": 16,
+      "hectares_burned": 2110.3
+    },
+    {
+      "year": 1969,
+      "month": 8,
+      "fire_count": 26,
+      "hectares_burned": 9560.2
+    },
+    {
+      "year": 1969,
+      "month": 9,
+      "fire_count": 6,
+      "hectares_burned": 818.4
+    },
+    {
+      "year": 1969,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 17.3
+    },
+    {
+      "year": 1970,
+      "month": 4,
+      "fire_count": 7,
+      "hectares_burned": 960.7
+    },
+    {
+      "year": 1970,
+      "month": 5,
+      "fire_count": 19,
+      "hectares_burned": 3811
+    },
+    {
+      "year": 1970,
+      "month": 6,
+      "fire_count": 39,
+      "hectares_burned": 38704
+    },
+    {
+      "year": 1970,
+      "month": 7,
+      "fire_count": 75,
+      "hectares_burned": 36408
+    },
+    {
+      "year": 1970,
+      "month": 8,
+      "fire_count": 42,
+      "hectares_burned": 14962.8
+    },
+    {
+      "year": 1970,
+      "month": 9,
+      "fire_count": 28,
+      "hectares_burned": 5578.6
+    },
+    {
+      "year": 1970,
+      "month": 10,
+      "fire_count": 11,
+      "hectares_burned": 806.5
+    },
+    {
+      "year": 1970,
+      "month": 11,
+      "fire_count": 3,
+      "hectares_burned": 312.7
+    },
+    {
+      "year": 1971,
+      "month": 4,
+      "fire_count": 7,
+      "hectares_burned": 249.3
+    },
+    {
+      "year": 1971,
+      "month": 5,
+      "fire_count": 92,
+      "hectares_burned": 53058.8
+    },
+    {
+      "year": 1971,
+      "month": 6,
+      "fire_count": 10,
+      "hectares_burned": 26792
+    },
+    {
+      "year": 1971,
+      "month": 7,
+      "fire_count": 37,
+      "hectares_burned": 174411.3
+    },
+    {
+      "year": 1971,
+      "month": 8,
+      "fire_count": 112,
+      "hectares_burned": 88647.8
+    },
+    {
+      "year": 1971,
+      "month": 9,
+      "fire_count": 7,
+      "hectares_burned": 187
+    },
+    {
+      "year": 1972,
+      "month": 3,
+      "fire_count": 3,
+      "hectares_burned": 50.7
+    },
+    {
+      "year": 1972,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 187
+    },
+    {
+      "year": 1972,
+      "month": 5,
+      "fire_count": 32,
+      "hectares_burned": 4637.6
+    },
+    {
+      "year": 1972,
+      "month": 6,
+      "fire_count": 10,
+      "hectares_burned": 10395.8
+    },
+    {
+      "year": 1972,
+      "month": 7,
+      "fire_count": 15,
+      "hectares_burned": 2153.4
+    },
+    {
+      "year": 1972,
+      "month": 8,
+      "fire_count": 13,
+      "hectares_burned": 1193.9
+    },
+    {
+      "year": 1972,
+      "month": 9,
+      "fire_count": 20,
+      "hectares_burned": 2597.4
+    },
+    {
+      "year": 1972,
+      "month": 10,
+      "fire_count": 39,
+      "hectares_burned": 1612.8
+    },
+    {
+      "year": 1973,
+      "month": 4,
+      "fire_count": 10,
+      "hectares_burned": 943.9
+    },
+    {
+      "year": 1973,
+      "month": 5,
+      "fire_count": 25,
+      "hectares_burned": 2980.6
+    },
+    {
+      "year": 1973,
+      "month": 6,
+      "fire_count": 4,
+      "hectares_burned": 1011.2
+    },
+    {
+      "year": 1973,
+      "month": 7,
+      "fire_count": 19,
+      "hectares_burned": 7555.9
+    },
+    {
+      "year": 1973,
+      "month": 8,
+      "fire_count": 40,
+      "hectares_burned": 8091.4
+    },
+    {
+      "year": 1973,
+      "month": 9,
+      "fire_count": 62,
+      "hectares_burned": 13312.5
+    },
+    {
+      "year": 1974,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 26.7
+    },
+    {
+      "year": 1974,
+      "month": 4,
+      "fire_count": 1,
+      "hectares_burned": 20.4
+    },
+    {
+      "year": 1974,
+      "month": 5,
+      "fire_count": 2,
+      "hectares_burned": 27.6
+    },
+    {
+      "year": 1974,
+      "month": 6,
+      "fire_count": 29,
+      "hectares_burned": 5595.4
+    },
+    {
+      "year": 1974,
+      "month": 7,
+      "fire_count": 5,
+      "hectares_burned": 557.4
+    },
+    {
+      "year": 1974,
+      "month": 8,
+      "fire_count": 22,
+      "hectares_burned": 1231.6
+    },
+    {
+      "year": 1974,
+      "month": 9,
+      "fire_count": 79,
+      "hectares_burned": 6861.3
+    },
+    {
+      "year": 1974,
+      "month": 10,
+      "fire_count": 84,
+      "hectares_burned": 6792.1
+    },
+    {
+      "year": 1975,
+      "month": 4,
+      "fire_count": 6,
+      "hectares_burned": 132.6
+    },
+    {
+      "year": 1975,
+      "month": 5,
+      "fire_count": 13,
+      "hectares_burned": 6296.9
+    },
+    {
+      "year": 1975,
+      "month": 6,
+      "fire_count": 3,
+      "hectares_burned": 358.4
+    },
+    {
+      "year": 1975,
+      "month": 7,
+      "fire_count": 43,
+      "hectares_burned": 9852
+    },
+    {
+      "year": 1975,
+      "month": 8,
+      "fire_count": 3,
+      "hectares_burned": 70.2
+    },
+    {
+      "year": 1975,
+      "month": 9,
+      "fire_count": 29,
+      "hectares_burned": 6768.9
+    },
+    {
+      "year": 1975,
+      "month": 10,
+      "fire_count": 5,
+      "hectares_burned": 804.9
+    },
+    {
+      "year": 1976,
+      "month": 4,
+      "fire_count": 34,
+      "hectares_burned": 21801.7
+    },
+    {
+      "year": 1976,
+      "month": 5,
+      "fire_count": 21,
+      "hectares_burned": 23965.8
+    },
+    {
+      "year": 1976,
+      "month": 6,
+      "fire_count": 6,
+      "hectares_burned": 4722.1
+    },
+    {
+      "year": 1976,
+      "month": 7,
+      "fire_count": 1,
+      "hectares_burned": 92.5
+    },
+    {
+      "year": 1976,
+      "month": 9,
+      "fire_count": 1,
+      "hectares_burned": 54.8
+    },
+    {
+      "year": 1976,
+      "month": 10,
+      "fire_count": 5,
+      "hectares_burned": 148.6
+    },
+    {
+      "year": 1977,
+      "month": 4,
+      "fire_count": 15,
+      "hectares_burned": 1578.3
+    },
+    {
+      "year": 1977,
+      "month": 5,
+      "fire_count": 5,
+      "hectares_burned": 567.3
+    },
+    {
+      "year": 1977,
+      "month": 6,
+      "fire_count": 3,
+      "hectares_burned": 141.6
+    },
+    {
+      "year": 1977,
+      "month": 7,
+      "fire_count": 5,
+      "hectares_burned": 402.6
+    },
+    {
+      "year": 1977,
+      "month": 8,
+      "fire_count": 7,
+      "hectares_burned": 302.2
+    },
+    {
+      "year": 1977,
+      "month": 9,
+      "fire_count": 2,
+      "hectares_burned": 30.2
+    },
+    {
+      "year": 1977,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 103.6
+    },
+    {
+      "year": 1978,
+      "month": 1,
+      "fire_count": 1,
+      "hectares_burned": 49.9
+    },
+    {
+      "year": 1978,
+      "month": 3,
+      "fire_count": 4,
+      "hectares_burned": 145.2
+    },
+    {
+      "year": 1978,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 59
+    },
+    {
+      "year": 1978,
+      "month": 5,
+      "fire_count": 8,
+      "hectares_burned": 1057
+    },
+    {
+      "year": 1978,
+      "month": 6,
+      "fire_count": 22,
+      "hectares_burned": 12367.2
+    },
+    {
+      "year": 1978,
+      "month": 7,
+      "fire_count": 25,
+      "hectares_burned": 31014
+    },
+    {
+      "year": 1978,
+      "month": 8,
+      "fire_count": 18,
+      "hectares_burned": 2571.5
+    },
+    {
+      "year": 1978,
+      "month": 10,
+      "fire_count": 7,
+      "hectares_burned": 338.1
+    },
+    {
+      "year": 1978,
+      "month": 11,
+      "fire_count": 2,
+      "hectares_burned": 393.4
+    },
+    {
+      "year": 1979,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 265.2
+    },
+    {
+      "year": 1979,
+      "month": 4,
+      "fire_count": 7,
+      "hectares_burned": 360.4
+    },
+    {
+      "year": 1979,
+      "month": 5,
+      "fire_count": 32,
+      "hectares_burned": 5943.8
+    },
+    {
+      "year": 1979,
+      "month": 6,
+      "fire_count": 26,
+      "hectares_burned": 1934.3
+    },
+    {
+      "year": 1979,
+      "month": 7,
+      "fire_count": 26,
+      "hectares_burned": 3429
+    },
+    {
+      "year": 1979,
+      "month": 8,
+      "fire_count": 35,
+      "hectares_burned": 5870.6
+    },
+    {
+      "year": 1979,
+      "month": 9,
+      "fire_count": 33,
+      "hectares_burned": 2597.9
+    },
+    {
+      "year": 1979,
+      "month": 10,
+      "fire_count": 22,
+      "hectares_burned": 883.6
+    },
+    {
+      "year": 1979,
+      "month": 11,
+      "fire_count": 16,
+      "hectares_burned": 3233.2
+    },
+    {
+      "year": 1980,
+      "month": 4,
+      "fire_count": 56,
+      "hectares_burned": 13303.6
+    },
+    {
+      "year": 1980,
+      "month": 5,
+      "fire_count": 58,
+      "hectares_burned": 47093.3
+    },
+    {
+      "year": 1980,
+      "month": 6,
+      "fire_count": 8,
+      "hectares_burned": 1008.1
+    },
+    {
+      "year": 1980,
+      "month": 7,
+      "fire_count": 2,
+      "hectares_burned": 812.1
+    },
+    {
+      "year": 1980,
+      "month": 8,
+      "fire_count": 1,
+      "hectares_burned": 18
+    },
+    {
+      "year": 1980,
+      "month": 9,
+      "fire_count": 7,
+      "hectares_burned": 343.7
+    },
+    {
+      "year": 1980,
+      "month": 10,
+      "fire_count": 8,
+      "hectares_burned": 719.3
+    },
+    {
+      "year": 1981,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 104.5
+    },
+    {
+      "year": 1981,
+      "month": 4,
+      "fire_count": 4,
+      "hectares_burned": 213.1
+    },
+    {
+      "year": 1981,
+      "month": 5,
+      "fire_count": 3,
+      "hectares_burned": 114
+    },
+    {
+      "year": 1981,
+      "month": 6,
+      "fire_count": 2,
+      "hectares_burned": 468
+    },
+    {
+      "year": 1981,
+      "month": 7,
+      "fire_count": 21,
+      "hectares_burned": 30983.8
+    },
+    {
+      "year": 1981,
+      "month": 8,
+      "fire_count": 65,
+      "hectares_burned": 77813.2
+    },
+    {
+      "year": 1981,
+      "month": 9,
+      "fire_count": 44,
+      "hectares_burned": 5463.6
+    },
+    {
+      "year": 1981,
+      "month": 10,
+      "fire_count": 5,
+      "hectares_burned": 356.5
+    },
+    {
+      "year": 1982,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 13
+    },
+    {
+      "year": 1982,
+      "month": 4,
+      "fire_count": 16,
+      "hectares_burned": 1349.6
+    },
+    {
+      "year": 1982,
+      "month": 5,
+      "fire_count": 22,
+      "hectares_burned": 9653.3
+    },
+    {
+      "year": 1982,
+      "month": 6,
+      "fire_count": 53,
+      "hectares_burned": 296209.3
+    },
+    {
+      "year": 1982,
+      "month": 7,
+      "fire_count": 20,
+      "hectares_burned": 46232.6
+    },
+    {
+      "year": 1982,
+      "month": 8,
+      "fire_count": 3,
+      "hectares_burned": 485.3
+    },
+    {
+      "year": 1982,
+      "month": 9,
+      "fire_count": 3,
+      "hectares_burned": 82.6
+    },
+    {
+      "year": 1982,
+      "month": 10,
+      "fire_count": 3,
+      "hectares_burned": 311.4
+    },
+    {
+      "year": 1983,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 47.8
+    },
+    {
+      "year": 1983,
+      "month": 4,
+      "fire_count": 14,
+      "hectares_burned": 881.5
+    },
+    {
+      "year": 1983,
+      "month": 5,
+      "fire_count": 53,
+      "hectares_burned": 76110.3
+    },
+    {
+      "year": 1983,
+      "month": 7,
+      "fire_count": 5,
+      "hectares_burned": 191.2
+    },
+    {
+      "year": 1983,
+      "month": 8,
+      "fire_count": 4,
+      "hectares_burned": 395.5
+    },
+    {
+      "year": 1983,
+      "month": 9,
+      "fire_count": 7,
+      "hectares_burned": 253.6
+    },
+    {
+      "year": 1983,
+      "month": 10,
+      "fire_count": 10,
+      "hectares_burned": 233.8
+    },
+    {
+      "year": 1984,
+      "month": 4,
+      "fire_count": 29,
+      "hectares_burned": 3671.1
+    },
+    {
+      "year": 1984,
+      "month": 5,
+      "fire_count": 10,
+      "hectares_burned": 6207.9
+    },
+    {
+      "year": 1984,
+      "month": 6,
+      "fire_count": 2,
+      "hectares_burned": 163.8
+    },
+    {
+      "year": 1984,
+      "month": 7,
+      "fire_count": 43,
+      "hectares_burned": 8674.8
+    },
+    {
+      "year": 1984,
+      "month": 8,
+      "fire_count": 11,
+      "hectares_burned": 883.2
+    },
+    {
+      "year": 1984,
+      "month": 9,
+      "fire_count": 14,
+      "hectares_burned": 512.9
+    },
+    {
+      "year": 1984,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 73.7
+    },
+    {
+      "year": 1985,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 113.8
+    },
+    {
+      "year": 1985,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 52
+    },
+    {
+      "year": 1985,
+      "month": 5,
+      "fire_count": 58,
+      "hectares_burned": 49705.4
+    },
+    {
+      "year": 1985,
+      "month": 6,
+      "fire_count": 51,
+      "hectares_burned": 106056.1
+    },
+    {
+      "year": 1985,
+      "month": 7,
+      "fire_count": 111,
+      "hectares_burned": 69013
+    },
+    {
+      "year": 1985,
+      "month": 8,
+      "fire_count": 22,
+      "hectares_burned": 3291.5
+    },
+    {
+      "year": 1985,
+      "month": 9,
+      "fire_count": 22,
+      "hectares_burned": 1906.3
+    },
+    {
+      "year": 1985,
+      "month": 10,
+      "fire_count": 4,
+      "hectares_burned": 228.9
+    },
+    {
+      "year": 1986,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 98.5
+    },
+    {
+      "year": 1986,
+      "month": 5,
+      "fire_count": 10,
+      "hectares_burned": 1468.5
+    },
+    {
+      "year": 1986,
+      "month": 6,
+      "fire_count": 17,
+      "hectares_burned": 3089.1
+    },
+    {
+      "year": 1986,
+      "month": 7,
+      "fire_count": 1,
+      "hectares_burned": 2
+    },
+    {
+      "year": 1986,
+      "month": 8,
+      "fire_count": 41,
+      "hectares_burned": 8497.1
+    },
+    {
+      "year": 1986,
+      "month": 9,
+      "fire_count": 16,
+      "hectares_burned": 1777
+    },
+    {
+      "year": 1986,
+      "month": 10,
+      "fire_count": 35,
+      "hectares_burned": 1704.3
+    },
+    {
+      "year": 1987,
+      "month": 4,
+      "fire_count": 20,
+      "hectares_burned": 2696.1
+    },
+    {
+      "year": 1987,
+      "month": 5,
+      "fire_count": 23,
+      "hectares_burned": 4250.7
+    },
+    {
+      "year": 1987,
+      "month": 6,
+      "fire_count": 9,
+      "hectares_burned": 2493.8
+    },
+    {
+      "year": 1987,
+      "month": 7,
+      "fire_count": 28,
+      "hectares_burned": 7014.7
+    },
+    {
+      "year": 1987,
+      "month": 8,
+      "fire_count": 11,
+      "hectares_burned": 594
+    },
+    {
+      "year": 1987,
+      "month": 9,
+      "fire_count": 56,
+      "hectares_burned": 12822.3
+    },
+    {
+      "year": 1987,
+      "month": 10,
+      "fire_count": 33,
+      "hectares_burned": 2257
+    },
+    {
+      "year": 1988,
+      "month": 2,
+      "fire_count": 2,
+      "hectares_burned": 177.5
+    },
+    {
+      "year": 1988,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 130.7
+    },
+    {
+      "year": 1988,
+      "month": 4,
+      "fire_count": 10,
+      "hectares_burned": 267.1
+    },
+    {
+      "year": 1988,
+      "month": 5,
+      "fire_count": 10,
+      "hectares_burned": 917.6
+    },
+    {
+      "year": 1988,
+      "month": 6,
+      "fire_count": 10,
+      "hectares_burned": 531.9
+    },
+    {
+      "year": 1988,
+      "month": 7,
+      "fire_count": 10,
+      "hectares_burned": 429.1
+    },
+    {
+      "year": 1988,
+      "month": 8,
+      "fire_count": 16,
+      "hectares_burned": 1080.5
+    },
+    {
+      "year": 1988,
+      "month": 9,
+      "fire_count": 9,
+      "hectares_burned": 1284.5
+    },
+    {
+      "year": 1988,
+      "month": 10,
+      "fire_count": 25,
+      "hectares_burned": 1136.1
+    },
+    {
+      "year": 1988,
+      "month": 12,
+      "fire_count": 1,
+      "hectares_burned": 37.8
+    },
+    {
+      "year": 1989,
+      "month": 3,
+      "fire_count": 3,
+      "hectares_burned": 69.9
+    },
+    {
+      "year": 1989,
+      "month": 4,
+      "fire_count": 25,
+      "hectares_burned": 2072.4
+    },
+    {
+      "year": 1989,
+      "month": 5,
+      "fire_count": 22,
+      "hectares_burned": 3869
+    },
+    {
+      "year": 1989,
+      "month": 6,
+      "fire_count": 30,
+      "hectares_burned": 10082.3
+    },
+    {
+      "year": 1989,
+      "month": 7,
+      "fire_count": 17,
+      "hectares_burned": 2394.4
+    },
+    {
+      "year": 1989,
+      "month": 8,
+      "fire_count": 5,
+      "hectares_burned": 2478.4
+    },
+    {
+      "year": 1989,
+      "month": 9,
+      "fire_count": 24,
+      "hectares_burned": 1170.7
+    },
+    {
+      "year": 1989,
+      "month": 10,
+      "fire_count": 3,
+      "hectares_burned": 43.2
+    },
+    {
+      "year": 1990,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 25.5
+    },
+    {
+      "year": 1990,
+      "month": 4,
+      "fire_count": 5,
+      "hectares_burned": 161.2
+    },
+    {
+      "year": 1990,
+      "month": 5,
+      "fire_count": 26,
+      "hectares_burned": 2058.3
+    },
+    {
+      "year": 1990,
+      "month": 6,
+      "fire_count": 1,
+      "hectares_burned": 29.9
+    },
+    {
+      "year": 1990,
+      "month": 7,
+      "fire_count": 22,
+      "hectares_burned": 25113.6
+    },
+    {
+      "year": 1990,
+      "month": 8,
+      "fire_count": 52,
+      "hectares_burned": 8248.2
+    },
+    {
+      "year": 1990,
+      "month": 9,
+      "fire_count": 55,
+      "hectares_burned": 33789.1
+    },
+    {
+      "year": 1990,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 48.5
+    },
+    {
+      "year": 1991,
+      "month": 2,
+      "fire_count": 1,
+      "hectares_burned": 595.9
+    },
+    {
+      "year": 1991,
+      "month": 3,
+      "fire_count": 3,
+      "hectares_burned": 67
+    },
+    {
+      "year": 1991,
+      "month": 4,
+      "fire_count": 22,
+      "hectares_burned": 4284.4
+    },
+    {
+      "year": 1991,
+      "month": 5,
+      "fire_count": 14,
+      "hectares_burned": 3283.9
+    },
+    {
+      "year": 1991,
+      "month": 6,
+      "fire_count": 14,
+      "hectares_burned": 4608.3
+    },
+    {
+      "year": 1991,
+      "month": 7,
+      "fire_count": 2,
+      "hectares_burned": 38.6
+    },
+    {
+      "year": 1991,
+      "month": 8,
+      "fire_count": 22,
+      "hectares_burned": 9000
+    },
+    {
+      "year": 1991,
+      "month": 9,
+      "fire_count": 11,
+      "hectares_burned": 717.6
+    },
+    {
+      "year": 1991,
+      "month": 10,
+      "fire_count": 14,
+      "hectares_burned": 1344.2
+    },
+    {
+      "year": 1992,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 43.4
+    },
+    {
+      "year": 1992,
+      "month": 4,
+      "fire_count": 9,
+      "hectares_burned": 800.1
+    },
+    {
+      "year": 1992,
+      "month": 5,
+      "fire_count": 16,
+      "hectares_burned": 5895.5
+    },
+    {
+      "year": 1992,
+      "month": 6,
+      "fire_count": 38,
+      "hectares_burned": 3443
+    },
+    {
+      "year": 1992,
+      "month": 7,
+      "fire_count": 16,
+      "hectares_burned": 11156.2
+    },
+    {
+      "year": 1992,
+      "month": 8,
+      "fire_count": 28,
+      "hectares_burned": 2591.9
+    },
+    {
+      "year": 1992,
+      "month": 9,
+      "fire_count": 4,
+      "hectares_burned": 160.4
+    },
+    {
+      "year": 1992,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 28.8
+    },
+    {
+      "year": 1993,
+      "month": 1,
+      "fire_count": 1,
+      "hectares_burned": 11
+    },
+    {
+      "year": 1993,
+      "month": 2,
+      "fire_count": 6,
+      "hectares_burned": 145.4
+    },
+    {
+      "year": 1993,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 66
+    },
+    {
+      "year": 1993,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 27.4
+    },
+    {
+      "year": 1993,
+      "month": 5,
+      "fire_count": 9,
+      "hectares_burned": 1923.9
+    },
+    {
+      "year": 1993,
+      "month": 6,
+      "fire_count": 6,
+      "hectares_burned": 838.5
+    },
+    {
+      "year": 1993,
+      "month": 7,
+      "fire_count": 1,
+      "hectares_burned": 119.6
+    },
+    {
+      "year": 1993,
+      "month": 8,
+      "fire_count": 5,
+      "hectares_burned": 455.3
+    },
+    {
+      "year": 1993,
+      "month": 9,
+      "fire_count": 15,
+      "hectares_burned": 561.3
+    },
+    {
+      "year": 1993,
+      "month": 10,
+      "fire_count": 6,
+      "hectares_burned": 96
+    },
+    {
+      "year": 1994,
+      "month": 3,
+      "fire_count": 5,
+      "hectares_burned": 112.6
+    },
+    {
+      "year": 1994,
+      "month": 4,
+      "fire_count": 6,
+      "hectares_burned": 267.3
+    },
+    {
+      "year": 1994,
+      "month": 5,
+      "fire_count": 13,
+      "hectares_burned": 236
+    },
+    {
+      "year": 1994,
+      "month": 6,
+      "fire_count": 7,
+      "hectares_burned": 791.9
+    },
+    {
+      "year": 1994,
+      "month": 7,
+      "fire_count": 43,
+      "hectares_burned": 15960
+    },
+    {
+      "year": 1994,
+      "month": 8,
+      "fire_count": 45,
+      "hectares_burned": 5414.7
+    },
+    {
+      "year": 1994,
+      "month": 9,
+      "fire_count": 11,
+      "hectares_burned": 438.2
+    },
+    {
+      "year": 1994,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 24.8
+    },
+    {
+      "year": 1995,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 54
+    },
+    {
+      "year": 1995,
+      "month": 4,
+      "fire_count": 5,
+      "hectares_burned": 298.3
+    },
+    {
+      "year": 1995,
+      "month": 5,
+      "fire_count": 26,
+      "hectares_burned": 16229.2
+    },
+    {
+      "year": 1995,
+      "month": 6,
+      "fire_count": 15,
+      "hectares_burned": 29636.4
+    },
+    {
+      "year": 1995,
+      "month": 7,
+      "fire_count": 3,
+      "hectares_burned": 254.2
+    },
+    {
+      "year": 1995,
+      "month": 8,
+      "fire_count": 1,
+      "hectares_burned": 32
+    },
+    {
+      "year": 1995,
+      "month": 9,
+      "fire_count": 8,
+      "hectares_burned": 1305.1
+    },
+    {
+      "year": 1996,
+      "month": 4,
+      "fire_count": 4,
+      "hectares_burned": 144.5
+    },
+    {
+      "year": 1996,
+      "month": 5,
+      "fire_count": 4,
+      "hectares_burned": 62.3
+    },
+    {
+      "year": 1996,
+      "month": 6,
+      "fire_count": 12,
+      "hectares_burned": 10220.7
+    },
+    {
+      "year": 1996,
+      "month": 7,
+      "fire_count": 11,
+      "hectares_burned": 10593.6
+    },
+    {
+      "year": 1996,
+      "month": 8,
+      "fire_count": 9,
+      "hectares_burned": 651.4
+    },
+    {
+      "year": 1996,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 12.8
+    },
+    {
+      "year": 1997,
+      "month": 5,
+      "fire_count": 5,
+      "hectares_burned": 294.7
+    },
+    {
+      "year": 1997,
+      "month": 6,
+      "fire_count": 4,
+      "hectares_burned": 366
+    },
+    {
+      "year": 1997,
+      "month": 7,
+      "fire_count": 2,
+      "hectares_burned": 1073.3
+    },
+    {
+      "year": 1997,
+      "month": 8,
+      "fire_count": 3,
+      "hectares_burned": 182.1
+    },
+    {
+      "year": 1997,
+      "month": 9,
+      "fire_count": 3,
+      "hectares_burned": 85.7
+    },
+    {
+      "year": 1997,
+      "month": 12,
+      "fire_count": 1,
+      "hectares_burned": 56.2
+    },
+    {
+      "year": 1998,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 39.1
+    },
+    {
+      "year": 1998,
+      "month": 4,
+      "fire_count": 18,
+      "hectares_burned": 1559.3
+    },
+    {
+      "year": 1998,
+      "month": 5,
+      "fire_count": 10,
+      "hectares_burned": 1596.5
+    },
+    {
+      "year": 1998,
+      "month": 6,
+      "fire_count": 4,
+      "hectares_burned": 315.9
+    },
+    {
+      "year": 1998,
+      "month": 7,
+      "fire_count": 46,
+      "hectares_burned": 51411.2
+    },
+    {
+      "year": 1998,
+      "month": 8,
+      "fire_count": 96,
+      "hectares_burned": 22008.2
+    },
+    {
+      "year": 1998,
+      "month": 9,
+      "fire_count": 10,
+      "hectares_burned": 1616
+    },
+    {
+      "year": 1998,
+      "month": 10,
+      "fire_count": 4,
+      "hectares_burned": 121.1
+    },
+    {
+      "year": 1999,
+      "month": 3,
+      "fire_count": 3,
+      "hectares_burned": 6047
+    },
+    {
+      "year": 1999,
+      "month": 4,
+      "fire_count": 19,
+      "hectares_burned": 927.8
+    },
+    {
+      "year": 1999,
+      "month": 5,
+      "fire_count": 4,
+      "hectares_burned": 117.2
+    },
+    {
+      "year": 1999,
+      "month": 6,
+      "fire_count": 2,
+      "hectares_burned": 806.7
+    },
+    {
+      "year": 1999,
+      "month": 7,
+      "fire_count": 5,
+      "hectares_burned": 1352.1
+    },
+    {
+      "year": 1999,
+      "month": 8,
+      "fire_count": 20,
+      "hectares_burned": 4126.3
+    },
+    {
+      "year": 1999,
+      "month": 9,
+      "fire_count": 11,
+      "hectares_burned": 698.5
+    },
+    {
+      "year": 1999,
+      "month": 10,
+      "fire_count": 17,
+      "hectares_burned": 791.4
+    },
+    {
+      "year": 1999,
+      "month": 12,
+      "fire_count": 1,
+      "hectares_burned": 18.8
+    },
+    {
+      "year": 2000,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 83.4
+    },
+    {
+      "year": 2000,
+      "month": 4,
+      "fire_count": 14,
+      "hectares_burned": 542.6
+    },
+    {
+      "year": 2000,
+      "month": 5,
+      "fire_count": 5,
+      "hectares_burned": 240.2
+    },
+    {
+      "year": 2000,
+      "month": 6,
+      "fire_count": 6,
+      "hectares_burned": 930.6
+    },
+    {
+      "year": 2000,
+      "month": 7,
+      "fire_count": 12,
+      "hectares_burned": 837
+    },
+    {
+      "year": 2000,
+      "month": 8,
+      "fire_count": 30,
+      "hectares_burned": 2007.2
+    },
+    {
+      "year": 2000,
+      "month": 10,
+      "fire_count": 7,
+      "hectares_burned": 145
+    },
+    {
+      "year": 2000,
+      "month": 12,
+      "fire_count": 1,
+      "hectares_burned": 21.1
+    },
+    {
+      "year": 2001,
+      "month": 5,
+      "fire_count": 1,
+      "hectares_burned": 69.5
+    },
+    {
+      "year": 2001,
+      "month": 7,
+      "fire_count": 4,
+      "hectares_burned": 1265.3
+    },
+    {
+      "year": 2001,
+      "month": 8,
+      "fire_count": 9,
+      "hectares_burned": 4892.7
+    },
+    {
+      "year": 2001,
+      "month": 9,
+      "fire_count": 1,
+      "hectares_burned": 184.3
+    },
+    {
+      "year": 2002,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 437.8
+    },
+    {
+      "year": 2002,
+      "month": 6,
+      "fire_count": 5,
+      "hectares_burned": 2491.3
+    },
+    {
+      "year": 2002,
+      "month": 7,
+      "fire_count": 1,
+      "hectares_burned": 1047.8
+    },
+    {
+      "year": 2002,
+      "month": 8,
+      "fire_count": 2,
+      "hectares_burned": 242.7
+    },
+    {
+      "year": 2003,
+      "month": 4,
+      "fire_count": 2,
+      "hectares_burned": 330.6
+    },
+    {
+      "year": 2003,
+      "month": 5,
+      "fire_count": 2,
+      "hectares_burned": 1444.7
+    },
+    {
+      "year": 2003,
+      "month": 6,
+      "fire_count": 2,
+      "hectares_burned": 367.4
+    },
+    {
+      "year": 2003,
+      "month": 7,
+      "fire_count": 19,
+      "hectares_burned": 100358.8
+    },
+    {
+      "year": 2003,
+      "month": 8,
+      "fire_count": 94,
+      "hectares_burned": 129559.1
+    },
+    {
+      "year": 2003,
+      "month": 9,
+      "fire_count": 4,
+      "hectares_burned": 1088.2
+    },
+    {
+      "year": 2003,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 110.2
+    },
+    {
+      "year": 2004,
+      "month": 4,
+      "fire_count": 3,
+      "hectares_burned": 149
+    },
+    {
+      "year": 2004,
+      "month": 6,
+      "fire_count": 54,
+      "hectares_burned": 154911.3
+    },
+    {
+      "year": 2004,
+      "month": 7,
+      "fire_count": 21,
+      "hectares_burned": 23571.9
+    },
+    {
+      "year": 2004,
+      "month": 8,
+      "fire_count": 17,
+      "hectares_burned": 17891.6
+    },
+    {
+      "year": 2005,
+      "month": 4,
+      "fire_count": 19,
+      "hectares_burned": 299
+    },
+    {
+      "year": 2005,
+      "month": 5,
+      "fire_count": 24,
+      "hectares_burned": 20588.7
+    },
+    {
+      "year": 2005,
+      "month": 6,
+      "fire_count": 1,
+      "hectares_burned": 363.3
+    },
+    {
+      "year": 2005,
+      "month": 8,
+      "fire_count": 2,
+      "hectares_burned": 3789.2
+    },
+    {
+      "year": 2006,
+      "month": 4,
+      "fire_count": 26,
+      "hectares_burned": 375.6
+    },
+    {
+      "year": 2006,
+      "month": 5,
+      "fire_count": 34,
+      "hectares_burned": 1995.4
+    },
+    {
+      "year": 2006,
+      "month": 6,
+      "fire_count": 35,
+      "hectares_burned": 26469.4
+    },
+    {
+      "year": 2006,
+      "month": 7,
+      "fire_count": 101,
+      "hectares_burned": 82477
+    },
+    {
+      "year": 2006,
+      "month": 8,
+      "fire_count": 29,
+      "hectares_burned": 1484.4
+    },
+    {
+      "year": 2006,
+      "month": 9,
+      "fire_count": 21,
+      "hectares_burned": 26373.2
+    },
+    {
+      "year": 2006,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 2.1
+    },
+    {
+      "year": 2007,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 28
+    },
+    {
+      "year": 2007,
+      "month": 4,
+      "fire_count": 23,
+      "hectares_burned": 413.5
+    },
+    {
+      "year": 2007,
+      "month": 5,
+      "fire_count": 35,
+      "hectares_burned": 472.6
+    },
+    {
+      "year": 2007,
+      "month": 6,
+      "fire_count": 28,
+      "hectares_burned": 8753.9
+    },
+    {
+      "year": 2007,
+      "month": 7,
+      "fire_count": 108,
+      "hectares_burned": 10926.8
+    },
+    {
+      "year": 2007,
+      "month": 8,
+      "fire_count": 96,
+      "hectares_burned": 4512
+    },
+    {
+      "year": 2007,
+      "month": 9,
+      "fire_count": 15,
+      "hectares_burned": 492.5
+    },
+    {
+      "year": 2007,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 15.5
+    },
+    {
+      "year": 2008,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 24.7
+    },
+    {
+      "year": 2008,
+      "month": 4,
+      "fire_count": 47,
+      "hectares_burned": 761
+    },
+    {
+      "year": 2008,
+      "month": 5,
+      "fire_count": 57,
+      "hectares_burned": 5808.9
+    },
+    {
+      "year": 2008,
+      "month": 6,
+      "fire_count": 34,
+      "hectares_burned": 1709.6
+    },
+    {
+      "year": 2008,
+      "month": 7,
+      "fire_count": 107,
+      "hectares_burned": 2653.8
+    },
+    {
+      "year": 2008,
+      "month": 8,
+      "fire_count": 95,
+      "hectares_burned": 1650.3
+    },
+    {
+      "year": 2008,
+      "month": 9,
+      "fire_count": 14,
+      "hectares_burned": 348.9
+    },
+    {
+      "year": 2008,
+      "month": 10,
+      "fire_count": 14,
+      "hectares_burned": 436.1
+    },
+    {
+      "year": 2008,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 7.5
+    },
+    {
+      "year": 2009,
+      "month": 1,
+      "fire_count": 1,
+      "hectares_burned": 311.1
+    },
+    {
+      "year": 2009,
+      "month": 3,
+      "fire_count": 4,
+      "hectares_burned": 10.6
+    },
+    {
+      "year": 2009,
+      "month": 4,
+      "fire_count": 75,
+      "hectares_burned": 1580.6
+    },
+    {
+      "year": 2009,
+      "month": 5,
+      "fire_count": 71,
+      "hectares_burned": 36541.7
+    },
+    {
+      "year": 2009,
+      "month": 6,
+      "fire_count": 57,
+      "hectares_burned": 3617.4
+    },
+    {
+      "year": 2009,
+      "month": 7,
+      "fire_count": 236,
+      "hectares_burned": 164999.8
+    },
+    {
+      "year": 2009,
+      "month": 8,
+      "fire_count": 113,
+      "hectares_burned": 34637.5
+    },
+    {
+      "year": 2009,
+      "month": 9,
+      "fire_count": 23,
+      "hectares_burned": 1144
+    },
+    {
+      "year": 2009,
+      "month": 10,
+      "fire_count": 2,
+      "hectares_burned": 14.6
+    },
+    {
+      "year": 2009,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 8.7
+    },
+    {
+      "year": 2010,
+      "month": 2,
+      "fire_count": 1,
+      "hectares_burned": 3.8
+    },
+    {
+      "year": 2010,
+      "month": 3,
+      "fire_count": 7,
+      "hectares_burned": 64.2
+    },
+    {
+      "year": 2010,
+      "month": 4,
+      "fire_count": 54,
+      "hectares_burned": 1035.6
+    },
+    {
+      "year": 2010,
+      "month": 5,
+      "fire_count": 24,
+      "hectares_burned": 1035.9
+    },
+    {
+      "year": 2010,
+      "month": 6,
+      "fire_count": 40,
+      "hectares_burned": 30030.5
+    },
+    {
+      "year": 2010,
+      "month": 7,
+      "fire_count": 174,
+      "hectares_burned": 278602.8
+    },
+    {
+      "year": 2010,
+      "month": 8,
+      "fire_count": 54,
+      "hectares_burned": 10814.8
+    },
+    {
+      "year": 2010,
+      "month": 9,
+      "fire_count": 8,
+      "hectares_burned": 65.8
+    },
+    {
+      "year": 2010,
+      "month": 10,
+      "fire_count": 10,
+      "hectares_burned": 417
+    },
+    {
+      "year": 2010,
+      "month": 11,
+      "fire_count": 3,
+      "hectares_burned": 34.9
+    },
+    {
+      "year": 2011,
+      "month": 3,
+      "fire_count": 5,
+      "hectares_burned": 34
+    },
+    {
+      "year": 2011,
+      "month": 4,
+      "fire_count": 18,
+      "hectares_burned": 82.4
+    },
+    {
+      "year": 2011,
+      "month": 5,
+      "fire_count": 16,
+      "hectares_burned": 11128.7
+    },
+    {
+      "year": 2011,
+      "month": 6,
+      "fire_count": 9,
+      "hectares_burned": 822.6
+    },
+    {
+      "year": 2011,
+      "month": 7,
+      "fire_count": 11,
+      "hectares_burned": 64
+    },
+    {
+      "year": 2011,
+      "month": 8,
+      "fire_count": 24,
+      "hectares_burned": 207.7
+    },
+    {
+      "year": 2011,
+      "month": 9,
+      "fire_count": 12,
+      "hectares_burned": 305.6
+    },
+    {
+      "year": 2011,
+      "month": 10,
+      "fire_count": 11,
+      "hectares_burned": 235.3
+    },
+    {
+      "year": 2011,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 103
+    },
+    {
+      "year": 2012,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 12.9
+    },
+    {
+      "year": 2012,
+      "month": 4,
+      "fire_count": 24,
+      "hectares_burned": 447.4
+    },
+    {
+      "year": 2012,
+      "month": 5,
+      "fire_count": 61,
+      "hectares_burned": 1009.7
+    },
+    {
+      "year": 2012,
+      "month": 6,
+      "fire_count": 11,
+      "hectares_burned": 245.6
+    },
+    {
+      "year": 2012,
+      "month": 7,
+      "fire_count": 73,
+      "hectares_burned": 43811.2
+    },
+    {
+      "year": 2012,
+      "month": 8,
+      "fire_count": 81,
+      "hectares_burned": 53924.7
+    },
+    {
+      "year": 2012,
+      "month": 9,
+      "fire_count": 38,
+      "hectares_burned": 1052.6
+    },
+    {
+      "year": 2012,
+      "month": 10,
+      "fire_count": 8,
+      "hectares_burned": 55.9
+    },
+    {
+      "year": 2013,
+      "month": 2,
+      "fire_count": 1,
+      "hectares_burned": 2
+    },
+    {
+      "year": 2013,
+      "month": 3,
+      "fire_count": 3,
+      "hectares_burned": 151.1
+    },
+    {
+      "year": 2013,
+      "month": 4,
+      "fire_count": 43,
+      "hectares_burned": 2917.7
+    },
+    {
+      "year": 2013,
+      "month": 5,
+      "fire_count": 47,
+      "hectares_burned": 966.1
+    },
+    {
+      "year": 2013,
+      "month": 6,
+      "fire_count": 20,
+      "hectares_burned": 44427.4
+    },
+    {
+      "year": 2013,
+      "month": 7,
+      "fire_count": 62,
+      "hectares_burned": 2037.4
+    },
+    {
+      "year": 2013,
+      "month": 8,
+      "fire_count": 105,
+      "hectares_burned": 3668
+    },
+    {
+      "year": 2013,
+      "month": 9,
+      "fire_count": 14,
+      "hectares_burned": 3412.3
+    },
+    {
+      "year": 2013,
+      "month": 10,
+      "fire_count": 23,
+      "hectares_burned": 451.3
+    },
+    {
+      "year": 2014,
+      "month": 2,
+      "fire_count": 2,
+      "hectares_burned": 44.7
+    },
+    {
+      "year": 2014,
+      "month": 3,
+      "fire_count": 12,
+      "hectares_burned": 240.2
+    },
+    {
+      "year": 2014,
+      "month": 4,
+      "fire_count": 49,
+      "hectares_burned": 674.4
+    },
+    {
+      "year": 2014,
+      "month": 5,
+      "fire_count": 30,
+      "hectares_burned": 457.4
+    },
+    {
+      "year": 2014,
+      "month": 6,
+      "fire_count": 21,
+      "hectares_burned": 29832.6
+    },
+    {
+      "year": 2014,
+      "month": 7,
+      "fire_count": 120,
+      "hectares_burned": 297230.1
+    },
+    {
+      "year": 2014,
+      "month": 8,
+      "fire_count": 84,
+      "hectares_burned": 34687.9
+    },
+    {
+      "year": 2014,
+      "month": 9,
+      "fire_count": 15,
+      "hectares_burned": 310.8
+    },
+    {
+      "year": 2014,
+      "month": 10,
+      "fire_count": 12,
+      "hectares_burned": 79.7
+    },
+    {
+      "year": 2015,
+      "month": 2,
+      "fire_count": 1,
+      "hectares_burned": 2.3
+    },
+    {
+      "year": 2015,
+      "month": 3,
+      "fire_count": 5,
+      "hectares_burned": 25.3
+    },
+    {
+      "year": 2015,
+      "month": 4,
+      "fire_count": 43,
+      "hectares_burned": 874.9
+    },
+    {
+      "year": 2015,
+      "month": 5,
+      "fire_count": 91,
+      "hectares_burned": 145069.3
+    },
+    {
+      "year": 2015,
+      "month": 6,
+      "fire_count": 102,
+      "hectares_burned": 81020.7
+    },
+    {
+      "year": 2015,
+      "month": 7,
+      "fire_count": 78,
+      "hectares_burned": 38596.7
+    },
+    {
+      "year": 2015,
+      "month": 8,
+      "fire_count": 75,
+      "hectares_burned": 17790.8
+    },
+    {
+      "year": 2015,
+      "month": 9,
+      "fire_count": 2,
+      "hectares_burned": 8.8
+    },
+    {
+      "year": 2015,
+      "month": 10,
+      "fire_count": 7,
+      "hectares_burned": 25.4
+    },
+    {
+      "year": 2016,
+      "month": 2,
+      "fire_count": 7,
+      "hectares_burned": 567.7
+    },
+    {
+      "year": 2016,
+      "month": 3,
+      "fire_count": 6,
+      "hectares_burned": 272.2
+    },
+    {
+      "year": 2016,
+      "month": 4,
+      "fire_count": 83,
+      "hectares_burned": 112975.1
+    },
+    {
+      "year": 2016,
+      "month": 5,
+      "fire_count": 21,
+      "hectares_burned": 265
+    },
+    {
+      "year": 2016,
+      "month": 6,
+      "fire_count": 26,
+      "hectares_burned": 1011.8
+    },
+    {
+      "year": 2016,
+      "month": 7,
+      "fire_count": 29,
+      "hectares_burned": 5217
+    },
+    {
+      "year": 2016,
+      "month": 8,
+      "fire_count": 44,
+      "hectares_burned": 1663.7
+    },
+    {
+      "year": 2016,
+      "month": 9,
+      "fire_count": 1,
+      "hectares_burned": 4.1
+    },
+    {
+      "year": 2016,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 22.8
+    },
+    {
+      "year": 2017,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 6.1
+    },
+    {
+      "year": 2017,
+      "month": 4,
+      "fire_count": 17,
+      "hectares_burned": 81.6
+    },
+    {
+      "year": 2017,
+      "month": 5,
+      "fire_count": 22,
+      "hectares_burned": 828.6
+    },
+    {
+      "year": 2017,
+      "month": 6,
+      "fire_count": 32,
+      "hectares_burned": 4286.6
+    },
+    {
+      "year": 2017,
+      "month": 7,
+      "fire_count": 147,
+      "hectares_burned": 1135186
+    },
+    {
+      "year": 2017,
+      "month": 8,
+      "fire_count": 72,
+      "hectares_burned": 77562.5
+    },
+    {
+      "year": 2017,
+      "month": 9,
+      "fire_count": 25,
+      "hectares_burned": 3735.1
+    },
+    {
+      "year": 2017,
+      "month": 10,
+      "fire_count": 26,
+      "hectares_burned": 518.9
+    },
+    {
+      "year": 2018,
+      "month": 3,
+      "fire_count": 5,
+      "hectares_burned": 46.9
+    },
+    {
+      "year": 2018,
+      "month": 4,
+      "fire_count": 17,
+      "hectares_burned": 238.2
+    },
+    {
+      "year": 2018,
+      "month": 5,
+      "fire_count": 62,
+      "hectares_burned": 34289.2
+    },
+    {
+      "year": 2018,
+      "month": 6,
+      "fire_count": 87,
+      "hectares_burned": 11300.4
+    },
+    {
+      "year": 2018,
+      "month": 7,
+      "fire_count": 212,
+      "hectares_burned": 607306
+    },
+    {
+      "year": 2018,
+      "month": 8,
+      "fire_count": 275,
+      "hectares_burned": 697295
+    },
+    {
+      "year": 2018,
+      "month": 9,
+      "fire_count": 9,
+      "hectares_burned": 147.4
+    },
+    {
+      "year": 2018,
+      "month": 10,
+      "fire_count": 13,
+      "hectares_burned": 184.7
+    },
+    {
+      "year": 2019,
+      "month": 3,
+      "fire_count": 1,
+      "hectares_burned": 8.9
+    },
+    {
+      "year": 2019,
+      "month": 4,
+      "fire_count": 33,
+      "hectares_burned": 513.3
+    },
+    {
+      "year": 2019,
+      "month": 5,
+      "fire_count": 46,
+      "hectares_burned": 10069.4
+    },
+    {
+      "year": 2019,
+      "month": 6,
+      "fire_count": 30,
+      "hectares_burned": 445.8
+    },
+    {
+      "year": 2019,
+      "month": 7,
+      "fire_count": 22,
+      "hectares_burned": 2482.5
+    },
+    {
+      "year": 2019,
+      "month": 8,
+      "fire_count": 12,
+      "hectares_burned": 8195.5
+    },
+    {
+      "year": 2019,
+      "month": 9,
+      "fire_count": 10,
+      "hectares_burned": 45.6
+    },
+    {
+      "year": 2019,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 1.9
+    },
+    {
+      "year": 2019,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 12.6
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "fire_count": 2,
+      "hectares_burned": 23
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "fire_count": 28,
+      "hectares_burned": 558
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "fire_count": 11,
+      "hectares_burned": 77.9
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "fire_count": 4,
+      "hectares_burned": 27.8
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "fire_count": 11,
+      "hectares_burned": 1229.5
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "fire_count": 54,
+      "hectares_burned": 12377.9
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "fire_count": 4,
+      "hectares_burned": 50.8
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "fire_count": 1,
+      "hectares_burned": 0.4
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "fire_count": 1,
+      "hectares_burned": 12.4
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "fire_count": 4,
+      "hectares_burned": 23.1
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "fire_count": 60,
+      "hectares_burned": 1916.1
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "fire_count": 19,
+      "hectares_burned": 348.4
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "fire_count": 81,
+      "hectares_burned": 356256.2
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "fire_count": 215,
+      "hectares_burned": 490202.8
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "fire_count": 58,
+      "hectares_burned": 14558.4
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "fire_count": 5,
+      "hectares_burned": 182.5
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "fire_count": 3,
+      "hectares_burned": 29.2
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "fire_count": 1,
+      "hectares_burned": 4.3
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "fire_count": 9,
+      "hectares_burned": 95.1
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "fire_count": 29,
+      "hectares_burned": 308.9
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "fire_count": 15,
+      "hectares_burned": 746.4
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "fire_count": 23,
+      "hectares_burned": 16969.9
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "fire_count": 65,
+      "hectares_burned": 19286.6
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "fire_count": 166,
+      "hectares_burned": 84603.7
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "fire_count": 42,
+      "hectares_burned": 7414
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "fire_count": 40,
+      "hectares_burned": 2676.2
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "fire_count": 1,
+      "hectares_burned": 12.7
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "fire_count": 2,
+      "hectares_burned": 5.1
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "fire_count": 1,
+      "hectares_burned": 0.5
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "fire_count": 5,
+      "hectares_burned": 34.9
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "fire_count": 57,
+      "hectares_burned": 1276.8
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "fire_count": 76,
+      "hectares_burned": 1520155.6
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "fire_count": 75,
+      "hectares_burned": 951141
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "fire_count": 320,
+      "hectares_burned": 1233081.1
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "fire_count": 108,
+      "hectares_burned": 142784.2
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "fire_count": 26,
+      "hectares_burned": 7172.8
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "fire_count": 3,
+      "hectares_burned": 4.4
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "fire_count": 1,
+      "hectares_burned": 28.4
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "fire_count": 1,
+      "hectares_burned": 3.3
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "fire_count": 3,
+      "hectares_burned": 12.7
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "fire_count": 32,
+      "hectares_burned": 2345.4
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "fire_count": 28,
+      "hectares_burned": 53472.1
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "fire_count": 30,
+      "hectares_burned": 511424.2
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "fire_count": 253,
+      "hectares_burned": 324179.2
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "fire_count": 78,
+      "hectares_burned": 16972.7
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "fire_count": 13,
+      "hectares_burned": 206.6
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "fire_count": 8,
+      "hectares_burned": 285.1
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "fire_count": 42,
+      "hectares_burned": 734.2
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "fire_count": 65,
+      "hectares_burned": 681877.8
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "fire_count": 41,
+      "hectares_burned": 37246.4
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "fire_count": 61,
+      "hectares_burned": 8186.5
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "fire_count": 71,
+      "hectares_burned": 154207.9
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "fire_count": 28,
+      "hectares_burned": 2524.8
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "fire_count": 5,
+      "hectares_burned": 39.9
+    }
+  ]
+}

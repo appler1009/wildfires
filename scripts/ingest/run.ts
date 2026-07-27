@@ -2,7 +2,7 @@
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 
-const STEPS = ["fetch-historical-fires.ts", "build-rollups.ts"];
+const STEPS = ["fetch-historical-fires.ts", "build-rollups.ts", "build-monthly-heatmap.ts"];
 
 for (const step of STEPS) {
   const scriptPath = path.join(import.meta.dirname, step);
