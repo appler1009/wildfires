@@ -496,7 +496,7 @@ export function FireMap() {
   // The five largest actively out-of-control / uncontained fires get a
   // pulsing screen-space halo (see CriticalFireGlow) - a data-driven "these
   // are the ones to watch" cue, not decoration for its own sake.
-  const criticalPoints: GlowPoint[] = isLive
+  const allCriticalPoints: GlowPoint[] = isLive
     ? [
         ...bcStatusPoints
           .filter((p) => p.status === "Out of Control")
@@ -520,9 +520,14 @@ export function FireMap() {
             label: p.name || p.fireNumber || "Fire",
           })),
       ]
-        .sort((a, b) => b.hectares - a.hectares)
-        .slice(0, 5)
     : [];
+  // A rough 0-1 severity signal (count of active out-of-control/uncontained
+  // fires, saturating at 15) driving the map's ambient glow intensity below
+  // - a "mood ring" that's actually tied to real data, not just decorative.
+  const severity = Math.min(1, allCriticalPoints.length / 15);
+  const criticalPoints: GlowPoint[] = [...allCriticalPoints]
+    .sort((a, b) => b.hectares - a.hectares)
+    .slice(0, 5);
   const shareText = isLive
     ? `${formatNumber(totalActive)} wildfires being tracked across Canada right now.`
     : "Wildfire tracking across Canada — latest status and historical trends.";
@@ -872,6 +877,17 @@ export function FireMap() {
           className="pointer-events-none absolute inset-0 z-[850]"
           style={{ boxShadow: "inset 0 0 140px 40px rgba(0,0,0,0.55)" }}
         />
+        {/* Ambient ember glow around the frame, scaled to how many fires are
+            actively out-of-control right now - a "mood ring" tied to real
+            severity rather than a fixed decorative vignette. */}
+        {severity > 0 && (
+          <div
+            className="pointer-events-none absolute inset-0 z-[860] transition-opacity duration-1000"
+            style={{
+              boxShadow: `inset 0 0 ${60 + severity * 60}px ${10 + severity * 20}px rgba(255, 90, 31, ${0.12 + severity * 0.22})`,
+            }}
+          />
+        )}
 
         <button
           type="button"
