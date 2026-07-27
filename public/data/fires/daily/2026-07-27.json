@@ -3,7 +3,7 @@
   "licence": "Open Government Licence - British Columbia",
   "kind": "operational_live_reference",
   "note": "Points are area-weighted centroids of the published fire perimeter, not the exact incident location. Refresh cadence and accuracy are per BC Wildfire Service's public disclaimer.",
-  "generatedAt": "2026-07-27T05:43:58.494Z",
+  "generatedAt": "2026-07-27T05:47:16.067Z",
   "points": [
     {
       "fireNumber": "C40114",
