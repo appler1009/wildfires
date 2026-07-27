@@ -8,6 +8,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { BootSequence } from "./boot-sequence";
 import { CriticalFireGlow, type GlowPoint } from "./critical-fire-glow";
+import { MapResetButton } from "./map-reset-button";
 import { ShareButton } from "./share-button";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -835,6 +836,7 @@ export function FireMap() {
               </CircleMarker>
             ))}
           <CriticalFireGlow points={criticalPoints} />
+          <MapResetButton center={[58, -97]} zoom={4} />
         </MapContainer>
 
         <div
