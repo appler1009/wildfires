@@ -94,8 +94,8 @@ export default function Home() {
             <thead className="label bg-[var(--surface-2)] text-[var(--ink-faint)]">
               <tr>
                 <th className="px-4 py-2 font-normal">Year</th>
-                <th className="px-4 py-2 font-normal">Fires</th>
-                <th className="px-4 py-2 font-normal">Hectares Burned</th>
+                <th className="px-4 py-2 text-right font-normal">Fires</th>
+                <th className="px-4 py-2 text-right font-normal">Hectares Burned</th>
               </tr>
             </thead>
             <tbody>
@@ -105,10 +105,10 @@ export default function Home() {
                 .map((row) => (
                   <tr key={row.year} className="border-t border-[var(--border)]">
                     <td className="px-4 py-2 text-[var(--ink)]">{row.year}</td>
-                    <td className="tabular px-4 py-2 text-[var(--ink-muted)]">
+                    <td className="tabular px-4 py-2 text-right text-[var(--ink-muted)]">
                       {formatNumber(row.fire_count)}
                     </td>
-                    <td className="tabular px-4 py-2 text-[var(--ink-muted)]">
+                    <td className="tabular px-4 py-2 text-right text-[var(--ink-muted)]">
                       {formatNumber(row.hectares_burned)}
                     </td>
                   </tr>
