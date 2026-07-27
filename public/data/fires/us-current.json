@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-07-27T08:27:12.718Z",
+  "generatedAt": "2026-07-27T09:21:49.401Z",
   "points": [
     {
       "fireNumber": "2026-MTLG13-000069",
@@ -2226,17 +2226,6 @@
       "discoveryDate": "2026-07-26T18:54:18.000Z",
       "lat": 48.33708800000005,
       "lon": -105.42759699999999
-    },
-    {
-      "fireNumber": "2026-MTCRA-260902",
-      "name": "White Man Runs Him Creek",
-      "state": "MT",
-      "hectares": 0.4,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-27T05:33:26.000Z",
-      "lat": 45.21916700000003,
-      "lon": -107.39805599999994
     }
   ]
 }
