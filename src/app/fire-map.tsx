@@ -11,12 +11,19 @@ const MONTH_NAMES = [
 ];
 
 // Status palette (dataviz skill, fixed/reserved — never reused for series identity).
+// Shared by BC and Quebec - SOPFEU's English condition labels match BC's own
+// wording for the stages both use; Quebec's three earlier pre-control stages
+// (no BC equivalent) reuse the closest existing hue rather than inventing new
+// ones outside the reserved four-color status set.
 const STATUS_COLOR: Record<string, string> = {
   Out: "#0ca30c",
   "Under Control": "#fab219",
   "Being Held": "#ec835a",
   "Out of Control": "#d03b3b",
   "Fire of Note": "#d03b3b",
+  Identified: "#898781",
+  New: "#fab219",
+  "Under Observation": "#ec835a",
 };
 const HISTORICAL_COLOR = "#2a78d6"; // categorical slot 1 (blue) — recorded fire location
 const HOTSPOT_COLOR = "#eb6834"; // categorical slot 2 (orange) — satellite hotspot detection
@@ -87,6 +94,26 @@ type OntarioData = {
   points: OntarioPoint[];
 };
 
+type QuebecPoint = {
+  fireNumber: string;
+  name: string | null;
+  hectares: number | null;
+  status: string | null;
+  cause: string | null;
+  startDate: string | null;
+  url: string | null;
+  lat: number;
+  lon: number;
+};
+
+type QuebecData = {
+  source: string;
+  licence: string;
+  note: string;
+  generatedAt: string;
+  points: QuebecPoint[];
+};
+
 type ClusterPoint = {
   province: string;
   lat: number;
@@ -131,6 +158,7 @@ export function FireMap() {
   const [dailyIndex, setDailyIndex] = useState<DailyIndexData | null>(null);
   const [current, setCurrent] = useState<CurrentData | null>(null);
   const [onCurrent, setOnCurrent] = useState<OntarioData | null>(null);
+  const [qcCurrent, setQcCurrent] = useState<QuebecData | null>(null);
   const [latestClusters, setLatestClusters] = useState<ClusterPoint[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
   const [historicalPoints, setHistoricalPoints] = useState<HistoricalPoint[]>([]);
@@ -144,11 +172,20 @@ export function FireMap() {
       fetch("/data/fires/index.json").then((r) => r.json()),
       fetch("/data/fires/current.json").then((r) => r.json()),
       fetch("/data/fires/on-current.json").then((r) => r.json()),
+      fetch("/data/fires/qc-current.json").then((r) => r.json()),
       fetch("/data/fires/daily/index.json").then((r) => r.json()),
-    ]).then(([idx, cur, onCur, daily]: [IndexData, CurrentData, OntarioData, DailyIndexData]) => {
+    ]).then((results) => {
+      const [idx, cur, onCur, qcCur, daily] = results as [
+        IndexData,
+        CurrentData,
+        OntarioData,
+        QuebecData,
+        DailyIndexData,
+      ];
       setIndex(idx);
       setCurrent(cur);
       setOnCurrent(onCur);
+      setQcCurrent(qcCur);
       setDailyIndex(daily);
       const latestDate = daily.days.at(-1)?.date;
       if (latestDate) {
@@ -181,12 +218,13 @@ export function FireMap() {
     if (
       (current && current.points.length > 0) ||
       (onCurrent && onCurrent.points.length > 0) ||
+      (qcCurrent && qcCurrent.points.length > 0) ||
       latestClusters.length > 0
     ) {
       entries.push({ kind: "live", label: "Live — now" });
     }
     return entries;
-  }, [index, dailyIndex, current, onCurrent, latestClusters]);
+  }, [index, dailyIndex, current, onCurrent, qcCurrent, latestClusters]);
 
   // Default to "live" (last entry) once data loads, unless the user already picked something.
   const effectiveSelected = selected ?? Math.max(0, timeline.length - 1);
@@ -230,8 +268,9 @@ export function FireMap() {
   const isOperational = isLive || isDaily;
   const bcStatusPoints = isLive ? (current?.points ?? []) : [];
   const onStatusPoints = isLive ? (onCurrent?.points ?? []) : [];
+  const qcStatusPoints = isLive ? (qcCurrent?.points ?? []) : [];
   const clusterPoints = isLive
-    ? latestClusters.filter((c) => c.province !== "BC" && c.province !== "ON")
+    ? latestClusters.filter((c) => c.province !== "BC" && c.province !== "ON" && c.province !== "QC")
     : isDaily
       ? dailyPoints
       : [];
@@ -310,6 +349,38 @@ export function FireMap() {
               </CircleMarker>
             ))}
           {isOperational &&
+            qcStatusPoints.map((p, i) => (
+              <CircleMarker
+                key={`${p.fireNumber}-${i}`}
+                center={[p.lat, p.lon]}
+                radius={radiusFor(p.hectares)}
+                pathOptions={{
+                  color: "#ffffff",
+                  weight: 1,
+                  fillColor: STATUS_COLOR[p.status ?? ""] ?? "#898781",
+                  fillOpacity: 0.85,
+                }}
+              >
+                <Popup>
+                  <div className="flex flex-col gap-1 text-sm">
+                    <strong>QC — {p.name || p.fireNumber}</strong>
+                    <span>Status: {p.status ?? "Unknown"}</span>
+                    <span>{formatNumber(p.hectares ?? 0)} ha · {p.cause ?? "Unknown cause"}</span>
+                    {p.url && (
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-700 underline"
+                      >
+                        Situation update
+                      </a>
+                    )}
+                  </div>
+                </Popup>
+              </CircleMarker>
+            ))}
+          {isOperational &&
             clusterPoints.map((c, i) => (
               <CircleMarker
                 key={`${c.province}-${c.lat}-${c.lon}-${i}`}
@@ -369,10 +440,10 @@ export function FireMap() {
           <div className="pointer-events-auto flex flex-col gap-1 rounded-lg border border-zinc-200 bg-white/95 px-3 py-2 text-[11px] text-zinc-600 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95 dark:text-zinc-400">
             {isLive && (
               <>
-                <LegendDot color={STATUS_COLOR["Out of Control"]} label="BC — out of control" />
-                <LegendDot color={STATUS_COLOR["Being Held"]} label="BC — being held" />
-                <LegendDot color={STATUS_COLOR["Under Control"]} label="BC — under control" />
-                <LegendDot color={STATUS_COLOR["Out"]} label="BC — out" />
+                <LegendDot color={STATUS_COLOR["Out of Control"]} label="BC/QC — out of control" />
+                <LegendDot color={STATUS_COLOR["Being Held"]} label="BC/QC — being held" />
+                <LegendDot color={STATUS_COLOR["Under Control"]} label="BC/QC — under control" />
+                <LegendDot color={STATUS_COLOR["Out"]} label="BC/QC — out" />
                 <LegendDot color={ON_STATUS_COLOR["F"]} label="Ontario — active" />
                 <LegendDot color={ON_STATUS_COLOR["I"]} label="Ontario — inactive" />
                 <LegendDot color={HOTSPOT_COLOR} label="Elsewhere — hotspot cluster" />
@@ -403,7 +474,8 @@ export function FireMap() {
             {isLive && (
               <span className="text-xs text-zinc-500 dark:text-zinc-500">
                 {formatNumber(bcStatusPoints.length)} BC · {formatNumber(onStatusPoints.length)} Ontario
-                · {formatNumber(clusterPoints.length)} clusters elsewhere
+                · {formatNumber(qcStatusPoints.length)} Quebec · {formatNumber(clusterPoints.length)}{" "}
+                clusters elsewhere
               </span>
             )}
           </div>
@@ -446,10 +518,11 @@ export function FireMap() {
 
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-zinc-200 bg-zinc-50 px-4 py-2 text-xs text-zinc-500 dark:border-zinc-800 dark:bg-black dark:text-zinc-500 sm:px-8">
         <span>
-          Sources: BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), Natural Resources Canada /
-          CWFIS (elsewhere, hotspots and national historical data). Contains information licensed
-          under the Open Government Licence – British Columbia, Ontario, and Canada. Live and hotspot
-          data are reference information, not exact real-time ground truth.
+          Sources: BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), SOPFEU (Quebec), Natural
+          Resources Canada / CWFIS (elsewhere, hotspots and national historical data). Contains
+          information licensed under the Open Government Licence – British Columbia, Ontario, and
+          Canada, and under Creative Commons Attribution 4.0 (Gouvernement du Québec). Live and
+          hotspot data are reference information, not exact real-time ground truth.
         </span>
         <div className="flex gap-4">
           <Link
