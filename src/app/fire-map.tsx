@@ -8,6 +8,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { BootSequence } from "./boot-sequence";
 import { CriticalFireGlow, type GlowPoint } from "./critical-fire-glow";
+import { HelpButton } from "./help-button";
 import { MapResetButton } from "./map-reset-button";
 import { ShareButton } from "./share-button";
 import { ThemeToggle } from "./theme-toggle";
@@ -641,6 +642,7 @@ export function FireMap() {
           )}
           <span className="label tabular">{formatUtcClock(clock)}</span>
           <ThemeToggle />
+          <HelpButton />
         </div>
       </div>
 
