@@ -3,6 +3,7 @@
 import "leaflet/dist/leaflet.css";
 import type { CircleMarker as LeafletCircleMarker, LeafletMouseEvent } from "leaflet";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { BootSequence } from "./boot-sequence";
@@ -163,6 +164,21 @@ type Timeline =
   | { kind: "daily"; date: string; count: number; label: string }
   | { kind: "historical"; year: number; month: number; count: number; label: string };
 
+// Encodes a timeline entry into a shareable `?at=` URL value, and back - so a
+// copied link reopens on the same date/month instead of always landing on
+// today. "today" for the live entry, YYYY-MM-DD for a daily stop, YYYY-MM for
+// a historical month.
+function timelineKey(entry: Timeline): string {
+  if (entry.kind === "live") return "today";
+  if (entry.kind === "daily") return entry.date;
+  return `${entry.year}-${String(entry.month).padStart(2, "0")}`;
+}
+
+function findTimelineIndex(timeline: Timeline[], key: string): number | null {
+  const idx = timeline.findIndex((e) => timelineKey(e) === key);
+  return idx === -1 ? null : idx;
+}
+
 // Builds a compact SVG sparkline path (line + closed area-under-curve) from a
 // series of counts, scaled to fit a width x height viewBox with a small
 // vertical margin so peaks don't clip the stroke.
@@ -243,6 +259,9 @@ async function fetchClusterDay(date: string): Promise<ClusterPoint[]> {
 
 export function FireMap() {
   const clock = useUtcClock();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const urlAppliedRef = useRef(false);
   const [index, setIndex] = useState<IndexData | null>(null);
   const [dailyIndex, setDailyIndex] = useState<DailyIndexData | null>(null);
   const [current, setCurrent] = useState<CurrentData | null>(null);
@@ -341,6 +360,31 @@ export function FireMap() {
   // Default to "live" (last entry) once data loads, unless the user already picked something.
   const effectiveSelected = selected ?? Math.max(0, timeline.length - 1);
   const activeEntry = timeline[effectiveSelected];
+
+  // Once, on first load: if the URL was shared with a specific ?at= stop,
+  // jump straight to it instead of always opening on "today".
+  useEffect(() => {
+    if (urlAppliedRef.current || timeline.length === 0) return;
+    urlAppliedRef.current = true;
+    const at = searchParams.get("at");
+    if (!at) return;
+    const idx = findTimelineIndex(timeline, at);
+    if (idx == null) return;
+    const t = setTimeout(() => setSelected(idx), 0);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [timeline]);
+
+  // Keep the URL in sync as the user scrubs, so Share always links back to
+  // the exact stop being viewed - skipped until the URL-driven jump above
+  // has had its chance to run, so it doesn't get immediately overwritten.
+  useEffect(() => {
+    if (!urlAppliedRef.current || !activeEntry) return;
+    const params = new URLSearchParams(window.location.search);
+    params.set("at", timelineKey(activeEntry));
+    router.replace(`?${params.toString()}`, { scroll: false });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeEntry]);
 
   useEffect(() => {
     if (activeEntry?.kind === "historical") {
