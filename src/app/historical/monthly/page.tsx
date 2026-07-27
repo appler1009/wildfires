@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import monthlyFireHeatmap from "@/data/monthly-fire-heatmap.json";
+import { DownloadCsvButton } from "../../download-csv-button";
 import { EmberParticles } from "../../ember-particles";
 import { ThemeToggle } from "../../theme-toggle";
 import { HeatmapGrid } from "./heatmap-grid";
@@ -50,6 +51,19 @@ export default function MonthlyPage() {
 
         <div className="animate-reveal-delay-1">
           <HeatmapGrid data={monthlyFireHeatmap} />
+        </div>
+
+        <div>
+          <DownloadCsvButton
+            rows={monthlyFireHeatmap.rows}
+            columns={[
+              { key: "year", label: "Year" },
+              { key: "month", label: "Month" },
+              { key: "fire_count", label: "Fires" },
+              { key: "hectares_burned", label: "Hectares Burned" },
+            ]}
+            filename="canada-wildfires-monthly-totals.csv"
+          />
         </div>
 
         <footer className="flex flex-col gap-1 border-t border-[var(--border)] pt-4 text-[11px] text-[var(--ink-faint)]">

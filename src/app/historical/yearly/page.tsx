@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import yearlyFireTotals from "@/data/yearly-fire-totals.json";
+import { DownloadCsvButton } from "../../download-csv-button";
 import { EmberParticles } from "../../ember-particles";
 import { ThemeToggle } from "../../theme-toggle";
 import { CountUp } from "./count-up";
@@ -124,6 +125,18 @@ export default function Home() {
                 ))}
             </tbody>
           </table>
+        </div>
+
+        <div>
+          <DownloadCsvButton
+            rows={rows}
+            columns={[
+              { key: "year", label: "Year" },
+              { key: "fire_count", label: "Fires" },
+              { key: "hectares_burned", label: "Hectares Burned" },
+            ]}
+            filename="canada-wildfires-yearly-totals.csv"
+          />
         </div>
 
         <footer className="flex flex-col gap-1 border-t border-[var(--border)] pt-4 text-[11px] text-[var(--ink-faint)]">
