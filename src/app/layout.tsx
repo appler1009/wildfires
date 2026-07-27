@@ -18,7 +18,12 @@ const title = "Canada Wildfires";
 const description =
   "Latest wildfire status and over a century of historical trends across Canada — BC, Ontario, Quebec, and satellite-tracked hotspots nationwide.";
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title,
   description,
   openGraph: {
