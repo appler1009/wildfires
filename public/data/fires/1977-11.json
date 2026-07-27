@@ -1,1 +1,1 @@
-{"year":1977,"month":11,"points":[{"fire_number":"GA0023","date":"1977-11-01","lat":56.484,"lon":-120.017,"hectares":1,"cause":"Person","place":null},{"fire_number":"NJ0211","date":"1977-11-01","lat":49.633,"lon":-115.666,"hectares":0.1,"cause":"Unknown","place":null}]}
+{"year":1977,"month":11,"points":[{"fire_number":"GA0023","province":"BC","date":"1977-11-01","lat":56.484,"lon":-120.017,"hectares":1,"cause":"Person","place":null},{"fire_number":"NJ0211","province":"BC","date":"1977-11-01","lat":49.633,"lon":-115.666,"hectares":0.1,"cause":"Unknown","place":null}]}

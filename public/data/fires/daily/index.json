@@ -1,11 +1,148 @@
 {
-  "source": "BC Data Catalogue - Current Fire Perimeters (WHSE_LAND_AND_NATURAL_RESOURCE.PROT_CURRENT_FIRE_POLYS_SP)",
-  "licence": "Open Government Licence - British Columbia",
-  "note": "Daily archive of the live current-fire snapshot, one entry per day this pipeline has run. Not a backfilled history.",
+  "source": "Natural Resources Canada / CWFIS - satellite-detected hotspots",
+  "licence": "Open Government Licence - Canada",
+  "note": "Satellite hotspot detections grid-clustered to ~11km cells per day. Reflects detected thermal activity, not official incident boundaries or status - cross-reference with the live BC status layer where available.",
+  "generatedAt": "2026-07-27T06:15:05.295Z",
   "days": [
     {
-      "date": "2026-07-27",
-      "count": 171
+      "date": "2026-06-22",
+      "count": 681
+    },
+    {
+      "date": "2026-06-23",
+      "count": 1055
+    },
+    {
+      "date": "2026-06-24",
+      "count": 1331
+    },
+    {
+      "date": "2026-06-25",
+      "count": 3607
+    },
+    {
+      "date": "2026-06-26",
+      "count": 4161
+    },
+    {
+      "date": "2026-06-27",
+      "count": 11492
+    },
+    {
+      "date": "2026-06-28",
+      "count": 36225
+    },
+    {
+      "date": "2026-06-29",
+      "count": 28968
+    },
+    {
+      "date": "2026-06-30",
+      "count": 19528
+    },
+    {
+      "date": "2026-07-01",
+      "count": 20949
+    },
+    {
+      "date": "2026-07-02",
+      "count": 27612
+    },
+    {
+      "date": "2026-07-03",
+      "count": 25174
+    },
+    {
+      "date": "2026-07-04",
+      "count": 13874
+    },
+    {
+      "date": "2026-07-05",
+      "count": 6580
+    },
+    {
+      "date": "2026-07-06",
+      "count": 14196
+    },
+    {
+      "date": "2026-07-07",
+      "count": 20802
+    },
+    {
+      "date": "2026-07-08",
+      "count": 26915
+    },
+    {
+      "date": "2026-07-09",
+      "count": 18390
+    },
+    {
+      "date": "2026-07-10",
+      "count": 5398
+    },
+    {
+      "date": "2026-07-11",
+      "count": 9343
+    },
+    {
+      "date": "2026-07-12",
+      "count": 7910
+    },
+    {
+      "date": "2026-07-13",
+      "count": 15338
+    },
+    {
+      "date": "2026-07-14",
+      "count": 48194
+    },
+    {
+      "date": "2026-07-15",
+      "count": 78973
+    },
+    {
+      "date": "2026-07-16",
+      "count": 59760
+    },
+    {
+      "date": "2026-07-17",
+      "count": 21273
+    },
+    {
+      "date": "2026-07-18",
+      "count": 27259
+    },
+    {
+      "date": "2026-07-19",
+      "count": 21266
+    },
+    {
+      "date": "2026-07-20",
+      "count": 20048
+    },
+    {
+      "date": "2026-07-21",
+      "count": 3534
+    },
+    {
+      "date": "2026-07-22",
+      "count": 4161
+    },
+    {
+      "date": "2026-07-23",
+      "count": 7950
+    },
+    {
+      "date": "2026-07-24",
+      "count": 2226
+    },
+    {
+      "date": "2026-07-25",
+      "count": 710
+    },
+    {
+      "date": "2026-07-26",
+      "count": 1639
     }
   ]
 }

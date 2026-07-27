@@ -1,1 +1,1 @@
-{"year":1951,"month":10,"points":[{"fire_number":"V00340","date":"1951-10-27","lat":49.01,"lon":-123.849,"hectares":0.1,"cause":"Person","place":null},{"fire_number":"V00657","date":"1951-10-14","lat":49.405,"lon":-121.599,"hectares":0.1,"cause":"Lightning","place":null}]}
+{"year":1951,"month":10,"points":[{"fire_number":"V00340","province":"BC","date":"1951-10-27","lat":49.01,"lon":-123.849,"hectares":0.1,"cause":"Person","place":null},{"fire_number":"V00657","province":"BC","date":"1951-10-14","lat":49.405,"lon":-121.599,"hectares":0.1,"cause":"Lightning","place":null}]}

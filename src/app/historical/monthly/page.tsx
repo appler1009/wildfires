@@ -30,7 +30,7 @@ export default function MonthlyPage() {
             Hectares burned by month
           </h1>
           <p className="max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-            {monthlyFireHeatmap.metric} Color scale is logarithmic — most BC fire activity is
+            {monthlyFireHeatmap.metric} Color scale is logarithmic — most fire activity is
             concentrated in a few summer months, so a linear scale would make everything outside
             July–August look blank.
           </p>

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BC Wildfires",
-  description: "Historical trends and live status for BC wildfires.",
+  title: "Canada Wildfires",
+  description: "Historical trends and live status for wildfires across Canada.",
 };
 
 export default function RootLayout({

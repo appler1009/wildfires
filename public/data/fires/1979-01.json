@@ -1,1 +1,1 @@
-{"year":1979,"month":1,"points":[{"fire_number":"V30001","date":"1979-01-06","lat":49.227,"lon":-121.916,"hectares":4,"cause":"Person","place":null},{"fire_number":"N10028","date":"1979-01-28","lat":50.583,"lon":-116.244,"hectares":0.4,"cause":"Lightning","place":null}]}
+{"year":1979,"month":1,"points":[{"fire_number":"V30001","province":"BC","date":"1979-01-06","lat":49.227,"lon":-121.916,"hectares":4,"cause":"Person","place":null},{"fire_number":"N10028","province":"BC","date":"1979-01-28","lat":50.583,"lon":-116.244,"hectares":0.4,"cause":"Lightning","place":null}]}

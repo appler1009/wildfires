@@ -3,12 +3,18 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 
 const STEPS = [
+  // BC (own datasets - most complete/current for BC)
   "fetch-historical-fires.ts",
+  "fetch-fire-points.ts",
+  "fetch-current-fires.ts",
+  // Rest of Canada (National Fire Database + CWFIS satellite hotspots)
+  "fetch-nfdb-points.ts",
+  "fetch-cwfis-hotspots.ts",
+  // Rollups (combine BC + Canada-wide sources)
   "build-rollups.ts",
   "build-monthly-heatmap.ts",
-  "fetch-fire-points.ts",
   "build-monthly-points.ts",
-  "fetch-current-fires.ts",
+  "build-daily-clusters.ts",
 ];
 
 for (const step of STEPS) {

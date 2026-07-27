@@ -1,10 +1,13 @@
 // Pulls the current-season fire perimeters (small dataset, refreshed ~15 min
 // by BCWS) and reduces each polygon to an area-weighted centroid point for
-// the map's live-fire overlay.
+// the map's live-fire overlay. This is BC's own richer, status-labeled feed;
+// the rest of Canada's live/daily view comes from CWFIS hotspots (see
+// fetch-cwfis-hotspots.ts / build-daily-clusters.ts), which also covers BC
+// retroactively - this script only needs to produce "today".
 //
 // Source: WHSE_LAND_AND_NATURAL_RESOURCE.PROT_CURRENT_FIRE_POLYS_SP
 // Licence: Open Government Licence - British Columbia
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const WFS_URL =
@@ -19,7 +22,6 @@ const WFS_URL =
   }).toString();
 
 const OUTPUT_PATH = path.join(import.meta.dirname, "../../public/data/fires/current.json");
-const DAILY_DIR = path.join(import.meta.dirname, "../../public/data/fires/daily");
 
 type Ring = [number, number][];
 
@@ -110,60 +112,6 @@ async function main() {
 
   await writeFile(OUTPUT_PATH, JSON.stringify(output, null, 2) + "\n", "utf-8");
   console.log(`Wrote ${points.length} current fire points to ${OUTPUT_PATH}`);
-
-  await writeDailySnapshot(output);
-}
-
-// Archives today's live snapshot so the map can offer daily (not just
-// monthly) granularity going forward. There is no source for day-level
-// history of the *current* season - BCWS only publishes day-dated records
-// once a season is complete - so this only grows from the day this pipeline
-// started running; it can't be backfilled.
-async function writeDailySnapshot(output: {
-  source: string;
-  licence: string;
-  generatedAt: string;
-  points: unknown[];
-}) {
-  await mkdir(DAILY_DIR, { recursive: true });
-
-  const today = new Date().toISOString().slice(0, 10); // UTC date
-  await writeFile(
-    path.join(DAILY_DIR, `${today}.json`),
-    JSON.stringify({ ...output, date: today }, null, 2) + "\n",
-    "utf-8",
-  );
-
-  const files = (await readdir(DAILY_DIR)).filter(
-    (f) => f.endsWith(".json") && f !== "index.json",
-  );
-  const days = await Promise.all(
-    files.map(async (f) => {
-      const raw = JSON.parse(await readFile(path.join(DAILY_DIR, f), "utf-8")) as {
-        date: string;
-        points: unknown[];
-      };
-      return { date: raw.date, count: raw.points.length };
-    }),
-  );
-  days.sort((a, b) => a.date.localeCompare(b.date));
-
-  await writeFile(
-    path.join(DAILY_DIR, "index.json"),
-    JSON.stringify(
-      {
-        source: output.source,
-        licence: output.licence,
-        note: "Daily archive of the live current-fire snapshot, one entry per day this pipeline has run. Not a backfilled history.",
-        days,
-      },
-      null,
-      2,
-    ) + "\n",
-    "utf-8",
-  );
-
-  console.log(`Wrote daily snapshot for ${today} (${days.length} days archived total)`);
 }
 
 main().catch((err) => {

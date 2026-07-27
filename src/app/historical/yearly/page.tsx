@@ -30,12 +30,13 @@ export default function Home() {
             Historical summary
           </span>
           <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            BC hectares burned by year
+            Canada hectares burned by year
           </h1>
           <p className="max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-            Sum of mapped fire perimeter area (hectares) and fire count per season, since{" "}
-            {rows[0].year}. This is a historical summary derived from recorded fire perimeters —
-            not live operational data.
+            Sum of mapped fire area (hectares) and fire count per season, since {rows[0].year}. BC
+            uses its own dataset (most current and complete); the rest of Canada uses the National
+            Fire Database, which currently extends to 2023. This is a historical summary — not live
+            operational data.
           </p>
         </header>
 

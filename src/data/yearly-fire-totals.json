@@ -1,7 +1,8 @@
 {
-  "source": "BC Data Catalogue - Historical Fire Perimeters (WHSE_LAND_AND_NATURAL_RESOURCE.PROT_HISTORICAL_FIRE_POLYS_SP)",
-  "licence": "Open Government Licence - British Columbia",
-  "generatedAt": "2026-07-27T05:15:26.743Z",
+  "source": "BC Data Catalogue - Historical Fire Perimeters (BC), National Fire Database (rest of Canada, Natural Resources Canada / CWFIS)",
+  "licence": "Open Government Licence - British Columbia / Open Government Licence - Canada",
+  "note": "National Fire Database coverage outside BC currently extends to 2023 and lags the current season by roughly 1-2 years; BC's own dataset is more current and complete for BC.",
+  "generatedAt": "2026-07-27T06:17:28.930Z",
   "kind": "historical_summary",
   "rows": [
     {
@@ -321,223 +322,223 @@
     },
     {
       "year": 1980,
-      "fire_count": 140,
-      "hectares_burned": 63298.1
+      "fire_count": 547,
+      "hectares_burned": 4786415.6
     },
     {
       "year": 1981,
-      "fire_count": 146,
-      "hectares_burned": 115516.7
+      "fire_count": 526,
+      "hectares_burned": 6266916
     },
     {
       "year": 1982,
-      "fire_count": 121,
-      "hectares_burned": 354337.1
+      "fire_count": 344,
+      "hectares_burned": 1737478.7
     },
     {
       "year": 1983,
-      "fire_count": 95,
-      "hectares_burned": 78113.7
+      "fire_count": 394,
+      "hectares_burned": 2000681
     },
     {
       "year": 1984,
-      "fire_count": 111,
-      "hectares_burned": 20187.4
+      "fire_count": 316,
+      "hectares_burned": 736951.1
     },
     {
       "year": 1985,
-      "fire_count": 272,
-      "hectares_burned": 230367
+      "fire_count": 386,
+      "hectares_burned": 752458.1
     },
     {
       "year": 1986,
-      "fire_count": 122,
-      "hectares_burned": 16636.5
+      "fire_count": 278,
+      "hectares_burned": 989778.8
     },
     {
       "year": 1987,
-      "fire_count": 180,
-      "hectares_burned": 32128.6
+      "fire_count": 438,
+      "hectares_burned": 988117.3
     },
     {
       "year": 1988,
-      "fire_count": 94,
-      "hectares_burned": 5992.8
+      "fire_count": 372,
+      "hectares_burned": 1314129.2
     },
     {
       "year": 1989,
-      "fire_count": 129,
-      "hectares_burned": 22180.3
+      "fire_count": 880,
+      "hectares_burned": 7551775.6
     },
     {
       "year": 1990,
-      "fire_count": 164,
-      "hectares_burned": 69474.3
+      "fire_count": 378,
+      "hectares_burned": 926337.1
     },
     {
       "year": 1991,
-      "fire_count": 103,
-      "hectares_burned": 23939.9
+      "fire_count": 392,
+      "hectares_burned": 1515501.7
     },
     {
       "year": 1992,
-      "fire_count": 114,
-      "hectares_burned": 24119.3
+      "fire_count": 244,
+      "hectares_burned": 827413.8
     },
     {
       "year": 1993,
-      "fire_count": 53,
-      "hectares_burned": 4244.4
+      "fire_count": 262,
+      "hectares_burned": 1930575.2
     },
     {
       "year": 1994,
-      "fire_count": 131,
-      "hectares_burned": 23245.5
+      "fire_count": 520,
+      "hectares_burned": 6171744.2
     },
     {
       "year": 1995,
-      "fire_count": 60,
-      "hectares_burned": 47809.2
+      "fire_count": 520,
+      "hectares_burned": 7448500.6
     },
     {
       "year": 1996,
-      "fire_count": 41,
-      "hectares_burned": 21685.3
+      "fire_count": 499,
+      "hectares_burned": 1893379.8
     },
     {
       "year": 1997,
-      "fire_count": 18,
-      "hectares_burned": 2058
+      "fire_count": 147,
+      "hectares_burned": 618131.3
     },
     {
       "year": 1998,
-      "fire_count": 190,
-      "hectares_burned": 78667.3
+      "fire_count": 681,
+      "hectares_burned": 4790144
     },
     {
       "year": 1999,
-      "fire_count": 82,
-      "hectares_burned": 14885.8
+      "fire_count": 373,
+      "hectares_burned": 1752442.4
     },
     {
       "year": 2000,
-      "fire_count": 77,
-      "hectares_burned": 4807.1
+      "fire_count": 251,
+      "hectares_burned": 606591.7
     },
     {
       "year": 2001,
-      "fire_count": 15,
-      "hectares_burned": 6411.8
+      "fire_count": 181,
+      "hectares_burned": 626916.7
     },
     {
       "year": 2002,
-      "fire_count": 10,
-      "hectares_burned": 4219.6
+      "fire_count": 325,
+      "hectares_burned": 2731928.7
     },
     {
       "year": 2003,
-      "fire_count": 124,
-      "hectares_burned": 233259
+      "fire_count": 456,
+      "hectares_burned": 2112716.1
     },
     {
       "year": 2004,
-      "fire_count": 96,
-      "hectares_burned": 196523.8
+      "fire_count": 470,
+      "hectares_burned": 3144654
     },
     {
       "year": 2005,
-      "fire_count": 46,
-      "hectares_burned": 25040.2
+      "fire_count": 333,
+      "hectares_burned": 1657516.1
     },
     {
       "year": 2006,
-      "fire_count": 248,
-      "hectares_burned": 139177.1
+      "fire_count": 598,
+      "hectares_burned": 2074047.6
     },
     {
       "year": 2007,
-      "fire_count": 308,
-      "hectares_burned": 25614.8
+      "fire_count": 547,
+      "hectares_burned": 1763075.5
     },
     {
       "year": 2008,
-      "fire_count": 371,
-      "hectares_burned": 13400.8
+      "fire_count": 563,
+      "hectares_burned": 1648244.3
     },
     {
       "year": 2009,
-      "fire_count": 584,
-      "hectares_burned": 245052.5
+      "fire_count": 732,
+      "hectares_burned": 744833.8
     },
     {
       "year": 2010,
-      "fire_count": 375,
-      "hectares_burned": 322105.3
+      "fire_count": 697,
+      "hectares_burned": 3141087.3
     },
     {
       "year": 2011,
-      "fire_count": 107,
-      "hectares_burned": 12983.3
+      "fire_count": 338,
+      "hectares_burned": 2384054.2
     },
     {
       "year": 2012,
-      "fire_count": 298,
-      "hectares_burned": 100560
+      "fire_count": 687,
+      "hectares_burned": 1784217.9
     },
     {
       "year": 2013,
-      "fire_count": 318,
-      "hectares_burned": 58033.3
+      "fire_count": 679,
+      "hectares_burned": 4287034
     },
     {
       "year": 2014,
-      "fire_count": 345,
-      "hectares_burned": 363557.8
+      "fire_count": 646,
+      "hectares_burned": 4521310.3
     },
     {
       "year": 2015,
-      "fire_count": 404,
-      "hectares_burned": 283414.2
+      "fire_count": 872,
+      "hectares_burned": 3879375.7
     },
     {
       "year": 2016,
-      "fire_count": 218,
-      "hectares_burned": 121999.4
+      "fire_count": 399,
+      "hectares_burned": 1322248.8
     },
     {
       "year": 2017,
-      "fire_count": 342,
-      "hectares_burned": 1222205.4
+      "fire_count": 736,
+      "hectares_burned": 3569429.5
     },
     {
       "year": 2018,
-      "fire_count": 680,
-      "hectares_burned": 1350807.8
+      "fire_count": 939,
+      "hectares_burned": 2302370
     },
     {
       "year": 2019,
-      "fire_count": 156,
-      "hectares_burned": 21775.5
+      "fire_count": 334,
+      "hectares_burned": 1767788.8
     },
     {
       "year": 2020,
-      "fire_count": 115,
-      "hectares_burned": 14345.3
+      "fire_count": 187,
+      "hectares_burned": 206621.2
     },
     {
       "year": 2021,
-      "fire_count": 446,
-      "hectares_burned": 863529.1
+      "fire_count": 925,
+      "hectares_burned": 4044524.5
     },
     {
       "year": 2022,
-      "fire_count": 391,
-      "hectares_burned": 132117.8
+      "fire_count": 753,
+      "hectares_burned": 1561871.1
     },
     {
       "year": 2023,
-      "fire_count": 676,
-      "hectares_burned": 3855693.3
+      "fire_count": 1422,
+      "hectares_burned": 18600883.9
     },
     {
       "year": 2024,

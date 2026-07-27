@@ -1,1 +1,1 @@
-{"year":1994,"month":2,"points":[{"fire_number":"V50002","date":"1994-02-12","lat":49.745,"lon":-123.897,"hectares":0.1,"cause":"Person","place":null},{"fire_number":"K70027","date":"1994-02-15","lat":51.133,"lon":-122.133,"hectares":0,"cause":"Unknown","place":null}]}
+{"year":1994,"month":2,"points":[{"fire_number":"V50002","province":"BC","date":"1994-02-12","lat":49.745,"lon":-123.897,"hectares":0.1,"cause":"Person","place":null},{"fire_number":"K70027","province":"BC","date":"1994-02-15","lat":51.133,"lon":-122.133,"hectares":0,"cause":"Unknown","place":null}]}

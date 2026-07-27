@@ -1,13 +1,15 @@
-// Reads the cached historical fire records and produces frontend-ready
-// rollup JSON artifacts under src/data/, using DuckDB for aggregation.
+// Reads the cached historical fire records (BC's own dataset + the National
+// Fire Database for the rest of Canada) and produces frontend-ready yearly
+// rollup JSON under src/data/, using DuckDB for aggregation.
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { DuckDBInstance } from "@duckdb/node-api";
 
-const RAW_PATH = path.join(
+const BC_RAW_PATH = path.join(
   import.meta.dirname,
   "../../data/raw/historical-fire-perimeters.ndjson",
 );
+const NFDB_RAW_PATH = path.join(import.meta.dirname, "../../data/raw/nfdb-points.ndjson");
 const OUTPUT_DIR = path.join(import.meta.dirname, "../../src/data");
 
 async function main() {
@@ -18,13 +20,13 @@ async function main() {
 
   await connection.run(`
     CREATE TABLE fires AS
-    SELECT
-      FIRE_YEAR::INTEGER AS fire_year,
-      FIRE_SIZE_HECTARES::DOUBLE AS size_hectares,
-      FIRE_CAUSE AS cause,
-      FIRE_NUMBER AS fire_number
-    FROM read_ndjson_auto('${RAW_PATH}')
+    SELECT FIRE_YEAR::INTEGER AS fire_year, FIRE_SIZE_HECTARES::DOUBLE AS size_hectares
+    FROM read_ndjson_auto('${BC_RAW_PATH}')
     WHERE FIRE_YEAR IS NOT NULL
+    UNION ALL
+    SELECT YEAR::INTEGER AS fire_year, SIZE_HA::DOUBLE AS size_hectares
+    FROM read_ndjson_auto('${NFDB_RAW_PATH}')
+    WHERE YEAR IS NOT NULL
   `);
 
   const yearly = await connection.runAndReadAll(`
@@ -38,8 +40,10 @@ async function main() {
   `);
 
   const yearlyTotals = {
-    source: "BC Data Catalogue - Historical Fire Perimeters (WHSE_LAND_AND_NATURAL_RESOURCE.PROT_HISTORICAL_FIRE_POLYS_SP)",
-    licence: "Open Government Licence - British Columbia",
+    source:
+      "BC Data Catalogue - Historical Fire Perimeters (BC), National Fire Database (rest of Canada, Natural Resources Canada / CWFIS)",
+    licence: "Open Government Licence - British Columbia / Open Government Licence - Canada",
+    note: "National Fire Database coverage outside BC currently extends to 2023 and lags the current season by roughly 1-2 years; BC's own dataset is more current and complete for BC.",
     generatedAt: new Date().toISOString(),
     kind: "historical_summary" as const,
     rows: yearly.getRowObjectsJson(),

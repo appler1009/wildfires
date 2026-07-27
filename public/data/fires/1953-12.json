@@ -1,1 +1,1 @@
-{"year":1953,"month":12,"points":[{"fire_number":"K00028","date":"1952-12-31","lat":50.789,"lon":-119.641,"hectares":0.1,"cause":"Unknown","place":null},{"fire_number":"K00104","date":"1952-12-31","lat":50.318,"lon":-118.595,"hectares":0.1,"cause":"Unknown","place":null}]}
+{"year":1953,"month":12,"points":[{"fire_number":"K00028","province":"BC","date":"1952-12-31","lat":50.789,"lon":-119.641,"hectares":0.1,"cause":"Unknown","place":null},{"fire_number":"K00104","province":"BC","date":"1952-12-31","lat":50.318,"lon":-118.595,"hectares":0.1,"cause":"Unknown","place":null}]}
