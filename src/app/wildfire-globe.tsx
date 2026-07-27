@@ -89,7 +89,16 @@ function Globe() {
   const positions = useMemo(() => HOTSPOTS.map(([lat, lon]) => latLonToVec3(lat, lon, 1.52)), []);
 
   useFrame((state, delta) => {
-    if (groupRef.current) groupRef.current.rotation.y += delta * 0.12;
+    if (groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.12;
+      // Subtle mouse-parallax tilt on top of the constant spin - r3f tracks
+      // pointer position over the canvas automatically (state.pointer, -1..1),
+      // no extra listeners needed. Damped with lerp so it drifts, not snaps.
+      const targetTiltX = state.pointer.y * 0.15;
+      const targetTiltZ = -state.pointer.x * 0.12;
+      groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, targetTiltX, delta * 2);
+      groupRef.current.rotation.z = THREE.MathUtils.lerp(groupRef.current.rotation.z, targetTiltZ, delta * 2);
+    }
     const t = state.clock.elapsedTime;
     hotspotRefs.current.forEach((mesh, i) => {
       if (!mesh) return;
