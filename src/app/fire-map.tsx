@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { BootSequence } from "./boot-sequence";
+import { ShareButton } from "./share-button";
 
 const MONTH_NAMES = [
   "January", "February", "March", "April", "May", "June",
@@ -300,6 +301,10 @@ export function FireMap() {
       ? dailyPoints
       : [];
   const points = isOperational ? [] : historicalPoints;
+  const totalActive = bcStatusPoints.length + onStatusPoints.length + qcStatusPoints.length;
+  const shareText = isLive
+    ? `${formatNumber(totalActive)} wildfires being tracked live across Canada right now.`
+    : "Live and historical wildfire tracking across Canada.";
 
   function step(delta: number) {
     setSelected(Math.min(timeline.length - 1, Math.max(0, effectiveSelected + delta)));
@@ -575,7 +580,8 @@ export function FireMap() {
           Sources: BC · Ontario · Quebec · CWFIS (rest of Canada) — reference data, not real-time
           ground truth.
         </span>
-        <div className="flex shrink-0 gap-4">
+        <div className="flex shrink-0 items-center gap-4">
+          <ShareButton text={shareText} />
           <Link
             href="/historical/yearly"
             className="label text-[var(--amber)] transition-colors hover:text-[var(--ember)]"
