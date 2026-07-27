@@ -3,52 +3,8 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-07-27T15:03:17.596Z",
+  "generatedAt": "2026-07-27T16:20:50.954Z",
   "points": [
-    {
-      "fireNumber": "2026-MTLG13-000069",
-      "name": "LG13 Second Railroad",
-      "state": "MT",
-      "hectares": 0.3,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-04-06T19:19:00.000Z",
-      "lat": 46.51050300000003,
-      "lon": -114.08334599999995
-    },
-    {
-      "fireNumber": "2026-MTLG13-000072",
-      "name": "LG13 Watt",
-      "state": "MT",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-04-07T23:11:00.000Z",
-      "lat": 46.57521100000008,
-      "lon": -114.12224699999996
-    },
-    {
-      "fireNumber": "2026-MTLG13-000073",
-      "name": "LG13 Sweeny the Second",
-      "state": "MT",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-04-07T19:44:00.000Z",
-      "lat": 46.611462000000074,
-      "lon": -114.09637099999998
-    },
-    {
-      "fireNumber": "2026-MTLG13-000075",
-      "name": "LG13 Ambrose Creek",
-      "state": "MT",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-04-11T20:36:00.000Z",
-      "lat": 46.55882600000007,
-      "lon": -114.02167299999996
-    },
     {
       "fireNumber": "2026-MTLG13-000081",
       "name": "LG13 Sleeping Child",
@@ -70,17 +26,6 @@
       "discoveryDate": "2026-04-21T00:34:00.000Z",
       "lat": 46.31878100000006,
       "lon": -114.18135699999999
-    },
-    {
-      "fireNumber": "2026-MTLG13-000077",
-      "name": "LG13 Cherry Orchard",
-      "state": "MT",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-04-15T00:15:00.000Z",
-      "lat": 46.32038700000004,
-      "lon": -114.19118299999997
     },
     {
       "fireNumber": "2026-MTLG13-000086",
@@ -1029,6 +974,17 @@
       "lon": -107.48895999999996
     },
     {
+      "fireNumber": "2026-PAVFP-000352",
+      "name": "Misery Trail",
+      "state": "PA",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-07-22T19:09:19.000Z",
+      "lat": 40.08943900000003,
+      "lon": -75.45947699999994
+    },
+    {
       "fireNumber": "2026-NDSRA-000091",
       "name": "97th st",
       "state": "ND",
@@ -1117,17 +1073,6 @@
       "lon": -105.58559999999994
     },
     {
-      "fireNumber": "2026-MTLG14-000546",
-      "name": "Fort Keogh",
-      "state": "MT",
-      "hectares": 0.2,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-07-23T21:20:24.000Z",
-      "lat": 46.392689000000075,
-      "lon": -105.88587099999995
-    },
-    {
       "fireNumber": "2026-MTLG42-000548",
       "name": "Potato Butte",
       "state": "MT",
@@ -1210,32 +1155,10 @@
       "state": "MT",
       "hectares": 1.3,
       "percentContained": null,
-      "cause": "Undetermined",
+      "cause": "Natural",
       "discoveryDate": "2026-07-24T04:09:00.000Z",
       "lat": 48.23611200000005,
       "lon": -115.76153
-    },
-    {
-      "fireNumber": "2026-MEMES-26002269",
-      "name": "Electric Boat Fire",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-07-17T18:24:00.000Z",
-      "lat": 44.619042000000036,
-      "lon": -68.25145803999999
-    },
-    {
-      "fireNumber": "2026-MEMES-26002185",
-      "name": "Peaty Fire",
-      "state": "ME",
-      "hectares": 0.2,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-07-14T02:16:00.000Z",
-      "lat": 44.62948585000004,
-      "lon": -68.26401020999998
     },
     {
       "fireNumber": "2026-NDSRA-000093",
@@ -1843,17 +1766,6 @@
       "lon": -121.53216699999996
     },
     {
-      "fireNumber": "2026-WAGPF-000719",
-      "name": "BADGER CREEK",
-      "state": "WA",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-26T00:10:00.000Z",
-      "lat": 46.30550000000005,
-      "lon": -121.86083299999996
-    },
-    {
       "fireNumber": "2026-MTLG29-000558",
       "name": "Butte - Rosebud",
       "state": "MT",
@@ -2019,17 +1931,6 @@
       "lon": -122.16433299999994
     },
     {
-      "fireNumber": "2026-WANES-001790",
-      "name": "BIGELOW GULCH",
-      "state": "WA",
-      "hectares": 25.7,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-07-26T20:52:42.000Z",
-      "lat": 47.72291800000005,
-      "lon": -117.25032399999998
-    },
-    {
       "fireNumber": "2026-WANES-001791",
       "name": "SINLAHEKIN",
       "state": "WA",
@@ -2055,7 +1956,7 @@
       "fireNumber": "2026-MTBDF-266293",
       "name": "Moose",
       "state": "MT",
-      "hectares": 20.2,
+      "hectares": 28.3,
       "percentContained": null,
       "cause": "Undetermined",
       "discoveryDate": "2026-07-26T21:44:32.000Z",
@@ -2151,15 +2052,15 @@
       "lon": -107.95846699999998
     },
     {
-      "fireNumber": "2026-MTLG17-000225",
+      "fireNumber": "2026-MTFPA-000225",
       "name": "Buffalo Ranch 2",
       "state": "MT",
       "hectares": 72.4,
       "percentContained": null,
       "cause": "Human",
       "discoveryDate": "2026-07-26T18:54:18.000Z",
-      "lat": 48.33708800000005,
-      "lon": -105.42759699999999
+      "lat": 48.29510800000003,
+      "lon": -105.01686099999995
     },
     {
       "fireNumber": "2026-MIMIS-2026010019",
@@ -2193,6 +2094,39 @@
       "discoveryDate": "2026-07-27T14:40:07.000Z",
       "lat": 46.659219000000064,
       "lon": -94.95395799999994
+    },
+    {
+      "fireNumber": "2026-MTLG14-000569",
+      "name": "Reservoir",
+      "state": "MT",
+      "hectares": 16.2,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-07-27T14:30:29.000Z",
+      "lat": 46.42461700000007,
+      "lon": -105.38261699999998
+    },
+    {
+      "fireNumber": "2026-MTBDF-266295",
+      "name": "Moonlight Creek",
+      "state": "MT",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-07-27T03:15:54.000Z",
+      "lat": 45.32491700000003,
+      "lon": -111.44503299999997
+    },
+    {
+      "fireNumber": "2026-MTLG29-000568",
+      "name": "North Cottonwood",
+      "state": "MT",
+      "hectares": 16.2,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-07-27T14:22:23.000Z",
+      "lat": 45.71473300000008,
+      "lon": -106.79424999999998
     }
   ]
 }

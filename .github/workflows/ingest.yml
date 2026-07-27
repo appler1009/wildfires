@@ -1,11 +1,21 @@
-name: Daily data ingestion
+name: Data ingestion
 
 on:
   schedule:
-    # 12:00 UTC ≈ 8am Eastern / 5am Pacific during daylight time (7am/4am in
-    # winter) - adjust to taste, GitHub Actions cron is always UTC.
+    # Daily: current-fires feeds + incremental satellite hotspots + rebuild.
+    # 12:00 UTC ≈ 8am Eastern / 5am Pacific in summer (7am/4am in winter) -
+    # cron is always UTC, adjust to taste.
     - cron: "0 12 * * *"
-  workflow_dispatch: {}
+    # Full refresh (re-pulls the BC/Ontario/NFDB historical archives, which
+    # have no incremental fetch of their own) once a month, to pick up any
+    # revisions to already-finalized seasons. 03:00 UTC on the 1st.
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Run the full pipeline (including historical archives) instead of the daily one"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -23,13 +33,37 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run ingest
+      # Historical WFS fetchers (BC/Ontario/NFDB) always pull their full
+      # archive with no incremental filter of their own, so this cache is
+      # what lets the daily job skip them entirely and still have their raw
+      # data on disk for build-rollups.ts etc. It also carries forward the
+      # CWFIS satellite-hotspot cache, which the daily job's fetch step
+      # updates incrementally instead of re-fetching its whole 365-day window.
+      #
+      # actions/cache never overwrites an existing key, so a static key
+      # would restore the same stale snapshot forever - keying on the run id
+      # guarantees a cache miss (and therefore a fresh save) every run,
+      # while restore-keys still finds the most recent prior entry to
+      # restore from.
+      - uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: ingest-raw-data-${{ github.run_id }}
+          restore-keys: ingest-raw-data-
+
+      - name: Run full pipeline
+        if: github.event.schedule == '0 3 1 * *' || inputs.full == true
+        run: npm run ingest
+
+      - name: Run daily pipeline
+        if: github.event.schedule != '0 3 1 * *' && inputs.full != true
+        run: npm run ingest:daily
 
       - name: Commit and push updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data
+          git add public/data src/data
           if git diff --cached --quiet; then
             echo "No data changes."
             exit 0

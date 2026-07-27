@@ -56,7 +56,7 @@ async function main() {
       FROM hotspots
       WHERE SUBSTR(rep_day_str, 1, 10) = '${date}'
       GROUP BY province, cell_lat, cell_lon
-      ORDER BY estarea DESC NULLS LAST
+      ORDER BY estarea DESC NULLS LAST, province, lat, lon
     `);
     const points = cellsResult.getRowObjectsJson();
 

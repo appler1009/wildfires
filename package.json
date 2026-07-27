@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "ingest": "tsx scripts/ingest/run.ts"
+    "ingest": "tsx scripts/ingest/run.ts",
+    "ingest:daily": "tsx scripts/ingest/run-daily.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

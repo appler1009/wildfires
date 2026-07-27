@@ -22,48 +22,57 @@ async function main() {
   const instance = await DuckDBInstance.create(":memory:");
   const connection = await instance.connect();
 
+  // DISTINCT on the whole union: some sources carry near-duplicate records
+  // for the same fire (differing only in fields we don't display, e.g. a
+  // BC point re-surveyed under a different internal object ID) - deduping
+  // on exactly the fields we show keeps the per-month fire count (which
+  // surfaces in the UI) and the per-file point list consistent, without
+  // risking collapsing genuinely distinct fires the way deduping on a
+  // narrower key (like just year+hectares) could.
   await connection.run(`
     CREATE TABLE points AS
-    SELECT
-      FIRE_NUMBER AS fire_number,
-      'BC' AS province,
-      FIRE_YEAR::INTEGER AS fire_year,
-      TRY_CAST(IGNITION_DATE AS DATE) AS ignition_date,
-      LATITUDE::DOUBLE AS lat,
-      LONGITUDE::DOUBLE AS lon,
-      CURRENT_SIZE::DOUBLE AS hectares,
-      FIRE_CAUSE AS cause,
-      GEOGRAPHIC_DESCRIPTION AS place
-    FROM read_ndjson_auto('${BC_RAW_PATH}')
-    WHERE FIRE_YEAR IS NOT NULL AND LATITUDE IS NOT NULL AND LONGITUDE IS NOT NULL
-    UNION ALL
-    SELECT
-      FIRE_DISTURBANCE_AREA_IDENT AS fire_number,
-      'ON' AS province,
-      FIRE_YEAR::INTEGER AS fire_year,
-      EPOCH_MS(FIRE_START_DATE::BIGINT)::DATE AS ignition_date,
-      LATITUDE::DOUBLE AS lat,
-      LONGITUDE::DOUBLE AS lon,
-      FIRE_FINAL_SIZE::DOUBLE AS hectares,
-      FIRE_GENERAL_CAUSE_CODE AS cause,
-      NULL AS place
-    FROM read_ndjson_auto('${ON_RAW_PATH}')
-    WHERE FIRE_YEAR IS NOT NULL AND LATITUDE IS NOT NULL AND LONGITUDE IS NOT NULL
-      AND FIRE_START_DATE IS NOT NULL
-    UNION ALL
-    SELECT
-      COALESCE(FIRE_ID, FIRENAME) AS fire_number,
-      SRC_AGENCY AS province,
-      YEAR::INTEGER AS fire_year,
-      MAKE_DATE(YEAR::INTEGER, MONTH::INTEGER, DAY::INTEGER) AS ignition_date,
-      LATITUDE::DOUBLE AS lat,
-      LONGITUDE::DOUBLE AS lon,
-      SIZE_HA::DOUBLE AS hectares,
-      CAUSE AS cause,
-      FIRENAME AS place
-    FROM read_ndjson_auto('${NFDB_RAW_PATH}')
-    WHERE YEAR IS NOT NULL AND LATITUDE IS NOT NULL AND LONGITUDE IS NOT NULL
-      AND MONTH::INTEGER BETWEEN 1 AND 12 AND DAY::INTEGER BETWEEN 1 AND 31
+    SELECT DISTINCT * FROM (
+      SELECT
+        FIRE_NUMBER AS fire_number,
+        'BC' AS province,
+        FIRE_YEAR::INTEGER AS fire_year,
+        TRY_CAST(IGNITION_DATE AS DATE) AS ignition_date,
+        LATITUDE::DOUBLE AS lat,
+        LONGITUDE::DOUBLE AS lon,
+        CURRENT_SIZE::DOUBLE AS hectares,
+        FIRE_CAUSE AS cause,
+        GEOGRAPHIC_DESCRIPTION AS place
+      FROM read_ndjson_auto('${BC_RAW_PATH}')
+      WHERE FIRE_YEAR IS NOT NULL AND LATITUDE IS NOT NULL AND LONGITUDE IS NOT NULL
+      UNION ALL
+      SELECT
+        FIRE_DISTURBANCE_AREA_IDENT AS fire_number,
+        'ON' AS province,
+        FIRE_YEAR::INTEGER AS fire_year,
+        EPOCH_MS(FIRE_START_DATE::BIGINT)::DATE AS ignition_date,
+        LATITUDE::DOUBLE AS lat,
+        LONGITUDE::DOUBLE AS lon,
+        FIRE_FINAL_SIZE::DOUBLE AS hectares,
+        FIRE_GENERAL_CAUSE_CODE AS cause,
+        NULL AS place
+      FROM read_ndjson_auto('${ON_RAW_PATH}')
+      WHERE FIRE_YEAR IS NOT NULL AND LATITUDE IS NOT NULL AND LONGITUDE IS NOT NULL
+        AND FIRE_START_DATE IS NOT NULL
+      UNION ALL
+      SELECT
+        COALESCE(FIRE_ID, FIRENAME) AS fire_number,
+        SRC_AGENCY AS province,
+        YEAR::INTEGER AS fire_year,
+        MAKE_DATE(YEAR::INTEGER, MONTH::INTEGER, DAY::INTEGER) AS ignition_date,
+        LATITUDE::DOUBLE AS lat,
+        LONGITUDE::DOUBLE AS lon,
+        SIZE_HA::DOUBLE AS hectares,
+        CAUSE AS cause,
+        FIRENAME AS place
+      FROM read_ndjson_auto('${NFDB_RAW_PATH}')
+      WHERE YEAR IS NOT NULL AND LATITUDE IS NOT NULL AND LONGITUDE IS NOT NULL
+        AND MONTH::INTEGER BETWEEN 1 AND 12 AND DAY::INTEGER BETWEEN 1 AND 31
+    )
   `);
 
   const monthsResult = await connection.runAndReadAll(`
@@ -85,11 +94,16 @@ async function main() {
     // month = 0 means no parseable ignition date; grouped separately, not written as a tile.
     if (month === 0) continue;
 
+    // points is already deduplicated (see above); the full tiebreaker chain
+    // here just makes row order deterministic across runs (ORDER BY over a
+    // non-unique key isn't guaranteed stable), so re-running with unchanged
+    // input doesn't produce a spurious diff.
     const cellResult = await connection.runAndReadAll(`
       SELECT fire_number, province, ignition_date::VARCHAR AS date, lat, lon, hectares, cause, place
       FROM points
       WHERE fire_year = ${year} AND MONTH(ignition_date) = ${month}
-      ORDER BY hectares DESC NULLS LAST
+      ORDER BY
+        hectares DESC NULLS LAST, fire_number, province, date, lat, lon, cause, place
     `);
     const points = cellResult.getRowObjectsJson();
 

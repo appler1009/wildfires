@@ -3,7 +3,7 @@
   "licence": "Open Government Licence - Ontario",
   "kind": "operational_live_reference",
   "note": "Points are area-weighted centroids of the published fire perimeter, not the exact incident location. Status code meaning (F/I) is an inferred reading, not from a published domain.",
-  "generatedAt": "2026-07-27T15:03:16.019Z",
+  "generatedAt": "2026-07-27T16:20:49.921Z",
   "points": [
     {
       "fireNumber": "SUD016",

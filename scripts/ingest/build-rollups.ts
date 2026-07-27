@@ -19,18 +19,24 @@ async function main() {
   const instance = await DuckDBInstance.create(":memory:");
   const connection = await instance.connect();
 
+  // DISTINCT * on each raw source before projecting down to fire_year/
+  // size_hectares: the NFDB cache has a handful of byte-identical duplicate
+  // records, which would otherwise double-count those fires' hectares in
+  // the yearly totals. Deduping on the full raw row (not just year+size,
+  // which two different small fires could coincidentally share) avoids
+  // collapsing genuinely distinct fires.
   await connection.run(`
     CREATE TABLE fires AS
     SELECT FIRE_YEAR::INTEGER AS fire_year, FIRE_SIZE_HECTARES::DOUBLE AS size_hectares
-    FROM read_ndjson_auto('${BC_RAW_PATH}')
+    FROM (SELECT DISTINCT * FROM read_ndjson_auto('${BC_RAW_PATH}'))
     WHERE FIRE_YEAR IS NOT NULL
     UNION ALL
     SELECT FIRE_YEAR::INTEGER AS fire_year, FIRE_FINAL_SIZE::DOUBLE AS size_hectares
-    FROM read_ndjson_auto('${ON_RAW_PATH}')
+    FROM (SELECT DISTINCT * FROM read_ndjson_auto('${ON_RAW_PATH}'))
     WHERE FIRE_YEAR IS NOT NULL
     UNION ALL
     SELECT YEAR::INTEGER AS fire_year, SIZE_HA::DOUBLE AS size_hectares
-    FROM read_ndjson_auto('${NFDB_RAW_PATH}')
+    FROM (SELECT DISTINCT * FROM read_ndjson_auto('${NFDB_RAW_PATH}'))
     WHERE YEAR IS NOT NULL
   `);
 

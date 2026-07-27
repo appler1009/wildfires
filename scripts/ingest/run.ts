@@ -1,6 +1,9 @@
-// Orchestrates the local ingestion pipeline: fetch source data, then build rollups.
-import { spawnSync } from "node:child_process";
-import path from "node:path";
+// Orchestrates the FULL ingestion pipeline: every source, including the
+// large historical archives (BC/Ontario/NFDB), which have no incremental
+// fetch logic of their own and always re-pull in full. Meant for local use
+// or an infrequent (e.g. monthly) scheduled refresh - see run-daily.ts for
+// the lightweight version used by the daily GitHub Actions job.
+import { runSteps } from "./lib/run-steps";
 
 const STEPS = [
   // BC (own datasets - most complete/current for BC)
@@ -25,11 +28,4 @@ const STEPS = [
   "build-daily-clusters.ts",
 ];
 
-for (const step of STEPS) {
-  const scriptPath = path.join(import.meta.dirname, step);
-  console.log(`\n--- Running ${step} ---`);
-  const result = spawnSync("npx", ["tsx", scriptPath], { stdio: "inherit" });
-  if (result.status !== 0) {
-    process.exit(result.status ?? 1);
-  }
-}
+runSteps(STEPS, import.meta.dirname);

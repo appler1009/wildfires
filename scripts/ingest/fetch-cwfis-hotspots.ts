@@ -7,6 +7,15 @@
 // (not just Canadian) coverage, so the border states cost nothing extra to
 // add beyond widening this allowlist.
 //
+// Incremental: re-fetching the full 365-day window every run was the single
+// most expensive step in the pipeline (many chunked requests against a
+// server that already needs retry/split handling - see below). Instead this
+// keeps the existing cache and only re-fetches a short overlap window at the
+// tail (hotspot records for a date can keep trickling in for a day or two
+// after, from later satellite passes/reprocessing), then prunes anything
+// that's aged out of the 365-day window. First run (no cache yet) still
+// does the full fetch.
+//
 // Fetched in date-range chunks, splitting recursively on timeout: the server
 // is fast for small/recent ranges but can 504 on larger or denser (peak fire
 // season) ranges regardless of season age - there's no reliable fixed chunk
@@ -15,7 +24,7 @@
 //
 // Source: Natural Resources Canada / CWFIS - hotspots
 // Licence: Open Government Licence - Canada
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const WFS_BASE = "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows";
@@ -23,6 +32,7 @@ const TYPE_NAME = "public:hotspots";
 const PROPERTIES = ["lat", "lon", "rep_day", "agency", "estarea", "frp"];
 const PAGE_SIZE = 10_000;
 const LOOKBACK_DAYS = 365;
+const OVERLAP_DAYS = 3; // re-pull this many days before the cached max, for late-arriving corrections
 const INITIAL_CHUNK_DAYS = 7;
 const REQUEST_TIMEOUT_MS = 25_000;
 
@@ -118,26 +128,70 @@ async function fetchRangeResilient(from: Date, to: Date): Promise<string[]> {
   }
 }
 
+async function loadExisting(): Promise<string[]> {
+  try {
+    const raw = await readFile(OUTPUT_PATH, "utf-8");
+    return raw.split("\n").filter((line) => line.trim().length > 0);
+  } catch {
+    return []; // no cache yet - first run does the full fetch
+  }
+}
+
+function repDay(line: string): string {
+  return String((JSON.parse(line) as { rep_day: string }).rep_day).slice(0, 10);
+}
+
 async function main() {
   await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
 
-  const windowStart = new Date(Date.now() - LOOKBACK_DAYS * 24 * 60 * 60 * 1000);
   const windowEnd = new Date();
+  const windowStart = new Date(windowEnd.getTime() - LOOKBACK_DAYS * 24 * 60 * 60 * 1000);
+  const windowStartIso = toIso(windowStart);
 
-  const rows: string[] = [];
-  let cursor = new Date(windowStart);
+  const existing = await loadExisting();
+  const existingMaxDay = existing.reduce<string | null>((max, line) => {
+    const day = repDay(line);
+    return !max || day > max ? day : max;
+  }, null);
 
+  // Re-fetch only the overlap tail if we already have a cache; otherwise
+  // (first run) fetch the whole rolling window.
+  let fetchFrom = windowStart;
+  if (existingMaxDay) {
+    const resumeFrom = new Date(new Date(existingMaxDay).getTime() - OVERLAP_DAYS * 86400000);
+    fetchFrom = resumeFrom > windowStart ? resumeFrom : windowStart;
+  }
+  const fetchFromIso = toIso(fetchFrom);
+
+  console.log(
+    existingMaxDay
+      ? `Cache has data through ${existingMaxDay} - fetching from ${fetchFromIso} (incremental)`
+      : `No cache found - fetching the full ${LOOKBACK_DAYS}-day window`,
+  );
+
+  const fetchedRows: string[] = [];
+  let cursor = new Date(fetchFrom);
   while (cursor < windowEnd) {
     const chunkEnd = new Date(
       Math.min(cursor.getTime() + INITIAL_CHUNK_DAYS * 86400000, windowEnd.getTime()),
     );
     const chunkRows = await fetchRangeResilient(cursor, chunkEnd);
-    for (const row of chunkRows) rows.push(row);
+    for (const row of chunkRows) fetchedRows.push(row);
     cursor = chunkEnd;
   }
 
+  // Keep existing rows outside the refetched range and inside the rolling
+  // window; drop everything else (superseded by the fresh fetch, or aged out).
+  const keptExisting = existing.filter((line) => {
+    const day = repDay(line);
+    return day >= windowStartIso && day < fetchFromIso;
+  });
+
+  const rows = [...keptExisting, ...fetchedRows];
   await writeFile(OUTPUT_PATH, rows.join("\n") + "\n", "utf-8");
-  console.log(`Wrote ${rows.length} records to ${OUTPUT_PATH}`);
+  console.log(
+    `Wrote ${rows.length} records to ${OUTPUT_PATH} (${keptExisting.length} kept, ${fetchedRows.length} fetched)`,
+  );
 }
 
 main().catch((err) => {
