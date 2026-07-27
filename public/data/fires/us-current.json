@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-07-27T14:22:17.852Z",
+  "generatedAt": "2026-07-27T15:03:17.596Z",
   "points": [
     {
       "fireNumber": "2026-MTLG13-000069",
@@ -1524,17 +1524,6 @@
       "lon": -113.85903299999995
     },
     {
-      "fireNumber": "2026-WAGPF-000700",
-      "name": "FRYING PAN",
-      "state": "WA",
-      "hectares": 0.4,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-24T20:47:00.000Z",
-      "lat": 46.74916700000006,
-      "lon": -121.44008299999996
-    },
-    {
       "fireNumber": "2026-MTBDF-266286",
       "name": "Stony Creek",
       "state": "MT",
@@ -1643,17 +1632,6 @@
       "discoveryDate": "2026-07-25T02:25:00.000Z",
       "lat": 48.25100000000003,
       "lon": -116.14899999999994
-    },
-    {
-      "fireNumber": "2026-MN1BS-002648",
-      "name": "Rusty",
-      "state": "MN",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-07-25T16:37:10.000Z",
-      "lat": 47.68198000000007,
-      "lon": -95.05947999999995
     },
     {
       "fireNumber": "2026-WANWS-000093",
@@ -1810,28 +1788,6 @@
       "lon": -118.97082999999998
     },
     {
-      "fireNumber": "2026-IDNCF-000336",
-      "name": "Ruby Creek",
-      "state": "ID",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-25T22:32:00.000Z",
-      "lat": 46.71760000000006,
-      "lon": -115.10381699999999
-    },
-    {
-      "fireNumber": "2026-WAGPF-000711",
-      "name": "YELLOWJACKET",
-      "state": "WA",
-      "hectares": 0.2,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-25T17:36:01.000Z",
-      "lat": 46.28216700000007,
-      "lon": -121.85249999999996
-    },
-    {
       "fireNumber": "2026-IDNCF-000338",
       "name": "Butter",
       "state": "ID",
@@ -1975,17 +1931,6 @@
       "lon": -106.50313299999999
     },
     {
-      "fireNumber": "2026-MTLNF-260306",
-      "name": "Crater Creek",
-      "state": "MT",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-26T16:21:06.000Z",
-      "lat": 46.93470000000008,
-      "lon": -114.85536699999994
-    },
-    {
       "fireNumber": "2026-NHNHS-220517A",
       "name": "220517A Lebanon",
       "state": "NH",
@@ -2114,8 +2059,8 @@
       "percentContained": null,
       "cause": "Undetermined",
       "discoveryDate": "2026-07-26T21:44:32.000Z",
-      "lat": 46.08691700000003,
-      "lon": -113.65244999999999
+      "lat": 46.072200000000066,
+      "lon": -113.69074999999998
     },
     {
       "fireNumber": "2026-IDNCF-000337",
@@ -2228,15 +2173,26 @@
       "lon": -83.27644327999997
     },
     {
-      "fireNumber": "2026-IDSCC-000158",
-      "name": "Crestview",
-      "state": "ID",
+      "fireNumber": "2026-MNMNA-002656",
+      "name": "Landing",
+      "state": "MN",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-07-04T19:26:18.000Z",
+      "lat": 46.19205658000004,
+      "lon": -93.76072684999997
+    },
+    {
+      "fireNumber": "2026-MN1GS-002660",
+      "name": "Surprise",
+      "state": "MN",
       "hectares": 0,
       "percentContained": null,
       "cause": "Undetermined",
-      "discoveryDate": "2026-07-27T12:52:23.000Z",
-      "lat": 42.52038300000004,
-      "lon": -113.98171699999995
+      "discoveryDate": "2026-07-27T14:40:07.000Z",
+      "lat": 46.659219000000064,
+      "lon": -94.95395799999994
     }
   ]
 }
