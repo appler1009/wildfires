@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { BootSequence } from "./boot-sequence";
+import { CriticalFireGlow, type GlowPoint } from "./critical-fire-glow";
 import { ShareButton } from "./share-button";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -489,6 +490,37 @@ export function FireMap() {
       : [];
   const points = isOperational ? [] : historicalPoints;
   const totalActive = bcStatusPoints.length + onStatusPoints.length + qcStatusPoints.length;
+
+  // The five largest actively out-of-control / uncontained fires get a
+  // pulsing screen-space halo (see CriticalFireGlow) - a data-driven "these
+  // are the ones to watch" cue, not decoration for its own sake.
+  const criticalPoints: GlowPoint[] = isLive
+    ? [
+        ...bcStatusPoints
+          .filter((p) => p.status === "Out of Control")
+          .map((p) => ({ key: p.fireNumber, lat: p.lat, lon: p.lon, hectares: p.hectares ?? 0, label: p.fireNumber })),
+        ...qcStatusPoints
+          .filter((p) => p.status === "Out of Control")
+          .map((p) => ({
+            key: p.fireNumber,
+            lat: p.lat,
+            lon: p.lon,
+            hectares: p.hectares ?? 0,
+            label: p.name || p.fireNumber,
+          })),
+        ...usStatusPoints
+          .filter((p) => (p.percentContained ?? 0) <= 0)
+          .map((p) => ({
+            key: p.fireNumber ?? `${p.lat},${p.lon}`,
+            lat: p.lat,
+            lon: p.lon,
+            hectares: p.hectares ?? 0,
+            label: p.name || p.fireNumber || "Fire",
+          })),
+      ]
+        .sort((a, b) => b.hectares - a.hectares)
+        .slice(0, 5)
+    : [];
   const shareText = isLive
     ? `${formatNumber(totalActive)} wildfires being tracked across Canada right now.`
     : "Wildfire tracking across Canada — latest status and historical trends.";
@@ -787,6 +819,7 @@ export function FireMap() {
                 </Popup>
               </CircleMarker>
             ))}
+          <CriticalFireGlow points={criticalPoints} />
         </MapContainer>
 
         <div
