@@ -1,6 +1,7 @@
 import Link from "next/link";
 import yearlyFireTotals from "@/data/yearly-fire-totals.json";
 import { EmberParticles } from "../../ember-particles";
+import { ThemeToggle } from "../../theme-toggle";
 import { CountUp } from "./count-up";
 import { YearBarChart } from "./year-bar-chart";
 
@@ -34,12 +35,15 @@ export default function Home() {
       <EmberParticles density={0.6} />
       <main className="relative mx-auto flex w-full max-w-4xl flex-col gap-10">
         <header className="animate-reveal flex flex-col gap-3">
-          <Link
-            href="/"
-            className="text-ember-glow label w-fit text-[var(--ink-faint)] hover:text-[var(--ember)]"
-          >
-            ← Back to map
-          </Link>
+          <div className="flex items-center justify-between gap-4">
+            <Link
+              href="/"
+              className="text-ember-glow label w-fit text-[var(--ink-faint)] hover:text-[var(--ember)]"
+            >
+              ← Back to map
+            </Link>
+            <ThemeToggle />
+          </div>
           <span className="label w-fit border border-[var(--border-strong)] px-2.5 py-1 text-[var(--amber)]">
             Historical Summary
           </span>

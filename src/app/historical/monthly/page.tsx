@@ -1,6 +1,7 @@
 import Link from "next/link";
 import monthlyFireHeatmap from "@/data/monthly-fire-heatmap.json";
 import { EmberParticles } from "../../ember-particles";
+import { ThemeToggle } from "../../theme-toggle";
 import { HeatmapGrid } from "./heatmap-grid";
 
 export default function MonthlyPage() {
@@ -11,19 +12,22 @@ export default function MonthlyPage() {
       <EmberParticles density={0.6} />
       <main className="relative mx-auto flex w-full max-w-5xl flex-col gap-8">
         <header className="animate-reveal flex flex-col gap-3">
-          <div className="flex gap-4">
-            <Link
-              href="/"
-              className="text-ember-glow label text-[var(--ink-faint)] hover:text-[var(--ember)]"
-            >
-              ← Map
-            </Link>
-            <Link
-              href="/historical/yearly"
-              className="text-ember-glow label text-[var(--ink-faint)] hover:text-[var(--ember)]"
-            >
-              Yearly Totals
-            </Link>
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex gap-4">
+              <Link
+                href="/"
+                className="text-ember-glow label text-[var(--ink-faint)] hover:text-[var(--ember)]"
+              >
+                ← Map
+              </Link>
+              <Link
+                href="/historical/yearly"
+                className="text-ember-glow label text-[var(--ink-faint)] hover:text-[var(--ember)]"
+              >
+                Yearly Totals
+              </Link>
+            </div>
+            <ThemeToggle />
           </div>
           <span className="label w-fit border border-[var(--border-strong)] px-2.5 py-1 text-[var(--amber)]">
             Historical Summary

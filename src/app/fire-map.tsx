@@ -7,6 +7,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { BootSequence } from "./boot-sequence";
 import { ShareButton } from "./share-button";
+import { ThemeToggle } from "./theme-toggle";
 
 const MONTH_NAMES = [
   "January", "February", "March", "April", "May", "June",
@@ -492,6 +493,7 @@ export function FireMap() {
             </span>
           )}
           <span className="label tabular">{formatUtcClock(clock)}</span>
+          <ThemeToggle />
         </div>
       </div>
 
