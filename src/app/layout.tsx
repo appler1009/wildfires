@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, IBM_Plex_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const anton = Anton({
@@ -55,15 +56,18 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <script
-          // Applied before hydration so a stored theme choice doesn't flash
-          // the OS-preference theme first, then swap.
+        {children}
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          // Runs before hydration so a stored theme choice doesn't flash
+          // the OS-preference theme first, then swap. Matches the doc's
+          // placement exactly: after {children}, inside <body>.
           dangerouslySetInnerHTML={{
             __html:
               "(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}})();",
           }}
         />
-        {children}
       </body>
     </html>
   );

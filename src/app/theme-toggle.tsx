@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type ThemeChoice = "auto" | "dark" | "light";
 
@@ -13,11 +13,19 @@ const LABEL: Record<ThemeChoice, string> = {
 };
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<ThemeChoice>(() => {
-    if (typeof document === "undefined") return "auto";
+  // Always starts at "auto" so the very first client render matches the
+  // server-rendered markup exactly - the layout's beforeInteractive script
+  // already stamps data-theme onto <html> ahead of hydration, so reading it
+  // here in a lazy initializer would mismatch the server's "auto" render
+  // and trigger a hydration error. Corrected client-side, after mount.
+  const [theme, setTheme] = useState<ThemeChoice>("auto");
+
+  useEffect(() => {
     const attr = document.documentElement.dataset.theme;
-    return attr === "dark" || attr === "light" ? attr : "auto";
-  });
+    if (attr !== "dark" && attr !== "light") return;
+    const t = setTimeout(() => setTheme(attr), 0);
+    return () => clearTimeout(t);
+  }, []);
 
   function cycle() {
     const next = NEXT[theme];
