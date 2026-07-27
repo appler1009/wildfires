@@ -497,6 +497,14 @@ export function FireMap() {
           {dataRefreshedAt && (
             <span className="label tabular hidden md:inline" title="When this data was last pulled from source — not a continuous live stream">
               Data refreshed {new Date(dataRefreshedAt).toISOString().slice(0, 16).replace("T", " ")} UTC
+              {clock.getTime() - new Date(dataRefreshedAt).getTime() > 30 * 60 * 60 * 1000 && (
+                <span
+                  className="ml-1.5 text-[var(--amber)]"
+                  title="This is more than 30 hours old — the ingestion pipeline may have missed its usual run"
+                >
+                  · stale
+                </span>
+              )}
             </span>
           )}
           <span className="label tabular">{formatUtcClock(clock)}</span>
