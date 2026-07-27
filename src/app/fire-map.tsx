@@ -1,6 +1,7 @@
 "use client";
 
 import "leaflet/dist/leaflet.css";
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 
@@ -26,6 +27,9 @@ type IndexData = {
   generatedAt: string;
   months: IndexMonth[];
 };
+
+type DailyIndexDay = { date: string; count: number };
+type DailyIndexData = { days: DailyIndexDay[] };
 
 type HistoricalPoint = {
   fire_number: string;
@@ -58,7 +62,14 @@ type CurrentData = {
 
 type Timeline =
   | { kind: "live"; label: string }
+  | { kind: "daily"; date: string; count: number; label: string }
   | { kind: "historical"; year: number; month: number; count: number; label: string };
+
+function formatDayLabel(date: string) {
+  // date is YYYY-MM-DD (UTC); format without a timezone-shifting Date parse.
+  const [y, m, d] = date.split("-").map(Number);
+  return `${MONTH_NAMES[m - 1]} ${d}, ${y}`;
+}
 
 function radiusFor(hectares: number | null | undefined) {
   const h = hectares ?? 0;
@@ -71,19 +82,24 @@ function formatNumber(n: number) {
 
 export function FireMap() {
   const [index, setIndex] = useState<IndexData | null>(null);
+  const [dailyIndex, setDailyIndex] = useState<DailyIndexData | null>(null);
   const [current, setCurrent] = useState<CurrentData | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [historicalPoints, setHistoricalPoints] = useState<HistoricalPoint[]>([]);
+  const [dailyPoints, setDailyPoints] = useState<CurrentPoint[]>([]);
   const [loading, setLoading] = useState(false);
-  const cache = useRef(new Map<string, HistoricalPoint[]>());
+  const historicalCache = useRef(new Map<string, HistoricalPoint[]>());
+  const dailyCache = useRef(new Map<string, CurrentPoint[]>());
 
   useEffect(() => {
     Promise.all([
       fetch("/data/fires/index.json").then((r) => r.json()),
       fetch("/data/fires/current.json").then((r) => r.json()),
-    ]).then(([idx, cur]: [IndexData, CurrentData]) => {
+      fetch("/data/fires/daily/index.json").then((r) => (r.ok ? r.json() : { days: [] })),
+    ]).then(([idx, cur, daily]: [IndexData, CurrentData, DailyIndexData]) => {
       setIndex(idx);
       setCurrent(cur);
+      setDailyIndex(daily);
     });
   }, []);
 
@@ -95,45 +111,73 @@ export function FireMap() {
       count: m.count,
       label: `${MONTH_NAMES[m.month - 1]} ${m.year}`,
     }));
+    const today = new Date().toISOString().slice(0, 10);
+    const days: Timeline[] = (dailyIndex?.days ?? [])
+      .filter((d) => d.date !== today) // today is represented by "Live", not a frozen daily snapshot
+      .map((d) => ({
+        kind: "daily",
+        date: d.date,
+        count: d.count,
+        label: formatDayLabel(d.date),
+      }));
+    const entries = [...months, ...days];
     if (current && current.points.length > 0) {
-      months.push({ kind: "live", label: "Live — now" });
+      entries.push({ kind: "live", label: "Live — now" });
     }
-    return months;
-  }, [index, current]);
+    return entries;
+  }, [index, dailyIndex, current]);
 
   // Default to "live" (last entry) once data loads, unless the user already picked something.
   const effectiveSelected = selected ?? Math.max(0, timeline.length - 1);
   const activeEntry = timeline[effectiveSelected];
 
   useEffect(() => {
-    if (!activeEntry || activeEntry.kind !== "historical") return;
-    const monthStr = String(activeEntry.month).padStart(2, "0");
-    const key = `${activeEntry.year}-${monthStr}`;
-    const cached = cache.current.get(key);
-    if (cached) {
-      setHistoricalPoints(cached);
-      return;
+    if (activeEntry?.kind === "historical") {
+      const monthStr = String(activeEntry.month).padStart(2, "0");
+      const key = `${activeEntry.year}-${monthStr}`;
+      const cached = historicalCache.current.get(key);
+      if (cached) {
+        setHistoricalPoints(cached);
+        return;
+      }
+      setLoading(true);
+      fetch(`/data/fires/${key}.json`)
+        .then((r) => r.json())
+        .then((data: { points: HistoricalPoint[] }) => {
+          historicalCache.current.set(key, data.points);
+          setHistoricalPoints(data.points);
+        })
+        .finally(() => setLoading(false));
+    } else if (activeEntry?.kind === "daily") {
+      const cached = dailyCache.current.get(activeEntry.date);
+      if (cached) {
+        setDailyPoints(cached);
+        return;
+      }
+      setLoading(true);
+      fetch(`/data/fires/daily/${activeEntry.date}.json`)
+        .then((r) => r.json())
+        .then((data: { points: CurrentPoint[] }) => {
+          dailyCache.current.set(activeEntry.date, data.points);
+          setDailyPoints(data.points);
+        })
+        .finally(() => setLoading(false));
     }
-    setLoading(true);
-    fetch(`/data/fires/${key}.json`)
-      .then((r) => r.json())
-      .then((data: { points: HistoricalPoint[] }) => {
-        cache.current.set(key, data.points);
-        setHistoricalPoints(data.points);
-      })
-      .finally(() => setLoading(false));
   }, [activeEntry]);
 
   const isLive = activeEntry?.kind === "live";
-  const points = isLive ? [] : historicalPoints;
+  const isDaily = activeEntry?.kind === "daily";
+  const isOperational = isLive || isDaily;
+  const operationalPoints = isLive ? (current?.points ?? []) : isDaily ? dailyPoints : [];
+  const points = isOperational ? [] : historicalPoints;
 
   function step(delta: number) {
     setSelected(Math.min(timeline.length - 1, Math.max(0, effectiveSelected + delta)));
   }
 
   return (
-    <div className="flex h-screen flex-col">
-      <div className="relative flex-1">
+    <div className="flex h-dvh flex-col">
+      <div className="relative min-h-0 flex-1">
         <MapContainer
           center={[54.5, -125]}
           zoom={5}
@@ -145,8 +189,8 @@ export function FireMap() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-          {isLive &&
-            current?.points.map((p) => (
+          {isOperational &&
+            operationalPoints.map((p) => (
               <CircleMarker
                 key={p.fireNumber}
                 center={[p.lat, p.lon]}
@@ -177,7 +221,7 @@ export function FireMap() {
                 </Popup>
               </CircleMarker>
             ))}
-          {!isLive &&
+          {!isOperational &&
             points.map((p, i) => (
               <CircleMarker
                 key={`${p.fire_number}-${i}`}
@@ -205,15 +249,19 @@ export function FireMap() {
         <div className="pointer-events-none absolute bottom-4 left-4 z-[1000] flex flex-col gap-2">
           <span
             className={`pointer-events-auto w-fit rounded-full px-3 py-1 text-xs font-medium ${
-              isLive
+              isOperational
                 ? "bg-red-100 text-red-900 dark:bg-red-950 dark:text-red-300"
                 : "bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300"
             }`}
           >
-            {isLive ? "Live operational status" : "Historical summary"}
+            {isLive
+              ? "Live operational status"
+              : isDaily
+                ? "Recorded operational status"
+                : "Historical summary"}
           </span>
           <div className="pointer-events-auto flex flex-col gap-1 rounded-lg border border-zinc-200 bg-white/95 px-3 py-2 text-[11px] text-zinc-600 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95 dark:text-zinc-400">
-            {isLive ? (
+            {isOperational ? (
               <>
                 <LegendDot color={STATUS_COLOR["Out of Control"]} label="Out of control" />
                 <LegendDot color={STATUS_COLOR["Being Held"]} label="Being held" />
@@ -233,9 +281,14 @@ export function FireMap() {
             <span className="text-sm font-semibold text-black dark:text-zinc-50">
               {activeEntry?.label ?? "Loading…"}
             </span>
-            {!isLive && activeEntry?.kind === "historical" && (
+            {activeEntry?.kind === "historical" && (
               <span className="text-xs text-zinc-500 dark:text-zinc-500">
                 {formatNumber(activeEntry.count)} fires{loading ? " · loading…" : ""}
+              </span>
+            )}
+            {activeEntry?.kind === "daily" && (
+              <span className="text-xs text-zinc-500 dark:text-zinc-500">
+                {formatNumber(activeEntry.count)} active/recent fires{loading ? " · loading…" : ""}
               </span>
             )}
             {isLive && current && (
@@ -279,6 +332,28 @@ export function FireMap() {
           onChange={(e) => setSelected(Number(e.target.value))}
           className="w-full accent-orange-600"
         />
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-zinc-200 bg-zinc-50 px-4 py-2 text-xs text-zinc-500 dark:border-zinc-800 dark:bg-black dark:text-zinc-500 sm:px-8">
+        <span>
+          Source: BC Data Catalogue. Contains information licensed under the Open Government
+          Licence – British Columbia. Live status is reference information, not exact real-time
+          ground truth.
+        </span>
+        <div className="flex gap-4">
+          <Link
+            href="/historical/yearly"
+            className="font-medium text-orange-700 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-300"
+          >
+            Yearly totals
+          </Link>
+          <Link
+            href="/historical/monthly"
+            className="font-medium text-orange-700 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-300"
+          >
+            Monthly heatmap
+          </Link>
+        </div>
       </div>
     </div>
   );

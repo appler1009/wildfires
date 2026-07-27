@@ -1,0 +1,11 @@
+{
+  "source": "BC Data Catalogue - Current Fire Perimeters (WHSE_LAND_AND_NATURAL_RESOURCE.PROT_CURRENT_FIRE_POLYS_SP)",
+  "licence": "Open Government Licence - British Columbia",
+  "note": "Daily archive of the live current-fire snapshot, one entry per day this pipeline has run. Not a backfilled history.",
+  "days": [
+    {
+      "date": "2026-07-27",
+      "count": 171
+    }
+  ]
+}
