@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/* Native cross-document view transitions (Chrome/Edge) - a soft cross-fade
+   between routes instead of a hard cut. No-op, not an error, in browsers
+   that don't support it yet. */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root) {
+  animation-duration: 0.2s;
+}
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+}
+
 /* ---------------------------------------------------------------------
    Wildfire Operations Console
    A dark, field-report aesthetic: charcoal + ash surfaces, ember/amber
