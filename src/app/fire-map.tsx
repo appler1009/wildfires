@@ -1046,6 +1046,16 @@ export function FireMap() {
         </span>
         <div className="flex shrink-0 items-center gap-4">
           <ShareButton text={shareText} />
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(typeof window !== "undefined" ? window.location.href : "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Share on X"
+            aria-label="Share on X"
+            className="text-ember-glow label text-[var(--amber)] hover:text-[var(--ember)]"
+          >
+            𝕏
+          </a>
           <Link
             href="/historical/yearly"
             className="text-ember-glow label text-[var(--amber)] hover:text-[var(--ember)]"
