@@ -703,27 +703,33 @@ export function FireMap() {
             </span>
           </button>
           <div
-            id="map-legend-panel"
-            className={`pointer-events-auto flex-col gap-1.5 border border-[var(--border)] bg-[var(--surface)]/95 px-3 py-2.5 text-[11px] text-[var(--ink-muted)] backdrop-blur-sm ${
-              legendOpen ? "flex" : "hidden"
+            className={`legend-collapse pointer-events-auto grid transition-[grid-template-rows] duration-300 ease-out ${
+              legendOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
             }`}
           >
-            {isLive && (
-              <>
-                <LegendDot color={STATUS_COLOR["Out of Control"]} label="BC/QC — out of control" />
-                <LegendDot color={STATUS_COLOR["Being Held"]} label="BC/QC — being held" />
-                <LegendDot color={STATUS_COLOR["Under Control"]} label="BC/QC — under control" />
-                <LegendDot color={STATUS_COLOR["Out"]} label="BC/QC — out" />
-                <LegendDot color={ON_STATUS_COLOR["F"]} label="Ontario — active" />
-                <LegendDot color={ON_STATUS_COLOR["I"]} label="Ontario — inactive" />
-                <LegendDot color={usStatusColor(0)} label="US border states — uncontained" />
-                <LegendDot color={usStatusColor(50)} label="US border states — partial" />
-                <LegendDot color={usStatusColor(100)} label="US border states — contained" />
-                <LegendDot color={HOTSPOT_COLOR} label="Elsewhere — hotspot cluster" />
-              </>
-            )}
-            {isDaily && <LegendDot color={HOTSPOT_COLOR} label="Satellite hotspot cluster" />}
-            {!isOperational && <LegendDot color={HISTORICAL_COLOR} label="Recorded fire location" />}
+            <div className="overflow-hidden">
+              <div
+                id="map-legend-panel"
+                className="flex flex-col gap-1.5 border border-[var(--border)] bg-[var(--surface)]/95 px-3 py-2.5 text-[11px] text-[var(--ink-muted)] backdrop-blur-sm"
+              >
+                {isLive && (
+                  <>
+                    <LegendDot color={STATUS_COLOR["Out of Control"]} label="BC/QC — out of control" />
+                    <LegendDot color={STATUS_COLOR["Being Held"]} label="BC/QC — being held" />
+                    <LegendDot color={STATUS_COLOR["Under Control"]} label="BC/QC — under control" />
+                    <LegendDot color={STATUS_COLOR["Out"]} label="BC/QC — out" />
+                    <LegendDot color={ON_STATUS_COLOR["F"]} label="Ontario — active" />
+                    <LegendDot color={ON_STATUS_COLOR["I"]} label="Ontario — inactive" />
+                    <LegendDot color={usStatusColor(0)} label="US border states — uncontained" />
+                    <LegendDot color={usStatusColor(50)} label="US border states — partial" />
+                    <LegendDot color={usStatusColor(100)} label="US border states — contained" />
+                    <LegendDot color={HOTSPOT_COLOR} label="Elsewhere — hotspot cluster" />
+                  </>
+                )}
+                {isDaily && <LegendDot color={HOTSPOT_COLOR} label="Satellite hotspot cluster" />}
+                {!isOperational && <LegendDot color={HISTORICAL_COLOR} label="Recorded fire location" />}
+              </div>
+            </div>
           </div>
         </div>
       </div>

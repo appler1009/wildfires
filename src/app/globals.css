@@ -357,7 +357,8 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
   .ember-glow,
   .ember-glow-solid,
-  .text-ember-glow {
+  .text-ember-glow,
+  .legend-collapse {
     transition: none;
   }
 }
