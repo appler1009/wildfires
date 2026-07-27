@@ -2,6 +2,17 @@
 // and Ontario, this gives lat/lon and a documented status directly (no
 // polygon-centroid math, no guessing at status codes).
 //
+// Known issue (as of 2026-07-27): this endpoint is returning zero fires for
+// the entire season, and /public/feux-etat-situation shows every stat at 0
+// with DateDerniereModification null - not a quiet season, the feed appears
+// unpopulated. CWFIS shows 50k+ real hotspot detections in Quebec over the
+// same window, so real activity exists; it just isn't reaching this API.
+// Other SOPFEU endpoints (e.g. feux-sources-ignition?test=true) return real
+// data, so this looks like a gap specific to /public/feux, not an outage.
+// The map falls back to CWFIS clusters for Quebec in the meantime - no
+// code change needed here, just re-check whether this has resolved itself
+// before assuming a real quiet season.
+//
 // Source: SOPFEU (Société de protection des forêts contre le feu) public API
 // Licence: Creative Commons Attribution 4.0 International - Gouvernement du Québec
 import { mkdir, writeFile } from "node:fs/promises";
