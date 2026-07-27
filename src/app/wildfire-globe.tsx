@@ -82,6 +82,40 @@ function ArcLines({ positions }: { positions: THREE.Vector3[] }) {
   );
 }
 
+// Fresnel-style rim glow, rendered back-face-only and additively blended so
+// it reads as a thin ember-colored atmosphere hugging the globe's silhouette
+// rather than a flat halo - the classic three.js "atmosphere shell" trick.
+const ATMOSPHERE_VERTEX = /* glsl */ `
+  varying vec3 vNormal;
+  void main() {
+    vNormal = normalize(normalMatrix * normal);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`;
+const ATMOSPHERE_FRAGMENT = /* glsl */ `
+  varying vec3 vNormal;
+  void main() {
+    float intensity = pow(0.65 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 2.5);
+    gl_FragColor = vec4(1.0, 0.42, 0.14, 1.0) * intensity;
+  }
+`;
+
+function Atmosphere() {
+  return (
+    <mesh scale={1.14}>
+      <icosahedronGeometry args={[1.5, 3]} />
+      <shaderMaterial
+        vertexShader={ATMOSPHERE_VERTEX}
+        fragmentShader={ATMOSPHERE_FRAGMENT}
+        blending={THREE.AdditiveBlending}
+        side={THREE.BackSide}
+        transparent
+        depthWrite={false}
+      />
+    </mesh>
+  );
+}
+
 function Globe() {
   const groupRef = useRef<THREE.Group>(null);
   const hotspotRefs = useRef<THREE.Mesh[]>([]);
@@ -109,6 +143,7 @@ function Globe() {
 
   return (
     <group ref={groupRef}>
+      <Atmosphere />
       {/* Wireframe globe */}
       <mesh>
         <icosahedronGeometry args={[1.5, 3]} />
