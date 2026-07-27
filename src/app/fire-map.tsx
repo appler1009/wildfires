@@ -538,6 +538,8 @@ export function FireMap() {
         )
       : null;
 
+  const [satellite, setSatellite] = useState(false);
+
   // Collapsed by default on narrow viewports so the ten-row legend doesn't
   // eat half the map; left open on desktop where it always has room.
   const [legendOpen, setLegendOpen] = useState(() =>
@@ -655,12 +657,22 @@ export function FireMap() {
           zoom={4}
           preferCanvas
           style={{ height: "100%", width: "100%" }}
-          className="bg-[var(--bg)]"
+          className={`bg-[var(--bg)] ${satellite ? "satellite-tiles" : ""}`}
         >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
+          {satellite ? (
+            <TileLayer
+              key="satellite"
+              url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+              attribution="Tiles &copy; Esri"
+              maxZoom={17}
+            />
+          ) : (
+            <TileLayer
+              key="streets"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+          )}
           {isOperational &&
             bcStatusPoints.map((p) => (
               <CircleMarker
@@ -829,6 +841,15 @@ export function FireMap() {
           className="pointer-events-none absolute inset-0 z-[850]"
           style={{ boxShadow: "inset 0 0 140px 40px rgba(0,0,0,0.55)" }}
         />
+
+        <button
+          type="button"
+          onClick={() => setSatellite((s) => !s)}
+          title={satellite ? "Switch to street map" : "Switch to satellite imagery"}
+          className="ember-glow label absolute top-4 right-4 z-[1000] border border-[var(--border-strong)] bg-[var(--surface)]/95 px-2.5 py-1.5 text-[var(--ink-muted)] backdrop-blur-sm hover:border-[var(--ember)] hover:text-[var(--ember)]"
+        >
+          {satellite ? "Streets" : "Satellite"}
+        </button>
 
         <div className="animate-reveal-delay-1 pointer-events-none absolute bottom-4 left-4 z-[1000] flex flex-col gap-2">
           <button

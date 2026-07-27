@@ -470,6 +470,12 @@ body::after {
     filter: brightness(1.02) contrast(0.95) saturate(0.7) sepia(0.08);
   }
 }
+/* Satellite imagery already reads naturally (dark greens/browns) - the
+   street-map "grayed ops console" tint would just muddy it, so it gets a
+   much lighter touch instead of the full filter stack above. */
+.satellite-tiles .leaflet-tile-pane {
+  filter: brightness(0.85) contrast(1.1) saturate(0.9);
+}
 .leaflet-control-zoom a {
   background: var(--surface) !important;
   color: var(--ink) !important;
