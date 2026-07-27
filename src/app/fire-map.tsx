@@ -285,21 +285,67 @@ export function FireMap() {
   const dailyCache = useRef(new Map<string, ClusterPoint[]>());
 
   useEffect(() => {
-    const indexP = fetch("/data/fires/index.json").then((r) => r.json());
-    const currentP = fetch("/data/fires/current.json").then((r) => r.json());
-    const onCurrentP = fetch("/data/fires/on-current.json").then((r) => r.json());
-    const qcCurrentP = fetch("/data/fires/qc-current.json").then((r) => r.json());
-    const usCurrentP = fetch("/data/fires/us-current.json").then((r) => r.json());
-    const dailyP = fetch("/data/fires/daily/index.json").then((r) => r.json());
+    const rawIndexP = fetch("/data/fires/index.json").then((r) => r.json());
+    const rawCurrentP = fetch("/data/fires/current.json").then((r) => r.json());
+    const rawOnCurrentP = fetch("/data/fires/on-current.json").then((r) => r.json());
+    const rawQcCurrentP = fetch("/data/fires/qc-current.json").then((r) => r.json());
+    const rawUsCurrentP = fetch("/data/fires/us-current.json").then((r) => r.json());
+    const rawDailyP = fetch("/data/fires/daily/index.json").then((r) => r.json());
 
     // Each channel flips to "connected" independently as its own fetch
     // resolves, not all at once - the boot screen's status list reflects
-    // this instead of just claiming everything connected on a timer.
-    currentP.then(() => setConnected((c) => ({ ...c, bc: true })));
-    onCurrentP.then(() => setConnected((c) => ({ ...c, on: true })));
-    qcCurrentP.then(() => setConnected((c) => ({ ...c, qc: true })));
-    usCurrentP.then(() => setConnected((c) => ({ ...c, us: true })));
-    dailyP.then(() => setConnected((c) => ({ ...c, cwfis: true })));
+    // this instead of just claiming everything connected on a timer. Uses
+    // the raw (rejectable) promise so a failed source honestly stays "○".
+    rawCurrentP.then(() => setConnected((c) => ({ ...c, bc: true })));
+    rawOnCurrentP.then(() => setConnected((c) => ({ ...c, on: true })));
+    rawQcCurrentP.then(() => setConnected((c) => ({ ...c, qc: true })));
+    rawUsCurrentP.then(() => setConnected((c) => ({ ...c, us: true })));
+    rawDailyP.then(() => setConnected((c) => ({ ...c, cwfis: true })));
+
+    // Each source is an independent static file - one being unreachable
+    // (bad deploy, transient network blip) shouldn't strand the whole app
+    // on the boot screen forever, so the aggregated versions fall back to
+    // an empty-but-well-typed default instead of rejecting Promise.all.
+    const indexP: Promise<IndexData> = rawIndexP.catch(() => ({
+      source: "",
+      licence: "",
+      generatedAt: "",
+      months: [],
+    }));
+    const currentP: Promise<CurrentData> = rawCurrentP.catch(() => ({
+      source: "",
+      licence: "",
+      note: "",
+      generatedAt: "",
+      points: [],
+    }));
+    const onCurrentP: Promise<OntarioData> = rawOnCurrentP.catch(() => ({
+      source: "",
+      licence: "",
+      note: "",
+      generatedAt: "",
+      points: [],
+    }));
+    const qcCurrentP: Promise<QuebecData> = rawQcCurrentP.catch(() => ({
+      source: "",
+      licence: "",
+      note: "",
+      generatedAt: "",
+      points: [],
+    }));
+    const usCurrentP: Promise<UsData> = rawUsCurrentP.catch(() => ({
+      source: "",
+      licence: "",
+      note: "",
+      generatedAt: "",
+      points: [],
+    }));
+    const dailyP: Promise<DailyIndexData> = rawDailyP.catch(() => ({
+      source: "",
+      licence: "",
+      note: "",
+      days: [],
+    }));
 
     Promise.all([indexP, currentP, onCurrentP, qcCurrentP, usCurrentP, dailyP]).then((results) => {
       const [idx, cur, onCur, qcCur, usCur, daily] = results as [
