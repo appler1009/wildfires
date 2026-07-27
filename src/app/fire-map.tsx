@@ -483,6 +483,11 @@ export function FireMap() {
             ))}
         </MapContainer>
 
+        <div
+          className="pointer-events-none absolute inset-0 z-[850]"
+          style={{ boxShadow: "inset 0 0 140px 40px rgba(0,0,0,0.55)" }}
+        />
+
         <div className="animate-reveal-delay-1 pointer-events-none absolute bottom-4 left-4 z-[1000] flex flex-col gap-2">
           <span
             className={`label pointer-events-auto w-fit border px-2.5 py-1 backdrop-blur-sm ${
