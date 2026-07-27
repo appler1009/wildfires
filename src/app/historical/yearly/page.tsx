@@ -1,5 +1,6 @@
 import Link from "next/link";
 import yearlyFireTotals from "@/data/yearly-fire-totals.json";
+import { EmberParticles } from "../../ember-particles";
 import { CountUp } from "./count-up";
 import { YearBarChart } from "./year-bar-chart";
 
@@ -29,8 +30,9 @@ export default function Home() {
   const lastUpdated = new Date(yearlyFireTotals.generatedAt);
 
   return (
-    <div className="min-h-screen px-6 py-14 sm:px-16">
-      <main className="mx-auto flex w-full max-w-4xl flex-col gap-10">
+    <div className="relative min-h-screen overflow-hidden px-6 py-14 sm:px-16">
+      <EmberParticles density={0.6} />
+      <main className="relative mx-auto flex w-full max-w-4xl flex-col gap-10">
         <header className="animate-reveal flex flex-col gap-3">
           <Link
             href="/"

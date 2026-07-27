@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
+import { BootSequence } from "./boot-sequence";
 
 const MONTH_NAMES = [
   "January", "February", "March", "April", "May", "June",
@@ -181,6 +182,7 @@ export function FireMap() {
   const [historicalPoints, setHistoricalPoints] = useState<HistoricalPoint[]>([]);
   const [dailyPoints, setDailyPoints] = useState<ClusterPoint[]>([]);
   const [loading, setLoading] = useState(false);
+  const [dataLoaded, setDataLoaded] = useState(false);
   const historicalCache = useRef(new Map<string, HistoricalPoint[]>());
   const dailyCache = useRef(new Map<string, ClusterPoint[]>());
 
@@ -211,6 +213,7 @@ export function FireMap() {
           setLatestClusters(pts);
         });
       }
+      setDataLoaded(true);
     });
   }, []);
 
@@ -304,6 +307,7 @@ export function FireMap() {
 
   return (
     <div className="flex h-dvh flex-col">
+      <BootSequence ready={dataLoaded} />
       <div className="animate-reveal flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 py-2 sm:px-8">
         <div className="flex items-baseline gap-3">
           <h1 className="font-display text-lg leading-none tracking-wide text-[var(--ink)] sm:text-xl">

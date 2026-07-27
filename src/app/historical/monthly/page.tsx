@@ -1,14 +1,16 @@
 import Link from "next/link";
 import monthlyFireHeatmap from "@/data/monthly-fire-heatmap.json";
+import { EmberParticles } from "../../ember-particles";
 import { HeatmapGrid } from "./heatmap-grid";
 
 export default function MonthlyPage() {
   const lastUpdated = new Date(monthlyFireHeatmap.generatedAt);
 
   return (
-    <div className="min-h-screen px-6 py-14 sm:px-16">
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-8">
-        <header className="flex flex-col gap-3">
+    <div className="relative min-h-screen overflow-hidden px-6 py-14 sm:px-16">
+      <EmberParticles density={0.6} />
+      <main className="relative mx-auto flex w-full max-w-5xl flex-col gap-8">
+        <header className="animate-reveal flex flex-col gap-3">
           <div className="flex gap-4">
             <Link
               href="/"
@@ -36,7 +38,9 @@ export default function MonthlyPage() {
           </p>
         </header>
 
-        <HeatmapGrid data={monthlyFireHeatmap} />
+        <div className="animate-reveal-delay-1">
+          <HeatmapGrid data={monthlyFireHeatmap} />
+        </div>
 
         <footer className="flex flex-col gap-1 border-t border-[var(--border)] pt-4 text-[11px] text-[var(--ink-faint)]">
           <p>
