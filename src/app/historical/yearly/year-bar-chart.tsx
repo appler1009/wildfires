@@ -42,7 +42,10 @@ export function YearBarChart({
 
   return (
     <div ref={containerRef} className="relative">
-      <div className="flex min-w-[640px] items-end gap-[2px]" style={{ height: 220 }}>
+      {/* 22px of top padding reserves headroom for the record-year flame
+          marker, which would otherwise be clipped by the horizontal
+          scroll container's implied overflow-y: hidden. */}
+      <div className="flex min-w-[640px] items-end gap-[2px] pt-[22px]" style={{ height: 220 }}>
         {rows.map((row, i) => (
           <div
             key={row.year}
@@ -57,7 +60,15 @@ export function YearBarChart({
             onPointerEnter={(e) => handlePointer(row, e)}
             onPointerMove={(e) => handlePointer(row, e)}
             onPointerLeave={() => setHovered(null)}
-          />
+          >
+            {row.year === recordYear && (
+              <span
+                className="flame-icon absolute -top-5 left-1/2 -translate-x-1/2"
+                aria-hidden="true"
+                title={`Record season: ${row.year}`}
+              />
+            )}
+          </div>
         ))}
       </div>
       {hovered && (
