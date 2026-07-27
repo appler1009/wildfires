@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# ingestion: raw cached source data (regenerate via `npm run ingest`)
+/data/raw/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
