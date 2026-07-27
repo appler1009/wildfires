@@ -62,6 +62,7 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
   const cellByKey = new Map(data.rows.map((r) => [`${r.year}-${r.month}`, r]));
   const maxHectares = Math.max(...data.rows.map((r) => r.hectares_burned));
   const years = [...data.years].reverse();
+  const hottest = data.rows.reduce((a, b) => (b.hectares_burned > a.hectares_burned ? b : a));
 
   function showTooltip(
     year: number,
@@ -109,6 +110,7 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
               const cell = cellByKey.get(`${year}-${month}`);
               const hectares = cell?.hectares_burned ?? 0;
               const idx = bucketIndex(hectares, maxHectares);
+              const isHottest = hottest.year === year && hottest.month === month;
               return (
                 <button
                   key={month}
@@ -119,12 +121,16 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
                       idx === -1
                         ? `light-dark(${ZERO_LIGHT}, ${ZERO_DARK})`
                         : `light-dark(${RAMP_LIGHT[idx]}, ${RAMP_DARK[idx]})`,
+                    boxShadow: isHottest ? "0 0 0 2px var(--ember), 0 0 8px 1px var(--ember)" : undefined,
+                    position: isHottest ? "relative" : undefined,
+                    zIndex: isHottest ? 1 : undefined,
                   }}
                   onPointerEnter={(e) => showTooltip(year, month, cell, e.currentTarget)}
                   onFocus={(e) => showTooltip(year, month, cell, e.currentTarget)}
                   onPointerLeave={() => setHovered(null)}
                   onBlur={() => setHovered(null)}
-                  aria-label={`${MONTH_NAMES[i]} ${year}: ${formatHectares(hectares)} hectares burned`}
+                  aria-label={`${MONTH_NAMES[i]} ${year}: ${formatHectares(hectares)} hectares burned${isHottest ? " — highest single month on record" : ""}`}
+                  title={isHottest ? "Highest single month on record" : undefined}
                 />
               );
             })}
