@@ -49,7 +49,7 @@ export default async function OpengraphImage() {
               textTransform: "uppercase",
             }}
           >
-            Live &amp; Historical Tracker
+            Latest &amp; Historical Tracker
           </div>
           <div style={{ display: "flex", fontSize: 108, color: "#f3ecdf", lineHeight: 1.02 }}>
             Canada

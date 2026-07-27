@@ -125,6 +125,8 @@ type ClusterPoint = {
   max_frp: number | null;
 };
 
+type ConnectionStatus = { bc: boolean; on: boolean; qc: boolean; cwfis: boolean };
+
 type Timeline =
   | { kind: "live"; label: string }
   | { kind: "daily"; date: string; count: number; label: string }
@@ -184,17 +186,31 @@ export function FireMap() {
   const [dailyPoints, setDailyPoints] = useState<ClusterPoint[]>([]);
   const [loading, setLoading] = useState(false);
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [connected, setConnected] = useState<ConnectionStatus>({
+    bc: false,
+    on: false,
+    qc: false,
+    cwfis: false,
+  });
   const historicalCache = useRef(new Map<string, HistoricalPoint[]>());
   const dailyCache = useRef(new Map<string, ClusterPoint[]>());
 
   useEffect(() => {
-    Promise.all([
-      fetch("/data/fires/index.json").then((r) => r.json()),
-      fetch("/data/fires/current.json").then((r) => r.json()),
-      fetch("/data/fires/on-current.json").then((r) => r.json()),
-      fetch("/data/fires/qc-current.json").then((r) => r.json()),
-      fetch("/data/fires/daily/index.json").then((r) => r.json()),
-    ]).then((results) => {
+    const indexP = fetch("/data/fires/index.json").then((r) => r.json());
+    const currentP = fetch("/data/fires/current.json").then((r) => r.json());
+    const onCurrentP = fetch("/data/fires/on-current.json").then((r) => r.json());
+    const qcCurrentP = fetch("/data/fires/qc-current.json").then((r) => r.json());
+    const dailyP = fetch("/data/fires/daily/index.json").then((r) => r.json());
+
+    // Each channel flips to "connected" independently as its own fetch
+    // resolves, not all at once - the boot screen's status list reflects
+    // this instead of just claiming everything connected on a timer.
+    currentP.then(() => setConnected((c) => ({ ...c, bc: true })));
+    onCurrentP.then(() => setConnected((c) => ({ ...c, on: true })));
+    qcCurrentP.then(() => setConnected((c) => ({ ...c, qc: true })));
+    dailyP.then(() => setConnected((c) => ({ ...c, cwfis: true })));
+
+    Promise.all([indexP, currentP, onCurrentP, qcCurrentP, dailyP]).then((results) => {
       const [idx, cur, onCur, qcCur, daily] = results as [
         IndexData,
         CurrentData,
@@ -242,7 +258,7 @@ export function FireMap() {
       (qcCurrent && qcCurrent.points.length > 0) ||
       latestClusters.length > 0
     ) {
-      entries.push({ kind: "live", label: "Live — Today" });
+      entries.push({ kind: "live", label: "Today" });
     }
     return entries;
   }, [index, dailyIndex, current, onCurrent, qcCurrent, latestClusters]);
@@ -303,22 +319,36 @@ export function FireMap() {
   const points = isOperational ? [] : historicalPoints;
   const totalActive = bcStatusPoints.length + onStatusPoints.length + qcStatusPoints.length;
   const shareText = isLive
-    ? `${formatNumber(totalActive)} wildfires being tracked live across Canada right now.`
-    : "Live and historical wildfire tracking across Canada.";
+    ? `${formatNumber(totalActive)} wildfires being tracked across Canada right now.`
+    : "Wildfire tracking across Canada — latest status and historical trends.";
 
   function step(delta: number) {
     setSelected(Math.min(timeline.length - 1, Math.max(0, effectiveSelected + delta)));
   }
 
+  const [playing, setPlaying] = useState(false);
+  useEffect(() => {
+    if (!playing) return;
+    const id = setTimeout(() => {
+      if (effectiveSelected >= timeline.length - 1) {
+        setPlaying(false);
+      } else {
+        step(1);
+      }
+    }, 450);
+    return () => clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playing, effectiveSelected, timeline.length]);
+
   return (
     <div className="flex h-dvh flex-col">
-      <BootSequence ready={dataLoaded} />
+      <BootSequence ready={dataLoaded} connected={connected} />
       <div className="animate-reveal flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 py-2 sm:px-8">
         <div className="flex items-baseline gap-3">
           <h1 className="font-display text-lg leading-none tracking-wide text-[var(--ink)] sm:text-xl">
             Canada Wildfires
           </h1>
-          <span className="label hidden sm:inline">Live &amp; Historical Tracker</span>
+          <span className="label hidden sm:inline">Latest &amp; Historical Tracker</span>
         </div>
         <div className="flex items-center gap-4">
           {dataRefreshedAt && (
@@ -496,7 +526,7 @@ export function FireMap() {
                 : "border-[var(--border-strong)] bg-[var(--surface)]/95 text-[var(--amber)]"
             }`}
           >
-            {isLive ? "Live Operational Status" : isDaily ? "Satellite Hotspot Detections" : "Historical Summary"}
+            {isLive ? "Latest Operational Status" : isDaily ? "Satellite Hotspot Detections" : "Historical Summary"}
           </span>
           <div className="pointer-events-auto flex flex-col gap-1.5 border border-[var(--border)] bg-[var(--surface)]/95 px-3 py-2.5 text-[11px] text-[var(--ink-muted)] backdrop-blur-sm">
             {isLive && (
@@ -543,7 +573,19 @@ export function FireMap() {
           <div className="flex items-center gap-1.5">
             <button
               type="button"
-              onClick={() => step(-1)}
+              onClick={() => setPlaying((p) => !p)}
+              disabled={effectiveSelected >= timeline.length - 1 && !playing}
+              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
+              title="Play through the timeline"
+            >
+              {playing ? "⏸ Pause" : "▶ Play"}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setPlaying(false);
+                step(-1);
+              }}
               disabled={effectiveSelected <= 0}
               className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
             >
@@ -551,15 +593,21 @@ export function FireMap() {
             </button>
             <button
               type="button"
-              onClick={() => setSelected(timeline.length - 1)}
+              onClick={() => {
+                setPlaying(false);
+                setSelected(timeline.length - 1);
+              }}
               disabled={isLive}
               className="label border border-[var(--ember-dim)] bg-[var(--ember)] px-3 py-1.5 text-[#0d0b09] transition-all hover:opacity-90 active:scale-95 disabled:pointer-events-none disabled:opacity-30"
             >
-              Live
+              Latest
             </button>
             <button
               type="button"
-              onClick={() => step(1)}
+              onClick={() => {
+                setPlaying(false);
+                step(1);
+              }}
               disabled={effectiveSelected >= timeline.length - 1}
               className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
             >
@@ -572,7 +620,10 @@ export function FireMap() {
           min={0}
           max={Math.max(0, timeline.length - 1)}
           value={effectiveSelected}
-          onChange={(e) => setSelected(Number(e.target.value))}
+          onChange={(e) => {
+            setPlaying(false);
+            setSelected(Number(e.target.value));
+          }}
           className="w-full"
         />
       </div>

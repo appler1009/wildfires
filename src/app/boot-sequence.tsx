@@ -11,19 +11,28 @@ const WildfireGlobe = dynamic(() => import("./wildfire-globe").then((m) => m.Wil
   ssr: false,
 });
 
-const CHANNELS = [
-  "BC DATA CATALOGUE",
-  "ONTARIO GEOHUB / LIO",
-  "SOPFEU QUEBEC",
-  "CWFIS / NRCAN SATELLITE",
+type ConnectionStatus = { bc: boolean; on: boolean; qc: boolean; cwfis: boolean };
+
+const CHANNELS: { key: keyof ConnectionStatus; label: string }[] = [
+  { key: "bc", label: "BC DATA CATALOGUE" },
+  { key: "on", label: "ONTARIO GEOHUB / LIO" },
+  { key: "qc", label: "SOPFEU QUEBEC" },
+  { key: "cwfis", label: "CWFIS / NRCAN SATELLITE" },
 ];
 
 // A brief themed boot screen on first load - purely for first-impression
 // impact. Holds for a minimum duration even if data arrives instantly (a
 // flash of nothing would undercut the effect, and the globe deserves a
 // couple of seconds of rotation), then fades once both the timer and the
-// real data fetch are done.
-export function BootSequence({ ready }: { ready: boolean }) {
+// real data fetch are done. The channel list reflects each source's actual
+// fetch state, not a decorative always-green checklist.
+export function BootSequence({
+  ready,
+  connected,
+}: {
+  ready: boolean;
+  connected: ConnectionStatus;
+}) {
   const [visible, setVisible] = useState(true);
   const [minTimeDone, setMinTimeDone] = useState(false);
   const fading = ready && minTimeDone;
@@ -59,17 +68,24 @@ export function BootSequence({ ready }: { ready: boolean }) {
           Initializing Wildfire Telemetry
         </div>
         <div className="flex flex-col items-start gap-1">
-          {CHANNELS.map((line, i) => (
-            <div
-              key={line}
-              className="label animate-reveal flex items-center gap-2 text-[var(--ink-faint)]"
-              style={{ animationDelay: `${0.35 + i * 0.15}s` }}
-            >
-              <span className="text-[var(--safe)]">●</span>
-              <span>{line}</span>
-              <span className="text-[var(--ink-faint)]">Connected</span>
-            </div>
-          ))}
+          {CHANNELS.map((channel, i) => {
+            const isConnected = connected[channel.key];
+            return (
+              <div
+                key={channel.key}
+                className="label animate-reveal flex items-center gap-2 text-[var(--ink-faint)]"
+                style={{ animationDelay: `${0.35 + i * 0.15}s` }}
+              >
+                <span className={isConnected ? "text-[var(--safe)]" : "text-[var(--ink-faint)]"}>
+                  {isConnected ? "●" : "○"}
+                </span>
+                <span>{channel.label}</span>
+                <span className="text-[var(--ink-faint)]">
+                  {isConnected ? "Connected" : "Connecting…"}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

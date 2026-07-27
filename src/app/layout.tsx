@@ -16,7 +16,7 @@ const plexMono = IBM_Plex_Mono({
 
 const title = "Canada Wildfires";
 const description =
-  "Live wildfire status and over a century of historical trends across Canada — BC, Ontario, Quebec, and satellite-tracked hotspots nationwide.";
+  "Latest wildfire status and over a century of historical trends across Canada — BC, Ontario, Quebec, and satellite-tracked hotspots nationwide.";
 
 export const metadata: Metadata = {
   title,
