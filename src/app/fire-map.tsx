@@ -147,6 +147,22 @@ function formatNumber(n: number) {
   return new Intl.NumberFormat("en-CA").format(n);
 }
 
+function formatUtcClock(d: Date) {
+  return d.toISOString().slice(11, 19) + " UTC";
+}
+
+function useUtcClock() {
+  // Lazy-initialized: this hook only ever runs client-side (FireMap is
+  // loaded with ssr:false), so reading the clock here avoids needing a
+  // synchronous setState inside the effect just to get the first tick.
+  const [now, setNow] = useState<Date>(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return now;
+}
+
 async function fetchClusterDay(date: string): Promise<ClusterPoint[]> {
   const res = await fetch(`/data/fires/daily/${date}.json`);
   const data = (await res.json()) as { points: ClusterPoint[] };
@@ -154,6 +170,7 @@ async function fetchClusterDay(date: string): Promise<ClusterPoint[]> {
 }
 
 export function FireMap() {
+  const clock = useUtcClock();
   const [index, setIndex] = useState<IndexData | null>(null);
   const [dailyIndex, setDailyIndex] = useState<DailyIndexData | null>(null);
   const [current, setCurrent] = useState<CurrentData | null>(null);
@@ -221,7 +238,7 @@ export function FireMap() {
       (qcCurrent && qcCurrent.points.length > 0) ||
       latestClusters.length > 0
     ) {
-      entries.push({ kind: "live", label: "Live — now" });
+      entries.push({ kind: "live", label: "Live — Today" });
     }
     return entries;
   }, [index, dailyIndex, current, onCurrent, qcCurrent, latestClusters]);
@@ -266,6 +283,11 @@ export function FireMap() {
   const isLive = activeEntry?.kind === "live";
   const isDaily = activeEntry?.kind === "daily";
   const isOperational = isLive || isDaily;
+  const dataRefreshedAt = [current, onCurrent, qcCurrent]
+    .map((d) => d?.generatedAt)
+    .filter((d): d is string => Boolean(d))
+    .sort()
+    .at(-1);
   const bcStatusPoints = isLive ? (current?.points ?? []) : [];
   const onStatusPoints = isLive ? (onCurrent?.points ?? []) : [];
   const qcStatusPoints = isLive ? (qcCurrent?.points ?? []) : [];
@@ -282,26 +304,32 @@ export function FireMap() {
 
   return (
     <div className="flex h-dvh flex-col">
-      <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 py-2 sm:px-8">
+      <div className="animate-reveal flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 py-2 sm:px-8">
         <div className="flex items-baseline gap-3">
           <h1 className="font-display text-lg leading-none tracking-wide text-[var(--ink)] sm:text-xl">
             Canada Wildfires
           </h1>
           <span className="label hidden sm:inline">Live &amp; Historical Tracker</span>
         </div>
-        <div className="flex items-center gap-2">
-          <span
-            className={`pulse-dot h-1.5 w-1.5 rounded-full ${isOperational ? "text-[var(--ember)]" : "text-[var(--ink-faint)]"}`}
-          >
-            <span
-              className={`block h-1.5 w-1.5 rounded-full ${isOperational ? "bg-[var(--ember)]" : "bg-[var(--ink-faint)]"}`}
-            />
-          </span>
-          <span className="label">{isOperational ? "System Active" : "Archive Mode"}</span>
+        <div className="flex items-center gap-4">
+          {dataRefreshedAt && (
+            <span className="label tabular hidden md:inline" title="When this data was last pulled from source — not a continuous live stream">
+              Data refreshed {new Date(dataRefreshedAt).toISOString().slice(0, 16).replace("T", " ")} UTC
+            </span>
+          )}
+          <span className="label tabular">{formatUtcClock(clock)}</span>
         </div>
       </div>
 
       <div className="relative min-h-0 flex-1">
+        <div
+          key={effectiveSelected}
+          className="scan-flash pointer-events-none absolute inset-0 z-[900]"
+          style={{
+            background:
+              "linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--ember) 25%, transparent) 50%, transparent 100%)",
+          }}
+        />
         <MapContainer
           center={[58, -97]}
           zoom={4}
@@ -446,7 +474,7 @@ export function FireMap() {
             ))}
         </MapContainer>
 
-        <div className="pointer-events-none absolute bottom-4 left-4 z-[1000] flex flex-col gap-2">
+        <div className="animate-reveal-delay-1 pointer-events-none absolute bottom-4 left-4 z-[1000] flex flex-col gap-2">
           <span
             className={`label pointer-events-auto w-fit border px-2.5 py-1 backdrop-blur-sm ${
               isOperational
@@ -474,7 +502,7 @@ export function FireMap() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2.5 border-t border-[var(--border)] bg-[var(--surface)] px-4 py-3 sm:px-8">
+      <div className="animate-reveal-delay-2 flex flex-col gap-2.5 border-t border-[var(--border)] bg-[var(--surface)] px-4 py-3 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
           <div className="flex items-baseline gap-3">
             <span className="font-display text-2xl leading-none tracking-wide text-[var(--ink)] sm:text-3xl">
@@ -503,7 +531,7 @@ export function FireMap() {
               type="button"
               onClick={() => step(-1)}
               disabled={effectiveSelected <= 0}
-              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-colors hover:border-[var(--ember)] hover:text-[var(--ember)] disabled:pointer-events-none disabled:opacity-25"
+              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
             >
               ← Prev
             </button>
@@ -511,7 +539,7 @@ export function FireMap() {
               type="button"
               onClick={() => setSelected(timeline.length - 1)}
               disabled={isLive}
-              className="label border border-[var(--ember-dim)] bg-[var(--ember)] px-3 py-1.5 text-[#0d0b09] transition-opacity hover:opacity-90 disabled:pointer-events-none disabled:opacity-30"
+              className="label border border-[var(--ember-dim)] bg-[var(--ember)] px-3 py-1.5 text-[#0d0b09] transition-all hover:opacity-90 active:scale-95 disabled:pointer-events-none disabled:opacity-30"
             >
               Live
             </button>
@@ -519,7 +547,7 @@ export function FireMap() {
               type="button"
               onClick={() => step(1)}
               disabled={effectiveSelected >= timeline.length - 1}
-              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-colors hover:border-[var(--ember)] hover:text-[var(--ember)] disabled:pointer-events-none disabled:opacity-25"
+              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
             >
               Next →
             </button>

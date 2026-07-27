@@ -1,5 +1,6 @@
 import Link from "next/link";
 import yearlyFireTotals from "@/data/yearly-fire-totals.json";
+import { CountUp } from "./count-up";
 
 type YearRow = {
   year: number;
@@ -20,7 +21,7 @@ export default function Home() {
   return (
     <div className="min-h-screen px-6 py-14 sm:px-16">
       <main className="mx-auto flex w-full max-w-4xl flex-col gap-10">
-        <header className="flex flex-col gap-3">
+        <header className="animate-reveal flex flex-col gap-3">
           <Link
             href="/"
             className="label w-fit text-[var(--ink-faint)] transition-colors hover:text-[var(--ember)]"
@@ -41,7 +42,7 @@ export default function Home() {
           </p>
         </header>
 
-        <div className="flex flex-col justify-between gap-4 border border-[var(--ember-dim)] bg-[color-mix(in_srgb,var(--ember)_10%,var(--surface))] px-6 py-5 sm:flex-row sm:items-center">
+        <div className="animate-reveal-delay-1 flex flex-col justify-between gap-4 border border-[var(--ember-dim)] bg-[color-mix(in_srgb,var(--ember)_10%,var(--surface))] px-6 py-5 sm:flex-row sm:items-center">
           <div>
             <div className="label text-[var(--ember)]">Record Season</div>
             <div className="font-display text-3xl tracking-wide text-[var(--ink)] sm:text-4xl">
@@ -51,29 +52,32 @@ export default function Home() {
           <div className="flex gap-8 tabular">
             <div>
               <div className="text-2xl text-[var(--ink)] sm:text-3xl">
-                {formatNumber(recordYear.hectares_burned)}
+                <CountUp value={recordYear.hectares_burned} />
               </div>
               <div className="label">Hectares Burned</div>
             </div>
             <div>
               <div className="text-2xl text-[var(--ink)] sm:text-3xl">
-                {formatNumber(recordYear.fire_count)}
+                <CountUp value={recordYear.fire_count} />
               </div>
               <div className="label">Fires</div>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-1 overflow-x-auto border border-[var(--border)] bg-[var(--surface)] p-6">
+        <div className="animate-reveal-delay-2 flex flex-col gap-1 overflow-x-auto border border-[var(--border)] bg-[var(--surface)] p-6">
           <div className="flex min-w-[640px] items-end gap-[2px]" style={{ height: 220 }}>
-            {rows.map((row) => (
+            {rows.map((row, i) => (
               <div
                 key={row.year}
-                className="group relative flex-1 bg-[var(--ember)] transition-opacity hover:opacity-80"
-                style={{
-                  height: `${(row.hectares_burned / maxHectares) * 100}%`,
-                  opacity: row.year === recordYear.year ? 1 : 0.55,
-                }}
+                className="animate-bar group relative flex-1 bg-[var(--ember)] transition-opacity hover:opacity-80"
+                style={
+                  {
+                    height: `${(row.hectares_burned / maxHectares) * 100}%`,
+                    opacity: row.year === recordYear.year ? 1 : 0.55,
+                    "--bar-i": i,
+                  } as React.CSSProperties
+                }
                 title={`${row.year}: ${formatNumber(row.hectares_burned)} ha across ${row.fire_count} fires`}
               />
             ))}

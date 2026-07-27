@@ -193,6 +193,112 @@ input[type="range"]::-webkit-slider-runnable-track {
   color: #0d0b09;
 }
 
+/* Slow contour drift - the topographic layer creeps one full tile over two
+   minutes, just enough to read as "alive" without being distracting. */
+@keyframes contour-drift {
+  from {
+    background-position:
+      0% 0%,
+      0px 0px;
+  }
+  to {
+    background-position:
+      0% 0%,
+      400px 400px;
+  }
+}
+body {
+  animation: contour-drift 120s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+}
+
+/* Staggered entrance for the chrome around the map - one on load, not
+   scattered everywhere. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-reveal {
+  animation: reveal 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.animate-reveal-delay-1 {
+  animation: reveal 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation-delay: 0.08s;
+}
+.animate-reveal-delay-2 {
+  animation: reveal 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation-delay: 0.16s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal,
+  .animate-reveal-delay-1,
+  .animate-reveal-delay-2 {
+    animation: none;
+  }
+}
+
+/* Brief scan-line flash when the map's data layer swaps (timeline moved). */
+@keyframes scan-flash {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.scan-flash {
+  opacity: 0;
+  animation: scan-flash 0.5s ease-out forwards;
+}
+
+/* Count-up numerals (stat callouts) land with a quick upward settle. */
+@keyframes count-settle {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-count {
+  animation: count-settle 0.4s ease-out both;
+}
+
+/* Bar chart grows up from the baseline on first paint. */
+@keyframes grow-bar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.animate-bar {
+  transform-origin: bottom;
+  animation: grow-bar 0.6s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation-delay: calc(var(--bar-i, 0) * 4ms + 200ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-bar {
+    animation: none;
+  }
+}
+
 /* Tint the OSM base tiles to sit inside the ops-console palette instead of
    looking like a stock web map. Dark by default; lighter in light mode. */
 .leaflet-tile-pane {
