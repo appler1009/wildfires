@@ -6,30 +6,30 @@ export default function MonthlyPage() {
   const lastUpdated = new Date(monthlyFireHeatmap.generatedAt);
 
   return (
-    <div className="min-h-screen bg-zinc-50 px-6 py-16 font-sans dark:bg-black sm:px-16">
+    <div className="min-h-screen px-6 py-14 sm:px-16">
       <main className="mx-auto flex w-full max-w-5xl flex-col gap-8">
-        <header className="flex flex-col gap-2">
-          <div className="flex gap-3">
+        <header className="flex flex-col gap-3">
+          <div className="flex gap-4">
             <Link
               href="/"
-              className="text-xs font-medium text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+              className="label text-[var(--ink-faint)] transition-colors hover:text-[var(--ember)]"
             >
               ← Map
             </Link>
             <Link
               href="/historical/yearly"
-              className="text-xs font-medium text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+              className="label text-[var(--ink-faint)] transition-colors hover:text-[var(--ember)]"
             >
-              Yearly totals
+              Yearly Totals
             </Link>
           </div>
-          <span className="w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900 dark:bg-amber-950 dark:text-amber-300">
-            Historical summary
+          <span className="label w-fit border border-[var(--border-strong)] px-2.5 py-1 text-[var(--amber)]">
+            Historical Summary
           </span>
-          <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            Hectares burned by month
+          <h1 className="font-display text-4xl leading-none tracking-wide text-[var(--ink)] sm:text-5xl">
+            Hectares Burned by Month
           </h1>
-          <p className="max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+          <p className="max-w-2xl text-sm leading-6 text-[var(--ink-muted)]">
             {monthlyFireHeatmap.metric} Color scale is logarithmic — most fire activity is
             concentrated in a few summer months, so a linear scale would make everything outside
             July–August look blank.
@@ -38,7 +38,7 @@ export default function MonthlyPage() {
 
         <HeatmapGrid data={monthlyFireHeatmap} />
 
-        <footer className="flex flex-col gap-1 text-xs text-zinc-500 dark:text-zinc-500">
+        <footer className="flex flex-col gap-1 border-t border-[var(--border)] pt-4 text-[11px] text-[var(--ink-faint)]">
           <p>
             Source: {monthlyFireHeatmap.source}. Contains information licensed under the{" "}
             {monthlyFireHeatmap.licence}.

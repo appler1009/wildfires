@@ -14,25 +14,26 @@ function formatNumber(n: number) {
 export default function Home() {
   const rows = yearlyFireTotals.rows as YearRow[];
   const maxHectares = Math.max(...rows.map((r) => r.hectares_burned));
+  const recordYear = rows.reduce((a, b) => (b.hectares_burned > a.hectares_burned ? b : a));
   const lastUpdated = new Date(yearlyFireTotals.generatedAt);
 
   return (
-    <div className="min-h-screen bg-zinc-50 px-6 py-16 font-sans dark:bg-black sm:px-16">
-      <main className="mx-auto flex w-full max-w-4xl flex-col gap-8">
-        <header className="flex flex-col gap-2">
+    <div className="min-h-screen px-6 py-14 sm:px-16">
+      <main className="mx-auto flex w-full max-w-4xl flex-col gap-10">
+        <header className="flex flex-col gap-3">
           <Link
             href="/"
-            className="w-fit text-xs font-medium text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+            className="label w-fit text-[var(--ink-faint)] transition-colors hover:text-[var(--ember)]"
           >
-            ← Map
+            ← Back to map
           </Link>
-          <span className="w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900 dark:bg-amber-950 dark:text-amber-300">
-            Historical summary
+          <span className="label w-fit border border-[var(--border-strong)] px-2.5 py-1 text-[var(--amber)]">
+            Historical Summary
           </span>
-          <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            Canada hectares burned by year
+          <h1 className="font-display text-4xl leading-none tracking-wide text-[var(--ink)] sm:text-5xl">
+            Hectares Burned by Year
           </h1>
-          <p className="max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+          <p className="max-w-2xl text-sm leading-6 text-[var(--ink-muted)]">
             Sum of mapped fire area (hectares) and fire count per season, since {rows[0].year}. BC
             and Ontario use their own datasets (most current and complete for those provinces); the
             rest of Canada uses the National Fire Database, which currently extends to 2023. This is
@@ -40,31 +41,57 @@ export default function Home() {
           </p>
         </header>
 
-        <div className="flex flex-col gap-1 overflow-x-auto rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
+        <div className="flex flex-col justify-between gap-4 border border-[var(--ember-dim)] bg-[color-mix(in_srgb,var(--ember)_10%,var(--surface))] px-6 py-5 sm:flex-row sm:items-center">
+          <div>
+            <div className="label text-[var(--ember)]">Record Season</div>
+            <div className="font-display text-3xl tracking-wide text-[var(--ink)] sm:text-4xl">
+              {recordYear.year}
+            </div>
+          </div>
+          <div className="flex gap-8 tabular">
+            <div>
+              <div className="text-2xl text-[var(--ink)] sm:text-3xl">
+                {formatNumber(recordYear.hectares_burned)}
+              </div>
+              <div className="label">Hectares Burned</div>
+            </div>
+            <div>
+              <div className="text-2xl text-[var(--ink)] sm:text-3xl">
+                {formatNumber(recordYear.fire_count)}
+              </div>
+              <div className="label">Fires</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-1 overflow-x-auto border border-[var(--border)] bg-[var(--surface)] p-6">
           <div className="flex min-w-[640px] items-end gap-[2px]" style={{ height: 220 }}>
             {rows.map((row) => (
               <div
                 key={row.year}
-                className="group relative flex-1 rounded-t-sm bg-orange-400 transition-colors hover:bg-orange-500 dark:bg-orange-600 dark:hover:bg-orange-500"
-                style={{ height: `${(row.hectares_burned / maxHectares) * 100}%` }}
+                className="group relative flex-1 bg-[var(--ember)] transition-opacity hover:opacity-80"
+                style={{
+                  height: `${(row.hectares_burned / maxHectares) * 100}%`,
+                  opacity: row.year === recordYear.year ? 1 : 0.55,
+                }}
                 title={`${row.year}: ${formatNumber(row.hectares_burned)} ha across ${row.fire_count} fires`}
               />
             ))}
           </div>
-          <div className="mt-2 flex min-w-[640px] justify-between text-[10px] text-zinc-500 dark:text-zinc-500">
+          <div className="label tabular mt-2 flex min-w-[640px] justify-between">
             <span>{rows[0].year}</span>
             <span>{rows[Math.floor(rows.length / 2)].year}</span>
             <span>{rows[rows.length - 1].year}</span>
           </div>
         </div>
 
-        <div className="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-800">
+        <div className="overflow-x-auto border border-[var(--border)]">
           <table className="w-full min-w-[420px] text-left text-sm">
-            <thead className="bg-zinc-100 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
+            <thead className="label bg-[var(--surface-2)] text-[var(--ink-faint)]">
               <tr>
-                <th className="px-4 py-2 font-medium">Year</th>
-                <th className="px-4 py-2 font-medium">Fires</th>
-                <th className="px-4 py-2 font-medium">Hectares burned</th>
+                <th className="px-4 py-2 font-normal">Year</th>
+                <th className="px-4 py-2 font-normal">Fires</th>
+                <th className="px-4 py-2 font-normal">Hectares Burned</th>
               </tr>
             </thead>
             <tbody>
@@ -72,12 +99,12 @@ export default function Home() {
                 .reverse()
                 .slice(0, 10)
                 .map((row) => (
-                  <tr key={row.year} className="border-t border-zinc-100 dark:border-zinc-900">
-                    <td className="px-4 py-2 text-black dark:text-zinc-50">{row.year}</td>
-                    <td className="px-4 py-2 text-zinc-700 dark:text-zinc-300">
+                  <tr key={row.year} className="border-t border-[var(--border)]">
+                    <td className="px-4 py-2 text-[var(--ink)]">{row.year}</td>
+                    <td className="tabular px-4 py-2 text-[var(--ink-muted)]">
                       {formatNumber(row.fire_count)}
                     </td>
-                    <td className="px-4 py-2 text-zinc-700 dark:text-zinc-300">
+                    <td className="tabular px-4 py-2 text-[var(--ink-muted)]">
                       {formatNumber(row.hectares_burned)}
                     </td>
                   </tr>
@@ -86,7 +113,7 @@ export default function Home() {
           </table>
         </div>
 
-        <footer className="flex flex-col gap-1 text-xs text-zinc-500 dark:text-zinc-500">
+        <footer className="flex flex-col gap-1 border-t border-[var(--border)] pt-4 text-[11px] text-[var(--ink-faint)]">
           <p>
             Source: {yearlyFireTotals.source}. Contains information licensed under the{" "}
             {yearlyFireTotals.licence}.
@@ -96,7 +123,7 @@ export default function Home() {
 
         <Link
           href="/historical/monthly"
-          className="w-fit text-sm font-medium text-orange-700 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-300"
+          className="label w-fit text-[var(--amber)] transition-colors hover:text-[var(--ember)]"
         >
           View monthly heatmap →
         </Link>

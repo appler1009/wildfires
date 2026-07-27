@@ -1,27 +1,228 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------
+   Wildfire Operations Console
+   A dark, field-report aesthetic: charcoal + ash surfaces, ember/amber
+   accents, monospace data readouts, topographic contour texture.
+   Light mode reads as sun-bleached field paper - same accents, inverted.
+--------------------------------------------------------------------- */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  color-scheme: light dark;
+  color-scheme: dark;
+
+  --bg: #0d0b09;
+  --bg-2: #131009;
+  --surface: #17140f;
+  --surface-2: #1e1a13;
+  --border: #332c20;
+  --border-strong: #4a4030;
+
+  --ink: #f3ecdf;
+  --ink-muted: #a89a83;
+  --ink-faint: #6e6350;
+
+  --ember: #ff5a1f;
+  --ember-dim: #b8431a;
+  --amber: #ffb020;
+  --safe: #6ba368;
+  --smoke: #7c8a8f;
+
+  --grid-line: rgba(243, 236, 223, 0.05);
+  --contour-opacity: 0.5;
+
+  --font-display: var(--font-anton), "Arial Narrow", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4efe2;
+  --bg-2: #ede6d3;
+  --surface: #fbf8f0;
+  --surface-2: #f0ead9;
+  --border: #d8cbab;
+  --border-strong: #b8a878;
+
+  --ink: #211a10;
+  --ink-muted: #6b5d44;
+  --ink-faint: #94856a;
+
+  --ember: #d43f10;
+  --ember-dim: #b8431a;
+  --amber: #a86800;
+  --safe: #3f6d3f;
+  --smoke: #5b6b6f;
+
+  --grid-line: rgba(33, 26, 16, 0.06);
+  --contour-opacity: 0.35;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #f4efe2;
+    --bg-2: #ede6d3;
+    --surface: #fbf8f0;
+    --surface-2: #f0ead9;
+    --border: #d8cbab;
+    --border-strong: #b8a878;
+
+    --ink: #211a10;
+    --ink-muted: #6b5d44;
+    --ink-faint: #94856a;
+
+    --ember: #d43f10;
+    --ember-dim: #b8431a;
+    --amber: #a86800;
+    --safe: #3f6d3f;
+    --smoke: #5b6b6f;
+
+    --grid-line: rgba(33, 26, 16, 0.06);
+    --contour-opacity: 0.35;
   }
 }
 
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-mono);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  background: var(--bg);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 15% -10%, rgba(255, 90, 31, 0.08), transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.035' stroke-width='1'%3E%3Cpath d='M-40 60 Q 100 20 200 60 T 440 60'/%3E%3Cpath d='M-40 110 Q 100 70 200 110 T 440 110'/%3E%3Cpath d='M-40 160 Q 100 120 200 160 T 440 160'/%3E%3Cpath d='M-40 210 Q 100 170 200 210 T 440 210'/%3E%3Cpath d='M-40 260 Q 100 220 200 260 T 440 260'/%3E%3Cpath d='M-40 310 Q 100 270 200 310 T 440 310'/%3E%3Cpath d='M-40 360 Q 100 320 200 360 T 440 360'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed, fixed;
+  background-size: auto, 400px 400px;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Range slider: thin ember track, square-ish notch thumb (survey-marker feel) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: var(--border-strong);
+  border-radius: 0;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 18px;
+  background: var(--ember);
+  border: 1px solid var(--bg);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+  cursor: pointer;
+  margin-top: -8px;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 18px;
+  background: var(--ember);
+  border: 1px solid var(--bg);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+  cursor: pointer;
+  border-radius: 0;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--border-strong);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+.pulse-dot {
+  position: relative;
+  display: inline-flex;
+}
+.pulse-dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: pulse-ring 1.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+::selection {
+  background: var(--ember);
+  color: #0d0b09;
+}
+
+/* Tint the OSM base tiles to sit inside the ops-console palette instead of
+   looking like a stock web map. Dark by default; lighter in light mode. */
+.leaflet-tile-pane {
+  filter: brightness(0.5) contrast(1.2) saturate(0.55) sepia(0.15);
+}
+:root[data-theme="light"] .leaflet-tile-pane {
+  filter: brightness(1.02) contrast(0.95) saturate(0.7) sepia(0.08);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .leaflet-tile-pane {
+    filter: brightness(1.02) contrast(0.95) saturate(0.7) sepia(0.08);
+  }
+}
+.leaflet-control-zoom a {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-color: var(--border) !important;
+}
+.leaflet-control-zoom a:hover {
+  background: var(--surface-2) !important;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--surface);
+  color: var(--ink);
+}
+.leaflet-popup-content-wrapper {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+.leaflet-popup-close-button {
+  color: var(--ink-muted) !important;
 }

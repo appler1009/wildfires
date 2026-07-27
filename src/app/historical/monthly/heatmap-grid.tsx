@@ -50,7 +50,7 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
   return (
     <div className="flex flex-col gap-3">
       <div
-        className="overflow-x-auto rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950"
+        className="overflow-x-auto border border-[var(--border)] bg-[var(--surface)] p-4"
         role="img"
         aria-label="Heatmap of hectares burned by year and month"
       >
@@ -59,7 +59,7 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
             {MONTH_LABELS.map((label, i) => (
               <div
                 key={i}
-                className="flex w-6 shrink-0 items-center justify-center text-[10px] font-medium text-zinc-500 dark:text-zinc-500"
+                className="label flex w-6 shrink-0 items-center justify-center text-[var(--ink-faint)]"
               >
                 {label}
               </div>
@@ -67,7 +67,7 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
           </div>
           {years.map((year) => (
             <div key={year} className="flex items-center gap-[2px]">
-              <div className="w-14 shrink-0 pr-2 text-right text-[11px] tabular-nums text-zinc-500 dark:text-zinc-500">
+              <div className="tabular w-14 shrink-0 pr-2 text-right text-[11px] text-[var(--ink-faint)]">
                 {year}
               </div>
               {MONTH_LABELS.map((_, i) => {
@@ -79,7 +79,7 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
                   <button
                     key={month}
                     type="button"
-                    className="h-6 w-6 shrink-0 rounded-[2px] outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
+                    className="h-6 w-6 shrink-0 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ember)]"
                     style={{
                       backgroundColor:
                         idx === -1
@@ -104,26 +104,26 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
 
       <div
         aria-hidden={hovered === null}
-        className="flex h-10 items-center gap-3 rounded-lg border border-zinc-200 bg-white px-4 text-sm dark:border-zinc-800 dark:bg-zinc-950"
+        className="flex h-10 items-center gap-3 border border-[var(--border)] bg-[var(--surface)] px-4 text-sm"
       >
         {hovered ? (
           <>
-            <span className="font-medium text-black dark:text-zinc-50">
+            <span className="font-display tracking-wide text-[var(--ink)]">
               {MONTH_NAMES[hovered.month - 1]} {hovered.year}
             </span>
-            <span className="text-zinc-600 dark:text-zinc-400">
+            <span className="tabular text-[var(--ink-muted)]">
               {formatNumber(hovered.hectares_burned)} ha · {formatNumber(hovered.fire_count)} fires
             </span>
           </>
         ) : (
-          <span className="text-zinc-400 dark:text-zinc-600">Hover or focus a cell for detail</span>
+          <span className="label text-[var(--ink-faint)]">Hover or focus a cell for detail</span>
         )}
       </div>
 
-      <div className="flex items-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-500">
+      <div className="label flex items-center gap-2 text-[var(--ink-faint)]">
         <span id={gridId}>No recorded fire</span>
         <div
-          className="h-3 w-5 rounded-[2px]"
+          className="h-3 w-5"
           style={{ backgroundColor: `light-dark(${ZERO_LIGHT}, ${ZERO_DARK})` }}
         />
         <span className="ml-2">Fewer hectares</span>
@@ -131,7 +131,7 @@ export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
           {RAMP_LIGHT.map((_, i) => (
             <div
               key={i}
-              className="h-3 w-5 rounded-[2px]"
+              className="h-3 w-5"
               style={{ backgroundColor: `light-dark(${RAMP_LIGHT[i]}, ${RAMP_DARK[i]})` }}
             />
           ))}

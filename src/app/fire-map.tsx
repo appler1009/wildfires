@@ -282,13 +282,32 @@ export function FireMap() {
 
   return (
     <div className="flex h-dvh flex-col">
+      <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 py-2 sm:px-8">
+        <div className="flex items-baseline gap-3">
+          <h1 className="font-display text-lg leading-none tracking-wide text-[var(--ink)] sm:text-xl">
+            Canada Wildfires
+          </h1>
+          <span className="label hidden sm:inline">Live &amp; Historical Tracker</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span
+            className={`pulse-dot h-1.5 w-1.5 rounded-full ${isOperational ? "text-[var(--ember)]" : "text-[var(--ink-faint)]"}`}
+          >
+            <span
+              className={`block h-1.5 w-1.5 rounded-full ${isOperational ? "bg-[var(--ember)]" : "bg-[var(--ink-faint)]"}`}
+            />
+          </span>
+          <span className="label">{isOperational ? "System Active" : "Archive Mode"}</span>
+        </div>
+      </div>
+
       <div className="relative min-h-0 flex-1">
         <MapContainer
           center={[58, -97]}
           zoom={4}
           preferCanvas
           style={{ height: "100%", width: "100%" }}
-          className="bg-zinc-100 dark:bg-zinc-900"
+          className="bg-[var(--bg)]"
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -429,15 +448,15 @@ export function FireMap() {
 
         <div className="pointer-events-none absolute bottom-4 left-4 z-[1000] flex flex-col gap-2">
           <span
-            className={`pointer-events-auto w-fit rounded-full px-3 py-1 text-xs font-medium ${
+            className={`label pointer-events-auto w-fit border px-2.5 py-1 backdrop-blur-sm ${
               isOperational
-                ? "bg-red-100 text-red-900 dark:bg-red-950 dark:text-red-300"
-                : "bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300"
+                ? "border-[var(--ember-dim)] bg-[color-mix(in_srgb,var(--ember)_18%,var(--surface))] text-[var(--ember)]"
+                : "border-[var(--border-strong)] bg-[var(--surface)]/95 text-[var(--amber)]"
             }`}
           >
-            {isLive ? "Live operational status" : isDaily ? "Satellite hotspot detections" : "Historical summary"}
+            {isLive ? "Live Operational Status" : isDaily ? "Satellite Hotspot Detections" : "Historical Summary"}
           </span>
-          <div className="pointer-events-auto flex flex-col gap-1 rounded-lg border border-zinc-200 bg-white/95 px-3 py-2 text-[11px] text-zinc-600 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95 dark:text-zinc-400">
+          <div className="pointer-events-auto flex flex-col gap-1.5 border border-[var(--border)] bg-[var(--surface)]/95 px-3 py-2.5 text-[11px] text-[var(--ink-muted)] backdrop-blur-sm">
             {isLive && (
               <>
                 <LegendDot color={STATUS_COLOR["Out of Control"]} label="BC/QC — out of control" />
@@ -455,36 +474,36 @@ export function FireMap() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 border-t border-zinc-200 bg-white px-4 py-3 dark:border-zinc-800 dark:bg-zinc-950 sm:px-8">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-baseline gap-2">
-            <span className="text-sm font-semibold text-black dark:text-zinc-50">
+      <div className="flex flex-col gap-2.5 border-t border-[var(--border)] bg-[var(--surface)] px-4 py-3 sm:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
+          <div className="flex items-baseline gap-3">
+            <span className="font-display text-2xl leading-none tracking-wide text-[var(--ink)] sm:text-3xl">
               {activeEntry?.label ?? "Loading…"}
             </span>
             {activeEntry?.kind === "historical" && (
-              <span className="text-xs text-zinc-500 dark:text-zinc-500">
+              <span className="label tabular">
                 {formatNumber(activeEntry.count)} fires{loading ? " · loading…" : ""}
               </span>
             )}
             {activeEntry?.kind === "daily" && (
-              <span className="text-xs text-zinc-500 dark:text-zinc-500">
+              <span className="label tabular">
                 {formatNumber(clusterPoints.length)} hotspot clusters{loading ? " · loading…" : ""}
               </span>
             )}
             {isLive && (
-              <span className="text-xs text-zinc-500 dark:text-zinc-500">
+              <span className="label tabular">
                 {formatNumber(bcStatusPoints.length)} BC · {formatNumber(onStatusPoints.length)} Ontario
                 · {formatNumber(qcStatusPoints.length)} Quebec · {formatNumber(clusterPoints.length)}{" "}
                 clusters elsewhere
               </span>
             )}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <button
               type="button"
               onClick={() => step(-1)}
               disabled={effectiveSelected <= 0}
-              className="rounded-md border border-zinc-300 px-2 py-1 text-xs font-medium text-zinc-700 disabled:opacity-30 dark:border-zinc-700 dark:text-zinc-300"
+              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-colors hover:border-[var(--ember)] hover:text-[var(--ember)] disabled:pointer-events-none disabled:opacity-25"
             >
               ← Prev
             </button>
@@ -492,7 +511,7 @@ export function FireMap() {
               type="button"
               onClick={() => setSelected(timeline.length - 1)}
               disabled={isLive}
-              className="rounded-md border border-zinc-300 px-2 py-1 text-xs font-medium text-zinc-700 disabled:opacity-30 dark:border-zinc-700 dark:text-zinc-300"
+              className="label border border-[var(--ember-dim)] bg-[var(--ember)] px-3 py-1.5 text-[#0d0b09] transition-opacity hover:opacity-90 disabled:pointer-events-none disabled:opacity-30"
             >
               Live
             </button>
@@ -500,7 +519,7 @@ export function FireMap() {
               type="button"
               onClick={() => step(1)}
               disabled={effectiveSelected >= timeline.length - 1}
-              className="rounded-md border border-zinc-300 px-2 py-1 text-xs font-medium text-zinc-700 disabled:opacity-30 dark:border-zinc-700 dark:text-zinc-300"
+              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-colors hover:border-[var(--ember)] hover:text-[var(--ember)] disabled:pointer-events-none disabled:opacity-25"
             >
               Next →
             </button>
@@ -512,28 +531,28 @@ export function FireMap() {
           max={Math.max(0, timeline.length - 1)}
           value={effectiveSelected}
           onChange={(e) => setSelected(Number(e.target.value))}
-          className="w-full accent-orange-600"
+          className="w-full"
         />
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-zinc-200 bg-zinc-50 px-4 py-2 text-xs text-zinc-500 dark:border-zinc-800 dark:bg-black dark:text-zinc-500 sm:px-8">
-        <span>
-          Sources: BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), SOPFEU (Quebec), Natural
-          Resources Canada / CWFIS (elsewhere, hotspots and national historical data). Contains
-          information licensed under the Open Government Licence – British Columbia, Ontario, and
-          Canada, and under Creative Commons Attribution 4.0 (Gouvernement du Québec). Live and
-          hotspot data are reference information, not exact real-time ground truth.
+      <div
+        className="flex items-center justify-between gap-4 border-t border-[var(--border)] bg-[var(--bg-2)] px-4 py-1.5 text-[10px] text-[var(--ink-faint)] sm:px-8"
+        title="Sources: BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), SOPFEU (Quebec), Natural Resources Canada / CWFIS (elsewhere). Licensed under OGL British Columbia, Ontario, and Canada, and CC BY 4.0 (Gouvernement du Québec). Reference data, not exact real-time ground truth."
+      >
+        <span className="truncate">
+          Sources: BC · Ontario · Quebec · CWFIS (rest of Canada) — reference data, not real-time
+          ground truth.
         </span>
-        <div className="flex gap-4">
+        <div className="flex shrink-0 gap-4">
           <Link
             href="/historical/yearly"
-            className="font-medium text-orange-700 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-300"
+            className="label text-[var(--amber)] transition-colors hover:text-[var(--ember)]"
           >
             Yearly totals
           </Link>
           <Link
             href="/historical/monthly"
-            className="font-medium text-orange-700 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-300"
+            className="label text-[var(--amber)] transition-colors hover:text-[var(--ember)]"
           >
             Monthly heatmap
           </Link>
@@ -546,7 +565,7 @@ export function FireMap() {
 function LegendDot({ color, label }: { color: string; label: string }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: color }} />
+      <span className="h-2 w-2 shrink-0" style={{ backgroundColor: color }} />
       <span>{label}</span>
     </div>
   );
