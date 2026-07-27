@@ -36,7 +36,7 @@ export default function Home() {
         <header className="animate-reveal flex flex-col gap-3">
           <Link
             href="/"
-            className="label w-fit text-[var(--ink-faint)] transition-colors hover:text-[var(--ember)]"
+            className="text-ember-glow label w-fit text-[var(--ink-faint)] hover:text-[var(--ember)]"
           >
             ← Back to map
           </Link>
@@ -126,7 +126,7 @@ export default function Home() {
 
         <Link
           href="/historical/monthly"
-          className="label w-fit text-[var(--amber)] transition-colors hover:text-[var(--ember)]"
+          className="text-ember-glow label w-fit text-[var(--amber)] hover:text-[var(--ember)]"
         >
           View monthly heatmap →
         </Link>

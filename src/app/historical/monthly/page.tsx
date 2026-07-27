@@ -14,13 +14,13 @@ export default function MonthlyPage() {
           <div className="flex gap-4">
             <Link
               href="/"
-              className="label text-[var(--ink-faint)] transition-colors hover:text-[var(--ember)]"
+              className="text-ember-glow label text-[var(--ink-faint)] hover:text-[var(--ember)]"
             >
               ← Map
             </Link>
             <Link
               href="/historical/yearly"
-              className="label text-[var(--ink-faint)] transition-colors hover:text-[var(--ember)]"
+              className="text-ember-glow label text-[var(--ink-faint)] hover:text-[var(--ember)]"
             >
               Yearly Totals
             </Link>

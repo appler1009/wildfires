@@ -430,6 +430,31 @@ export function FireMap() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playing, effectiveSelected, timeline.length]);
 
+  // Arrow-key scrubbing through the timeline, Space to play/pause - skipped
+  // while focus is inside a form control so typing/selecting still works.
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      const target = e.target as HTMLElement | null;
+      const tag = target?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target?.isContentEditable) return;
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        setPlaying(false);
+        step(-1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        setPlaying(false);
+        step(1);
+      } else if (e.key === " ") {
+        e.preventDefault();
+        setPlaying((p) => !p);
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [effectiveSelected, timeline.length]);
+
   return (
     <div className="flex h-dvh flex-col">
       <BootSequence ready={dataLoaded} connected={connected} />
@@ -772,6 +797,7 @@ export function FireMap() {
         </div>
         <input
           type="range"
+          title="Tip: use the ← → arrow keys anywhere on this page to scrub, and Space to play/pause"
           min={0}
           max={Math.max(0, timeline.length - 1)}
           value={effectiveSelected}

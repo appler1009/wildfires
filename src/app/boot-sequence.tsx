@@ -21,6 +21,17 @@ const CHANNELS: { key: keyof ConnectionStatus; label: string }[] = [
   { key: "cwfis", label: "CWFIS / NRCAN SATELLITE" },
 ];
 
+// Decorative status-line ticker for the boot screen - flavor text, not a
+// literal progress log (the channel dots above carry the real state).
+const TICKER_LINES = [
+  "Cross-referencing hotspot detections…",
+  "Reconciling provincial incident feeds…",
+  "Calibrating containment estimates…",
+  "Syncing satellite pass timestamps…",
+  "Building historical rollups…",
+  "Normalizing cross-border coordinates…",
+];
+
 // A brief themed boot screen on first load - purely for first-impression
 // impact. Holds for a minimum duration even if data arrives instantly (a
 // flash of nothing would undercut the effect, and the globe deserves a
@@ -36,11 +47,17 @@ export function BootSequence({
 }) {
   const [visible, setVisible] = useState(true);
   const [minTimeDone, setMinTimeDone] = useState(false);
+  const [tickerIndex, setTickerIndex] = useState(0);
   const fading = ready && minTimeDone;
 
   useEffect(() => {
     const t = setTimeout(() => setMinTimeDone(true), 2200);
     return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setTickerIndex((i) => (i + 1) % TICKER_LINES.length), 650);
+    return () => clearInterval(id);
   }, []);
 
   useEffect(() => {
@@ -87,6 +104,13 @@ export function BootSequence({
               </div>
             );
           })}
+        </div>
+        <div
+          key={tickerIndex}
+          className="animate-reveal label text-[var(--ink-faint)] opacity-70"
+          aria-hidden="true"
+        >
+          {TICKER_LINES[tickerIndex]}
         </div>
       </div>
     </div>
