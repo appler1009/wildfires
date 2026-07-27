@@ -21,6 +21,12 @@ const HOTSPOTS: [number, number][] = [
   [70.0, -90.0], // NU
 ];
 
+// Loose network linking neighbouring hotspots, west to east - a decorative
+// "telemetry links" read, not a claim about real data relationships.
+const ARCS: [number, number][] = [
+  [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [5, 8], [9, 10], [10, 11], [1, 9],
+];
+
 function latLonToVec3(lat: number, lon: number, radius: number) {
   const phi = (90 - lat) * (Math.PI / 180);
   const theta = (lon + 90) * (Math.PI / 180);
@@ -28,6 +34,51 @@ function latLonToVec3(lat: number, lon: number, radius: number) {
     radius * Math.sin(phi) * Math.cos(theta),
     radius * Math.cos(phi),
     radius * Math.sin(phi) * Math.sin(theta),
+  );
+}
+
+function arcPoints(start: THREE.Vector3, end: THREE.Vector3, lift: number, segments = 24) {
+  const mid = start.clone().add(end).multiplyScalar(0.5).normalize().multiplyScalar(start.length() + lift);
+  const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
+  return curve.getPoints(segments);
+}
+
+function ArcLines({ positions }: { positions: THREE.Vector3[] }) {
+  const matRefs = useRef<THREE.LineBasicMaterial[]>([]);
+  const arcs = useMemo(
+    () => ARCS.map(([a, b]) => arcPoints(positions[a], positions[b], 0.22)),
+    [positions],
+  );
+
+  useFrame((state) => {
+    const t = state.clock.elapsedTime;
+    matRefs.current.forEach((mat, i) => {
+      if (!mat) return;
+      mat.opacity = 0.15 + (Math.sin(t * 1.3 + i * 1.7) * 0.5 + 0.5) * 0.35;
+    });
+  });
+
+  return (
+    <>
+      {arcs.map((points, i) => (
+        <line key={i}>
+          <bufferGeometry>
+            <bufferAttribute
+              attach="attributes-position"
+              args={[new Float32Array(points.flatMap((p) => [p.x, p.y, p.z])), 3]}
+            />
+          </bufferGeometry>
+          <lineBasicMaterial
+            ref={(el) => {
+              if (el) matRefs.current[i] = el;
+            }}
+            color="#ffb020"
+            transparent
+            opacity={0.3}
+          />
+        </line>
+      ))}
+    </>
   );
 }
 
@@ -59,6 +110,8 @@ function Globe() {
         <icosahedronGeometry args={[1.48, 3]} />
         <meshBasicMaterial color="#0d0b09" transparent opacity={0.6} />
       </mesh>
+      {/* Telemetry link arcs between hotspots */}
+      <ArcLines positions={positions} />
       {/* Hotspot embers over Canada */}
       {positions.map((pos, i) => (
         <mesh
