@@ -11,12 +11,13 @@ const WildfireGlobe = dynamic(() => import("./wildfire-globe").then((m) => m.Wil
   ssr: false,
 });
 
-type ConnectionStatus = { bc: boolean; on: boolean; qc: boolean; cwfis: boolean };
+type ConnectionStatus = { bc: boolean; on: boolean; qc: boolean; us: boolean; cwfis: boolean };
 
 const CHANNELS: { key: keyof ConnectionStatus; label: string }[] = [
   { key: "bc", label: "BC DATA CATALOGUE" },
   { key: "on", label: "ONTARIO GEOHUB / LIO" },
   { key: "qc", label: "SOPFEU QUEBEC" },
+  { key: "us", label: "NIFC / WFIGS (US BORDER)" },
   { key: "cwfis", label: "CWFIS / NRCAN SATELLITE" },
 ];
 

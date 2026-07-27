@@ -12,7 +12,10 @@ const STEPS = [
   "fetch-on-current-fires.ts",
   // Quebec (own live feed; historical still comes from NFDB)
   "fetch-qc-current-fires.ts",
-  // Rest of Canada (National Fire Database + CWFIS satellite hotspots)
+  // US border states (own live feed; historical/daily still comes from CWFIS)
+  "fetch-us-current-fires.ts",
+  // Rest of Canada + the border states' daily/historical fallback (National
+  // Fire Database + CWFIS satellite hotspots)
   "fetch-nfdb-points.ts",
   "fetch-cwfis-hotspots.ts",
   // Rollups (combine BC + Ontario + Canada-wide sources)

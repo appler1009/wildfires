@@ -1,8 +1,11 @@
-// Pulls satellite-detected fire hotspots (VIIRS/MODIS) for all Canadian
-// provinces/territories over a rolling window, from the Canadian Wildland
-// Fire Information System. Unlike provincial "current fires" feeds, this
-// updates continuously regardless of season status, so it's the only source
-// that gives real day-by-day granularity for the current season.
+// Pulls satellite-detected fire hotspots (VIIRS/MODIS) for Canada plus the
+// 13 US states/territories that share the Canada-US border, over a rolling
+// window, from the Canadian Wildland Fire Information System. Unlike
+// provincial "current fires" feeds, this updates continuously regardless of
+// season status, so it's the only source that gives real day-by-day
+// granularity for the current season - and it already carries continental
+// (not just Canadian) coverage, so the border states cost nothing extra to
+// add beyond widening this allowlist.
 //
 // Fetched in date-range chunks, splitting recursively on timeout: the server
 // is fast for small/recent ranges but can 504 on larger or denser (peak fire
@@ -23,11 +26,17 @@ const LOOKBACK_DAYS = 365;
 const INITIAL_CHUNK_DAYS = 7;
 const REQUEST_TIMEOUT_MS = 25_000;
 
-// Canadian provinces/territories only - CWFIS hotspots also cover the
-// continental US, which this app is not scoped to.
 const CANADIAN_AGENCIES = [
   "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PC", "PE", "QC", "SK", "YT",
 ];
+
+// The 13 US states touching the Canadian border (land or Great Lakes/Bay of
+// Fundy shoreline): AK, WA, ID, MT, ND, MN, MI, OH, PA, NY, VT, NH, ME.
+const US_BORDER_STATES = [
+  "AK", "WA", "ID", "MT", "ND", "MN", "MI", "OH", "PA", "NY", "VT", "NH", "ME",
+];
+
+const AGENCIES = [...CANADIAN_AGENCIES, ...US_BORDER_STATES];
 
 const OUTPUT_PATH = path.join(import.meta.dirname, "../../data/raw/cwfis-hotspots.ndjson");
 
@@ -43,7 +52,7 @@ async function fetchPage(
   fromIso: string,
   toIsoExclusive: string,
 ): Promise<WfsResponse> {
-  const agencyList = CANADIAN_AGENCIES.map((a) => `'${a}'`).join(",");
+  const agencyList = AGENCIES.map((a) => `'${a}'`).join(",");
   const params: Record<string, string> = {
     service: "WFS",
     version: "2.0.0",

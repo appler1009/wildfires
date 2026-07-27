@@ -125,7 +125,36 @@ type ClusterPoint = {
   max_frp: number | null;
 };
 
-type ConnectionStatus = { bc: boolean; on: boolean; qc: boolean; cwfis: boolean };
+type UsPoint = {
+  fireNumber: string | null;
+  name: string | null;
+  state: string | null;
+  hectares: number | null;
+  percentContained: number | null;
+  cause: string | null;
+  discoveryDate: string | null;
+  lat: number;
+  lon: number;
+};
+
+type UsData = {
+  source: string;
+  licence: string;
+  note: string;
+  generatedAt: string;
+  points: UsPoint[];
+};
+
+const US_BORDER_STATES = ["AK", "WA", "ID", "MT", "ND", "MN", "MI", "OH", "PA", "NY", "VT", "NH", "ME"];
+
+function usStatusColor(percentContained: number | null): string {
+  if (percentContained == null) return "#898781"; // unknown
+  if (percentContained >= 100) return "#0ca30c"; // contained (good)
+  if (percentContained <= 0) return "#d03b3b"; // 0% contained (critical)
+  return "#fab219"; // partially contained (warning)
+}
+
+type ConnectionStatus = { bc: boolean; on: boolean; qc: boolean; us: boolean; cwfis: boolean };
 
 type Timeline =
   | { kind: "live"; label: string }
@@ -180,6 +209,7 @@ export function FireMap() {
   const [current, setCurrent] = useState<CurrentData | null>(null);
   const [onCurrent, setOnCurrent] = useState<OntarioData | null>(null);
   const [qcCurrent, setQcCurrent] = useState<QuebecData | null>(null);
+  const [usCurrent, setUsCurrent] = useState<UsData | null>(null);
   const [latestClusters, setLatestClusters] = useState<ClusterPoint[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
   const [historicalPoints, setHistoricalPoints] = useState<HistoricalPoint[]>([]);
@@ -190,6 +220,7 @@ export function FireMap() {
     bc: false,
     on: false,
     qc: false,
+    us: false,
     cwfis: false,
   });
   const historicalCache = useRef(new Map<string, HistoricalPoint[]>());
@@ -200,6 +231,7 @@ export function FireMap() {
     const currentP = fetch("/data/fires/current.json").then((r) => r.json());
     const onCurrentP = fetch("/data/fires/on-current.json").then((r) => r.json());
     const qcCurrentP = fetch("/data/fires/qc-current.json").then((r) => r.json());
+    const usCurrentP = fetch("/data/fires/us-current.json").then((r) => r.json());
     const dailyP = fetch("/data/fires/daily/index.json").then((r) => r.json());
 
     // Each channel flips to "connected" independently as its own fetch
@@ -208,20 +240,23 @@ export function FireMap() {
     currentP.then(() => setConnected((c) => ({ ...c, bc: true })));
     onCurrentP.then(() => setConnected((c) => ({ ...c, on: true })));
     qcCurrentP.then(() => setConnected((c) => ({ ...c, qc: true })));
+    usCurrentP.then(() => setConnected((c) => ({ ...c, us: true })));
     dailyP.then(() => setConnected((c) => ({ ...c, cwfis: true })));
 
-    Promise.all([indexP, currentP, onCurrentP, qcCurrentP, dailyP]).then((results) => {
-      const [idx, cur, onCur, qcCur, daily] = results as [
+    Promise.all([indexP, currentP, onCurrentP, qcCurrentP, usCurrentP, dailyP]).then((results) => {
+      const [idx, cur, onCur, qcCur, usCur, daily] = results as [
         IndexData,
         CurrentData,
         OntarioData,
         QuebecData,
+        UsData,
         DailyIndexData,
       ];
       setIndex(idx);
       setCurrent(cur);
       setOnCurrent(onCur);
       setQcCurrent(qcCur);
+      setUsCurrent(usCur);
       setDailyIndex(daily);
       const latestDate = daily.days.at(-1)?.date;
       if (latestDate) {
@@ -256,12 +291,13 @@ export function FireMap() {
       (current && current.points.length > 0) ||
       (onCurrent && onCurrent.points.length > 0) ||
       (qcCurrent && qcCurrent.points.length > 0) ||
+      (usCurrent && usCurrent.points.length > 0) ||
       latestClusters.length > 0
     ) {
       entries.push({ kind: "live", label: "Today" });
     }
     return entries;
-  }, [index, dailyIndex, current, onCurrent, qcCurrent, latestClusters]);
+  }, [index, dailyIndex, current, onCurrent, qcCurrent, usCurrent, latestClusters]);
 
   // Default to "live" (last entry) once data loads, unless the user already picked something.
   const effectiveSelected = selected ?? Math.max(0, timeline.length - 1);
@@ -303,7 +339,7 @@ export function FireMap() {
   const isLive = activeEntry?.kind === "live";
   const isDaily = activeEntry?.kind === "daily";
   const isOperational = isLive || isDaily;
-  const dataRefreshedAt = [current, onCurrent, qcCurrent]
+  const dataRefreshedAt = [current, onCurrent, qcCurrent, usCurrent]
     .map((d) => d?.generatedAt)
     .filter((d): d is string => Boolean(d))
     .sort()
@@ -311,8 +347,10 @@ export function FireMap() {
   const bcStatusPoints = isLive ? (current?.points ?? []) : [];
   const onStatusPoints = isLive ? (onCurrent?.points ?? []) : [];
   const qcStatusPoints = isLive ? (qcCurrent?.points ?? []) : [];
+  const usStatusPoints = isLive ? (usCurrent?.points ?? []) : [];
+  const richCoveredCodes = ["BC", "ON", "QC", ...US_BORDER_STATES];
   const clusterPoints = isLive
-    ? latestClusters.filter((c) => c.province !== "BC" && c.province !== "ON" && c.province !== "QC")
+    ? latestClusters.filter((c) => !richCoveredCodes.includes(c.province))
     : isDaily
       ? dailyPoints
       : [];
@@ -467,6 +505,30 @@ export function FireMap() {
               </CircleMarker>
             ))}
           {isOperational &&
+            usStatusPoints.map((p, i) => (
+              <CircleMarker
+                key={`${p.fireNumber}-${i}`}
+                center={[p.lat, p.lon]}
+                radius={radiusFor(p.hectares)}
+                pathOptions={{
+                  color: "#ffffff",
+                  weight: 1,
+                  fillColor: usStatusColor(p.percentContained),
+                  fillOpacity: 0.85,
+                }}
+              >
+                <Popup>
+                  <div className="flex flex-col gap-1 text-sm">
+                    <strong>{p.state ?? "US"} — {p.name || p.fireNumber}</strong>
+                    <span>
+                      {p.percentContained != null ? `${p.percentContained}% contained` : "Containment unknown"}
+                    </span>
+                    <span>{formatNumber(p.hectares ?? 0)} ha · {p.cause ?? "Unknown cause"}</span>
+                  </div>
+                </Popup>
+              </CircleMarker>
+            ))}
+          {isOperational &&
             clusterPoints.map((c, i) => (
               <CircleMarker
                 key={`${c.province}-${c.lat}-${c.lon}-${i}`}
@@ -537,6 +599,9 @@ export function FireMap() {
                 <LegendDot color={STATUS_COLOR["Out"]} label="BC/QC — out" />
                 <LegendDot color={ON_STATUS_COLOR["F"]} label="Ontario — active" />
                 <LegendDot color={ON_STATUS_COLOR["I"]} label="Ontario — inactive" />
+                <LegendDot color={usStatusColor(0)} label="US border states — uncontained" />
+                <LegendDot color={usStatusColor(50)} label="US border states — partial" />
+                <LegendDot color={usStatusColor(100)} label="US border states — contained" />
                 <LegendDot color={HOTSPOT_COLOR} label="Elsewhere — hotspot cluster" />
               </>
             )}
@@ -549,7 +614,10 @@ export function FireMap() {
       <div className="animate-reveal-delay-2 flex flex-col gap-2.5 border-t border-[var(--border)] bg-[var(--surface)] px-4 py-3 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
           <div className="flex items-baseline gap-3">
-            <span className="font-display text-2xl leading-none tracking-wide text-[var(--ink)] sm:text-3xl">
+            <span
+              className="font-display text-2xl leading-none tracking-wide text-[var(--ink)] sm:text-3xl"
+              aria-live="polite"
+            >
               {activeEntry?.label ?? "Loading…"}
             </span>
             {activeEntry?.kind === "historical" && (
@@ -565,8 +633,8 @@ export function FireMap() {
             {isLive && (
               <span className="label tabular">
                 {formatNumber(bcStatusPoints.length)} BC · {formatNumber(onStatusPoints.length)} Ontario
-                · {formatNumber(qcStatusPoints.length)} Quebec · {formatNumber(clusterPoints.length)}{" "}
-                clusters elsewhere
+                · {formatNumber(qcStatusPoints.length)} Quebec · {formatNumber(usStatusPoints.length)} US
+                border states · {formatNumber(clusterPoints.length)} clusters elsewhere
               </span>
             )}
           </div>
@@ -630,11 +698,11 @@ export function FireMap() {
 
       <div
         className="flex items-center justify-between gap-4 border-t border-[var(--border)] bg-[var(--bg-2)] px-4 py-1.5 text-[10px] text-[var(--ink-faint)] sm:px-8"
-        title="Sources: BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), SOPFEU (Quebec), Natural Resources Canada / CWFIS (elsewhere). Licensed under OGL British Columbia, Ontario, and Canada, and CC BY 4.0 (Gouvernement du Québec). Reference data, not exact real-time ground truth."
+        title="Sources: BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), SOPFEU (Quebec), NIFC/WFIGS via Esri Living Atlas (13 US border states), Natural Resources Canada / CWFIS (elsewhere). Licensed under OGL British Columbia, Ontario, and Canada, CC BY 4.0 (Gouvernement du Québec), and US federal public domain. Reference data, not exact real-time ground truth."
       >
         <span className="truncate">
-          Sources: BC · Ontario · Quebec · CWFIS (rest of Canada) — reference data, not real-time
-          ground truth.
+          Sources: BC · Ontario · Quebec · NIFC (US border states) · CWFIS (elsewhere) — reference
+          data, not real-time ground truth.
         </span>
         <div className="flex shrink-0 items-center gap-4">
           <ShareButton text={shareText} />
