@@ -200,6 +200,12 @@ input[type="range"]::-webkit-slider-runnable-track {
   background: currentColor;
   animation: pulse-ring 1.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
 }
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot::before {
+    animation: none;
+    opacity: 0;
+  }
+}
 
 ::selection {
   background: var(--ember);

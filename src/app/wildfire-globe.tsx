@@ -1,8 +1,16 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
+
+// This component only ever mounts client-side (dynamically imported with
+// ssr:false), so reading matchMedia in a lazy initializer is safe - there's
+// no server-rendered version of it to hydration-mismatch against.
+function useReducedMotion() {
+  const [reduced] = useState(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  return reduced;
+}
 
 // Rough provincial/territorial centroids - just enough to scatter glowing
 // hotspot dots recognizably over Canada's shape, not a precise atlas.
@@ -45,12 +53,14 @@ function arcPoints(start: THREE.Vector3, end: THREE.Vector3, lift: number, segme
 
 function ArcLines({ positions }: { positions: THREE.Vector3[] }) {
   const matRefs = useRef<THREE.LineBasicMaterial[]>([]);
+  const reducedMotion = useReducedMotion();
   const arcs = useMemo(
     () => ARCS.map(([a, b]) => arcPoints(positions[a], positions[b], 0.22)),
     [positions],
   );
 
   useFrame((state) => {
+    if (reducedMotion) return;
     const t = state.clock.elapsedTime;
     matRefs.current.forEach((mat, i) => {
       if (!mat) return;
@@ -119,10 +129,12 @@ function Atmosphere() {
 function Globe() {
   const groupRef = useRef<THREE.Group>(null);
   const hotspotRefs = useRef<THREE.Mesh[]>([]);
+  const reducedMotion = useReducedMotion();
 
   const positions = useMemo(() => HOTSPOTS.map(([lat, lon]) => latLonToVec3(lat, lon, 1.52)), []);
 
   useFrame((state, delta) => {
+    if (reducedMotion) return;
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.12;
       // Subtle mouse-parallax tilt on top of the constant spin - r3f tracks
