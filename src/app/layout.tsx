@@ -14,9 +14,28 @@ const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
 });
 
+const title = "Canada Wildfires";
+const description =
+  "Live wildfire status and over a century of historical trends across Canada — BC, Ontario, Quebec, and satellite-tracked hotspots nationwide.";
+
 export const metadata: Metadata = {
-  title: "Canada Wildfires",
-  description: "Historical trends and live status for wildfires across Canada.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    siteName: "Canada Wildfires",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+};
+
+export const viewport = {
+  themeColor: "#0d0b09",
 };
 
 export default function RootLayout({
