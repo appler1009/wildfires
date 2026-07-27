@@ -31,11 +31,36 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background:
-            "radial-gradient(ellipse 120% 90% at 12% -10%, rgba(255,90,31,0.28), transparent 55%), #0d0b09",
+            "radial-gradient(ellipse 120% 90% at 12% -10%, rgba(255,90,31,0.28), transparent 55%), radial-gradient(ellipse 70% 70% at 95% 105%, rgba(255,176,32,0.22), transparent 60%), #0d0b09",
           padding: "72px",
           fontFamily: fontData ? "Anton" : "sans-serif",
+          position: "relative",
         }}
       >
+        <div
+          style={{
+            display: "flex",
+            position: "absolute",
+            right: 90,
+            top: 90,
+            width: 220,
+            height: 220,
+            borderRadius: 999,
+            background: "radial-gradient(circle, rgba(255,90,31,0.55) 0%, rgba(255,90,31,0) 70%)",
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
+            position: "absolute",
+            right: 170,
+            top: 260,
+            width: 120,
+            height: 120,
+            borderRadius: 999,
+            background: "radial-gradient(circle, rgba(255,176,32,0.5) 0%, rgba(255,176,32,0) 70%)",
+          }}
+        />
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <div
             style={{
