@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import yearlyFireTotals from "@/data/yearly-fire-totals.json";
 import { EmberParticles } from "../../ember-particles";
 import { ThemeToggle } from "../../theme-toggle";
 import { CountUp } from "./count-up";
 import { YearBarChart } from "./year-bar-chart";
+
+export const metadata: Metadata = {
+  title: "Yearly Totals — Canada Wildfires",
+  description: "Hectares burned and fire counts by year across Canada, since 1917.",
+};
 
 type YearRow = {
   year: number;

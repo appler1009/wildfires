@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import monthlyFireHeatmap from "@/data/monthly-fire-heatmap.json";
 import { EmberParticles } from "../../ember-particles";
 import { ThemeToggle } from "../../theme-toggle";
 import { HeatmapGrid } from "./heatmap-grid";
+
+export const metadata: Metadata = {
+  title: "Monthly Heatmap — Canada Wildfires",
+  description: "Hectares burned by month and year across Canada, as a heatmap.",
+};
 
 export default function MonthlyPage() {
   const lastUpdated = new Date(monthlyFireHeatmap.generatedAt);
