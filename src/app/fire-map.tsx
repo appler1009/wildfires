@@ -167,7 +167,7 @@ type Timeline =
 // series of counts, scaled to fit a width x height viewBox with a small
 // vertical margin so peaks don't clip the stroke.
 function sparklinePaths(values: number[], width: number, height: number) {
-  if (values.length < 2) return { line: "", area: "" };
+  if (values.length < 2) return { line: "", area: "", points: [] as (readonly [number, number])[] };
   const max = Math.max(1, ...values);
   const margin = height * 0.12;
   const usableHeight = height - margin * 2;
@@ -179,7 +179,7 @@ function sparklinePaths(values: number[], width: number, height: number) {
   });
   const line = points.map(([x, y], i) => `${i === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
   const area = `${line} L${width},${height} L0,${height} Z`;
-  return { line, area };
+  return { line, area, points };
 }
 
 function formatDayLabel(date: string) {
@@ -476,6 +476,13 @@ export function FireMap() {
               <svg width="110" height="28" viewBox="0 0 110 28" className="overflow-visible">
                 <path d={sparkline.area} fill="var(--ember)" opacity="0.12" />
                 <path d={sparkline.line} fill="none" stroke="var(--ember)" strokeWidth="1.5" />
+                {sparkline.points.map(([x, y], i) => (
+                  <circle key={i} cx={x} cy={y} r="4" fill="transparent" className="cursor-default">
+                    <title>
+                      {formatDayLabel(sparklineDays[i].date)}: {formatNumber(sparklineDays[i].count)} detections
+                    </title>
+                  </circle>
+                ))}
               </svg>
               {sparklineTrendPct != null && (
                 <span
