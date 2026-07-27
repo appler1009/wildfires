@@ -74,6 +74,12 @@ export function BootSequence({
         fading ? "opacity-0" : "opacity-100"
       }`}
     >
+      {/* Faint tiled starfield behind the globe - a static SVG pattern, not
+          canvas/WebGL, so it costs nothing extra to paint. Themed in CSS
+          (boot-starfield) rather than inline, since a hardcoded light dot
+          color reads fine in dark mode but disappears entirely against the
+          light "field paper" background. */}
+      <div aria-hidden="true" className="boot-starfield absolute inset-0" />
       <div className="absolute inset-0 opacity-90">
         <WildfireGlobe />
       </div>
