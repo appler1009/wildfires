@@ -17,7 +17,14 @@ type Particle = {
 // Lightweight canvas ember drift - glowing motes rising and guttering out.
 // Self-contained: sizes to its parent, respects prefers-reduced-motion, and
 // throttles particle count so it never fights the page for CPU.
-export function EmberParticles({ density = 1 }: { density?: number }) {
+export function EmberParticles({
+  density = 1,
+  connect = false,
+}: {
+  density?: number;
+  /** Draw faint constellation-style lines between nearby particles. */
+  connect?: boolean;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -81,6 +88,34 @@ export function EmberParticles({ density = 1 }: { density?: number }) {
           particles.splice(i, 1);
           continue;
         }
+      }
+
+      // Constellation lines between nearby particles, drawn before the
+      // embers themselves so the glow reads on top of the linework - O(n^2)
+      // but n stays in the dozens, so it's cheap.
+      if (connect) {
+        const maxDist = 90;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const a = particles[i];
+            const b = particles[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist >= maxDist) continue;
+            const lineAlpha = (1 - dist / maxDist) * 0.18;
+            ctx!.strokeStyle = `hsla(28, 100%, 60%, ${lineAlpha})`;
+            ctx!.lineWidth = 1;
+            ctx!.beginPath();
+            ctx!.moveTo(a.x, a.y);
+            ctx!.lineTo(b.x, b.y);
+            ctx!.stroke();
+          }
+        }
+      }
+
+      for (const p of particles) {
+        const lifeT = p.life / p.maxLife;
         const fade = lifeT < 0.15 ? lifeT / 0.15 : lifeT > 0.7 ? 1 - (lifeT - 0.7) / 0.3 : 1;
         const alpha = Math.max(0, fade) * 0.55;
         const grad = ctx!.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 4);
@@ -103,7 +138,7 @@ export function EmberParticles({ density = 1 }: { density?: number }) {
       cancelAnimationFrame(raf);
       ro.disconnect();
     };
-  }, [density]);
+  }, [density, connect]);
 
   return (
     <canvas

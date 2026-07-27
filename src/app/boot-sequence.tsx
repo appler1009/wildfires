@@ -77,7 +77,7 @@ export function BootSequence({
       <div className="absolute inset-0 opacity-90">
         <WildfireGlobe />
       </div>
-      <EmberParticles density={1.4} />
+      <EmberParticles density={1.4} connect />
       <div className="relative flex flex-col items-center gap-5 px-6 text-center">
         <h1 className="animate-reveal font-display text-4xl leading-none tracking-wide text-[var(--ink)] drop-shadow-[0_2px_24px_rgba(0,0,0,0.9)] sm:text-6xl">
           Canada Wildfires
