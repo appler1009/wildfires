@@ -30,7 +30,9 @@ export function ShareButton({ text }: { text: string }) {
       onClick={handleShare}
       className="text-ember-glow label flex items-center gap-1.5 text-[var(--amber)] hover:text-[var(--ember)]"
     >
-      <span>{copied ? "Link Copied" : "Share"}</span>
+      <span key={copied ? "copied" : "share"} className="animate-count">
+        {copied ? "Link Copied" : "Share"}
+      </span>
       <span aria-hidden="true">{copied ? "✓" : "↗"}</span>
     </button>
   );
