@@ -326,6 +326,42 @@ body::before {
   }
 }
 
+/* Ember-glow hover feedback for interactive controls - a soft outward bloom
+   in the ember hue, scaled by the button's own accent so it reads as "hot"
+   rather than a generic focus ring. */
+.ember-glow {
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.15s ease;
+}
+.ember-glow:hover:not(:disabled) {
+  box-shadow:
+    0 0 0 1px var(--ember),
+    0 0 16px 1px rgba(255, 90, 31, 0.45);
+}
+.ember-glow-solid:hover:not(:disabled) {
+  box-shadow:
+    0 0 18px 3px rgba(255, 90, 31, 0.55),
+    0 0 40px 8px rgba(255, 90, 31, 0.2);
+}
+.text-ember-glow {
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+.text-ember-glow:hover {
+  text-shadow: 0 0 12px rgba(255, 90, 31, 0.65);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ember-glow,
+  .ember-glow-solid,
+  .text-ember-glow {
+    transition: none;
+  }
+}
+
 /* Tint the OSM base tiles to sit inside the ops-console palette instead of
    looking like a stock web map. Dark by default; lighter in light mode. */
 .leaflet-tile-pane {

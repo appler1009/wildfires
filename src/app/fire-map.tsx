@@ -1,6 +1,7 @@
 "use client";
 
 import "leaflet/dist/leaflet.css";
+import type { CircleMarker as LeafletCircleMarker, LeafletMouseEvent } from "leaflet";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
@@ -161,6 +162,25 @@ type Timeline =
   | { kind: "daily"; date: string; count: number; label: string }
   | { kind: "historical"; year: number; month: number; count: number; label: string };
 
+// Builds a compact SVG sparkline path (line + closed area-under-curve) from a
+// series of counts, scaled to fit a width x height viewBox with a small
+// vertical margin so peaks don't clip the stroke.
+function sparklinePaths(values: number[], width: number, height: number) {
+  if (values.length < 2) return { line: "", area: "" };
+  const max = Math.max(1, ...values);
+  const margin = height * 0.12;
+  const usableHeight = height - margin * 2;
+  const stepX = width / (values.length - 1);
+  const points = values.map((v, i) => {
+    const x = i * stepX;
+    const y = margin + usableHeight * (1 - v / max);
+    return [x, y] as const;
+  });
+  const line = points.map(([x, y], i) => `${i === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+  const area = `${line} L${width},${height} L0,${height} Z`;
+  return { line, area };
+}
+
 function formatDayLabel(date: string) {
   // date is YYYY-MM-DD (UTC); format without a timezone-shifting Date parse.
   const [y, m, d] = date.split("-").map(Number);
@@ -174,6 +194,24 @@ function radiusFor(hectares: number | null | undefined) {
 
 function radiusForCluster(pixelCount: number) {
   return Math.min(20, Math.max(4, Math.sqrt(pixelCount) * 1.4 + 3));
+}
+
+// Markers are canvas-rendered (preferCanvas) for performance with thousands of
+// points, so CSS :hover can't reach them - Leaflet still fires mouse events on
+// canvas-rendered paths via hit-testing, so we drive the glow imperatively
+// through the layer's own setStyle instead of React state (no re-render).
+function markerHoverHandlers(baseWeight: number, baseFillOpacity: number) {
+  return {
+    mouseover: (e: LeafletMouseEvent) => {
+      const layer = e.target as LeafletCircleMarker;
+      layer.setStyle({ weight: baseWeight + 2, fillOpacity: Math.min(1, baseFillOpacity + 0.15) });
+      layer.bringToFront();
+    },
+    mouseout: (e: LeafletMouseEvent) => {
+      const layer = e.target as LeafletCircleMarker;
+      layer.setStyle({ weight: baseWeight, fillOpacity: baseFillOpacity });
+    },
+  };
 }
 
 function formatNumber(n: number) {
@@ -364,6 +402,20 @@ export function FireMap() {
     setSelected(Math.min(timeline.length - 1, Math.max(0, effectiveSelected + delta)));
   }
 
+  const sparklineDays = (dailyIndex?.days ?? []).slice(-30);
+  const sparkline = sparklinePaths(sparklineDays.map((d) => d.count), 110, 28);
+  const sparklineTrendPct =
+    sparklineDays.length >= 2 && sparklineDays[0].count > 0
+      ? Math.round(
+          ((sparklineDays.at(-1)!.count - sparklineDays[0].count) / sparklineDays[0].count) * 100,
+        )
+      : null;
+
+  // Collapsed by default on narrow viewports so the ten-row legend doesn't
+  // eat half the map; left open on desktop where it always has room.
+  const [legendOpen, setLegendOpen] = useState(() =>
+    typeof window === "undefined" ? true : window.matchMedia("(min-width: 640px)").matches,
+  );
   const [playing, setPlaying] = useState(false);
   useEffect(() => {
     if (!playing) return;
@@ -389,6 +441,26 @@ export function FireMap() {
           <span className="label hidden sm:inline">Latest &amp; Historical Tracker</span>
         </div>
         <div className="flex items-center gap-4">
+          {sparkline.line && (
+            <div
+              className="hidden items-center gap-2 lg:flex"
+              title="Satellite hotspot detections per day, last 30 days"
+            >
+              <span className="label">30-day trend</span>
+              <svg width="110" height="28" viewBox="0 0 110 28" className="overflow-visible">
+                <path d={sparkline.area} fill="var(--ember)" opacity="0.12" />
+                <path d={sparkline.line} fill="none" stroke="var(--ember)" strokeWidth="1.5" />
+              </svg>
+              {sparklineTrendPct != null && (
+                <span
+                  className="label tabular"
+                  style={{ color: sparklineTrendPct >= 0 ? "var(--ember)" : "var(--safe)" }}
+                >
+                  {sparklineTrendPct >= 0 ? "▲" : "▼"} {Math.abs(sparklineTrendPct)}%
+                </span>
+              )}
+            </div>
+          )}
           {dataRefreshedAt && (
             <span className="label tabular hidden md:inline" title="When this data was last pulled from source — not a continuous live stream">
               Data refreshed {new Date(dataRefreshedAt).toISOString().slice(0, 16).replace("T", " ")} UTC
@@ -430,6 +502,7 @@ export function FireMap() {
                   fillColor: STATUS_COLOR[p.status ?? ""] ?? "#898781",
                   fillOpacity: 0.85,
                 }}
+                eventHandlers={markerHoverHandlers(1, 0.85)}
               >
                 <Popup>
                   <div className="flex flex-col gap-1 text-sm">
@@ -462,6 +535,7 @@ export function FireMap() {
                   fillColor: ON_STATUS_COLOR[p.status ?? ""] ?? "#898781",
                   fillOpacity: 0.85,
                 }}
+                eventHandlers={markerHoverHandlers(1, 0.85)}
               >
                 <Popup>
                   <div className="flex flex-col gap-1 text-sm">
@@ -484,6 +558,7 @@ export function FireMap() {
                   fillColor: STATUS_COLOR[p.status ?? ""] ?? "#898781",
                   fillOpacity: 0.85,
                 }}
+                eventHandlers={markerHoverHandlers(1, 0.85)}
               >
                 <Popup>
                   <div className="flex flex-col gap-1 text-sm">
@@ -516,6 +591,7 @@ export function FireMap() {
                   fillColor: usStatusColor(p.percentContained),
                   fillOpacity: 0.85,
                 }}
+                eventHandlers={markerHoverHandlers(1, 0.85)}
               >
                 <Popup>
                   <div className="flex flex-col gap-1 text-sm">
@@ -540,6 +616,7 @@ export function FireMap() {
                   fillColor: HOTSPOT_COLOR,
                   fillOpacity: 0.75,
                 }}
+                eventHandlers={markerHoverHandlers(1, 0.75)}
               >
                 <Popup>
                   <div className="flex flex-col gap-1 text-sm">
@@ -562,6 +639,7 @@ export function FireMap() {
                   fillColor: HISTORICAL_COLOR,
                   fillOpacity: 0.7,
                 }}
+                eventHandlers={markerHoverHandlers(1, 0.7)}
               >
                 <Popup>
                   <div className="flex flex-col gap-1 text-sm">
@@ -581,16 +659,25 @@ export function FireMap() {
         />
 
         <div className="animate-reveal-delay-1 pointer-events-none absolute bottom-4 left-4 z-[1000] flex flex-col gap-2">
-          <span
-            className={`label pointer-events-auto w-fit border px-2.5 py-1 backdrop-blur-sm ${
+          <button
+            type="button"
+            onClick={() => setLegendOpen((o) => !o)}
+            className={`ember-glow label pointer-events-auto flex w-fit items-center gap-1.5 border px-2.5 py-1 backdrop-blur-sm ${
               isOperational
                 ? "border-[var(--ember-dim)] bg-[color-mix(in_srgb,var(--ember)_18%,var(--surface))] text-[var(--ember)]"
                 : "border-[var(--border-strong)] bg-[var(--surface)]/95 text-[var(--amber)]"
             }`}
           >
             {isLive ? "Latest Operational Status" : isDaily ? "Satellite Hotspot Detections" : "Historical Summary"}
-          </span>
-          <div className="pointer-events-auto flex flex-col gap-1.5 border border-[var(--border)] bg-[var(--surface)]/95 px-3 py-2.5 text-[11px] text-[var(--ink-muted)] backdrop-blur-sm">
+            <span aria-hidden="true" className="text-[9px]">
+              {legendOpen ? "▾" : "▸"}
+            </span>
+          </button>
+          <div
+            className={`pointer-events-auto flex-col gap-1.5 border border-[var(--border)] bg-[var(--surface)]/95 px-3 py-2.5 text-[11px] text-[var(--ink-muted)] backdrop-blur-sm ${
+              legendOpen ? "flex" : "hidden"
+            }`}
+          >
             {isLive && (
               <>
                 <LegendDot color={STATUS_COLOR["Out of Control"]} label="BC/QC — out of control" />
@@ -643,7 +730,7 @@ export function FireMap() {
               type="button"
               onClick={() => setPlaying((p) => !p)}
               disabled={effectiveSelected >= timeline.length - 1 && !playing}
-              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
+              className="ember-glow label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
               title="Play through the timeline"
             >
               {playing ? "⏸ Pause" : "▶ Play"}
@@ -655,7 +742,7 @@ export function FireMap() {
                 step(-1);
               }}
               disabled={effectiveSelected <= 0}
-              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
+              className="ember-glow label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
             >
               ← Prev
             </button>
@@ -666,7 +753,7 @@ export function FireMap() {
                 setSelected(timeline.length - 1);
               }}
               disabled={isLive}
-              className="label border border-[var(--ember-dim)] bg-[var(--ember)] px-3 py-1.5 text-[#0d0b09] transition-all hover:opacity-90 active:scale-95 disabled:pointer-events-none disabled:opacity-30"
+              className="ember-glow-solid label border border-[var(--ember-dim)] bg-[var(--ember)] px-3 py-1.5 text-[#0d0b09] transition-all hover:opacity-90 active:scale-95 disabled:pointer-events-none disabled:opacity-30"
             >
               Latest
             </button>
@@ -677,7 +764,7 @@ export function FireMap() {
                 step(1);
               }}
               disabled={effectiveSelected >= timeline.length - 1}
-              className="label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
+              className="ember-glow label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
             >
               Next →
             </button>
@@ -708,13 +795,13 @@ export function FireMap() {
           <ShareButton text={shareText} />
           <Link
             href="/historical/yearly"
-            className="label text-[var(--amber)] transition-colors hover:text-[var(--ember)]"
+            className="text-ember-glow label text-[var(--amber)] hover:text-[var(--ember)]"
           >
             Yearly totals
           </Link>
           <Link
             href="/historical/monthly"
-            className="label text-[var(--amber)] transition-colors hover:text-[var(--ember)]"
+            className="text-ember-glow label text-[var(--amber)] hover:text-[var(--ember)]"
           >
             Monthly heatmap
           </Link>

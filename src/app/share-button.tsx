@@ -28,7 +28,7 @@ export function ShareButton({ text }: { text: string }) {
     <button
       type="button"
       onClick={handleShare}
-      className="label flex items-center gap-1.5 text-[var(--amber)] transition-colors hover:text-[var(--ember)]"
+      className="text-ember-glow label flex items-center gap-1.5 text-[var(--amber)] hover:text-[var(--ember)]"
     >
       <span>{copied ? "Link Copied" : "Share"}</span>
       <span aria-hidden="true">{copied ? "✓" : "↗"}</span>
