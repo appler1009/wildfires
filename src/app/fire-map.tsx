@@ -544,6 +544,8 @@ export function FireMap() {
     typeof window === "undefined" ? true : window.matchMedia("(min-width: 640px)").matches,
   );
   const [playing, setPlaying] = useState(false);
+  const PLAY_SPEEDS = [450, 220, 90];
+  const [speedIndex, setSpeedIndex] = useState(0);
   useEffect(() => {
     if (!playing) return;
     const id = setTimeout(() => {
@@ -552,10 +554,10 @@ export function FireMap() {
       } else {
         step(1);
       }
-    }, 450);
+    }, PLAY_SPEEDS[speedIndex]);
     return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [playing, effectiveSelected, timeline.length]);
+  }, [playing, effectiveSelected, timeline.length, speedIndex]);
 
   // Arrow-key scrubbing through the timeline, Space to play/pause - skipped
   // while focus is inside a form control so typing/selecting still works.
@@ -924,6 +926,14 @@ export function FireMap() {
               title="Play through the timeline"
             >
               {playing ? "⏸ Pause" : "▶ Play"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setSpeedIndex((i) => (i + 1) % PLAY_SPEEDS.length)}
+              className="ember-glow label border border-[var(--border-strong)] px-2 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95"
+              title="Playback speed"
+            >
+              {["1×", "2×", "4×"][speedIndex]}
             </button>
             <button
               type="button"
