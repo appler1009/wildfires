@@ -689,6 +689,8 @@ export function FireMap() {
           <button
             type="button"
             onClick={() => setLegendOpen((o) => !o)}
+            aria-expanded={legendOpen}
+            aria-controls="map-legend-panel"
             className={`ember-glow label pointer-events-auto flex w-fit items-center gap-1.5 border px-2.5 py-1 backdrop-blur-sm ${
               isOperational
                 ? "border-[var(--ember-dim)] bg-[color-mix(in_srgb,var(--ember)_18%,var(--surface))] text-[var(--ember)]"
@@ -701,6 +703,7 @@ export function FireMap() {
             </span>
           </button>
           <div
+            id="map-legend-panel"
             className={`pointer-events-auto flex-col gap-1.5 border border-[var(--border)] bg-[var(--surface)]/95 px-3 py-2.5 text-[11px] text-[var(--ink-muted)] backdrop-blur-sm ${
               legendOpen ? "flex" : "hidden"
             }`}
@@ -757,6 +760,7 @@ export function FireMap() {
               type="button"
               onClick={() => setPlaying((p) => !p)}
               disabled={effectiveSelected >= timeline.length - 1 && !playing}
+              aria-pressed={playing}
               className="ember-glow label border border-[var(--border-strong)] px-2.5 py-1.5 text-[var(--ink-muted)] transition-all hover:border-[var(--ember)] hover:text-[var(--ember)] active:scale-95 disabled:pointer-events-none disabled:opacity-25"
               title="Play through the timeline"
             >
