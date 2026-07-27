@@ -586,7 +586,8 @@ export function FireMap() {
     <div className="flex h-dvh flex-col">
       <BootSequence ready={dataLoaded} connected={connected} />
       <div className="animate-reveal flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 py-2 sm:px-8">
-        <div className="flex items-baseline gap-3">
+        <div className="flex items-baseline gap-2.5">
+          <span className="flame-icon" aria-hidden="true" />
           <h1 className="font-display text-lg leading-none tracking-wide text-[var(--ink)] sm:text-xl">
             Canada Wildfires
           </h1>
