@@ -1,7 +1,7 @@
 // Pulls Canada-wide historical fire points (all provinces/territories except
-// BC, which is covered more completely and further back by BC's own
-// historical incidents dataset - see fetch-fire-points.ts) from the National
-// Fire Database.
+// BC and Ontario, which have their own richer/more current provincial
+// datasets - see fetch-fire-points.ts and fetch-on-historical-points.ts)
+// from the National Fire Database.
 //
 // Source: Natural Resources Canada / CWFIS - NFDB_point
 // Licence: Open Government Licence - Canada
@@ -32,18 +32,23 @@ type WfsFeature = { properties: Record<string, string | number | null> };
 type WfsResponse = { features: WfsFeature[]; totalFeatures: number; numberReturned: number };
 
 async function fetchPage(startIndex: number): Promise<WfsResponse> {
-  const url = new URL(WFS_BASE);
-  url.search = new URLSearchParams({
+  const params: Record<string, string> = {
     service: "WFS",
     version: "2.0.0",
     request: "GetFeature",
     typeName: TYPE_NAME,
     outputFormat: "json",
     propertyName: PROPERTIES.join(","),
-    CQL_FILTER: "SRC_AGENCY<>'BC'",
+    CQL_FILTER: "SRC_AGENCY NOT IN ('BC','ON')",
     count: String(PAGE_SIZE),
     startIndex: String(startIndex),
-  }).toString();
+  };
+  // GeoServer's CQL parser rejects "+"-encoded spaces (URLSearchParams' default);
+  // encodeURIComponent uses %20, which it accepts.
+  const query = Object.entries(params)
+    .map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
+    .join("&");
+  const url = `${WFS_BASE}?${query}`;
 
   const res = await fetch(url);
   if (!res.ok) throw new Error(`WFS request failed (${res.status}): ${url}`);

@@ -7,10 +7,13 @@ const STEPS = [
   "fetch-historical-fires.ts",
   "fetch-fire-points.ts",
   "fetch-current-fires.ts",
+  // Ontario (own datasets - more current than NFDB for Ontario)
+  "fetch-on-historical-points.ts",
+  "fetch-on-current-fires.ts",
   // Rest of Canada (National Fire Database + CWFIS satellite hotspots)
   "fetch-nfdb-points.ts",
   "fetch-cwfis-hotspots.ts",
-  // Rollups (combine BC + Canada-wide sources)
+  // Rollups (combine BC + Ontario + Canada-wide sources)
   "build-rollups.ts",
   "build-monthly-heatmap.ts",
   "build-monthly-points.ts",

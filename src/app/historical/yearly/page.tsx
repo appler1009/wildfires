@@ -34,9 +34,9 @@ export default function Home() {
           </h1>
           <p className="max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
             Sum of mapped fire area (hectares) and fire count per season, since {rows[0].year}. BC
-            uses its own dataset (most current and complete); the rest of Canada uses the National
-            Fire Database, which currently extends to 2023. This is a historical summary — not live
-            operational data.
+            and Ontario use their own datasets (most current and complete for those provinces); the
+            rest of Canada uses the National Fire Database, which currently extends to 2023. This is
+            a historical summary — not live operational data.
           </p>
         </header>
 

@@ -1,6 +1,6 @@
-// Reads the cached historical fire records (BC's own dataset + the National
-// Fire Database for the rest of Canada) and produces frontend-ready yearly
-// rollup JSON under src/data/, using DuckDB for aggregation.
+// Reads the cached historical fire records (BC + Ontario's own datasets, the
+// National Fire Database for the rest of Canada) and produces frontend-ready
+// yearly rollup JSON under src/data/, using DuckDB for aggregation.
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { DuckDBInstance } from "@duckdb/node-api";
@@ -9,6 +9,7 @@ const BC_RAW_PATH = path.join(
   import.meta.dirname,
   "../../data/raw/historical-fire-perimeters.ndjson",
 );
+const ON_RAW_PATH = path.join(import.meta.dirname, "../../data/raw/on-historical-points.ndjson");
 const NFDB_RAW_PATH = path.join(import.meta.dirname, "../../data/raw/nfdb-points.ndjson");
 const OUTPUT_DIR = path.join(import.meta.dirname, "../../src/data");
 
@@ -22,6 +23,10 @@ async function main() {
     CREATE TABLE fires AS
     SELECT FIRE_YEAR::INTEGER AS fire_year, FIRE_SIZE_HECTARES::DOUBLE AS size_hectares
     FROM read_ndjson_auto('${BC_RAW_PATH}')
+    WHERE FIRE_YEAR IS NOT NULL
+    UNION ALL
+    SELECT FIRE_YEAR::INTEGER AS fire_year, FIRE_FINAL_SIZE::DOUBLE AS size_hectares
+    FROM read_ndjson_auto('${ON_RAW_PATH}')
     WHERE FIRE_YEAR IS NOT NULL
     UNION ALL
     SELECT YEAR::INTEGER AS fire_year, SIZE_HA::DOUBLE AS size_hectares
@@ -41,9 +46,10 @@ async function main() {
 
   const yearlyTotals = {
     source:
-      "BC Data Catalogue - Historical Fire Perimeters (BC), National Fire Database (rest of Canada, Natural Resources Canada / CWFIS)",
-    licence: "Open Government Licence - British Columbia / Open Government Licence - Canada",
-    note: "National Fire Database coverage outside BC currently extends to 2023 and lags the current season by roughly 1-2 years; BC's own dataset is more current and complete for BC.",
+      "BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), National Fire Database (rest of Canada, Natural Resources Canada / CWFIS)",
+    licence:
+      "Open Government Licence - British Columbia / Open Government Licence - Ontario / Open Government Licence - Canada",
+    note: "National Fire Database coverage outside BC/Ontario currently extends to 2023 and lags the current season by roughly 1-2 years; BC's and Ontario's own datasets are more current and complete for those provinces.",
     generatedAt: new Date().toISOString(),
     kind: "historical_summary" as const,
     rows: yearly.getRowObjectsJson(),

@@ -1,18 +1,20 @@
-// Splits the cached historical fire points (BC's own incidents + National
-// Fire Database for the rest of Canada) into one JSON file per year-month
-// (under public/data/fires/) so the map only fetches the month the user is
-// actually viewing, plus an index of which months have data.
+// Splits the cached historical fire points (BC + Ontario's own datasets,
+// National Fire Database for the rest of Canada) into one JSON file per
+// year-month (under public/data/fires/) so the map only fetches the month
+// the user is actually viewing, plus an index of which months have data.
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { DuckDBInstance } from "@duckdb/node-api";
 
 const BC_RAW_PATH = path.join(import.meta.dirname, "../../data/raw/historical-fire-points.ndjson");
+const ON_RAW_PATH = path.join(import.meta.dirname, "../../data/raw/on-historical-points.ndjson");
 const NFDB_RAW_PATH = path.join(import.meta.dirname, "../../data/raw/nfdb-points.ndjson");
 const OUTPUT_DIR = path.join(import.meta.dirname, "../../public/data/fires");
 
 const SOURCE =
-  "BC Data Catalogue - Historical Fire Incident Locations (BC), National Fire Database (rest of Canada, Natural Resources Canada / CWFIS)";
-const LICENCE = "Open Government Licence - British Columbia / Open Government Licence - Canada";
+  "BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), National Fire Database (rest of Canada, Natural Resources Canada / CWFIS)";
+const LICENCE =
+  "Open Government Licence - British Columbia / Open Government Licence - Ontario / Open Government Licence - Canada";
 
 async function main() {
   await mkdir(OUTPUT_DIR, { recursive: true });
@@ -34,6 +36,20 @@ async function main() {
       GEOGRAPHIC_DESCRIPTION AS place
     FROM read_ndjson_auto('${BC_RAW_PATH}')
     WHERE FIRE_YEAR IS NOT NULL AND LATITUDE IS NOT NULL AND LONGITUDE IS NOT NULL
+    UNION ALL
+    SELECT
+      FIRE_DISTURBANCE_AREA_IDENT AS fire_number,
+      'ON' AS province,
+      FIRE_YEAR::INTEGER AS fire_year,
+      EPOCH_MS(FIRE_START_DATE::BIGINT)::DATE AS ignition_date,
+      LATITUDE::DOUBLE AS lat,
+      LONGITUDE::DOUBLE AS lon,
+      FIRE_FINAL_SIZE::DOUBLE AS hectares,
+      FIRE_GENERAL_CAUSE_CODE AS cause,
+      NULL AS place
+    FROM read_ndjson_auto('${ON_RAW_PATH}')
+    WHERE FIRE_YEAR IS NOT NULL AND LATITUDE IS NOT NULL AND LONGITUDE IS NOT NULL
+      AND FIRE_START_DATE IS NOT NULL
     UNION ALL
     SELECT
       COALESCE(FIRE_ID, FIRENAME) AS fire_number,
@@ -93,7 +109,7 @@ async function main() {
   const index = {
     source: SOURCE,
     licence: LICENCE,
-    note: "National Fire Database coverage outside BC currently extends to 2023 and lags the current season by roughly 1-2 years; BC's own dataset is more current and complete for BC.",
+    note: "National Fire Database coverage outside BC/Ontario currently extends to 2023 and lags the current season by roughly 1-2 years; BC's and Ontario's own datasets are more current and complete for those provinces.",
     generatedAt: new Date().toISOString(),
     excludedRecordsMissingDate: undatedCount,
     months: months.filter((m) => m.month !== 0),

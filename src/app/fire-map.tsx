@@ -21,6 +21,14 @@ const STATUS_COLOR: Record<string, string> = {
 const HISTORICAL_COLOR = "#2a78d6"; // categorical slot 1 (blue) — recorded fire location
 const HOTSPOT_COLOR = "#eb6834"; // categorical slot 2 (orange) — satellite hotspot detection
 
+// Ontario's live layer only publishes a single-letter code with no decoded
+// domain; F/I read as active/inactive, reusing the status palette's
+// good/critical poles (not a confirmed official meaning).
+const ON_STATUS_COLOR: Record<string, string> = {
+  F: "#d03b3b",
+  I: "#0ca30c",
+};
+
 type IndexMonth = { year: number; month: number; count: number };
 type IndexData = {
   source: string;
@@ -60,6 +68,23 @@ type CurrentData = {
   note: string;
   generatedAt: string;
   points: CurrentPoint[];
+};
+
+type OntarioPoint = {
+  fireNumber: string;
+  hectares: number | null;
+  status: string | null;
+  dateMapped: string | null;
+  lat: number;
+  lon: number;
+};
+
+type OntarioData = {
+  source: string;
+  licence: string;
+  note: string;
+  generatedAt: string;
+  points: OntarioPoint[];
 };
 
 type ClusterPoint = {
@@ -105,6 +130,7 @@ export function FireMap() {
   const [index, setIndex] = useState<IndexData | null>(null);
   const [dailyIndex, setDailyIndex] = useState<DailyIndexData | null>(null);
   const [current, setCurrent] = useState<CurrentData | null>(null);
+  const [onCurrent, setOnCurrent] = useState<OntarioData | null>(null);
   const [latestClusters, setLatestClusters] = useState<ClusterPoint[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
   const [historicalPoints, setHistoricalPoints] = useState<HistoricalPoint[]>([]);
@@ -117,10 +143,12 @@ export function FireMap() {
     Promise.all([
       fetch("/data/fires/index.json").then((r) => r.json()),
       fetch("/data/fires/current.json").then((r) => r.json()),
+      fetch("/data/fires/on-current.json").then((r) => r.json()),
       fetch("/data/fires/daily/index.json").then((r) => r.json()),
-    ]).then(([idx, cur, daily]: [IndexData, CurrentData, DailyIndexData]) => {
+    ]).then(([idx, cur, onCur, daily]: [IndexData, CurrentData, OntarioData, DailyIndexData]) => {
       setIndex(idx);
       setCurrent(cur);
+      setOnCurrent(onCur);
       setDailyIndex(daily);
       const latestDate = daily.days.at(-1)?.date;
       if (latestDate) {
@@ -150,11 +178,15 @@ export function FireMap() {
       label: formatDayLabel(d.date),
     }));
     const entries = [...months, ...days];
-    if ((current && current.points.length > 0) || latestClusters.length > 0) {
+    if (
+      (current && current.points.length > 0) ||
+      (onCurrent && onCurrent.points.length > 0) ||
+      latestClusters.length > 0
+    ) {
       entries.push({ kind: "live", label: "Live — now" });
     }
     return entries;
-  }, [index, dailyIndex, current, latestClusters]);
+  }, [index, dailyIndex, current, onCurrent, latestClusters]);
 
   // Default to "live" (last entry) once data loads, unless the user already picked something.
   const effectiveSelected = selected ?? Math.max(0, timeline.length - 1);
@@ -197,8 +229,9 @@ export function FireMap() {
   const isDaily = activeEntry?.kind === "daily";
   const isOperational = isLive || isDaily;
   const bcStatusPoints = isLive ? (current?.points ?? []) : [];
+  const onStatusPoints = isLive ? (onCurrent?.points ?? []) : [];
   const clusterPoints = isLive
-    ? latestClusters.filter((c) => c.province !== "BC")
+    ? latestClusters.filter((c) => c.province !== "BC" && c.province !== "ON")
     : isDaily
       ? dailyPoints
       : [];
@@ -250,6 +283,28 @@ export function FireMap() {
                         Official incident page
                       </a>
                     )}
+                  </div>
+                </Popup>
+              </CircleMarker>
+            ))}
+          {isOperational &&
+            onStatusPoints.map((p, i) => (
+              <CircleMarker
+                key={`${p.fireNumber}-${i}`}
+                center={[p.lat, p.lon]}
+                radius={radiusFor(p.hectares)}
+                pathOptions={{
+                  color: "#ffffff",
+                  weight: 1,
+                  fillColor: ON_STATUS_COLOR[p.status ?? ""] ?? "#898781",
+                  fillOpacity: 0.85,
+                }}
+              >
+                <Popup>
+                  <div className="flex flex-col gap-1 text-sm">
+                    <strong>ON — {p.fireNumber}</strong>
+                    <span>Status code: {p.status ?? "Unknown"}</span>
+                    <span>{formatNumber(p.hectares ?? 0)} ha</span>
                   </div>
                 </Popup>
               </CircleMarker>
@@ -318,7 +373,9 @@ export function FireMap() {
                 <LegendDot color={STATUS_COLOR["Being Held"]} label="BC — being held" />
                 <LegendDot color={STATUS_COLOR["Under Control"]} label="BC — under control" />
                 <LegendDot color={STATUS_COLOR["Out"]} label="BC — out" />
-                <LegendDot color={HOTSPOT_COLOR} label="Rest of Canada — hotspot cluster" />
+                <LegendDot color={ON_STATUS_COLOR["F"]} label="Ontario — active" />
+                <LegendDot color={ON_STATUS_COLOR["I"]} label="Ontario — inactive" />
+                <LegendDot color={HOTSPOT_COLOR} label="Elsewhere — hotspot cluster" />
               </>
             )}
             {isDaily && <LegendDot color={HOTSPOT_COLOR} label="Satellite hotspot cluster" />}
@@ -345,8 +402,8 @@ export function FireMap() {
             )}
             {isLive && (
               <span className="text-xs text-zinc-500 dark:text-zinc-500">
-                {formatNumber(bcStatusPoints.length)} BC fires · {formatNumber(clusterPoints.length)}{" "}
-                clusters elsewhere
+                {formatNumber(bcStatusPoints.length)} BC · {formatNumber(onStatusPoints.length)} Ontario
+                · {formatNumber(clusterPoints.length)} clusters elsewhere
               </span>
             )}
           </div>
@@ -389,10 +446,10 @@ export function FireMap() {
 
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-zinc-200 bg-zinc-50 px-4 py-2 text-xs text-zinc-500 dark:border-zinc-800 dark:bg-black dark:text-zinc-500 sm:px-8">
         <span>
-          Sources: BC Data Catalogue (BC), Natural Resources Canada / CWFIS (rest of Canada, hotspots
-          and national historical data). Contains information licensed under the Open Government
-          Licence – British Columbia and the Open Government Licence – Canada. Live and hotspot data
-          are reference information, not exact real-time ground truth.
+          Sources: BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), Natural Resources Canada /
+          CWFIS (elsewhere, hotspots and national historical data). Contains information licensed
+          under the Open Government Licence – British Columbia, Ontario, and Canada. Live and hotspot
+          data are reference information, not exact real-time ground truth.
         </span>
         <div className="flex gap-4">
           <Link
