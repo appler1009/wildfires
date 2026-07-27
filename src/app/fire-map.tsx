@@ -744,9 +744,11 @@ export function FireMap() {
                 {isDaily && <LegendDot color={HOTSPOT_COLOR} label="Satellite hotspot cluster" />}
                 {!isOperational && <LegendDot color={HISTORICAL_COLOR} label="Recorded fire location" />}
                 <div className="mt-0.5 border-t border-[var(--border)] pt-1.5 text-[var(--ink-faint)] italic">
-                  {isOperational
+                  {isLive
                     ? "Marker size ≈ hectares burned (hotspots: detection density)"
-                    : "Marker size ≈ hectares burned"}
+                    : isDaily
+                      ? "Marker size ≈ satellite detection density"
+                      : "Marker size ≈ hectares burned"}
                 </div>
               </div>
             </div>
