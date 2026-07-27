@@ -13,6 +13,7 @@ export function MapResetButton({ center, zoom }: { center: [number, number]; zoo
       type="button"
       onClick={() => map.setView(center, zoom, { animate: true })}
       title="Reset map view"
+      aria-label="Reset map view"
       className="ember-glow label pointer-events-auto absolute top-14 left-2.5 z-[1000] flex h-[26px] w-[26px] items-center justify-center border border-[var(--border-strong)] bg-[var(--surface)] text-[var(--ink-muted)] hover:border-[var(--ember)] hover:text-[var(--ember)]"
     >
       <span aria-hidden="true">⟲</span>
