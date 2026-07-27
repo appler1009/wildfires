@@ -744,6 +744,9 @@ export function FireMap() {
       <div className="animate-reveal-delay-2 flex flex-col gap-2.5 border-t border-[var(--border)] bg-[var(--surface)] px-4 py-3 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
           <div className="flex items-baseline gap-3">
+            {isLive && (
+              <span className="pulse-dot mb-1 h-2 w-2 rounded-full bg-[var(--ember)] text-[var(--ember)]" />
+            )}
             <span
               className="font-display text-2xl leading-none tracking-wide text-[var(--ink)] sm:text-3xl"
               aria-live="polite"
