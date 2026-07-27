@@ -541,6 +541,24 @@ export function FireMap() {
       : null;
 
   const [satellite, setSatellite] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onFullscreenChange() {
+      setFullscreen(Boolean(document.fullscreenElement));
+    }
+    document.addEventListener("fullscreenchange", onFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", onFullscreenChange);
+  }, []);
+
+  function toggleFullscreen() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      rootRef.current?.requestFullscreen();
+    }
+  }
 
   // Collapsed by default on narrow viewports so the ten-row legend doesn't
   // eat half the map; left open on desktop where it always has room.
@@ -589,7 +607,7 @@ export function FireMap() {
   }, [effectiveSelected, timeline.length]);
 
   return (
-    <div className="flex h-dvh flex-col">
+    <div ref={rootRef} className="flex h-dvh flex-col bg-[var(--bg)]">
       <BootSequence ready={dataLoaded} connected={connected} />
       <div className="animate-reveal flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 py-2 sm:px-8">
         <div className="flex items-baseline gap-2.5">
@@ -642,6 +660,15 @@ export function FireMap() {
           )}
           <span className="label tabular">{formatUtcClock(clock)}</span>
           <ThemeToggle />
+          <button
+            type="button"
+            onClick={toggleFullscreen}
+            title={fullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+            aria-label={fullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+            className="ember-glow label flex h-6 w-6 items-center justify-center border border-[var(--border-strong)] text-[var(--ink-muted)] hover:border-[var(--ember)] hover:text-[var(--ember)]"
+          >
+            <span aria-hidden="true">{fullscreen ? "⤦" : "⤢"}</span>
+          </button>
           <HelpButton />
         </div>
       </div>

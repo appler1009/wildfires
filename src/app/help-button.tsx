@@ -10,6 +10,7 @@ const SHORTCUTS: [string, string][] = [
   ["⟲", "Reset the map view"],
   ["1× / 2× / 4×", "Change autoplay speed"],
   ["◐ / ☾ / ☀", "Cycle theme: auto / dark / light"],
+  ["⤢", "Toggle fullscreen"],
 ];
 
 export function HelpButton() {
