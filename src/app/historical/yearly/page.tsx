@@ -1,6 +1,7 @@
 import Link from "next/link";
 import yearlyFireTotals from "@/data/yearly-fire-totals.json";
 import { CountUp } from "./count-up";
+import { YearBarChart } from "./year-bar-chart";
 
 type YearRow = {
   year: number;
@@ -10,6 +11,15 @@ type YearRow = {
 
 function formatNumber(n: number) {
   return new Intl.NumberFormat("en-CA").format(n);
+}
+
+// Hectares are pre-rounded to 1 decimal at ingest time; force it so a value
+// that happens to land on a whole number doesn't drop its trailing .0.
+function formatHectares(n: number) {
+  return new Intl.NumberFormat("en-CA", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  }).format(n);
 }
 
 export default function Home() {
@@ -66,21 +76,8 @@ export default function Home() {
         </div>
 
         <div className="animate-reveal-delay-2 flex flex-col gap-1 overflow-x-auto border border-[var(--border)] bg-[var(--surface)] p-6">
-          <div className="flex min-w-[640px] items-end gap-[2px]" style={{ height: 220 }}>
-            {rows.map((row, i) => (
-              <div
-                key={row.year}
-                className="animate-bar group relative flex-1 bg-[var(--ember)] transition-opacity hover:opacity-80"
-                style={
-                  {
-                    height: `${(row.hectares_burned / maxHectares) * 100}%`,
-                    opacity: row.year === recordYear.year ? 1 : 0.55,
-                    "--bar-i": i,
-                  } as React.CSSProperties
-                }
-                title={`${row.year}: ${formatNumber(row.hectares_burned)} ha across ${row.fire_count} fires`}
-              />
-            ))}
+          <div className="min-w-[640px]">
+            <YearBarChart rows={rows} maxHectares={maxHectares} recordYear={recordYear.year} />
           </div>
           <div className="label tabular mt-2 flex min-w-[640px] justify-between">
             <span>{rows[0].year}</span>
@@ -109,7 +106,7 @@ export default function Home() {
                       {formatNumber(row.fire_count)}
                     </td>
                     <td className="tabular px-4 py-2 text-right text-[var(--ink-muted)]">
-                      {formatNumber(row.hectares_burned)}
+                      {formatHectares(row.hectares_burned)}
                     </td>
                   </tr>
                 ))}

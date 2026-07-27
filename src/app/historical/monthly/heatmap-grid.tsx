@@ -1,6 +1,7 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useRef, useState } from "react";
+import { ChartTooltip } from "../../tooltip";
 
 type MonthlyRow = {
   year: number;
@@ -39,89 +40,112 @@ function formatNumber(n: number) {
   return new Intl.NumberFormat("en-CA").format(n);
 }
 
+// Hectares are pre-rounded to 1 decimal at ingest time; force it so a value
+// that happens to land on a whole number doesn't drop its trailing .0.
+function formatHectares(n: number) {
+  return new Intl.NumberFormat("en-CA", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  }).format(n);
+}
+
 export function HeatmapGrid({ data }: { data: MonthlyHeatmapData }) {
-  const gridId = useId();
-  const [hovered, setHovered] = useState<MonthlyRow | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [hovered, setHovered] = useState<{
+    cell: MonthlyRow;
+    month: number;
+    x: number;
+    y: number;
+    width: number;
+  } | null>(null);
 
   const cellByKey = new Map(data.rows.map((r) => [`${r.year}-${r.month}`, r]));
   const maxHectares = Math.max(...data.rows.map((r) => r.hectares_burned));
   const years = [...data.years].reverse();
 
+  function showTooltip(
+    year: number,
+    month: number,
+    cell: MonthlyRow | undefined,
+    target: HTMLElement,
+  ) {
+    const containerRect = containerRef.current?.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    if (!containerRect) return;
+    setHovered({
+      cell: cell ?? { year, month, fire_count: 0, hectares_burned: 0 },
+      month,
+      x: targetRect.left + targetRect.width / 2 - containerRect.left,
+      y: targetRect.top - containerRect.top,
+      width: containerRect.width,
+    });
+  }
+
   return (
-    <div className="flex flex-col gap-3">
-      <div
-        className="overflow-x-auto border border-[var(--border)] bg-[var(--surface)] p-4"
-        role="img"
-        aria-label="Heatmap of hectares burned by year and month"
-      >
-        <div className="inline-flex min-w-full flex-col gap-[2px]">
-          <div className="flex gap-[2px] pl-14">
-            {MONTH_LABELS.map((label, i) => (
-              <div
-                key={i}
-                className="label flex w-6 shrink-0 items-center justify-center text-[var(--ink-faint)]"
-              >
-                {label}
-              </div>
-            ))}
-          </div>
-          {years.map((year) => (
-            <div key={year} className="flex items-center gap-[2px]">
-              <div className="tabular w-14 shrink-0 pr-2 text-right text-[11px] text-[var(--ink-faint)]">
-                {year}
-              </div>
-              {MONTH_LABELS.map((_, i) => {
-                const month = i + 1;
-                const cell = cellByKey.get(`${year}-${month}`);
-                const hectares = cell?.hectares_burned ?? 0;
-                const idx = bucketIndex(hectares, maxHectares);
-                return (
-                  <button
-                    key={month}
-                    type="button"
-                    className="h-6 w-6 shrink-0 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ember)]"
-                    style={{
-                      backgroundColor:
-                        idx === -1
-                          ? `light-dark(${ZERO_LIGHT}, ${ZERO_DARK})`
-                          : `light-dark(${RAMP_LIGHT[idx]}, ${RAMP_DARK[idx]})`,
-                    }}
-                    onPointerEnter={() =>
-                      setHovered(cell ?? { year, month, fire_count: 0, hectares_burned: 0 })
-                    }
-                    onFocus={() =>
-                      setHovered(cell ?? { year, month, fire_count: 0, hectares_burned: 0 })
-                    }
-                    onPointerLeave={() => setHovered(null)}
-                    aria-label={`${MONTH_NAMES[i]} ${year}: ${formatNumber(hectares)} hectares burned`}
-                  />
-                );
-              })}
+    <div
+      ref={containerRef}
+      className="relative overflow-x-auto border border-[var(--border)] bg-[var(--surface)] p-4"
+      role="img"
+      aria-label="Heatmap of hectares burned by year and month"
+    >
+      <div className="inline-flex min-w-full flex-col gap-[2px]">
+        <div className="flex gap-[2px] pl-14">
+          {MONTH_LABELS.map((label, i) => (
+            <div
+              key={i}
+              className="label flex w-6 shrink-0 items-center justify-center text-[var(--ink-faint)]"
+            >
+              {label}
             </div>
           ))}
         </div>
+        {years.map((year) => (
+          <div key={year} className="flex items-center gap-[2px]">
+            <div className="tabular w-14 shrink-0 pr-2 text-right text-[11px] text-[var(--ink-faint)]">
+              {year}
+            </div>
+            {MONTH_LABELS.map((_, i) => {
+              const month = i + 1;
+              const cell = cellByKey.get(`${year}-${month}`);
+              const hectares = cell?.hectares_burned ?? 0;
+              const idx = bucketIndex(hectares, maxHectares);
+              return (
+                <button
+                  key={month}
+                  type="button"
+                  className="h-6 w-6 shrink-0 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ember)]"
+                  style={{
+                    backgroundColor:
+                      idx === -1
+                        ? `light-dark(${ZERO_LIGHT}, ${ZERO_DARK})`
+                        : `light-dark(${RAMP_LIGHT[idx]}, ${RAMP_DARK[idx]})`,
+                  }}
+                  onPointerEnter={(e) => showTooltip(year, month, cell, e.currentTarget)}
+                  onFocus={(e) => showTooltip(year, month, cell, e.currentTarget)}
+                  onPointerLeave={() => setHovered(null)}
+                  onBlur={() => setHovered(null)}
+                  aria-label={`${MONTH_NAMES[i]} ${year}: ${formatHectares(hectares)} hectares burned`}
+                />
+              );
+            })}
+          </div>
+        ))}
       </div>
 
-      <div
-        aria-hidden={hovered === null}
-        className="flex h-10 items-center gap-3 border border-[var(--border)] bg-[var(--surface)] px-4 text-sm"
-      >
-        {hovered ? (
-          <>
-            <span className="font-display tracking-wide text-[var(--ink)]">
-              {MONTH_NAMES[hovered.month - 1]} {hovered.year}
-            </span>
-            <span className="tabular text-[var(--ink-muted)]">
-              {formatNumber(hovered.hectares_burned)} ha · {formatNumber(hovered.fire_count)} fires
-            </span>
-          </>
-        ) : (
-          <span className="label text-[var(--ink-faint)]">Hover or focus a cell for detail</span>
-        )}
-      </div>
+      {hovered && (
+        <ChartTooltip x={hovered.x} y={hovered.y} clampWidth={hovered.width}>
+          <div className="font-display tracking-wide text-[var(--ink)]">
+            {MONTH_NAMES[hovered.month - 1]} {hovered.cell.year}
+          </div>
+          <div className="tabular text-[var(--ink-muted)]">
+            {formatHectares(hovered.cell.hectares_burned)} ha · {formatNumber(hovered.cell.fire_count)}{" "}
+            fires
+          </div>
+        </ChartTooltip>
+      )}
 
-      <div className="label flex items-center gap-2 text-[var(--ink-faint)]">
-        <span id={gridId}>No recorded fire</span>
+      <div className="label mt-3 flex items-center gap-2 text-[var(--ink-faint)]">
+        <span>No recorded fire</span>
         <div
           className="h-3 w-5"
           style={{ backgroundColor: `light-dark(${ZERO_LIGHT}, ${ZERO_DARK})` }}
