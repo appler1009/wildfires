@@ -3,7 +3,7 @@
   "licence": "Open Government Licence - British Columbia / Open Government Licence - Ontario / Open Government Licence - Canada",
   "metric": "Hectares burned per month, grouped by each fire's reported date.",
   "note": "National Fire Database coverage outside BC/Ontario currently extends to 2023 and lags the current season by roughly 1-2 years; BC's and Ontario's own datasets are more current and complete for those provinces.",
-  "generatedAt": "2026-07-28T05:24:48.994Z",
+  "generatedAt": "2026-07-28T05:29:35.978Z",
   "kind": "historical_summary",
   "excludedRecordsMissingDate": 500,
   "years": [
@@ -3968,7 +3968,7 @@
       "year": 2001,
       "month": 6,
       "fire_count": 309,
-      "hectares_burned": 214296.5
+      "hectares_burned": 214296.4
     },
     {
       "year": 2001,
