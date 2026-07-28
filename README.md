@@ -4,7 +4,7 @@ A public wildfire tracker for Canada — a live operational map plus over a
 century of historical trends, built on Next.js (App Router), Leaflet, and
 three.js.
 
-**Live:** https://canada-wildfires.vercel.app
+**Live:** https://canada-wildfire.vercel.app
 
 ## What it does
 
@@ -56,19 +56,44 @@ npm run build && npm run start   # production build
 
 ## Refreshing the data
 
+Two pipelines, both under `scripts/ingest/`:
+
 ```bash
-npm run ingest
+npm run ingest         # full: every source, including the BC/Ontario/NFDB
+                        # historical archives (large, no incremental fetch
+                        # of their own - always pulls in full)
+npm run ingest:daily   # lightweight: current-fires feeds + satellite
+                        # hotspots (incremental) + rebuild rollups
 ```
 
-Runs the full pipeline in `scripts/ingest/run.ts`: fetches every source
-above, rebuilds the yearly/monthly rollups, the monthly heatmap, and the
-daily satellite-hotspot archive, and writes everything to `public/data/`.
+`fetch-cwfis-hotspots.ts` (satellite hotspots) is incremental - it keeps
+`data/raw/cwfis-hotspots.ndjson` between runs and only re-fetches a short
+overlap window plus anything new, instead of re-pulling its full 365-day
+window every time. `run-daily.ts` is self-bootstrapping: if the historical
+raw caches it depends on (but doesn't itself fetch) aren't on disk yet, it
+fetches them before continuing rather than failing.
+
 Individual steps can also be run directly, e.g.
 `npx tsx scripts/ingest/fetch-current-fires.ts`.
 
+### Automated (GitHub Actions)
+
+`.github/workflows/ingest.yml` runs `ingest:daily` once a day (`12:00 UTC`)
+and the full `ingest` monthly (`03:00 UTC` on the 1st), committing any
+changed files under `public/data`/`src/data` back to `main` as
+`github-actions[bot]`. `data/raw/` is cached between runs so the daily job
+doesn't need to re-fetch the historical archives just to have them on disk.
+Trigger it manually from the Actions tab (`workflow_dispatch`, with an
+optional `full` flag to force the full pipeline).
+
 ## Deploying
 
-Deployed on [Vercel](https://vercel.com) directly from this repo — pushes to
-`main` deploy automatically once the project's GitHub connection is set up
-(Vercel dashboard → Project → Settings → Git). No environment variables are
-required; all data ships as static JSON in the repo itself.
+Deployed on [Vercel](https://vercel.com) directly from this repo - pushes to
+`main` (including the ingestion bot's commits) deploy automatically. No
+environment variables are required; all data ships as static JSON in the
+repo itself.
+
+The production domain (`canada-wildfire.vercel.app`) needs to be registered
+under Project → Settings → Domains to auto-track the latest deployment - a
+domain added any other way (e.g. `vercel alias set`) is a one-time pointer
+that won't follow future deploys.
