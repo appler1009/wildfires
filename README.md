@@ -4,7 +4,7 @@ A public wildfire tracker for Canada — a live operational map plus over a
 century of historical trends, built on Next.js (App Router), Leaflet, and
 three.js.
 
-**Live:** https://canada-wildfire.vercel.app
+**Live:** https://canada-wildfires.vercel.app
 
 ## What it does
 
@@ -93,7 +93,7 @@ Deployed on [Vercel](https://vercel.com) directly from this repo - pushes to
 environment variables are required; all data ships as static JSON in the
 repo itself.
 
-The production domain (`canada-wildfire.vercel.app`) needs to be registered
+The production domain (`canada-wildfires.vercel.app`) needs to be registered
 under Project → Settings → Domains to auto-track the latest deployment - a
 domain added any other way (e.g. `vercel alias set`) is a one-time pointer
 that won't follow future deploys.

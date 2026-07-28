@@ -19,9 +19,12 @@ const title = "Canada Wildfires";
 const description =
   "Latest wildfire status and over a century of historical trends across Canada — BC, Ontario, Quebec, and satellite-tracked hotspots nationwide.";
 
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
+// Hardcoded rather than derived from VERCEL_PROJECT_PRODUCTION_URL: that env
+// var reflects whichever domain Vercel considers "primary" for the project,
+// which doesn't necessarily match the domain we actually want canonical
+// (canada-wildfires.vercel.app, plural - matching the app's own name).
+const siteUrl =
+  process.env.NODE_ENV === "production" ? "https://canada-wildfires.vercel.app" : "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
