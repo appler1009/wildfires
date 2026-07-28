@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-07-28T05:26:55.026Z",
+  "generatedAt": "2026-07-28T13:55:20.657Z",
   "points": [
     {
       "fireNumber": "2026-MN1FS-000968",
@@ -1117,17 +1117,6 @@
       "lon": -120.73221899999999
     },
     {
-      "fireNumber": "2026-MTCRA-260871",
-      "name": "Crow Dump Inc. 871",
-      "state": "MT",
-      "hectares": 0.4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-07-24T22:33:15.000Z",
-      "lat": 45.60305600000004,
-      "lon": -107.46888899999999
-    },
-    {
       "fireNumber": "2026-MTLG14-000552",
       "name": "Divide - Custer",
       "state": "MT",
@@ -2083,6 +2072,17 @@
       "discoveryDate": "2026-07-27T22:43:00.000Z",
       "lat": 46.75412200000005,
       "lon": -121.435183
+    },
+    {
+      "fireNumber": "2026-NHNHS-220715A",
+      "name": "220715A",
+      "state": "NH",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Natural",
+      "discoveryDate": "2026-07-15T11:53:41.000Z",
+      "lat": 43.51964000000004,
+      "lon": -72.35063999999994
     }
   ]
 }
