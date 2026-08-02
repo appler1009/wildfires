@@ -3,7 +3,7 @@
   "licence": "Open Government Licence - Ontario",
   "kind": "operational_live_reference",
   "note": "Points are area-weighted centroids of the published fire perimeter, not the exact incident location. Status code meaning (F/I) is an inferred reading, not from a published domain.",
-  "generatedAt": "2026-08-01T13:08:59.446Z",
+  "generatedAt": "2026-08-02T13:11:21.221Z",
   "points": [
     {
       "fireNumber": "DRY009",
@@ -326,44 +326,84 @@
       "lon": -91.52661956698967
     },
     {
-      "fireNumber": "DRY035",
-      "hectares": 23367.7617762,
+      "fireNumber": "SLK057",
+      "hectares": 99.20373477,
       "status": "I",
-      "dateMapped": "2026-07-19T00:00:00.000Z",
-      "lat": 49.60398182738281,
-      "lon": -89.93519049201981
+      "dateMapped": "2026-07-06T00:00:00.000Z",
+      "lat": 51.550306298548826,
+      "lon": -89.61211449306843
     },
     {
-      "fireNumber": "DRY014",
-      "hectares": 0.7048534,
-      "status": "F",
-      "dateMapped": "2026-06-12T00:00:00.000Z",
-      "lat": 49.833145875812335,
-      "lon": -93.65322513292064
+      "fireNumber": "NIP061",
+      "hectares": 22.33287516,
+      "status": "I",
+      "dateMapped": "2026-07-17T00:00:00.000Z",
+      "lat": 51.1572764899492,
+      "lon": -87.81963738322364
     },
     {
-      "fireNumber": "SLK089",
-      "hectares": 7190.09452945,
+      "fireNumber": "NIP039",
+      "hectares": 24.51775422,
+      "status": "I",
+      "dateMapped": "2026-07-17T00:00:00.000Z",
+      "lat": 50.386954890621126,
+      "lon": -87.43815783629711
+    },
+    {
+      "fireNumber": "NIP038",
+      "hectares": 488.74791569,
+      "status": "I",
+      "dateMapped": "2026-07-17T00:00:00.000Z",
+      "lat": 50.42513277339555,
+      "lon": -87.40950999638395
+    },
+    {
+      "fireNumber": "NIP070",
+      "hectares": 1223.22702089,
       "status": "I",
       "dateMapped": "2026-07-18T00:00:00.000Z",
-      "lat": 50.55101173054307,
-      "lon": -90.58390778996763
+      "lat": 51.06832315252763,
+      "lon": -88.85094183740777
     },
     {
-      "fireNumber": "RED023",
-      "hectares": 637.67765575,
+      "fireNumber": "NIP025",
+      "hectares": 254.09682198,
       "status": "I",
-      "dateMapped": "2026-07-16T00:00:00.000Z",
-      "lat": 52.191110814574756,
-      "lon": -92.75021490778887
+      "dateMapped": "2026-07-22T00:00:00.000Z",
+      "lat": 49.6148915670207,
+      "lon": -88.7443059588386
     },
     {
-      "fireNumber": "RED022",
-      "hectares": 6195.40476843,
+      "fireNumber": "FOR039",
+      "hectares": 95.75804133,
       "status": "I",
-      "dateMapped": "2026-07-16T00:00:00.000Z",
-      "lat": 51.813602825363155,
-      "lon": -92.52124121264025
+      "dateMapped": "2026-07-23T00:00:00.000Z",
+      "lat": 48.331125671631604,
+      "lon": -92.01976907925523
+    },
+    {
+      "fireNumber": "DRY002",
+      "hectares": 0.49955557,
+      "status": "F",
+      "dateMapped": "2026-05-14T00:00:00.000Z",
+      "lat": 49.73007259808608,
+      "lon": -92.6091204227118
+    },
+    {
+      "fireNumber": "KEN003",
+      "hectares": 0.01398711,
+      "status": "F",
+      "dateMapped": "2026-06-01T00:00:00.000Z",
+      "lat": 50.169352600244295,
+      "lon": -93.98213825338996
+    },
+    {
+      "fireNumber": "KEN001",
+      "hectares": 0.01266208,
+      "status": "F",
+      "dateMapped": "2026-06-01T00:00:00.000Z",
+      "lat": 50.13023055762392,
+      "lon": -94.93646807085692
     },
     {
       "fireNumber": "RED019",
@@ -444,6 +484,22 @@
       "dateMapped": "2026-07-17T00:00:00.000Z",
       "lat": 49.67350723049011,
       "lon": -93.1880357779983
+    },
+    {
+      "fireNumber": "SLK086",
+      "hectares": 5643.68195032,
+      "status": "I",
+      "dateMapped": "2026-07-21T00:00:00.000Z",
+      "lat": 50.90774507917452,
+      "lon": -90.35971448986659
+    },
+    {
+      "fireNumber": "WAW015",
+      "hectares": 6.88244851,
+      "status": "I",
+      "dateMapped": "2026-07-22T00:00:00.000Z",
+      "lat": 47.27766052968609,
+      "lon": -84.59067926095587
     },
     {
       "fireNumber": "HAL012",
@@ -588,14 +644,6 @@
       "dateMapped": "2026-07-21T00:00:00.000Z",
       "lat": 48.245961999779546,
       "lon": -91.19069772732884
-    },
-    {
-      "fireNumber": "THU054",
-      "hectares": 7389.4677126,
-      "status": "I",
-      "dateMapped": "2026-07-25T00:00:00.000Z",
-      "lat": 49.75249684950654,
-      "lon": -89.86196032984064
     },
     {
       "fireNumber": "DRY034",
@@ -822,214 +870,6 @@
       "lon": -90.41608605854792
     },
     {
-      "fireNumber": "CHA002",
-      "hectares": 0.00811109,
-      "status": "F",
-      "dateMapped": "2026-05-25T00:00:00.000Z",
-      "lat": 46.75208934703367,
-      "lon": -84.36102181069249
-    },
-    {
-      "fireNumber": "SUD017",
-      "hectares": 0.00153412,
-      "status": "F",
-      "dateMapped": "2026-07-16T00:00:00.000Z",
-      "lat": 46.49538103908234,
-      "lon": -81.14241632794433
-    },
-    {
-      "fireNumber": "WAW007",
-      "hectares": 0.03254698,
-      "status": "F",
-      "dateMapped": "2026-07-09T00:00:00.000Z",
-      "lat": 47.44216252397521,
-      "lon": -84.19453012650465
-    },
-    {
-      "fireNumber": "FOR037",
-      "hectares": 3013.70106253,
-      "status": "I",
-      "dateMapped": "2026-07-16T00:00:00.000Z",
-      "lat": 48.230342913499186,
-      "lon": -91.77110359718063
-    },
-    {
-      "fireNumber": "SLK091",
-      "hectares": 37.28746544,
-      "status": "I",
-      "dateMapped": "2026-07-16T00:00:00.000Z",
-      "lat": 50.70364617031083,
-      "lon": -90.07474766556646
-    },
-    {
-      "fireNumber": "SLK095",
-      "hectares": 8.24322112,
-      "status": "F",
-      "dateMapped": "2026-07-16T00:00:00.000Z",
-      "lat": 50.67694886925532,
-      "lon": -90.37304015827264
-    },
-    {
-      "fireNumber": "NIP037",
-      "hectares": 911.84621003,
-      "status": "I",
-      "dateMapped": "2026-07-17T00:00:00.000Z",
-      "lat": 50.32175636063983,
-      "lon": -87.7877989860889
-    },
-    {
-      "fireNumber": "WAW017",
-      "hectares": 37.257269,
-      "status": "I",
-      "dateMapped": "2026-07-17T00:00:00.000Z",
-      "lat": 48.80900271804951,
-      "lon": -85.4745610336024
-    },
-    {
-      "fireNumber": "SLK001",
-      "hectares": 17248.0849667,
-      "status": "I",
-      "dateMapped": "2026-07-16T00:00:00.000Z",
-      "lat": 51.800137088731546,
-      "lon": -91.3655296789449
-    },
-    {
-      "fireNumber": "NIP032",
-      "hectares": 1810.89803351,
-      "status": "I",
-      "dateMapped": "2026-07-18T00:00:00.000Z",
-      "lat": 51.293005751713316,
-      "lon": -88.17255279744414
-    },
-    {
-      "fireNumber": "SLK084",
-      "hectares": 4796.60724,
-      "status": "I",
-      "dateMapped": "2026-07-15T00:00:00.000Z",
-      "lat": 50.70498790215704,
-      "lon": -90.7369631543674
-    },
-    {
-      "fireNumber": "COC045",
-      "hectares": 243.8168273,
-      "status": "I",
-      "dateMapped": "2026-07-19T00:00:00.000Z",
-      "lat": 52.04002679638173,
-      "lon": -83.49572007283756
-    },
-    {
-      "fireNumber": "NIP069",
-      "hectares": 2142,
-      "status": "I",
-      "dateMapped": "2026-07-18T00:00:00.000Z",
-      "lat": 51.3534374501648,
-      "lon": -88.59004023681985
-    },
-    {
-      "fireNumber": "RED024",
-      "hectares": 6414.93604425,
-      "status": "I",
-      "dateMapped": "2026-07-27T00:00:00.000Z",
-      "lat": 52.21824398715817,
-      "lon": -92.90421714684787
-    },
-    {
-      "fireNumber": "THUMB",
-      "hectares": 6803.77514723,
-      "status": "I",
-      "dateMapped": "2026-07-20T00:00:00.000Z",
-      "lat": 48.31893239208547,
-      "lon": -92.01027652006995
-    },
-    {
-      "fireNumber": "SLK057",
-      "hectares": 99.20373477,
-      "status": "I",
-      "dateMapped": "2026-07-06T00:00:00.000Z",
-      "lat": 51.550306298548826,
-      "lon": -89.61211449306843
-    },
-    {
-      "fireNumber": "NIP061",
-      "hectares": 22.33287516,
-      "status": "I",
-      "dateMapped": "2026-07-17T00:00:00.000Z",
-      "lat": 51.1572764899492,
-      "lon": -87.81963738322364
-    },
-    {
-      "fireNumber": "NIP039",
-      "hectares": 24.51775422,
-      "status": "I",
-      "dateMapped": "2026-07-17T00:00:00.000Z",
-      "lat": 50.386954890621126,
-      "lon": -87.43815783629711
-    },
-    {
-      "fireNumber": "NIP038",
-      "hectares": 488.74791569,
-      "status": "I",
-      "dateMapped": "2026-07-17T00:00:00.000Z",
-      "lat": 50.42513277339555,
-      "lon": -87.40950999638395
-    },
-    {
-      "fireNumber": "NIP070",
-      "hectares": 1223.22702089,
-      "status": "I",
-      "dateMapped": "2026-07-18T00:00:00.000Z",
-      "lat": 51.06832315252763,
-      "lon": -88.85094183740777
-    },
-    {
-      "fireNumber": "NIP025",
-      "hectares": 254.09682198,
-      "status": "I",
-      "dateMapped": "2026-07-22T00:00:00.000Z",
-      "lat": 49.6148915670207,
-      "lon": -88.7443059588386
-    },
-    {
-      "fireNumber": "FOR039",
-      "hectares": 95.75804133,
-      "status": "I",
-      "dateMapped": "2026-07-23T00:00:00.000Z",
-      "lat": 48.331125671631604,
-      "lon": -92.01976907925523
-    },
-    {
-      "fireNumber": "DRY002",
-      "hectares": 0.49955557,
-      "status": "F",
-      "dateMapped": "2026-05-14T00:00:00.000Z",
-      "lat": 49.73007259808608,
-      "lon": -92.6091204227118
-    },
-    {
-      "fireNumber": "KEN003",
-      "hectares": 0.01398711,
-      "status": "F",
-      "dateMapped": "2026-06-01T00:00:00.000Z",
-      "lat": 50.169352600244295,
-      "lon": -93.98213825338996
-    },
-    {
-      "fireNumber": "KEN001",
-      "hectares": 0.01266208,
-      "status": "F",
-      "dateMapped": "2026-06-01T00:00:00.000Z",
-      "lat": 50.13023055762392,
-      "lon": -94.93646807085692
-    },
-    {
-      "fireNumber": "WAW015",
-      "hectares": 6.88244851,
-      "status": "I",
-      "dateMapped": "2026-07-22T00:00:00.000Z",
-      "lat": 47.27766052968609,
-      "lon": -84.59067926095587
-    },
-    {
       "fireNumber": "RED015",
       "hectares": 83.56073024,
       "status": "F",
@@ -1108,22 +948,6 @@
       "dateMapped": "2026-06-04T00:00:00.000Z",
       "lat": 54.98296080629414,
       "lon": -85.45049658990459
-    },
-    {
-      "fireNumber": "SLK086",
-      "hectares": 5643.68195032,
-      "status": "I",
-      "dateMapped": "2026-07-21T00:00:00.000Z",
-      "lat": 50.90774507917452,
-      "lon": -90.35971448986659
-    },
-    {
-      "fireNumber": "SLK021",
-      "hectares": 443.45727417,
-      "status": "I",
-      "dateMapped": "2026-07-06T00:00:00.000Z",
-      "lat": 52.82097553170163,
-      "lon": -89.23757873878975
     },
     {
       "fireNumber": "RED003",
@@ -1212,14 +1036,6 @@
       "dateMapped": "2026-07-15T00:00:00.000Z",
       "lat": 51.437858279718625,
       "lon": -91.39132657248211
-    },
-    {
-      "fireNumber": "SLK066",
-      "hectares": 817.30660421,
-      "status": "I",
-      "dateMapped": "2026-07-15T00:00:00.000Z",
-      "lat": 51.302301443353876,
-      "lon": -91.26824356758739
     },
     {
       "fireNumber": "THU056",
@@ -1350,12 +1166,188 @@
       "lon": -84.5225865549498
     },
     {
+      "fireNumber": "DRY035",
+      "hectares": 31354,
+      "status": "I",
+      "dateMapped": "2026-08-01T00:00:00.000Z",
+      "lat": 49.64089308317665,
+      "lon": -89.91640766544734
+    },
+    {
       "fireNumber": "FOR028",
       "hectares": 53.716158,
       "status": "F",
       "dateMapped": "2026-07-12T00:00:00.000Z",
       "lat": 48.16680346891121,
       "lon": -91.15324000041579
+    },
+    {
+      "fireNumber": "DRY014",
+      "hectares": 0.7048534,
+      "status": "F",
+      "dateMapped": "2026-06-12T00:00:00.000Z",
+      "lat": 49.833145875812335,
+      "lon": -93.65322513292064
+    },
+    {
+      "fireNumber": "SLK089",
+      "hectares": 7190.09452945,
+      "status": "I",
+      "dateMapped": "2026-07-18T00:00:00.000Z",
+      "lat": 50.55101173054307,
+      "lon": -90.58390778996763
+    },
+    {
+      "fireNumber": "RED023",
+      "hectares": 637.67765575,
+      "status": "I",
+      "dateMapped": "2026-07-16T00:00:00.000Z",
+      "lat": 52.191110814574756,
+      "lon": -92.75021490778887
+    },
+    {
+      "fireNumber": "RED022",
+      "hectares": 6195.40476843,
+      "status": "I",
+      "dateMapped": "2026-07-16T00:00:00.000Z",
+      "lat": 51.813602825363155,
+      "lon": -92.52124121264025
+    },
+    {
+      "fireNumber": "CHA002",
+      "hectares": 0.00811109,
+      "status": "F",
+      "dateMapped": "2026-05-25T00:00:00.000Z",
+      "lat": 46.75208934703367,
+      "lon": -84.36102181069249
+    },
+    {
+      "fireNumber": "SUD017",
+      "hectares": 0.00153412,
+      "status": "F",
+      "dateMapped": "2026-07-16T00:00:00.000Z",
+      "lat": 46.49538103908234,
+      "lon": -81.14241632794433
+    },
+    {
+      "fireNumber": "WAW007",
+      "hectares": 0.03254698,
+      "status": "F",
+      "dateMapped": "2026-07-09T00:00:00.000Z",
+      "lat": 47.44216252397521,
+      "lon": -84.19453012650465
+    },
+    {
+      "fireNumber": "FOR037",
+      "hectares": 3013.70106253,
+      "status": "I",
+      "dateMapped": "2026-07-16T00:00:00.000Z",
+      "lat": 48.230342913499186,
+      "lon": -91.77110359718063
+    },
+    {
+      "fireNumber": "SLK066",
+      "hectares": 1105,
+      "status": "I",
+      "dateMapped": "2026-08-01T00:00:00.000Z",
+      "lat": 51.29817157698237,
+      "lon": -91.25771056586719
+    },
+    {
+      "fireNumber": "SLK091",
+      "hectares": 37.28746544,
+      "status": "I",
+      "dateMapped": "2026-07-16T00:00:00.000Z",
+      "lat": 50.70364617031083,
+      "lon": -90.07474766556646
+    },
+    {
+      "fireNumber": "SLK095",
+      "hectares": 8.24322112,
+      "status": "F",
+      "dateMapped": "2026-07-16T00:00:00.000Z",
+      "lat": 50.67694886925532,
+      "lon": -90.37304015827264
+    },
+    {
+      "fireNumber": "NIP037",
+      "hectares": 911.84621003,
+      "status": "I",
+      "dateMapped": "2026-07-17T00:00:00.000Z",
+      "lat": 50.32175636063983,
+      "lon": -87.7877989860889
+    },
+    {
+      "fireNumber": "WAW017",
+      "hectares": 37.257269,
+      "status": "I",
+      "dateMapped": "2026-07-17T00:00:00.000Z",
+      "lat": 48.80900271804951,
+      "lon": -85.4745610336024
+    },
+    {
+      "fireNumber": "SLK001",
+      "hectares": 17248.0849667,
+      "status": "I",
+      "dateMapped": "2026-07-16T00:00:00.000Z",
+      "lat": 51.800137088731546,
+      "lon": -91.3655296789449
+    },
+    {
+      "fireNumber": "NIP032",
+      "hectares": 1810.89803351,
+      "status": "I",
+      "dateMapped": "2026-07-18T00:00:00.000Z",
+      "lat": 51.293005751713316,
+      "lon": -88.17255279744414
+    },
+    {
+      "fireNumber": "SLK084",
+      "hectares": 4796.60724,
+      "status": "I",
+      "dateMapped": "2026-07-15T00:00:00.000Z",
+      "lat": 50.70498790215704,
+      "lon": -90.7369631543674
+    },
+    {
+      "fireNumber": "SLK021",
+      "hectares": 739,
+      "status": "I",
+      "dateMapped": "2026-08-01T00:00:00.000Z",
+      "lat": 52.82065389190978,
+      "lon": -89.22834806722965
+    },
+    {
+      "fireNumber": "COC045",
+      "hectares": 243.8168273,
+      "status": "I",
+      "dateMapped": "2026-07-19T00:00:00.000Z",
+      "lat": 52.04002679638173,
+      "lon": -83.49572007283756
+    },
+    {
+      "fireNumber": "NIP069",
+      "hectares": 2142,
+      "status": "I",
+      "dateMapped": "2026-07-18T00:00:00.000Z",
+      "lat": 51.3534374501648,
+      "lon": -88.59004023681985
+    },
+    {
+      "fireNumber": "RED024",
+      "hectares": 6414.93604425,
+      "status": "I",
+      "dateMapped": "2026-07-27T00:00:00.000Z",
+      "lat": 52.21824398715817,
+      "lon": -92.90421714684787
+    },
+    {
+      "fireNumber": "THUMB",
+      "hectares": 6803.77514723,
+      "status": "I",
+      "dateMapped": "2026-07-20T00:00:00.000Z",
+      "lat": 48.31893239208547,
+      "lon": -92.01027652006995
     }
   ]
 }
