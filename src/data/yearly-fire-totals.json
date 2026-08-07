@@ -2,7 +2,7 @@
   "source": "BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), National Fire Database (rest of Canada, Natural Resources Canada / CWFIS)",
   "licence": "Open Government Licence - British Columbia / Open Government Licence - Ontario / Open Government Licence - Canada",
   "note": "National Fire Database coverage outside BC/Ontario currently extends to 2023 and lags the current season by roughly 1-2 years; BC's and Ontario's own datasets are more current and complete for those provinces.",
-  "generatedAt": "2026-08-06T13:55:36.679Z",
+  "generatedAt": "2026-08-07T12:53:31.176Z",
   "kind": "historical_summary",
   "rows": [
     {
@@ -463,7 +463,7 @@
     {
       "year": 2008,
       "fire_count": 901,
-      "hectares_burned": 1648570.7
+      "hectares_burned": 1648570.8
     },
     {
       "year": 2009,
