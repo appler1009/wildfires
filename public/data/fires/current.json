@@ -3,178 +3,8 @@
   "licence": "Open Government Licence - British Columbia",
   "kind": "operational_live_reference",
   "note": "Points are area-weighted centroids of the published fire perimeter, not the exact incident location. Refresh cadence and accuracy are per BC Wildfire Service's public disclaimer.",
-  "generatedAt": "2026-09-01T08:16:22.637Z",
+  "generatedAt": "2026-09-01T15:58:50.099Z",
   "points": [
-    {
-      "fireNumber": "C42006",
-      "year": 2026,
-      "hectares": 1.5,
-      "status": "Out",
-      "trackDate": "2026-08-27Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C42006",
-      "lat": 51.98946537630135,
-      "lon": -120.80610325465302
-    },
-    {
-      "fireNumber": "C50009",
-      "year": 2026,
-      "hectares": 4.8,
-      "status": "Out",
-      "trackDate": "2026-04-03Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50009",
-      "lat": 52.07515955343363,
-      "lon": -123.26727370519265
-    },
-    {
-      "fireNumber": "C50020",
-      "year": 2026,
-      "hectares": 6.5,
-      "status": "Out",
-      "trackDate": "2026-04-05Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50020",
-      "lat": 52.09654433207635,
-      "lon": -123.42400446250605
-    },
-    {
-      "fireNumber": "C50044",
-      "year": 2026,
-      "hectares": 1.2,
-      "status": "Out",
-      "trackDate": "2026-04-11Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50044",
-      "lat": 51.80223659010324,
-      "lon": -123.0666259462359
-    },
-    {
-      "fireNumber": "C50057",
-      "year": 2026,
-      "hectares": 3.1,
-      "status": "Out",
-      "trackDate": "2026-04-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50057",
-      "lat": 52.429073295855204,
-      "lon": -124.4067218907517
-    },
-    {
-      "fireNumber": "C50060",
-      "year": 2026,
-      "hectares": 5.6,
-      "status": "Out",
-      "trackDate": "2026-04-17Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50060",
-      "lat": 52.03562475069545,
-      "lon": -123.19768994889016
-    },
-    {
-      "fireNumber": "C50113",
-      "year": 2026,
-      "hectares": 236.6,
-      "status": "Out",
-      "trackDate": "2026-04-25Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50113",
-      "lat": 51.485075518516005,
-      "lon": -123.83364609540392
-    },
-    {
-      "fireNumber": "C50173",
-      "year": 2026,
-      "hectares": 24.3,
-      "status": "Out",
-      "trackDate": "2026-04-30Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50173",
-      "lat": 52.45818786698985,
-      "lon": -125.28490012027318
-    },
-    {
-      "fireNumber": "C50303",
-      "year": 2026,
-      "hectares": 1.7,
-      "status": "Out",
-      "trackDate": "2026-05-10Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50303",
-      "lat": 51.925582653701156,
-      "lon": -123.1346243081315
-    },
-    {
-      "fireNumber": "C50385",
-      "year": 2026,
-      "hectares": 2,
-      "status": "Out",
-      "trackDate": "2026-05-19Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50385",
-      "lat": 52.09499132187104,
-      "lon": -123.31281956838495
-    },
-    {
-      "fireNumber": "C51473",
-      "year": 2026,
-      "hectares": 3096.6,
-      "status": "Under Control",
-      "trackDate": "2026-08-17Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C51473",
-      "lat": 52.392144812079785,
-      "lon": -124.56047850267292
-    },
-    {
-      "fireNumber": "G10279",
-      "year": 2026,
-      "hectares": 12.2,
-      "status": "Out",
-      "trackDate": "2026-05-09Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G10279",
-      "lat": 53.86708251565264,
-      "lon": -121.3335507961619
-    },
-    {
-      "fireNumber": "G11139",
-      "year": 2026,
-      "hectares": 1.9,
-      "status": "Out",
-      "trackDate": "2026-07-25Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G11139",
-      "lat": 53.554746961513246,
-      "lon": -120.90674819488984
-    },
-    {
-      "fireNumber": "G30109",
-      "year": 2026,
-      "hectares": 2.5,
-      "status": "Out",
-      "trackDate": "2026-04-23Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G30109",
-      "lat": 52.905930855805956,
-      "lon": -119.34622613076304
-    },
-    {
-      "fireNumber": "G31209",
-      "year": 2026,
-      "hectares": 30.8,
-      "status": "Being Held",
-      "trackDate": "2026-08-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G31209",
-      "lat": 52.28718282391366,
-      "lon": -119.20303117124826
-    },
-    {
-      "fireNumber": "G32037",
-      "year": 2026,
-      "hectares": 1.1,
-      "status": "Under Control",
-      "trackDate": "2026-08-29Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G32037",
-      "lat": 52.62075494858298,
-      "lon": -118.90325150086917
-    },
-    {
-      "fireNumber": "G40059",
-      "year": 2026,
-      "hectares": 1.6,
-      "status": "Out",
-      "trackDate": "2026-04-16Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G40059",
-      "lat": 54.08373809065545,
-      "lon": -124.5779042229592
-    },
     {
       "fireNumber": "G40092",
       "year": 2026,
@@ -306,136 +136,6 @@
       "lon": -120.5977731559909
     },
     {
-      "fireNumber": "C50442",
-      "year": 2026,
-      "hectares": 4.6,
-      "status": "Out",
-      "trackDate": "2026-05-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50442",
-      "lat": 52.02049704660277,
-      "lon": -124.40827064911483
-    },
-    {
-      "fireNumber": "C50929",
-      "year": 2026,
-      "hectares": 6103.2,
-      "status": "Out of Control",
-      "trackDate": "2026-08-24Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50929",
-      "lat": 52.66802993131203,
-      "lon": -125.3089282348492
-    },
-    {
-      "fireNumber": "C50946",
-      "year": 2026,
-      "hectares": 2.1,
-      "status": "Out",
-      "trackDate": "2026-07-20Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50946",
-      "lat": 52.42927941360994,
-      "lon": -124.75208243773642
-    },
-    {
-      "fireNumber": "C51022",
-      "year": 2026,
-      "hectares": 1.4,
-      "status": "Out",
-      "trackDate": "2026-07-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C51022",
-      "lat": 52.90125741901857,
-      "lon": -125.56764340804096
-    },
-    {
-      "fireNumber": "C51097",
-      "year": 2026,
-      "hectares": 1.9,
-      "status": "Out",
-      "trackDate": "2026-07-29Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C51097",
-      "lat": 52.361922747384746,
-      "lon": -125.57443839588532
-    },
-    {
-      "fireNumber": "C10058",
-      "year": 2026,
-      "hectares": 1.4,
-      "status": "Out",
-      "trackDate": "2026-04-16Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10058",
-      "lat": 53.04633267665905,
-      "lon": -122.46112452617147
-    },
-    {
-      "fireNumber": "C10073",
-      "year": 2026,
-      "hectares": 78.3,
-      "status": "Out",
-      "trackDate": "2026-04-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10073",
-      "lat": 52.992753376502044,
-      "lon": -125.06012972090096
-    },
-    {
-      "fireNumber": "C10095",
-      "year": 2026,
-      "hectares": 116.3,
-      "status": "Out",
-      "trackDate": "2026-04-25Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10095",
-      "lat": 52.97910815478788,
-      "lon": -125.14683062930031
-    },
-    {
-      "fireNumber": "C10172",
-      "year": 2026,
-      "hectares": 66.5,
-      "status": "Out",
-      "trackDate": "2026-04-30Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10172",
-      "lat": 52.46700293296733,
-      "lon": -122.61987509136961
-    },
-    {
-      "fireNumber": "C10467",
-      "year": 2026,
-      "hectares": 1775,
-      "status": "Under Control",
-      "trackDate": "2026-06-09Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10467",
-      "lat": 53.34177988020232,
-      "lon": -124.19130200803119
-    },
-    {
-      "fireNumber": "C10952",
-      "year": 2026,
-      "hectares": 1580.8,
-      "status": "Under Control",
-      "trackDate": "2026-08-09Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10952",
-      "lat": 53.1771040500121,
-      "lon": -123.9442945147375
-    },
-    {
-      "fireNumber": "C10970",
-      "year": 2026,
-      "hectares": 0.6,
-      "status": "Out",
-      "trackDate": "2026-07-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10970",
-      "lat": 53.11643070926555,
-      "lon": -121.82474014706312
-    },
-    {
-      "fireNumber": "C10981",
-      "year": 2026,
-      "hectares": 1.6,
-      "status": "Out",
-      "trackDate": "2026-07-12Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10981",
-      "lat": 52.94297677938094,
-      "lon": -121.5625304656107
-    },
-    {
       "fireNumber": "C11108",
       "year": 2026,
       "hectares": 1.6,
@@ -524,6 +224,86 @@
       "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C20153",
       "lat": 51.61239413684298,
       "lon": -122.20604146722303
+    },
+    {
+      "fireNumber": "C10058",
+      "year": 2026,
+      "hectares": 1.4,
+      "status": "Out",
+      "trackDate": "2026-04-16Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10058",
+      "lat": 53.04633267665905,
+      "lon": -122.46112452617147
+    },
+    {
+      "fireNumber": "C10073",
+      "year": 2026,
+      "hectares": 78.3,
+      "status": "Out",
+      "trackDate": "2026-04-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10073",
+      "lat": 52.992753376502044,
+      "lon": -125.06012972090096
+    },
+    {
+      "fireNumber": "C10095",
+      "year": 2026,
+      "hectares": 116.3,
+      "status": "Out",
+      "trackDate": "2026-04-25Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10095",
+      "lat": 52.97910815478788,
+      "lon": -125.14683062930031
+    },
+    {
+      "fireNumber": "C10172",
+      "year": 2026,
+      "hectares": 66.5,
+      "status": "Out",
+      "trackDate": "2026-04-30Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10172",
+      "lat": 52.46700293296733,
+      "lon": -122.61987509136961
+    },
+    {
+      "fireNumber": "C10467",
+      "year": 2026,
+      "hectares": 1775,
+      "status": "Under Control",
+      "trackDate": "2026-06-09Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10467",
+      "lat": 53.34177988020232,
+      "lon": -124.19130200803119
+    },
+    {
+      "fireNumber": "C10952",
+      "year": 2026,
+      "hectares": 1580.8,
+      "status": "Under Control",
+      "trackDate": "2026-08-09Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10952",
+      "lat": 53.1771040500121,
+      "lon": -123.9442945147375
+    },
+    {
+      "fireNumber": "C10970",
+      "year": 2026,
+      "hectares": 0.6,
+      "status": "Out",
+      "trackDate": "2026-07-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10970",
+      "lat": 53.11643070926555,
+      "lon": -121.82474014706312
+    },
+    {
+      "fireNumber": "C10981",
+      "year": 2026,
+      "hectares": 1.6,
+      "status": "Out",
+      "trackDate": "2026-07-12Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C10981",
+      "lat": 52.94297677938094,
+      "lon": -121.5625304656107
     },
     {
       "fireNumber": "C20851",
@@ -756,6 +536,326 @@
       "lon": -121.93687336260625
     },
     {
+      "fireNumber": "C42006",
+      "year": 2026,
+      "hectares": 1.5,
+      "status": "Out",
+      "trackDate": "2026-08-27Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C42006",
+      "lat": 51.98946537630135,
+      "lon": -120.80610325465302
+    },
+    {
+      "fireNumber": "C50009",
+      "year": 2026,
+      "hectares": 4.8,
+      "status": "Out",
+      "trackDate": "2026-04-03Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50009",
+      "lat": 52.07515955343363,
+      "lon": -123.26727370519265
+    },
+    {
+      "fireNumber": "C50020",
+      "year": 2026,
+      "hectares": 6.5,
+      "status": "Out",
+      "trackDate": "2026-04-05Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50020",
+      "lat": 52.09654433207635,
+      "lon": -123.42400446250605
+    },
+    {
+      "fireNumber": "C50044",
+      "year": 2026,
+      "hectares": 1.2,
+      "status": "Out",
+      "trackDate": "2026-04-11Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50044",
+      "lat": 51.80223659010324,
+      "lon": -123.0666259462359
+    },
+    {
+      "fireNumber": "C50057",
+      "year": 2026,
+      "hectares": 3.1,
+      "status": "Out",
+      "trackDate": "2026-04-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50057",
+      "lat": 52.429073295855204,
+      "lon": -124.4067218907517
+    },
+    {
+      "fireNumber": "C50060",
+      "year": 2026,
+      "hectares": 5.6,
+      "status": "Out",
+      "trackDate": "2026-04-17Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50060",
+      "lat": 52.03562475069545,
+      "lon": -123.19768994889016
+    },
+    {
+      "fireNumber": "C50113",
+      "year": 2026,
+      "hectares": 236.6,
+      "status": "Out",
+      "trackDate": "2026-04-25Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50113",
+      "lat": 51.485075518516005,
+      "lon": -123.83364609540392
+    },
+    {
+      "fireNumber": "C50173",
+      "year": 2026,
+      "hectares": 24.3,
+      "status": "Out",
+      "trackDate": "2026-04-30Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50173",
+      "lat": 52.45818786698985,
+      "lon": -125.28490012027318
+    },
+    {
+      "fireNumber": "C50303",
+      "year": 2026,
+      "hectares": 1.7,
+      "status": "Out",
+      "trackDate": "2026-05-10Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50303",
+      "lat": 51.925582653701156,
+      "lon": -123.1346243081315
+    },
+    {
+      "fireNumber": "C50385",
+      "year": 2026,
+      "hectares": 2,
+      "status": "Out",
+      "trackDate": "2026-05-19Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50385",
+      "lat": 52.09499132187104,
+      "lon": -123.31281956838495
+    },
+    {
+      "fireNumber": "C50442",
+      "year": 2026,
+      "hectares": 4.6,
+      "status": "Out",
+      "trackDate": "2026-05-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50442",
+      "lat": 52.02049704660277,
+      "lon": -124.40827064911483
+    },
+    {
+      "fireNumber": "C50929",
+      "year": 2026,
+      "hectares": 6103.2,
+      "status": "Out of Control",
+      "trackDate": "2026-08-24Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50929",
+      "lat": 52.66802993131203,
+      "lon": -125.3089282348492
+    },
+    {
+      "fireNumber": "C50946",
+      "year": 2026,
+      "hectares": 2.1,
+      "status": "Out",
+      "trackDate": "2026-07-20Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C50946",
+      "lat": 52.42927941360994,
+      "lon": -124.75208243773642
+    },
+    {
+      "fireNumber": "C51022",
+      "year": 2026,
+      "hectares": 1.4,
+      "status": "Out",
+      "trackDate": "2026-07-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C51022",
+      "lat": 52.90125741901857,
+      "lon": -125.56764340804096
+    },
+    {
+      "fireNumber": "C51097",
+      "year": 2026,
+      "hectares": 1.9,
+      "status": "Out",
+      "trackDate": "2026-07-29Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C51097",
+      "lat": 52.361922747384746,
+      "lon": -125.57443839588532
+    },
+    {
+      "fireNumber": "C51473",
+      "year": 2026,
+      "hectares": 3096.6,
+      "status": "Under Control",
+      "trackDate": "2026-08-17Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=C51473",
+      "lat": 52.392144812079785,
+      "lon": -124.56047850267292
+    },
+    {
+      "fireNumber": "G10279",
+      "year": 2026,
+      "hectares": 12.2,
+      "status": "Out",
+      "trackDate": "2026-05-09Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G10279",
+      "lat": 53.86708251565264,
+      "lon": -121.3335507961619
+    },
+    {
+      "fireNumber": "G11139",
+      "year": 2026,
+      "hectares": 1.9,
+      "status": "Out",
+      "trackDate": "2026-07-25Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G11139",
+      "lat": 53.554746961513246,
+      "lon": -120.90674819488984
+    },
+    {
+      "fireNumber": "G30109",
+      "year": 2026,
+      "hectares": 2.5,
+      "status": "Out",
+      "trackDate": "2026-04-23Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G30109",
+      "lat": 52.905930855805956,
+      "lon": -119.34622613076304
+    },
+    {
+      "fireNumber": "G31209",
+      "year": 2026,
+      "hectares": 30.8,
+      "status": "Being Held",
+      "trackDate": "2026-08-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G31209",
+      "lat": 52.28718282391366,
+      "lon": -119.20303117124826
+    },
+    {
+      "fireNumber": "G32037",
+      "year": 2026,
+      "hectares": 1.1,
+      "status": "Under Control",
+      "trackDate": "2026-08-29Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G32037",
+      "lat": 52.62075494858298,
+      "lon": -118.90325150086917
+    },
+    {
+      "fireNumber": "G40059",
+      "year": 2026,
+      "hectares": 1.6,
+      "status": "Out",
+      "trackDate": "2026-04-16Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G40059",
+      "lat": 54.08373809065545,
+      "lon": -124.5779042229592
+    },
+    {
+      "fireNumber": "G80457",
+      "year": 2026,
+      "hectares": 1.2,
+      "status": "Out",
+      "trackDate": "2026-05-31Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80457",
+      "lat": 56.78581767741592,
+      "lon": -121.6276636584953
+    },
+    {
+      "fireNumber": "G80662",
+      "year": 2026,
+      "hectares": 1.4,
+      "status": "Out",
+      "trackDate": "2026-06-26Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80662",
+      "lat": 56.86287696882462,
+      "lon": -120.08306390010394
+    },
+    {
+      "fireNumber": "G80747",
+      "year": 2026,
+      "hectares": 2.3,
+      "status": "Out",
+      "trackDate": "2026-07-04Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80747",
+      "lat": 57.74411558263162,
+      "lon": -120.14401987789432
+    },
+    {
+      "fireNumber": "G81123",
+      "year": 2026,
+      "hectares": 77.7,
+      "status": "Being Held",
+      "trackDate": "2026-07-27Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G81123",
+      "lat": 58.104040430863414,
+      "lon": -120.80944419148659
+    },
+    {
+      "fireNumber": "G90285",
+      "year": 2026,
+      "hectares": 1.4,
+      "status": "Out",
+      "trackDate": "2026-05-08Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G90285",
+      "lat": 58.35492023372573,
+      "lon": -123.94061369120901
+    },
+    {
+      "fireNumber": "G90634",
+      "year": 2026,
+      "hectares": 3.5,
+      "status": "Out",
+      "trackDate": "2026-06-24Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G90634",
+      "lat": 59.16280254436466,
+      "lon": -123.0999355002441
+    },
+    {
+      "fireNumber": "G90849",
+      "year": 2026,
+      "hectares": 2.1,
+      "status": "Out",
+      "trackDate": "2026-07-15Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G90849",
+      "lat": 58.573398023272496,
+      "lon": -121.84241644040998
+    },
+    {
+      "fireNumber": "G91077",
+      "year": 2026,
+      "hectares": 67.2,
+      "status": "Under Control",
+      "trackDate": "2026-07-23Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G91077",
+      "lat": 58.65637795682176,
+      "lon": -123.48759288713225
+    },
+    {
+      "fireNumber": "K20016",
+      "year": 2026,
+      "hectares": 1.8,
+      "status": "Out",
+      "trackDate": "2026-04-04Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K20016",
+      "lat": 50.3827096559047,
+      "lon": -120.25707633818001
+    },
+    {
+      "fireNumber": "K20025",
+      "year": 2026,
+      "hectares": 12.7,
+      "status": "Out",
+      "trackDate": "2026-04-07Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K20025",
+      "lat": 50.56596043899539,
+      "lon": -121.2967118149453
+    },
+    {
       "fireNumber": "K21273",
       "year": 2026,
       "hectares": 2.5,
@@ -916,146 +1016,6 @@
       "lon": -118.30931421280191
     },
     {
-      "fireNumber": "G70322",
-      "year": 2026,
-      "hectares": 206.8,
-      "status": "Out",
-      "trackDate": "2026-05-12Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G70322",
-      "lat": 55.96989063007081,
-      "lon": -121.46682626740726
-    },
-    {
-      "fireNumber": "G70362",
-      "year": 2026,
-      "hectares": 159.6,
-      "status": "Out",
-      "trackDate": "2026-05-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G70362",
-      "lat": 55.02523807398216,
-      "lon": -120.20688583440045
-    },
-    {
-      "fireNumber": "G80206",
-      "year": 2026,
-      "hectares": 3.3,
-      "status": "Out",
-      "trackDate": "2026-05-03Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80206",
-      "lat": 56.20821343374121,
-      "lon": -120.63849523866206
-    },
-    {
-      "fireNumber": "G80347",
-      "year": 2026,
-      "hectares": 13.8,
-      "status": "Out",
-      "trackDate": "2026-05-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80347",
-      "lat": 56.52494048067687,
-      "lon": -120.90264317995586
-    },
-    {
-      "fireNumber": "G80457",
-      "year": 2026,
-      "hectares": 1.2,
-      "status": "Out",
-      "trackDate": "2026-05-31Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80457",
-      "lat": 56.78581767741592,
-      "lon": -121.6276636584953
-    },
-    {
-      "fireNumber": "G80662",
-      "year": 2026,
-      "hectares": 1.4,
-      "status": "Out",
-      "trackDate": "2026-06-26Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80662",
-      "lat": 56.86287696882462,
-      "lon": -120.08306390010394
-    },
-    {
-      "fireNumber": "G80747",
-      "year": 2026,
-      "hectares": 2.3,
-      "status": "Out",
-      "trackDate": "2026-07-04Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80747",
-      "lat": 57.74411558263162,
-      "lon": -120.14401987789432
-    },
-    {
-      "fireNumber": "G81123",
-      "year": 2026,
-      "hectares": 77.7,
-      "status": "Being Held",
-      "trackDate": "2026-07-27Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G81123",
-      "lat": 58.104040430863414,
-      "lon": -120.80944419148659
-    },
-    {
-      "fireNumber": "G90285",
-      "year": 2026,
-      "hectares": 1.4,
-      "status": "Out",
-      "trackDate": "2026-05-08Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G90285",
-      "lat": 58.35492023372573,
-      "lon": -123.94061369120901
-    },
-    {
-      "fireNumber": "G90634",
-      "year": 2026,
-      "hectares": 3.5,
-      "status": "Out",
-      "trackDate": "2026-06-24Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G90634",
-      "lat": 59.16280254436466,
-      "lon": -123.0999355002441
-    },
-    {
-      "fireNumber": "G90849",
-      "year": 2026,
-      "hectares": 2.1,
-      "status": "Out",
-      "trackDate": "2026-07-15Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G90849",
-      "lat": 58.573398023272496,
-      "lon": -121.84241644040998
-    },
-    {
-      "fireNumber": "G91077",
-      "year": 2026,
-      "hectares": 67.2,
-      "status": "Under Control",
-      "trackDate": "2026-07-23Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G91077",
-      "lat": 58.65637795682176,
-      "lon": -123.48759288713225
-    },
-    {
-      "fireNumber": "K20016",
-      "year": 2026,
-      "hectares": 1.8,
-      "status": "Out",
-      "trackDate": "2026-04-04Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K20016",
-      "lat": 50.3827096559047,
-      "lon": -120.25707633818001
-    },
-    {
-      "fireNumber": "K20025",
-      "year": 2026,
-      "hectares": 12.7,
-      "status": "Out",
-      "trackDate": "2026-04-07Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K20025",
-      "lat": 50.56596043899539,
-      "lon": -121.2967118149453
-    },
-    {
       "fireNumber": "K20099",
       "year": 2026,
       "hectares": 9.3,
@@ -1134,6 +1094,136 @@
       "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K20861",
       "lat": 50.74423436763982,
       "lon": -120.56014485687002
+    },
+    {
+      "fireNumber": "G70322",
+      "year": 2026,
+      "hectares": 206.8,
+      "status": "Out",
+      "trackDate": "2026-05-12Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G70322",
+      "lat": 55.96989063007081,
+      "lon": -121.46682626740726
+    },
+    {
+      "fireNumber": "G70362",
+      "year": 2026,
+      "hectares": 159.6,
+      "status": "Out",
+      "trackDate": "2026-05-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G70362",
+      "lat": 55.02523807398216,
+      "lon": -120.20688583440045
+    },
+    {
+      "fireNumber": "G80206",
+      "year": 2026,
+      "hectares": 3.3,
+      "status": "Out",
+      "trackDate": "2026-05-03Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80206",
+      "lat": 56.20821343374121,
+      "lon": -120.63849523866206
+    },
+    {
+      "fireNumber": "G80347",
+      "year": 2026,
+      "hectares": 13.8,
+      "status": "Out",
+      "trackDate": "2026-05-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=G80347",
+      "lat": 56.52494048067687,
+      "lon": -120.90264317995586
+    },
+    {
+      "fireNumber": "K61756",
+      "year": 2026,
+      "hectares": 12.2,
+      "status": "Out",
+      "trackDate": "2026-08-23Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K61756",
+      "lat": 49.58600713004852,
+      "lon": -120.87609318302789
+    },
+    {
+      "fireNumber": "K61758",
+      "year": 2026,
+      "hectares": 47.8,
+      "status": "Being Held",
+      "trackDate": "2026-08-27Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K61758",
+      "lat": 49.62076263321603,
+      "lon": -120.91367539703697
+    },
+    {
+      "fireNumber": "K61957",
+      "year": 2026,
+      "hectares": 3.2,
+      "status": "Out",
+      "trackDate": "2026-08-26Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K61957",
+      "lat": 49.47930796020219,
+      "lon": -120.35212387244007
+    },
+    {
+      "fireNumber": "K70022",
+      "year": 2026,
+      "hectares": 3.3,
+      "status": "Out",
+      "trackDate": "2026-04-06Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70022",
+      "lat": 50.14166199253172,
+      "lon": -121.57135422217362
+    },
+    {
+      "fireNumber": "K70464",
+      "year": 2026,
+      "hectares": 2.7,
+      "status": "Out",
+      "trackDate": "2026-06-01Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70464",
+      "lat": 50.248243679409484,
+      "lon": -121.49708854744941
+    },
+    {
+      "fireNumber": "K70597",
+      "year": 2026,
+      "hectares": 655.6,
+      "status": "Out",
+      "trackDate": "2026-06-27Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70597",
+      "lat": 50.20726711862378,
+      "lon": -121.56580965648358
+    },
+    {
+      "fireNumber": "K70659",
+      "year": 2026,
+      "hectares": 4220.4,
+      "status": "Being Held",
+      "trackDate": "2026-08-29Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70659",
+      "lat": 50.562268941576384,
+      "lon": -121.88182980862425
+    },
+    {
+      "fireNumber": "K70748",
+      "year": 2026,
+      "hectares": 61766.4,
+      "status": "Out of Control",
+      "trackDate": "2026-08-31Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70748",
+      "lat": 51.27937045675902,
+      "lon": -122.32340958910365
+    },
+    {
+      "fireNumber": "K71082",
+      "year": 2026,
+      "hectares": 34985.8,
+      "status": "Out of Control",
+      "trackDate": "2026-08-27Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K71082",
+      "lat": 51.148927205425515,
+      "lon": -122.76702944831403
     },
     {
       "fireNumber": "K71651",
@@ -1416,94 +1506,64 @@
       "lon": -120.94846056294351
     },
     {
-      "fireNumber": "K61756",
+      "fireNumber": "N40151",
       "year": 2026,
-      "hectares": 12.2,
+      "hectares": 34.7,
       "status": "Out",
-      "trackDate": "2026-08-23Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K61756",
-      "lat": 49.58600713004852,
-      "lon": -120.87609318302789
+      "trackDate": "2026-04-26Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N40151",
+      "lat": 50.929648213936225,
+      "lon": -118.1624175833274
     },
     {
-      "fireNumber": "K61758",
+      "fireNumber": "N40233",
       "year": 2026,
-      "hectares": 47.8,
+      "hectares": 13.3,
+      "status": "Out",
+      "trackDate": "2026-05-06Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N40233",
+      "lat": 51.31819955846279,
+      "lon": -118.1872002228661
+    },
+    {
+      "fireNumber": "N40912",
+      "year": 2026,
+      "hectares": 4.8,
+      "status": "Out",
+      "trackDate": "2026-07-17Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N40912",
+      "lat": 50.97909878170608,
+      "lon": -117.85049208398205
+    },
+    {
+      "fireNumber": "N41081",
+      "year": 2026,
+      "hectares": 186.8,
       "status": "Being Held",
-      "trackDate": "2026-08-27Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K61758",
-      "lat": 49.62076263321603,
-      "lon": -120.91367539703697
+      "trackDate": "2026-08-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41081",
+      "lat": 50.5312398002614,
+      "lon": -118.16859483589438
     },
     {
-      "fireNumber": "K61957",
+      "fireNumber": "N41250",
       "year": 2026,
-      "hectares": 3.2,
-      "status": "Out",
-      "trackDate": "2026-08-26Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K61957",
-      "lat": 49.47930796020219,
-      "lon": -120.35212387244007
-    },
-    {
-      "fireNumber": "K70022",
-      "year": 2026,
-      "hectares": 3.3,
-      "status": "Out",
-      "trackDate": "2026-04-06Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70022",
-      "lat": 50.14166199253172,
-      "lon": -121.57135422217362
-    },
-    {
-      "fireNumber": "K70464",
-      "year": 2026,
-      "hectares": 2.7,
-      "status": "Out",
-      "trackDate": "2026-06-01Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70464",
-      "lat": 50.248243679409484,
-      "lon": -121.49708854744941
-    },
-    {
-      "fireNumber": "K70597",
-      "year": 2026,
-      "hectares": 655.6,
-      "status": "Out",
-      "trackDate": "2026-06-27Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70597",
-      "lat": 50.20726711862378,
-      "lon": -121.56580965648358
-    },
-    {
-      "fireNumber": "K70659",
-      "year": 2026,
-      "hectares": 4220.4,
+      "hectares": 181,
       "status": "Being Held",
-      "trackDate": "2026-08-29Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70659",
-      "lat": 50.562268941576384,
-      "lon": -121.88182980862425
+      "trackDate": "2026-08-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41250",
+      "lat": 51.73322674093609,
+      "lon": -118.16273393564902
     },
     {
-      "fireNumber": "K70748",
+      "fireNumber": "N41279",
       "year": 2026,
-      "hectares": 61766.4,
+      "hectares": 138.4,
       "status": "Out of Control",
-      "trackDate": "2026-08-31Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K70748",
-      "lat": 51.27937045675902,
-      "lon": -122.32340958910365
-    },
-    {
-      "fireNumber": "K71082",
-      "year": 2026,
-      "hectares": 34985.8,
-      "status": "Out of Control",
-      "trackDate": "2026-08-27Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=K71082",
-      "lat": 51.148927205425515,
-      "lon": -122.76702944831403
+      "trackDate": "2026-08-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41279",
+      "lat": 51.59406554705164,
+      "lon": -118.27521556160089
     },
     {
       "fireNumber": "N41569",
@@ -1606,6 +1666,56 @@
       "lon": -117.64092386559368
     },
     {
+      "fireNumber": "N41324",
+      "year": 2026,
+      "hectares": 341.8,
+      "status": "Out of Control",
+      "trackDate": "2026-08-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41324",
+      "lat": 51.5114926321588,
+      "lon": -118.22805317937566
+    },
+    {
+      "fireNumber": "N41348",
+      "year": 2026,
+      "hectares": 43.1,
+      "status": "Under Control",
+      "trackDate": "2026-08-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41348",
+      "lat": 51.68973800654399,
+      "lon": -118.08803792095114
+    },
+    {
+      "fireNumber": "N41412",
+      "year": 2026,
+      "hectares": 1221.5,
+      "status": "Out of Control",
+      "trackDate": "2026-08-20Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41412",
+      "lat": 51.542021411460176,
+      "lon": -116.82385850814097
+    },
+    {
+      "fireNumber": "N41423",
+      "year": 2026,
+      "hectares": 191.4,
+      "status": "Being Held",
+      "trackDate": "2026-08-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41423",
+      "lat": 51.09765502706337,
+      "lon": -117.79863441279201
+    },
+    {
+      "fireNumber": "N41514",
+      "year": 2026,
+      "hectares": 380.2,
+      "status": "Out of Control",
+      "trackDate": "2026-08-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41514",
+      "lat": 51.113636917518406,
+      "lon": -116.3334519471722
+    },
+    {
       "fireNumber": "N20361",
       "year": 2026,
       "hectares": 1.2,
@@ -1666,114 +1776,164 @@
       "lon": -115.75476808317076
     },
     {
-      "fireNumber": "N40151",
+      "fireNumber": "N71932",
       "year": 2026,
-      "hectares": 34.7,
-      "status": "Out",
-      "trackDate": "2026-04-26Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N40151",
-      "lat": 50.929648213936225,
-      "lon": -118.1624175833274
+      "hectares": 26.2,
+      "status": "Out of Control",
+      "trackDate": "2026-08-29Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71932",
+      "lat": 49.02031108966147,
+      "lon": -116.94347616641589
     },
     {
-      "fireNumber": "N40233",
+      "fireNumber": "N71947",
       "year": 2026,
-      "hectares": 13.3,
-      "status": "Out",
-      "trackDate": "2026-05-06Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N40233",
-      "lat": 51.31819955846279,
-      "lon": -118.1872002228661
+      "hectares": 4.7,
+      "status": "Being Held",
+      "trackDate": "2026-08-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71947",
+      "lat": 49.00051941454553,
+      "lon": -116.72098129758149
     },
     {
-      "fireNumber": "N40912",
+      "fireNumber": "N71956",
+      "year": 2026,
+      "hectares": 6.5,
+      "status": "Being Held",
+      "trackDate": "2026-08-29Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71956",
+      "lat": 49.250173199755295,
+      "lon": -116.12775716228268
+    },
+    {
+      "fireNumber": "N71959",
+      "year": 2026,
+      "hectares": 5,
+      "status": "Being Held",
+      "trackDate": "2026-08-29Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71959",
+      "lat": 49.42103309165693,
+      "lon": -116.88507095424887
+    },
+    {
+      "fireNumber": "N71993",
+      "year": 2026,
+      "hectares": 8.2,
+      "status": "Under Control",
+      "trackDate": "2026-08-29Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71993",
+      "lat": 49.34158832519098,
+      "lon": -116.24803387077525
+    },
+    {
+      "fireNumber": "N72002",
+      "year": 2026,
+      "hectares": 4.9,
+      "status": "Under Control",
+      "trackDate": "2026-08-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N72002",
+      "lat": 49.700583661129116,
+      "lon": -116.67599960386427
+    },
+    {
+      "fireNumber": "N72003",
+      "year": 2026,
+      "hectares": 26.6,
+      "status": "Being Held",
+      "trackDate": "2026-08-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N72003",
+      "lat": 49.67942908521896,
+      "lon": -116.69427874766271
+    },
+    {
+      "fireNumber": "N72004",
+      "year": 2026,
+      "hectares": 31.4,
+      "status": "Being Held",
+      "trackDate": "2026-08-28Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N72004",
+      "lat": 49.6805624705216,
+      "lon": -116.70997052545471
+    },
+    {
+      "fireNumber": "R10075",
+      "year": 2026,
+      "hectares": 0.8,
+      "status": "Out",
+      "trackDate": "2026-04-20Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R10075",
+      "lat": 54.07010501571219,
+      "lon": -125.72973249942709
+    },
+    {
+      "fireNumber": "R10084",
+      "year": 2026,
+      "hectares": 4.6,
+      "status": "Out",
+      "trackDate": "2026-04-20Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R10084",
+      "lat": 53.933234289630725,
+      "lon": -125.6653204960651
+    },
+    {
+      "fireNumber": "R10247",
+      "year": 2026,
+      "hectares": 1.7,
+      "status": "Out",
+      "trackDate": "2026-05-05Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R10247",
+      "lat": 54.33753449248052,
+      "lon": -125.87986910235732
+    },
+    {
+      "fireNumber": "R30203",
+      "year": 2026,
+      "hectares": 2.4,
+      "status": "Out",
+      "trackDate": "2026-05-03Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R30203",
+      "lat": 54.58897110735559,
+      "lon": -126.83809818196887
+    },
+    {
+      "fireNumber": "R40227",
       "year": 2026,
       "hectares": 4.8,
       "status": "Out",
-      "trackDate": "2026-07-17Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N40912",
-      "lat": 50.97909878170608,
-      "lon": -117.85049208398205
+      "trackDate": "2026-05-04Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R40227",
+      "lat": 55.361922709614845,
+      "lon": -127.62865261798684
     },
     {
-      "fireNumber": "N41081",
+      "fireNumber": "R41118",
       "year": 2026,
-      "hectares": 186.8,
-      "status": "Being Held",
-      "trackDate": "2026-08-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41081",
-      "lat": 50.5312398002614,
-      "lon": -118.16859483589438
-    },
-    {
-      "fireNumber": "N41250",
-      "year": 2026,
-      "hectares": 181,
-      "status": "Being Held",
-      "trackDate": "2026-08-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41250",
-      "lat": 51.73322674093609,
-      "lon": -118.16273393564902
-    },
-    {
-      "fireNumber": "N41279",
-      "year": 2026,
-      "hectares": 138.4,
-      "status": "Out of Control",
-      "trackDate": "2026-08-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41279",
-      "lat": 51.59406554705164,
-      "lon": -118.27521556160089
-    },
-    {
-      "fireNumber": "N41324",
-      "year": 2026,
-      "hectares": 341.8,
-      "status": "Out of Control",
-      "trackDate": "2026-08-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41324",
-      "lat": 51.5114926321588,
-      "lon": -118.22805317937566
-    },
-    {
-      "fireNumber": "N41348",
-      "year": 2026,
-      "hectares": 43.1,
+      "hectares": 293.5,
       "status": "Under Control",
-      "trackDate": "2026-08-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41348",
-      "lat": 51.68973800654399,
-      "lon": -118.08803792095114
+      "trackDate": "2026-07-26Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R41118",
+      "lat": 54.979532674137396,
+      "lon": -128.34440262582808
     },
     {
-      "fireNumber": "N41412",
+      "fireNumber": "R50553",
       "year": 2026,
-      "hectares": 1221.5,
-      "status": "Out of Control",
-      "trackDate": "2026-08-20Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41412",
-      "lat": 51.542021411460176,
-      "lon": -116.82385850814097
+      "hectares": 30.2,
+      "status": "Out",
+      "trackDate": "2026-06-15Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R50553",
+      "lat": 54.6217013871035,
+      "lon": -127.97086613429161
     },
     {
-      "fireNumber": "N41423",
+      "fireNumber": "R90157",
       "year": 2026,
-      "hectares": 191.4,
-      "status": "Being Held",
-      "trackDate": "2026-08-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41423",
-      "lat": 51.09765502706337,
-      "lon": -117.79863441279201
-    },
-    {
-      "fireNumber": "N41514",
-      "year": 2026,
-      "hectares": 380.2,
-      "status": "Out of Control",
-      "trackDate": "2026-08-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N41514",
-      "lat": 51.113636917518406,
-      "lon": -116.3334519471722
+      "hectares": 8.2,
+      "status": "Out",
+      "trackDate": "2026-04-29Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R90157",
+      "lat": 57.83898768240123,
+      "lon": -131.38744122260746
     },
     {
       "fireNumber": "R90834",
@@ -2156,336 +2316,6 @@
       "lon": -116.93928812416058
     },
     {
-      "fireNumber": "N71932",
-      "year": 2026,
-      "hectares": 26.2,
-      "status": "Out of Control",
-      "trackDate": "2026-08-29Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71932",
-      "lat": 49.02031108966147,
-      "lon": -116.94347616641589
-    },
-    {
-      "fireNumber": "N71947",
-      "year": 2026,
-      "hectares": 4.7,
-      "status": "Being Held",
-      "trackDate": "2026-08-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71947",
-      "lat": 49.00051941454553,
-      "lon": -116.72098129758149
-    },
-    {
-      "fireNumber": "N71956",
-      "year": 2026,
-      "hectares": 6.5,
-      "status": "Being Held",
-      "trackDate": "2026-08-29Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71956",
-      "lat": 49.250173199755295,
-      "lon": -116.12775716228268
-    },
-    {
-      "fireNumber": "N71959",
-      "year": 2026,
-      "hectares": 5,
-      "status": "Being Held",
-      "trackDate": "2026-08-29Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71959",
-      "lat": 49.42103309165693,
-      "lon": -116.88507095424887
-    },
-    {
-      "fireNumber": "N71993",
-      "year": 2026,
-      "hectares": 8.2,
-      "status": "Under Control",
-      "trackDate": "2026-08-29Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N71993",
-      "lat": 49.34158832519098,
-      "lon": -116.24803387077525
-    },
-    {
-      "fireNumber": "N72002",
-      "year": 2026,
-      "hectares": 4.9,
-      "status": "Under Control",
-      "trackDate": "2026-08-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N72002",
-      "lat": 49.700583661129116,
-      "lon": -116.67599960386427
-    },
-    {
-      "fireNumber": "N72003",
-      "year": 2026,
-      "hectares": 26.6,
-      "status": "Being Held",
-      "trackDate": "2026-08-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N72003",
-      "lat": 49.67942908521896,
-      "lon": -116.69427874766271
-    },
-    {
-      "fireNumber": "N72004",
-      "year": 2026,
-      "hectares": 31.4,
-      "status": "Being Held",
-      "trackDate": "2026-08-28Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=N72004",
-      "lat": 49.6805624705216,
-      "lon": -116.70997052545471
-    },
-    {
-      "fireNumber": "R10075",
-      "year": 2026,
-      "hectares": 0.8,
-      "status": "Out",
-      "trackDate": "2026-04-20Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R10075",
-      "lat": 54.07010501571219,
-      "lon": -125.72973249942709
-    },
-    {
-      "fireNumber": "R10084",
-      "year": 2026,
-      "hectares": 4.6,
-      "status": "Out",
-      "trackDate": "2026-04-20Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R10084",
-      "lat": 53.933234289630725,
-      "lon": -125.6653204960651
-    },
-    {
-      "fireNumber": "R10247",
-      "year": 2026,
-      "hectares": 1.7,
-      "status": "Out",
-      "trackDate": "2026-05-05Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R10247",
-      "lat": 54.33753449248052,
-      "lon": -125.87986910235732
-    },
-    {
-      "fireNumber": "R30203",
-      "year": 2026,
-      "hectares": 2.4,
-      "status": "Out",
-      "trackDate": "2026-05-03Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R30203",
-      "lat": 54.58897110735559,
-      "lon": -126.83809818196887
-    },
-    {
-      "fireNumber": "R40227",
-      "year": 2026,
-      "hectares": 4.8,
-      "status": "Out",
-      "trackDate": "2026-05-04Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R40227",
-      "lat": 55.361922709614845,
-      "lon": -127.62865261798684
-    },
-    {
-      "fireNumber": "R41118",
-      "year": 2026,
-      "hectares": 293.5,
-      "status": "Under Control",
-      "trackDate": "2026-07-26Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R41118",
-      "lat": 54.979532674137396,
-      "lon": -128.34440262582808
-    },
-    {
-      "fireNumber": "R50553",
-      "year": 2026,
-      "hectares": 30.2,
-      "status": "Out",
-      "trackDate": "2026-06-15Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R50553",
-      "lat": 54.6217013871035,
-      "lon": -127.97086613429161
-    },
-    {
-      "fireNumber": "R90157",
-      "year": 2026,
-      "hectares": 8.2,
-      "status": "Out",
-      "trackDate": "2026-04-29Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=R90157",
-      "lat": 57.83898768240123,
-      "lon": -131.38744122260746
-    },
-    {
-      "fireNumber": "V70768",
-      "year": 2026,
-      "hectares": 0.6,
-      "status": "Out",
-      "trackDate": "2026-07-06Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V70768",
-      "lat": 49.28384908955183,
-      "lon": -124.4644793707056
-    },
-    {
-      "fireNumber": "V71346",
-      "year": 2026,
-      "hectares": 0.2,
-      "status": "Out",
-      "trackDate": "2026-07-31Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V71346",
-      "lat": 49.107813949342855,
-      "lon": -123.6711668583754
-    },
-    {
-      "fireNumber": "V71736",
-      "year": 2026,
-      "hectares": 0.3,
-      "status": "Out",
-      "trackDate": "2026-08-22Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V71736",
-      "lat": 49.32729566597641,
-      "lon": -124.82182209210765
-    },
-    {
-      "fireNumber": "V71910",
-      "year": 2026,
-      "hectares": 0,
-      "status": "Out",
-      "trackDate": "2026-08-24Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V71910",
-      "lat": 49.193032118399415,
-      "lon": -124.24415715056901
-    },
-    {
-      "fireNumber": "V80761",
-      "year": 2026,
-      "hectares": 0.2,
-      "status": "Out",
-      "trackDate": "2026-07-05Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V80761",
-      "lat": 49.64189450860815,
-      "lon": -125.11257176800906
-    },
-    {
-      "fireNumber": "V81131",
-      "year": 2026,
-      "hectares": 1.9,
-      "status": "Being Held",
-      "trackDate": "2026-08-21Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V81131",
-      "lat": 50.04642948440929,
-      "lon": -126.19966835336389
-    },
-    {
-      "fireNumber": "V81682",
-      "year": 2026,
-      "hectares": 13.5,
-      "status": "Being Held",
-      "trackDate": "2026-08-26Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V81682",
-      "lat": 49.91387144213366,
-      "lon": -125.94235271232901
-    },
-    {
-      "fireNumber": "V81686",
-      "year": 2026,
-      "hectares": 38.8,
-      "status": "Being Held",
-      "trackDate": "2026-08-26Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V81686",
-      "lat": 49.94860781215217,
-      "lon": -125.76500068592848
-    },
-    {
-      "fireNumber": "V10858",
-      "year": 2026,
-      "hectares": 122.8,
-      "status": "Under Control",
-      "trackDate": "2026-08-12Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10858",
-      "lat": 49.48701621966161,
-      "lon": -121.23219244839306
-    },
-    {
-      "fireNumber": "V10885",
-      "year": 2026,
-      "hectares": 6277,
-      "status": "Out of Control",
-      "trackDate": "2026-08-24Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10885",
-      "lat": 49.05840550084298,
-      "lon": -121.03943909705069
-    },
-    {
-      "fireNumber": "V10898",
-      "year": 2026,
-      "hectares": 898.5,
-      "status": "Being Held",
-      "trackDate": "2026-08-16Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10898",
-      "lat": 49.14777368539456,
-      "lon": -120.96538341735865
-    },
-    {
-      "fireNumber": "V10942",
-      "year": 2026,
-      "hectares": 1339.8,
-      "status": "Being Held",
-      "trackDate": "2026-08-20Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10942",
-      "lat": 49.189340391024274,
-      "lon": -121.00219794613426
-    },
-    {
-      "fireNumber": "V10958",
-      "year": 2026,
-      "hectares": 722.1,
-      "status": "Being Held",
-      "trackDate": "2026-08-16Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10958",
-      "lat": 49.11897450794688,
-      "lon": -120.91009964803507
-    },
-    {
-      "fireNumber": "V11058",
-      "year": 2026,
-      "hectares": 152.9,
-      "status": "Being Held",
-      "trackDate": "2026-08-19Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V11058",
-      "lat": 49.12810910384842,
-      "lon": -120.95417934125177
-    },
-    {
-      "fireNumber": "V11104",
-      "year": 2026,
-      "hectares": 1.5,
-      "status": "Out",
-      "trackDate": "2026-07-22Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V11104",
-      "lat": 49.09776237389741,
-      "lon": -121.61860161318464
-    },
-    {
-      "fireNumber": "V11109",
-      "year": 2026,
-      "hectares": 2.3,
-      "status": "Out",
-      "trackDate": "2026-07-23Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V11109",
-      "lat": 49.682116673787824,
-      "lon": -122.09076381899541
-    },
-    {
-      "fireNumber": "V11496",
-      "year": 2026,
-      "hectares": 13.5,
-      "status": "Under Control",
-      "trackDate": "2026-08-17Z",
-      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V11496",
-      "lat": 49.375596775328475,
-      "lon": -122.10259771537105
-    },
-    {
       "fireNumber": "V30029",
       "year": 2026,
       "hectares": 61.8,
@@ -2606,6 +2436,86 @@
       "lon": -124.7229902968911
     },
     {
+      "fireNumber": "V70768",
+      "year": 2026,
+      "hectares": 0.6,
+      "status": "Out",
+      "trackDate": "2026-07-06Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V70768",
+      "lat": 49.28384908955183,
+      "lon": -124.4644793707056
+    },
+    {
+      "fireNumber": "V71346",
+      "year": 2026,
+      "hectares": 0.2,
+      "status": "Out",
+      "trackDate": "2026-07-31Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V71346",
+      "lat": 49.107813949342855,
+      "lon": -123.6711668583754
+    },
+    {
+      "fireNumber": "V71736",
+      "year": 2026,
+      "hectares": 0.3,
+      "status": "Out",
+      "trackDate": "2026-08-22Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V71736",
+      "lat": 49.32729566597641,
+      "lon": -124.82182209210765
+    },
+    {
+      "fireNumber": "V71910",
+      "year": 2026,
+      "hectares": 0,
+      "status": "Out",
+      "trackDate": "2026-08-24Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V71910",
+      "lat": 49.193032118399415,
+      "lon": -124.24415715056901
+    },
+    {
+      "fireNumber": "V80761",
+      "year": 2026,
+      "hectares": 0.2,
+      "status": "Out",
+      "trackDate": "2026-07-05Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V80761",
+      "lat": 49.64189450860815,
+      "lon": -125.11257176800906
+    },
+    {
+      "fireNumber": "V81131",
+      "year": 2026,
+      "hectares": 1.9,
+      "status": "Being Held",
+      "trackDate": "2026-08-21Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V81131",
+      "lat": 50.04642948440929,
+      "lon": -126.19966835336389
+    },
+    {
+      "fireNumber": "V81682",
+      "year": 2026,
+      "hectares": 13.5,
+      "status": "Being Held",
+      "trackDate": "2026-08-26Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V81682",
+      "lat": 49.91387144213366,
+      "lon": -125.94235271232901
+    },
+    {
+      "fireNumber": "V81686",
+      "year": 2026,
+      "hectares": 38.8,
+      "status": "Being Held",
+      "trackDate": "2026-08-26Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V81686",
+      "lat": 49.94860781215217,
+      "lon": -125.76500068592848
+    },
+    {
       "fireNumber": "V50640",
       "year": 2026,
       "hectares": 1.7,
@@ -2714,6 +2624,96 @@
       "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V70615",
       "lat": 49.26394460251631,
       "lon": -124.77610575079586
+    },
+    {
+      "fireNumber": "V10858",
+      "year": 2026,
+      "hectares": 122.8,
+      "status": "Under Control",
+      "trackDate": "2026-08-12Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10858",
+      "lat": 49.48701621966161,
+      "lon": -121.23219244839306
+    },
+    {
+      "fireNumber": "V10885",
+      "year": 2026,
+      "hectares": 6277,
+      "status": "Out of Control",
+      "trackDate": "2026-08-24Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10885",
+      "lat": 49.05840550084298,
+      "lon": -121.03943909705069
+    },
+    {
+      "fireNumber": "V10898",
+      "year": 2026,
+      "hectares": 898.5,
+      "status": "Being Held",
+      "trackDate": "2026-08-16Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10898",
+      "lat": 49.14777368539456,
+      "lon": -120.96538341735865
+    },
+    {
+      "fireNumber": "V10942",
+      "year": 2026,
+      "hectares": 1339.8,
+      "status": "Being Held",
+      "trackDate": "2026-08-20Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10942",
+      "lat": 49.189340391024274,
+      "lon": -121.00219794613426
+    },
+    {
+      "fireNumber": "V10958",
+      "year": 2026,
+      "hectares": 722.1,
+      "status": "Being Held",
+      "trackDate": "2026-08-16Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V10958",
+      "lat": 49.11897450794688,
+      "lon": -120.91009964803507
+    },
+    {
+      "fireNumber": "V11058",
+      "year": 2026,
+      "hectares": 152.9,
+      "status": "Being Held",
+      "trackDate": "2026-08-19Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V11058",
+      "lat": 49.12810910384842,
+      "lon": -120.95417934125177
+    },
+    {
+      "fireNumber": "V11104",
+      "year": 2026,
+      "hectares": 1.5,
+      "status": "Out",
+      "trackDate": "2026-07-22Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V11104",
+      "lat": 49.09776237389741,
+      "lon": -121.61860161318464
+    },
+    {
+      "fireNumber": "V11109",
+      "year": 2026,
+      "hectares": 2.3,
+      "status": "Out",
+      "trackDate": "2026-07-23Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V11109",
+      "lat": 49.682116673787824,
+      "lon": -122.09076381899541
+    },
+    {
+      "fireNumber": "V11496",
+      "year": 2026,
+      "hectares": 13.5,
+      "status": "Under Control",
+      "trackDate": "2026-08-17Z",
+      "url": "https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2026&incidentNumber=V11496",
+      "lat": 49.375596775328475,
+      "lon": -122.10259771537105
     },
     {
       "fireNumber": "V81694",

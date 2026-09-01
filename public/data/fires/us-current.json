@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-09-01T08:16:32.929Z",
+  "generatedAt": "2026-09-01T15:58:56.618Z",
   "points": [
     {
       "fireNumber": "2026-NDFBA-000251",
@@ -70,6 +70,17 @@
       "discoveryDate": "2026-07-02T19:06:00.000Z",
       "lat": 48.82113700000008,
       "lon": -121.20969299999996
+    },
+    {
+      "fireNumber": "2026-MIMIS-2026680023",
+      "name": "Osocda-23 Storm Wildfire",
+      "state": "MI",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-07-01T17:15:00.000Z",
+      "lat": 44.54137050000003,
+      "lon": -84.12984902999995
     },
     {
       "fireNumber": "2026-MNSUF-002393",
@@ -259,6 +270,17 @@
       "lon": -121.71741699999995
     },
     {
+      "fireNumber": "2026-WAOWF-260504",
+      "name": "DIRTYFACE",
+      "state": "WA",
+      "hectares": 0,
+      "percentContained": 100,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-07-23T16:02:00.000Z",
+      "lat": 47.88233000000008,
+      "lon": -120.81248999999997
+    },
+    {
       "fireNumber": "2026-WAGPF-000684",
       "name": "HIGH LAVA",
       "state": "WA",
@@ -411,6 +433,17 @@
       "discoveryDate": "2026-07-26T21:44:00.000Z",
       "lat": 46.072200000000066,
       "lon": -113.69074999999998
+    },
+    {
+      "fireNumber": "2026-WAMSF-000321",
+      "name": "Money Creek",
+      "state": "WA",
+      "hectares": 0.8,
+      "percentContained": 0,
+      "cause": "Natural",
+      "discoveryDate": "2026-07-27T03:00:00.000Z",
+      "lat": 47.68756900000005,
+      "lon": -121.46450599999997
     },
     {
       "fireNumber": "2026-MTFNF-000306",
@@ -897,6 +930,17 @@
       "lon": -113.92433299999999
     },
     {
+      "fireNumber": "2026-WAMSF-000502",
+      "name": "Gamma Creek",
+      "state": "WA",
+      "hectares": 5.1,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-08-24T01:24:09.000Z",
+      "lat": 48.17066700000004,
+      "lon": -121.04816699999998
+    },
+    {
       "fireNumber": "2026-MTCRA-261194",
       "name": "South HWY 1",
       "state": "MT",
@@ -1027,6 +1071,17 @@
       "discoveryDate": "2026-08-25T17:48:00.000Z",
       "lat": 48.99821700000007,
       "lon": -116.72241699999995
+    },
+    {
+      "fireNumber": "2026-WAMSF-000527",
+      "name": "Formidable",
+      "state": "WA",
+      "hectares": 0.2,
+      "percentContained": null,
+      "cause": "Natural",
+      "discoveryDate": "2026-08-26T03:10:17.000Z",
+      "lat": 48.424833000000035,
+      "lon": -121.10316699999998
     },
     {
       "fireNumber": "2026-IDNCF-000473",
@@ -1181,28 +1236,6 @@
       "discoveryDate": "2026-08-26T21:01:16.000Z",
       "lat": 48.16636700000004,
       "lon": -122.19088299999999
-    },
-    {
-      "fireNumber": "2026-MTCRA-261256",
-      "name": "I-90 Inc. 1256",
-      "state": "MT",
-      "hectares": 0.4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-08-28T22:08:58.000Z",
-      "lat": 45.68833300000006,
-      "lon": -107.51099999999997
-    },
-    {
-      "fireNumber": "2026-MTBDF-266404",
-      "name": "O'Dell Creek",
-      "state": "MT",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-08-27T21:58:37.000Z",
-      "lat": 45.574167000000045,
-      "lon": -113.21799999999996
     },
     {
       "fireNumber": "2026-MTBFA-000077",
@@ -1425,17 +1458,6 @@
       "lon": -114.03183299999995
     },
     {
-      "fireNumber": "2026-IDIPF-000770",
-      "name": "Hemlock Creek",
-      "state": "WA",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-08-30T22:48:25.000Z",
-      "lat": 48.81133300000005,
-      "lon": -117.06066699999997
-    },
-    {
       "fireNumber": "2026-WACOF-002149",
       "name": "SQUIRREL SPRING",
       "state": "WA",
@@ -1522,6 +1544,61 @@
       "discoveryDate": "2026-08-31T23:38:14.000Z",
       "lat": 45.76581700000003,
       "lon": -106.82391699999994
+    },
+    {
+      "fireNumber": "2026-MEMES-26R002619",
+      "name": "Baker Fire",
+      "state": "ME",
+      "hectares": 0.4,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-09-01T11:33:00.000Z",
+      "lat": 44.087919240000076,
+      "lon": -69.80527447999998
+    },
+    {
+      "fireNumber": "2026-MTMCD-000764",
+      "name": "Plum Bloom",
+      "state": "MT",
+      "hectares": 12.1,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-01T12:20:57.000Z",
+      "lat": 45.19730000000004,
+      "lon": -105.85188299999999
+    },
+    {
+      "fireNumber": "2026-MN1GS-002893",
+      "name": "Mary Brown Rx",
+      "state": "MN",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-01T14:24:45.000Z",
+      "lat": 46.723111000000074,
+      "lon": -94.91449399999999
+    },
+    {
+      "fireNumber": "2026-WASES-260778",
+      "name": "ALLIANCE ROAD",
+      "state": "WA",
+      "hectares": 0.2,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-09-01T06:35:31.000Z",
+      "lat": 47.20983300000006,
+      "lon": -120.96263299999998
+    },
+    {
+      "fireNumber": "2026-WASES-020434",
+      "name": "McCowan Road Mutual Aid",
+      "state": "WA",
+      "hectares": 6.1,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-08-06T18:23:36.000Z",
+      "lat": 46.22150000000005,
+      "lon": -118.12283299999996
     }
   ]
 }
