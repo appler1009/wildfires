@@ -2,7 +2,7 @@
   "source": "BC Data Catalogue (BC), Ontario GeoHub / LIO (Ontario), National Fire Database (rest of Canada, Natural Resources Canada / CWFIS)",
   "licence": "Open Government Licence - British Columbia / Open Government Licence - Ontario / Open Government Licence - Canada",
   "note": "National Fire Database coverage outside BC/Ontario currently extends to 2023 and lags the current season by roughly 1-2 years; BC's and Ontario's own datasets are more current and complete for those provinces.",
-  "generatedAt": "2026-09-01T15:59:01.047Z",
+  "generatedAt": "2026-09-02T15:52:30.966Z",
   "kind": "historical_summary",
   "rows": [
     {
