@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-09-30T17:30:09.974Z",
+  "generatedAt": "2026-10-01T09:45:02.146Z",
   "points": [
     {
       "fireNumber": "2026-IDIPF-000113",
@@ -130,7 +130,7 @@
       "fireNumber": "2026-WAOWF-260406",
       "name": "LITTLE GIANT",
       "state": "WA",
-      "hectares": 69969,
+      "hectares": 69971,
       "percentContained": 93,
       "cause": "Natural",
       "discoveryDate": "2026-07-16T01:17:54.000Z",
@@ -285,11 +285,22 @@
       "name": "SINLAHEKIN",
       "state": "WA",
       "hectares": 67183,
-      "percentContained": 93,
+      "percentContained": 94,
       "cause": "Undetermined",
       "discoveryDate": "2026-07-26T21:12:00.000Z",
       "lat": 48.70461700000004,
       "lon": -119.69311699999997
+    },
+    {
+      "fireNumber": "2026-MTBDF-266293",
+      "name": "Moose",
+      "state": "MT",
+      "hectares": 2430.2,
+      "percentContained": 37,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-07-26T21:44:00.000Z",
+      "lat": 46.072200000000066,
+      "lon": -113.69074999999998
     },
     {
       "fireNumber": "2026-IDNCF-000348",
@@ -615,7 +626,7 @@
       "name": "Davis Coulee",
       "state": "MT",
       "hectares": 6260.7,
-      "percentContained": 80,
+      "percentContained": 100,
       "cause": "Undetermined",
       "discoveryDate": "2026-09-14T04:30:00.000Z",
       "lat": 45.53980000000007,
@@ -625,7 +636,7 @@
       "fireNumber": "2026-IDSTF-000248",
       "name": "Stinson Creek RX 2026",
       "state": "ID",
-      "hectares": 20.2,
+      "hectares": 28.3,
       "percentContained": null,
       "cause": "Undetermined",
       "discoveryDate": "2026-09-14T17:37:00.000Z",
@@ -644,15 +655,15 @@
       "lon": -115.62108299999994
     },
     {
-      "fireNumber": "2026-MTLNF-260482",
-      "name": "RX D5 2 Short #18",
-      "state": "MT",
-      "hectares": 6.5,
+      "fireNumber": "2026-IDNCF-000574",
+      "name": "RX Bear Mountain Hand PWRD Piles",
+      "state": "ID",
+      "hectares": 2,
       "percentContained": null,
       "cause": "Undetermined",
-      "discoveryDate": "2026-09-21T13:31:00.000Z",
-      "lat": 47.58361700000006,
-      "lon": -115.44221699999997
+      "discoveryDate": "2026-09-17T18:05:35.000Z",
+      "lat": 46.43133300000005,
+      "lon": -114.92466699999994
     },
     {
       "fireNumber": "2026-IDNCF-000594",
@@ -919,17 +930,6 @@
       "lon": -67.86388586999993
     },
     {
-      "fireNumber": "2026-MNSUF-002967",
-      "name": "Fry NH Piles RX",
-      "state": "MN",
-      "hectares": 6.5,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-27T15:09:55.000Z",
-      "lat": 47.65023300000007,
-      "lon": -91.42804999999998
-    },
-    {
       "fireNumber": "2026-MNSUF-002969",
       "name": "Highway 1-Unit 4 Piles RX",
       "state": "MN",
@@ -1107,7 +1107,7 @@
     },
     {
       "fireNumber": "2026-WAWFS-000664",
-      "name": "Hatch Grade HB 1498 Request",
+      "name": "Hatch Grade",
       "state": "WA",
       "hectares": 2023.5,
       "percentContained": null,
@@ -1115,17 +1115,6 @@
       "discoveryDate": "2026-09-29T23:04:24.000Z",
       "lat": 46.032200000000046,
       "lon": -118.85879999999997
-    },
-    {
-      "fireNumber": "2026-MTSWS-266471",
-      "name": "Gregson Creek",
-      "state": "MT",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-09-29T22:34:58.000Z",
-      "lat": 46.020917000000054,
-      "lon": -112.85521699999998
     },
     {
       "fireNumber": "2026-MTBDF-266474",
@@ -1170,6 +1159,116 @@
       "discoveryDate": "2026-09-30T17:15:49.000Z",
       "lat": 47.33136700000006,
       "lon": -116.09221699999995
+    },
+    {
+      "fireNumber": "2026-MIMIS-659002",
+      "name": "OGEMAW-RX C71-1050 FB Perry Holt-Gilford Ranch",
+      "state": "MI",
+      "hectares": 21.4,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-09-28T15:00:00.000Z",
+      "lat": 44.49332752000004,
+      "lon": -84.29044998999996
+    },
+    {
+      "fireNumber": "2026-MIMIS-659003",
+      "name": "OGEMAW-RX C71-1048 FB-Odessa - Gilford Ranch",
+      "state": "MI",
+      "hectares": 30.4,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-09-28T16:30:00.000Z",
+      "lat": 44.493117520000055,
+      "lon": -84.32516897999994
+    },
+    {
+      "fireNumber": "2026-MIMIS-169001",
+      "name": "CHEBOYGAN-RX W53-527 CCC Fields",
+      "state": "MI",
+      "hectares": 43.7,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-09-28T17:33:00.000Z",
+      "lat": 45.22759141000006,
+      "lon": -84.38749487999996
+    },
+    {
+      "fireNumber": "2026-MIMIS-269002",
+      "name": "GLADWIN-RX W73-1030- Mohawk Trail",
+      "state": "MI",
+      "hectares": 11.7,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-09-29T16:45:00.000Z",
+      "lat": 44.11284159000007,
+      "lon": -84.33365501999998
+    },
+    {
+      "fireNumber": "2026-IDNCF-000613",
+      "name": "RX Cold Springs NFRD",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-30T17:57:55.000Z",
+      "lat": 46.72083300000003,
+      "lon": -115.29899999999998
+    },
+    {
+      "fireNumber": "2026-AKKKS-260003",
+      "name": "2026 Royal Crest Fuels RX",
+      "state": "AK",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-30T18:21:01.000Z",
+      "lat": 60.483967000000064,
+      "lon": -151.11361699999998
+    },
+    {
+      "fireNumber": "2026-MTFHA-000175",
+      "name": "Valley Y",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": null,
+      "discoveryDate": "2026-09-30T01:00:00.000Z",
+      "lat": 47.22083300000003,
+      "lon": -114.19111099999998
+    },
+    {
+      "fireNumber": "2026-WAPCS-000202",
+      "name": "LACAMAS PRAIRIE RX",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-30T22:09:01.000Z",
+      "lat": 45.641008000000056,
+      "lon": -122.45974299999995
+    },
+    {
+      "fireNumber": "2026-NDDPF-000834",
+      "name": "Cedar Top",
+      "state": "ND",
+      "hectares": 0.4,
+      "percentContained": null,
+      "cause": "Natural",
+      "discoveryDate": "2026-09-30T21:09:03.000Z",
+      "lat": 47.30236700000006,
+      "lon": -103.50058299999995
+    },
+    {
+      "fireNumber": "2026-IDBOF-001182",
+      "name": "RX COTTON",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-23T23:32:41.000Z",
+      "lat": 44.30292000000003,
+      "lon": -116.22305099999994
     }
   ]
 }
