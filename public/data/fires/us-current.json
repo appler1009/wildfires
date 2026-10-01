@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-10-01T09:45:02.146Z",
+  "generatedAt": "2026-10-01T17:55:31.956Z",
   "points": [
     {
       "fireNumber": "2026-IDIPF-000113",
@@ -15,17 +15,6 @@
       "discoveryDate": "2026-09-21T17:10:00.000Z",
       "lat": 47.19620000000003,
       "lon": -115.78089999999997
-    },
-    {
-      "fireNumber": "2026-IDIPF-000121",
-      "name": "D1 RX Bottom Canyon",
-      "state": "ID",
-      "hectares": 10.5,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-23T15:39:00.000Z",
-      "lat": 47.786550000000034,
-      "lon": -116.5503
     },
     {
       "fireNumber": "2026-WAPCS-000033",
@@ -70,6 +59,39 @@
       "discoveryDate": "2026-07-02T19:06:00.000Z",
       "lat": 48.82113700000008,
       "lon": -121.20969299999996
+    },
+    {
+      "fireNumber": "2026-MTNCA-000418",
+      "name": "Peoples Park",
+      "state": "MT",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-07-02T20:26:00.000Z",
+      "lat": 45.60558300000008,
+      "lon": -106.66119399999997
+    },
+    {
+      "fireNumber": "2026-MTNCA-000424",
+      "name": "Horn Creek",
+      "state": "MT",
+      "hectares": 0.1,
+      "percentContained": null,
+      "cause": "Natural",
+      "discoveryDate": "2026-07-04T04:22:00.000Z",
+      "lat": 45.55866700000007,
+      "lon": -106.57936099999995
+    },
+    {
+      "fireNumber": "2026-MTNCA-000425",
+      "name": "County",
+      "state": "MT",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Natural",
+      "discoveryDate": "2026-07-04T04:22:00.000Z",
+      "lat": 45.626028000000076,
+      "lon": -106.72727799999996
     },
     {
       "fireNumber": "2026-MNSUF-002394",
@@ -224,17 +246,6 @@
       "discoveryDate": "2026-07-24T16:00:00.000Z",
       "lat": 44.541333000000066,
       "lon": -117.09299999999996
-    },
-    {
-      "fireNumber": "2026-MTFNF-000280",
-      "name": "Silvertip",
-      "state": "MT",
-      "hectares": 2946.2,
-      "percentContained": 100,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-24T21:19:15.000Z",
-      "lat": 47.83550000000008,
-      "lon": -113.27349999999996
     },
     {
       "fireNumber": "2026-IDNCF-000330",
@@ -424,17 +435,6 @@
       "lon": -115.08585999999997
     },
     {
-      "fireNumber": "2026-MTFNF-000393",
-      "name": "Camp Creek",
-      "state": "MT",
-      "hectares": 3935.7,
-      "percentContained": 100,
-      "cause": "Natural",
-      "discoveryDate": "2026-08-21T22:48:00.000Z",
-      "lat": 47.42766700000004,
-      "lon": -113.09933299999994
-    },
-    {
       "fireNumber": "2026-WANCP-000482",
       "name": "Thunder Creek",
       "state": "WA",
@@ -466,17 +466,6 @@
       "discoveryDate": "2026-08-22T22:14:38.000Z",
       "lat": 45.713167000000055,
       "lon": -114.64899999999994
-    },
-    {
-      "fireNumber": "2026-WAMSF-000494",
-      "name": "Electric",
-      "state": "WA",
-      "hectares": 200.3,
-      "percentContained": 90,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-08-23T02:20:00.000Z",
-      "lat": 48.65241700000007,
-      "lon": -121.43529999999998
     },
     {
       "fireNumber": "2026-WAMRP-000952",
@@ -809,17 +798,6 @@
       "lon": -114.03229999999996
     },
     {
-      "fireNumber": "2026-MTLG32-261445",
-      "name": "Kunesh RD Fire",
-      "state": "MT",
-      "hectares": 31.4,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-24T19:02:00.000Z",
-      "lat": 46.099950000000035,
-      "lon": -109.24985999999996
-    },
-    {
       "fireNumber": "2026-MTLNF-260489",
       "name": "RX D3 Grant Creek 16",
       "state": "MT",
@@ -829,6 +807,17 @@
       "discoveryDate": "2026-09-24T15:05:14.000Z",
       "lat": 46.98972200000003,
       "lon": -114.03177799999997
+    },
+    {
+      "fireNumber": "2026-IDIFD-000224",
+      "name": "Sheep Creek RX",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-24T15:46:00.000Z",
+      "lat": 42.22655000000003,
+      "lon": -112.52266699999996
     },
     {
       "fireNumber": "2026-MTLG06-261460",
@@ -963,28 +952,6 @@
       "lon": -119.13179399999996
     },
     {
-      "fireNumber": "2026-MIMIS-350022",
-      "name": "Iosco-08 Roadway Smoke Check",
-      "state": "MI",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-09-27T20:31:00.000Z",
-      "lat": 44.36965849000006,
-      "lon": -83.33786229999998
-    },
-    {
-      "fireNumber": "2026-IDBOF-001184",
-      "name": "RX HIGH VALLEY",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-24T17:26:00.000Z",
-      "lat": 44.261817000000065,
-      "lon": -116.14952899999997
-    },
-    {
       "fireNumber": "2026-MIHIF-260398",
       "name": "Paula Red South RX",
       "state": "MI",
@@ -1043,7 +1010,7 @@
       "fireNumber": "2026-AKTAS-001130",
       "name": "2026 7 Mile RX",
       "state": "AK",
-      "hectares": 0,
+      "hectares": 0.1,
       "percentContained": null,
       "cause": "Human",
       "discoveryDate": "2026-09-29T17:38:54.000Z",
@@ -1109,8 +1076,8 @@
       "fireNumber": "2026-WAWFS-000664",
       "name": "Hatch Grade",
       "state": "WA",
-      "hectares": 2023.5,
-      "percentContained": null,
+      "hectares": 3651.6,
+      "percentContained": 70,
       "cause": "Undetermined",
       "discoveryDate": "2026-09-29T23:04:24.000Z",
       "lat": 46.032200000000046,
@@ -1249,17 +1216,6 @@
       "lon": -122.45974299999995
     },
     {
-      "fireNumber": "2026-NDDPF-000834",
-      "name": "Cedar Top",
-      "state": "ND",
-      "hectares": 0.4,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-09-30T21:09:03.000Z",
-      "lat": 47.30236700000006,
-      "lon": -103.50058299999995
-    },
-    {
       "fireNumber": "2026-IDBOF-001182",
       "name": "RX COTTON",
       "state": "ID",
@@ -1269,6 +1225,17 @@
       "discoveryDate": "2026-09-23T23:32:41.000Z",
       "lat": 44.30292000000003,
       "lon": -116.22305099999994
+    },
+    {
+      "fireNumber": "2026-MTBDC-261493",
+      "name": "Abandoned Campfire 1493",
+      "state": "MT",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-17T17:31:00.000Z",
+      "lat": 45.161421000000075,
+      "lon": -109.38990899999999
     }
   ]
 }
