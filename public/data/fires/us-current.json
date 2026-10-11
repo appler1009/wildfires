@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-10-10T16:51:54.849Z",
+  "generatedAt": "2026-10-11T17:15:07.874Z",
   "points": [
     {
       "fireNumber": "2026-WANCP-000179",
@@ -65,7 +65,7 @@
       "name": "LITTLE GIANT",
       "state": "WA",
       "hectares": 69975.1,
-      "percentContained": 93,
+      "percentContained": 95,
       "cause": "Natural",
       "discoveryDate": "2026-07-16T01:17:54.000Z",
       "lat": 48.01621700000004,
@@ -292,6 +292,17 @@
       "lon": -113.32566699999995
     },
     {
+      "fireNumber": "2026-WANES-001860",
+      "name": "HUDSPETH",
+      "state": "WA",
+      "hectares": 2722,
+      "percentContained": 100,
+      "cause": "Human",
+      "discoveryDate": "2026-08-01T23:17:13.000Z",
+      "lat": 48.08845000000008,
+      "lon": -118.15891699999997
+    },
+    {
       "fireNumber": "2026-MTBRF-000282",
       "name": "Black Bear",
       "state": "MT",
@@ -307,7 +318,7 @@
       "name": "SISI",
       "state": "WA",
       "hectares": 1796.5,
-      "percentContained": 29,
+      "percentContained": 34,
       "cause": "Natural",
       "discoveryDate": "2026-08-14T18:03:23.000Z",
       "lat": 48.34666700000008,
@@ -323,17 +334,6 @@
       "discoveryDate": "2026-08-14T21:06:00.000Z",
       "lat": 48.212000000000046,
       "lon": -121.06299999999999
-    },
-    {
-      "fireNumber": "2026-IDNCF-000434",
-      "name": "Cougar Creek",
-      "state": "ID",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-08-18T13:22:00.000Z",
-      "lat": 45.43011700000005,
-      "lon": -115.60104999999999
     },
     {
       "fireNumber": "2026-WAOWF-260699",
@@ -655,17 +655,6 @@
       "lon": -118.85879999999997
     },
     {
-      "fireNumber": "2026-MTLNF-260499",
-      "name": "RX D4 Peppy Le Deux C01",
-      "state": "MT",
-      "hectares": 2.4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-02T15:29:48.000Z",
-      "lat": 47.01870000000008,
-      "lon": -114.33933299999995
-    },
-    {
       "fireNumber": "2026-WASES-260860",
       "name": "MELOY CO-OP RX",
       "state": "WA",
@@ -719,17 +708,6 @@
       "discoveryDate": "2026-10-06T15:55:00.000Z",
       "lat": 46.877215000000035,
       "lon": -120.89596099999994
-    },
-    {
-      "fireNumber": "2026-WAOWF-260869",
-      "name": "TNC-SMITH CANYON RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-06T16:38:52.000Z",
-      "lat": 47.25421200000005,
-      "lon": -121.01649299999997
     },
     {
       "fireNumber": "2026-MIOTF-260408",
@@ -787,17 +765,6 @@
       "lon": -85.69274999999999
     },
     {
-      "fireNumber": "2026-MTBFA-000083",
-      "name": "NORTH FORK",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": null,
-      "discoveryDate": "2026-10-04T21:00:00.000Z",
-      "lat": 48.61611110000007,
-      "lon": -113.33333329999999
-    },
-    {
       "fireNumber": "2026-MTLG17-000330",
       "name": "Yukon Jack",
       "state": "MT",
@@ -815,284 +782,9 @@
       "hectares": 0.2,
       "percentContained": null,
       "cause": "Undetermined",
-      "discoveryDate": "2026-10-07T17:38:47.000Z",
+      "discoveryDate": "2026-10-07T17:38:00.000Z",
       "lat": 45.371883000000025,
       "lon": -114.73283299999997
-    },
-    {
-      "fireNumber": "2026-MIMIS-360013",
-      "name": "Windy",
-      "state": "MI",
-      "hectares": 0.2,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:50:00.000Z",
-      "lat": 46.110561510000025,
-      "lon": -88.31283355999994
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.1",
-      "name": "Cat Con Fire 1",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65063385000008,
-      "lon": -69.69695404999999
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.2",
-      "name": "Cat Con Fire 2",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65148612000007,
-      "lon": -69.69779432999997
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.3",
-      "name": "Cat Con Fire 3",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65273280000008,
-      "lon": -69.69865749999997
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.4",
-      "name": "Cat Con Fire 4",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65275950000006,
-      "lon": -69.69866646999998
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.5",
-      "name": "Cat Con Fire 5",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.652920100000074,
-      "lon": -69.69872329999998
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.6",
-      "name": "Cat Con Fire 6",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.653152900000066,
-      "lon": -69.69882823999995
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.7",
-      "name": "Cat Con Fire 7",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65319113000004,
-      "lon": -69.69889881999995
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.8",
-      "name": "Cat Con Fire 8",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65373084000004,
-      "lon": -69.69923567999996
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.9",
-      "name": "Cat Con Fire 9",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65423995000003,
-      "lon": -69.69955544999993
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.A",
-      "name": "Cat Con Fire 10",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65575460000008,
-      "lon": -69.70065087999996
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.B",
-      "name": "Cat Con Fire 11",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65647117000003,
-      "lon": -69.70128916999994
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.C",
-      "name": "Cat Con Fire 12",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65710493000006,
-      "lon": -69.70177832999997
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.D",
-      "name": "Cat Con Fire 13",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.657323570000074,
-      "lon": -69.70195669999998
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.E",
-      "name": "Cat Con Fire 14",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.657390630000066,
-      "lon": -69.70202106999994
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.F",
-      "name": "Cat Con Fire 15",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65766807000006,
-      "lon": -69.70225643999999
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.G",
-      "name": "Cat Con Fire 16",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65771170000005,
-      "lon": -69.70231652999996
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.H",
-      "name": "Cat Con Fire 17",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65772079000004,
-      "lon": -69.70230663999996
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.I",
-      "name": "Cat Con Fire 18",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65776676000007,
-      "lon": -69.70238006999995
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351.J",
-      "name": "Cat Con Fire 19",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65779560000004,
-      "lon": -69.70240034999995
-    },
-    {
-      "fireNumber": "2026-MEMES-26003351",
-      "name": "Cat Con Fire 1",
-      "state": "ME",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-07T19:51:00.000Z",
-      "lat": 44.65063385000008,
-      "lon": -69.69695404999999
-    },
-    {
-      "fireNumber": "2026-IDBLR-000228",
-      "name": "Bear Lake Refuge RX",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-07T22:03:56.000Z",
-      "lat": 42.22666700000008,
-      "lon": -111.35194399999995
-    },
-    {
-      "fireNumber": "2026-IDCTF-000229",
-      "name": "Yale Creek RX",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-07T22:16:15.000Z",
-      "lat": 44.47583300000008,
-      "lon": -111.53541699999994
-    },
-    {
-      "fireNumber": "2026-WANWS-000195",
-      "name": "NW REGION 2026 TRAINING RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-07T22:51:44.000Z",
-      "lat": 48.54895000000005,
-      "lon": -122.01513299999999
-    },
-    {
-      "fireNumber": "2026-MTFHA-000177",
-      "name": "Sunrise",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": null,
-      "discoveryDate": "2026-10-07T22:30:00.000Z",
-      "lat": 47.452780000000075,
-      "lon": -114.71888999999999
     },
     {
       "fireNumber": "2026-MIHMF-260410",
@@ -1104,17 +796,6 @@
       "discoveryDate": "2026-10-08T12:48:15.000Z",
       "lat": 43.502019000000075,
       "lon": -86.15667299999996
-    },
-    {
-      "fireNumber": "2026-MTKNF-000457",
-      "name": "D4 Buckhorn - RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-08T14:14:06.000Z",
-      "lat": 48.93719600000003,
-      "lon": -115.94729899999999
     },
     {
       "fireNumber": "2026-IDIPF-000982",
@@ -1256,8 +937,8 @@
       "percentContained": null,
       "cause": "Human",
       "discoveryDate": "2026-10-09T18:17:00.000Z",
-      "lat": 46.42659142000008,
-      "lon": -87.63739371999998
+      "lat": 46.48079143000007,
+      "lon": -87.89919362999996
     },
     {
       "fireNumber": "2026-MTLG02-000779",
@@ -1293,26 +974,136 @@
       "lon": -119.95233499999995
     },
     {
-      "fireNumber": "2026-IDCAS-000984",
-      "name": "Burke",
+      "fireNumber": "2026-MIMIS-020005",
+      "name": "Ross Lake",
+      "state": "MI",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T15:50:00.000Z",
+      "lat": 46.47836132000003,
+      "lon": -86.26140413999997
+    },
+    {
+      "fireNumber": "2026-MIMIS-520022",
+      "name": "FP",
+      "state": "MI",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T18:19:00.000Z",
+      "lat": 46.454341430000056,
+      "lon": -87.88646363999999
+    },
+    {
+      "fireNumber": "2026-IDTFD-000268",
+      "name": "Buckhorn 2",
+      "state": "ID",
+      "hectares": 809.4,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-10T18:58:00.000Z",
+      "lat": 42.33721700000007,
+      "lon": -114.10296699999998
+    },
+    {
+      "fireNumber": "2026-WAOLS-000119",
+      "name": "RIVER",
+      "state": "WA",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T17:46:28.000Z",
+      "lat": 48.05707000000007,
+      "lon": -123.50642999999997
+    },
+    {
+      "fireNumber": "2026-MNBNR-003011",
+      "name": "Nelson",
+      "state": "MN",
+      "hectares": 10.1,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-09T19:30:00.000Z",
+      "lat": 45.31713300000007,
+      "lon": -96.13688299999995
+    },
+    {
+      "fireNumber": "2026-MIMIS-480004",
+      "name": "Musky",
+      "state": "MI",
+      "hectares": 0.6,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T18:58:00.000Z",
+      "lat": 46.674986250000075,
+      "lon": -85.60425831999999
+    },
+    {
+      "fireNumber": "2026-MNSBR-003013",
+      "name": "Santiago",
+      "state": "MN",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T20:09:07.000Z",
+      "lat": 45.51167000000004,
+      "lon": -93.80294699999996
+    },
+    {
+      "fireNumber": "2026-MN3SS-003015",
+      "name": "Bean",
+      "state": "MN",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T22:39:54.000Z",
+      "lat": 45.36325900000003,
+      "lon": -93.23687099999995
+    },
+    {
+      "fireNumber": "2026-MN3SS-003016",
+      "name": "Scooter",
+      "state": "MN",
+      "hectares": 0.4,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T22:46:00.000Z",
+      "lat": 45.41266200000007,
+      "lon": -93.04191899999995
+    },
+    {
+      "fireNumber": "2026-MN3SS-003017",
+      "name": "Rutabaga 2.0",
+      "state": "MN",
+      "hectares": 32.4,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T23:20:50.000Z",
+      "lat": 46.18819800000006,
+      "lon": -92.59197099999994
+    },
+    {
+      "fireNumber": "2026-MIOTF-260420",
+      "name": "Black River",
+      "state": "MI",
+      "hectares": 26.7,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-11T12:52:34.000Z",
+      "lat": 46.42540000000008,
+      "lon": -89.93311699999998
+    },
+    {
+      "fireNumber": "2026-IDMIS-000987",
+      "name": "Coeur d'Alene Avenue",
       "state": "ID",
       "hectares": 0.2,
       "percentContained": null,
       "cause": "Undetermined",
-      "discoveryDate": "2026-10-09T22:11:36.000Z",
-      "lat": 47.516917000000035,
-      "lon": -115.83861699999994
-    },
-    {
-      "fireNumber": "2026-IDCIC-260200",
-      "name": "Deriar",
-      "state": "ID",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-10T15:25:12.000Z",
-      "lat": 45.23663300000004,
-      "lon": -113.94844999999998
+      "discoveryDate": "2026-10-11T15:16:00.000Z",
+      "lat": 47.97350000000006,
+      "lon": -116.80933299999998
     }
   ]
 }
