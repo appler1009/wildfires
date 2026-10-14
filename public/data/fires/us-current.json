@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-10-13T18:48:15.132Z",
+  "generatedAt": "2026-10-14T16:24:07.927Z",
   "points": [
     {
       "fireNumber": "2026-WANCP-000179",
@@ -64,7 +64,7 @@
       "fireNumber": "2026-WAOWF-260406",
       "name": "LITTLE GIANT",
       "state": "WA",
-      "hectares": 69975.1,
+      "hectares": 69977.5,
       "percentContained": 95,
       "cause": "Natural",
       "discoveryDate": "2026-07-16T01:17:54.000Z",
@@ -136,17 +136,6 @@
       "discoveryDate": "2026-07-17T15:46:00.000Z",
       "lat": 46.09563300000008,
       "lon": -115.13529999999997
-    },
-    {
-      "fireNumber": "2026-MTLG53-260865",
-      "name": "Bluff",
-      "state": "MT",
-      "hectares": 37.2,
-      "percentContained": null,
-      "cause": "Natural",
-      "discoveryDate": "2026-07-24T00:36:34.000Z",
-      "lat": 46.37500000000006,
-      "lon": -109.12550999999996
     },
     {
       "fireNumber": "2026-WAGPF-000684",
@@ -306,23 +295,12 @@
       "fireNumber": "2026-WAOWF-260664",
       "name": "SISI",
       "state": "WA",
-      "hectares": 1859.2,
+      "hectares": 1867.7,
       "percentContained": 34,
       "cause": "Natural",
       "discoveryDate": "2026-08-14T18:03:23.000Z",
       "lat": 48.34666700000008,
       "lon": -120.83066699999995
-    },
-    {
-      "fireNumber": "2026-WAMSF-000439",
-      "name": "Miners",
-      "state": "WA",
-      "hectares": 58.3,
-      "percentContained": 100,
-      "cause": "Natural",
-      "discoveryDate": "2026-08-14T21:06:00.000Z",
-      "lat": 48.212000000000046,
-      "lon": -121.06299999999999
     },
     {
       "fireNumber": "2026-AKTAS-613487",
@@ -435,6 +413,17 @@
       "lon": -141.22609999999997
     },
     {
+      "fireNumber": "2026-NDFBA-000776",
+      "name": "Wood Chips",
+      "state": "ND",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-09-02T21:25:00.000Z",
+      "lat": 47.941944000000035,
+      "lon": -102.13608299999999
+    },
+    {
       "fireNumber": "2026-MTNCA-000792",
       "name": "Tie Creek",
       "state": "MT",
@@ -490,6 +479,17 @@
       "lon": -113.68898899999999
     },
     {
+      "fireNumber": "2026-MTMCD-000820",
+      "name": "Hell Gate RX",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-15T20:08:33.000Z",
+      "lat": 47.82528300000007,
+      "lon": -106.11153299999995
+    },
+    {
       "fireNumber": "2026-IDNCF-000568",
       "name": "RX Rescue Jensen NFRD",
       "state": "ID",
@@ -501,17 +501,6 @@
       "lon": -115.62108299999994
     },
     {
-      "fireNumber": "2026-MTLNF-260482",
-      "name": "RX D5 2 Short #18",
-      "state": "MT",
-      "hectares": 6.5,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-21T13:31:00.000Z",
-      "lat": 47.58361700000006,
-      "lon": -115.44221699999997
-    },
-    {
       "fireNumber": "2026-ORCGF-001110",
       "name": "2026 Tracy Hill RX",
       "state": "WA",
@@ -519,8 +508,8 @@
       "percentContained": null,
       "cause": "Undetermined",
       "discoveryDate": "2026-09-22T00:24:33.000Z",
-      "lat": 45.75373300000007,
-      "lon": -121.40553299999999
+      "lat": 45.74413300000003,
+      "lon": -121.39028299999995
     },
     {
       "fireNumber": "2026-IDNCF-000595",
@@ -556,26 +545,15 @@
       "lon": -119.47013899999996
     },
     {
-      "fireNumber": "2026-MIHIF-260398",
-      "name": "Paula Red South RX",
-      "state": "MI",
-      "hectares": 59.5,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-28T12:34:00.000Z",
-      "lat": 46.363961000000074,
-      "lon": -84.79118899999997
-    },
-    {
-      "fireNumber": "2026-WABENN-260855",
-      "name": "1924",
-      "state": "WA",
-      "hectares": 75.7,
+      "fireNumber": "2026-AKTAS-001130",
+      "name": "2026 7 Mile RX",
+      "state": "AK",
+      "hectares": 0.2,
       "percentContained": null,
       "cause": "Human",
-      "discoveryDate": "2026-09-29T19:26:00.000Z",
-      "lat": 46.13561700000008,
-      "lon": -119.09453299999996
+      "discoveryDate": "2026-09-29T17:38:54.000Z",
+      "lat": 63.21854600000006,
+      "lon": -143.03913999999997
     },
     {
       "fireNumber": "2026-WASES-000662",
@@ -600,15 +578,15 @@
       "lon": -118.85879999999997
     },
     {
-      "fireNumber": "2026-MTLNF-260506",
-      "name": "RX D5 2 Short #17",
-      "state": "MT",
-      "hectares": 13.4,
+      "fireNumber": "2026-AKFAS-001137",
+      "name": "Freeman Road RX",
+      "state": "AK",
+      "hectares": 0,
       "percentContained": null,
       "cause": "Undetermined",
-      "discoveryDate": "2026-10-05T13:18:28.000Z",
-      "lat": 47.58193300000005,
-      "lon": -115.44173299999994
+      "discoveryDate": "2026-10-04T00:45:21.000Z",
+      "lat": 64.83549700000003,
+      "lon": -147.36614599999996
     },
     {
       "fireNumber": "2026-MTHLF-000768",
@@ -677,17 +655,6 @@
       "lon": -107.35722199999998
     },
     {
-      "fireNumber": "2026-IDSCF-260199",
-      "name": "Butts",
-      "state": "ID",
-      "hectares": 0.2,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-07T17:38:00.000Z",
-      "lat": 45.371883000000025,
-      "lon": -114.73283299999997
-    },
-    {
       "fireNumber": "2026-MIHMF-260410",
       "name": "SER 439 South RX",
       "state": "MI",
@@ -713,7 +680,7 @@
       "fireNumber": "2026-MIMIS-070006",
       "name": "Craig Lake 1",
       "state": "MI",
-      "hectares": 161.9,
+      "hectares": 242.8,
       "percentContained": 25,
       "cause": "Natural",
       "discoveryDate": "2026-10-08T18:38:00.000Z",
@@ -758,22 +725,11 @@
       "name": "Buckhorn 2",
       "state": "ID",
       "hectares": 809.4,
-      "percentContained": 50,
+      "percentContained": 100,
       "cause": "Human",
       "discoveryDate": "2026-10-10T18:58:00.000Z",
       "lat": 42.33721700000007,
       "lon": -114.10296699999998
-    },
-    {
-      "fireNumber": "2026-WAOLS-000119",
-      "name": "RIVER",
-      "state": "WA",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-10T17:46:28.000Z",
-      "lat": 48.05707000000007,
-      "lon": -123.50642999999997
     },
     {
       "fireNumber": "2026-MIMIS-480004",
@@ -791,33 +747,11 @@
       "name": "Santiago",
       "state": "MN",
       "hectares": 61.1,
-      "percentContained": 65,
+      "percentContained": 80,
       "cause": "Human",
       "discoveryDate": "2026-10-10T20:09:07.000Z",
       "lat": 45.51167000000004,
       "lon": -93.80294699999996
-    },
-    {
-      "fireNumber": "2026-MN3SS-003015",
-      "name": "Bean",
-      "state": "MN",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-10T22:39:54.000Z",
-      "lat": 45.36325900000003,
-      "lon": -93.23687099999995
-    },
-    {
-      "fireNumber": "2026-MN3SS-003016",
-      "name": "Scooter",
-      "state": "MN",
-      "hectares": 0.4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-10T22:46:00.000Z",
-      "lat": 45.41266200000007,
-      "lon": -93.04191899999995
     },
     {
       "fireNumber": "2026-MN3SS-003017",
@@ -853,17 +787,6 @@
       "lon": -86.79018904999998
     },
     {
-      "fireNumber": "2026-MIMIS-270009",
-      "name": "Smoky Lake",
-      "state": "MI",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-09T21:29:00.000Z",
-      "lat": 46.12495854000008,
-      "lon": -88.79224340999997
-    },
-    {
       "fireNumber": "2026-MIMIS-170012",
       "name": "West 10 Mile Rd",
       "state": "MI",
@@ -878,18 +801,18 @@
       "fireNumber": "2026-MIMIS-270010",
       "name": "Black River",
       "state": "MI",
-      "hectares": 46.9,
-      "percentContained": null,
+      "hectares": 161.9,
+      "percentContained": 40,
       "cause": "Undetermined",
       "discoveryDate": "2026-10-11T12:52:00.000Z",
-      "lat": 46.425391570000045,
-      "lon": -89.93311001999996
+      "lat": 46.42527780000006,
+      "lon": -89.93305559999999
     },
     {
       "fireNumber": "2026-MIMIS-270011",
       "name": "Camp 4 Grade",
       "state": "MI",
-      "hectares": 4,
+      "hectares": 6.5,
       "percentContained": null,
       "cause": "Undetermined",
       "discoveryDate": "2026-10-11T18:05:00.000Z",
@@ -958,7 +881,7 @@
       "hectares": null,
       "percentContained": null,
       "cause": "Undetermined",
-      "discoveryDate": "2026-10-13T15:02:07.000Z",
+      "discoveryDate": "2026-10-13T15:02:00.000Z",
       "lat": 47.07827000000003,
       "lon": -115.26745199999999
     },
@@ -974,7 +897,7 @@
       "lon": -118.39279199999999
     },
     {
-      "fireNumber": "2026-MTSWS-260516",
+      "fireNumber": "2026-MTLNF-260516",
       "name": "RX D6 Horseshoe West Unit 37",
       "state": "MT",
       "hectares": null,
@@ -996,26 +919,158 @@
       "lon": -71.50362879999994
     },
     {
-      "fireNumber": "2026-IDSCF-260201",
-      "name": "Marshall",
-      "state": "ID",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-10-13T15:31:05.000Z",
-      "lat": 44.27033300000005,
-      "lon": -114.68233299999997
-    },
-    {
       "fireNumber": "2026-MTLG13-000415",
       "name": "LG13 Kootenai Creek",
       "state": "MT",
       "hectares": 0,
       "percentContained": null,
-      "cause": "Undetermined",
+      "cause": "Human",
       "discoveryDate": "2026-10-09T19:14:00.000Z",
       "lat": 46.536527000000035,
       "lon": -114.14281099999994
+    },
+    {
+      "fireNumber": "2026-MTBDF-266489",
+      "name": "RX Hell's Canyon",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T19:06:56.000Z",
+      "lat": 45.433816000000036,
+      "lon": -111.91772499999996
+    },
+    {
+      "fireNumber": "2026-MTHLF-000782",
+      "name": "Kings Hill Cabin Piles Rx",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T19:09:47.000Z",
+      "lat": 46.838967000000025,
+      "lon": -110.69788299999999
+    },
+    {
+      "fireNumber": "2026-MTHLF-000783",
+      "name": "Monarch Unit 141 Piles Rx",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T19:14:44.000Z",
+      "lat": 47.09665000000007,
+      "lon": -110.82904999999994
+    },
+    {
+      "fireNumber": "2026-MTHLF-000784",
+      "name": "Coyote Divide Piles Rx",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T19:20:49.000Z",
+      "lat": 46.95466700000003,
+      "lon": -110.75553299999996
+    },
+    {
+      "fireNumber": "2026-MTCGF-261558",
+      "name": "Shenango Admin RX",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T19:44:58.000Z",
+      "lat": 45.45870000000008,
+      "lon": -111.24394999999998
+    },
+    {
+      "fireNumber": "2026-MTCGF-261559",
+      "name": "North Bridger Brackett Creek Pile Burning RX",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T21:40:30.000Z",
+      "lat": 45.84545000000003,
+      "lon": -110.90169999999995
+    },
+    {
+      "fireNumber": "2026-MTBFA-000085",
+      "name": "MARCEAU",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": null,
+      "discoveryDate": "2026-10-13T17:15:00.000Z",
+      "lat": 48.55111110000007,
+      "lon": -113.01277779999998
+    },
+    {
+      "fireNumber": "2026-MTLNF-260517",
+      "name": "RX D7 Lost Creek 155/559",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T22:06:41.000Z",
+      "lat": 47.15190000000007,
+      "lon": -115.05049999999994
+    },
+    {
+      "fireNumber": "2026-MTLNF-260518",
+      "name": "RX D6 Horseshoe West Unit 20",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T23:03:08.000Z",
+      "lat": 47.126630000000034,
+      "lon": -113.38257999999996
+    },
+    {
+      "fireNumber": "2026-MTLNF-260519",
+      "name": "RX D6 Horseshoe West Unit 23",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-13T23:03:23.000Z",
+      "lat": 47.12195000000003,
+      "lon": -113.35888999999997
+    },
+    {
+      "fireNumber": "2026-MTHLF-000785",
+      "name": "Hogum Creek Road Piles RX",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-14T14:19:04.000Z",
+      "lat": 46.96975000000003,
+      "lon": -112.51011699999998
+    },
+    {
+      "fireNumber": "2026-MTHLF-000786",
+      "name": "Glade Creek Piles RX",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-14T14:31:50.000Z",
+      "lat": 47.490717000000075,
+      "lon": -112.88038299999994
+    },
+    {
+      "fireNumber": "2026-MN1FS-003022",
+      "name": "Hay Bale",
+      "state": "MN",
+      "hectares": 0.8,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-12T09:49:00.000Z",
+      "lat": 46.340156000000036,
+      "lon": -94.59419099999997
     }
   ]
 }
