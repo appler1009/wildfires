@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-10-24T15:17:54.578Z",
+  "generatedAt": "2026-10-25T15:27:42.927Z",
   "points": [
     {
       "fireNumber": "2026-WANCP-000179",
@@ -252,7 +252,7 @@
       "name": "Black River",
       "state": "MI",
       "hectares": 131.9,
-      "percentContained": 75,
+      "percentContained": 80,
       "cause": "Natural",
       "discoveryDate": "2026-10-11T12:52:00.000Z",
       "lat": 46.42528623283465,
@@ -380,28 +380,6 @@
       "lon": -95.74606481685576
     },
     {
-      "fireNumber": "2026-MNMRA-003060",
-      "name": "SMSC Prescribed Burn RX",
-      "state": "MN",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-19T15:25:00.000Z",
-      "lat": 44.74191194388494,
-      "lon": -93.48151978033513
-    },
-    {
-      "fireNumber": "2026-MN1BS-003061",
-      "name": "Ottertail RX",
-      "state": "MN",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-19T16:09:51.000Z",
-      "lat": 47.232308226131174,
-      "lon": -94.38114141097161
-    },
-    {
       "fireNumber": "2026-MTBDF-266319",
       "name": "Sand Creek",
       "state": "MT",
@@ -477,17 +455,6 @@
       "discoveryDate": "2026-10-19T21:40:07.000Z",
       "lat": 45.7466556380747,
       "lon": -121.12013428049771
-    },
-    {
-      "fireNumber": "2026-MTNWS-000567",
-      "name": "STW West Coal RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-20T14:40:50.000Z",
-      "lat": 48.69150655097597,
-      "lon": -114.32701369013947
     },
     {
       "fireNumber": "2026-MTCGF-261577",
@@ -628,20 +595,9 @@
       "hectares": 148.1,
       "percentContained": null,
       "cause": "Undetermined",
-      "discoveryDate": "2026-10-21T14:14:05.000Z",
+      "discoveryDate": "2026-10-21T14:14:00.000Z",
       "lat": 46.61335854767221,
       "lon": -88.62155660533185
-    },
-    {
-      "fireNumber": "2026-MN3SS-003096",
-      "name": "Sunrise 2",
-      "state": "MN",
-      "hectares": 0.8,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-21T15:06:51.000Z",
-      "lat": 46.29708122688425,
-      "lon": -92.634214758119
     },
     {
       "fireNumber": "2026-MNDLR-003097",
@@ -655,50 +611,6 @@
       "lon": -95.86480879960735
     },
     {
-      "fireNumber": "2026-MTNWS-000561",
-      "name": "STW New Acquisition RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-19T15:19:19.000Z",
-      "lat": 48.53500651991699,
-      "lon": -114.51001368992958
-    },
-    {
-      "fireNumber": "2026-MTFNF-000563",
-      "name": "GV Frozen Moose RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-19T15:55:10.000Z",
-      "lat": 48.89900655775791,
-      "lon": -114.40801375732546
-    },
-    {
-      "fireNumber": "2026-MTNWS-000562",
-      "name": "STW Antice Central RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-19T15:36:30.000Z",
-      "lat": 48.638006520488574,
-      "lon": -114.5770137283743
-    },
-    {
-      "fireNumber": "2026-MN1DS-003094",
-      "name": "Roseau Lake East RX",
-      "state": "MN",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-21T14:23:10.000Z",
-      "lat": 48.94377532994677,
-      "lon": -95.82632612976246
-    },
-    {
       "fireNumber": "2026-MN1FS-003093",
       "name": "Hwy 87",
       "state": "MN",
@@ -708,17 +620,6 @@
       "discoveryDate": "2026-10-21T14:02:00.000Z",
       "lat": 46.80923215461294,
       "lon": -94.57907539939929
-    },
-    {
-      "fireNumber": "2026-NDSRA-000170",
-      "name": "Leaf",
-      "state": "ND",
-      "hectares": null,
-      "percentContained": null,
-      "cause": null,
-      "discoveryDate": "2026-10-21T00:00:00.000Z",
-      "lat": 46.09362758211905,
-      "lon": -100.65656994760931
     },
     {
       "fireNumber": "2026-IDMIS-001011",
@@ -732,28 +633,6 @@
       "lon": -116.99101395589132
     },
     {
-      "fireNumber": "2026-MN1FS-003067",
-      "name": "Tripp",
-      "state": "MN",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-18T21:42:00.000Z",
-      "lat": 46.510278162245605,
-      "lon": -93.93270816670501
-    },
-    {
-      "fireNumber": "2026-MTCGF-261579",
-      "name": "Hyalite BMW 999E RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-21T20:52:00.000Z",
-      "lat": 45.549223611876144,
-      "lon": -111.00854532072385
-    },
-    {
       "fireNumber": "2026-IDIPF-001019",
       "name": "Slate",
       "state": "ID",
@@ -763,17 +642,6 @@
       "discoveryDate": "2026-10-21T17:21:00.000Z",
       "lat": 47.40283927782717,
       "lon": -116.01751372686455
-    },
-    {
-      "fireNumber": "2026-MTFHA-000180",
-      "name": "3 CHIEFS",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": null,
-      "discoveryDate": "2026-10-21T22:00:00.000Z",
-      "lat": 47.61139548986015,
-      "lon": -114.11528539537682
     },
     {
       "fireNumber": "2026-WANCP-000687",
@@ -809,17 +677,6 @@
       "lon": -119.40926465247792
     },
     {
-      "fireNumber": "2026-MTFNF-000570",
-      "name": "SL Van Lake Handpiles RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-22T13:07:00.000Z",
-      "lat": 47.69208653215477,
-      "lon": -113.76501334169375
-    },
-    {
       "fireNumber": "2026-MIOTF-260408",
       "name": "Pinto RX",
       "state": "MI",
@@ -829,28 +686,6 @@
       "discoveryDate": "2026-10-06T18:23:18.000Z",
       "lat": 46.69984155457098,
       "lon": -88.70947364419295
-    },
-    {
-      "fireNumber": "2026-MTFNF-000556",
-      "name": "SL Napa Point Handpiles RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-16T20:57:58.000Z",
-      "lat": 47.78643954288774,
-      "lon": -113.73391335653022
-    },
-    {
-      "fireNumber": "2026-MTCGF-261559",
-      "name": "North Bridger Brackett Creek Pile Burning RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-13T21:40:30.000Z",
-      "lat": 45.845456650357896,
-      "lon": -110.9017123540113
     },
     {
       "fireNumber": "2026-WASES-260860",
@@ -875,39 +710,6 @@
       "lon": -107.35723341808844
     },
     {
-      "fireNumber": "2026-MN2KS-003104",
-      "name": "Dam Lake Rx",
-      "state": "MN",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-22T14:32:51.000Z",
-      "lat": 46.51092519773172,
-      "lon": -93.45074502766377
-    },
-    {
-      "fireNumber": "2026-IDBOF-001182",
-      "name": "RX COTTON",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-23T23:32:41.000Z",
-      "lat": 44.302926011943555,
-      "lon": -116.22306413824799
-    },
-    {
-      "fireNumber": "2026-MTHLF-000769",
-      "name": "Dalton 2 RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-05T17:40:16.000Z",
-      "lat": 46.83475656812062,
-      "lon": -112.6956799337915
-    },
-    {
       "fireNumber": "2026-MTLNF-260510",
       "name": "RX D5 ABLT Block #4",
       "state": "MT",
@@ -928,17 +730,6 @@
       "discoveryDate": "2026-10-22T14:24:42.000Z",
       "lat": 46.875208060824406,
       "lon": -95.91980879122261
-    },
-    {
-      "fireNumber": "2026-MTBDF-266489",
-      "name": "RX Hell's Canyon",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-13T19:06:56.000Z",
-      "lat": 45.675917495124885,
-      "lon": -112.38073463522103
     },
     {
       "fireNumber": "2026-IDPAF-265780",
@@ -1005,28 +796,6 @@
       "discoveryDate": "2026-09-24T19:27:56.000Z",
       "lat": 45.73070560799965,
       "lon": -121.40409732354014
-    },
-    {
-      "fireNumber": "2026-MTSWS-260509",
-      "name": "RX MSO Camaspen",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-06T14:43:00.000Z",
-      "lat": 46.824517486476445,
-      "lon": -113.51164810079003
-    },
-    {
-      "fireNumber": "2026-MTLNF-260499",
-      "name": "RX D4 Peppy Le Deux C01",
-      "state": "MT",
-      "hectares": 2.4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-02T15:29:48.000Z",
-      "lat": 47.018706419637574,
-      "lon": -114.33934631055655
     },
     {
       "fireNumber": "2026-AKUYD-260006",
@@ -1599,6 +1368,160 @@
       "discoveryDate": "2026-10-23T22:42:01.000Z",
       "lat": 45.563502299858705,
       "lon": -114.3222070087436
+    },
+    {
+      "fireNumber": "2026-MNSUF-003123",
+      "name": "Hilda Creek 2",
+      "state": "MN",
+      "hectares": 2,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T16:39:47.000Z",
+      "lat": 48.05434148267505,
+      "lon": -92.42584097277087
+    },
+    {
+      "fireNumber": "2026-MEMES-26003509.3",
+      "name": "Fall Foliage Fires",
+      "state": "ME",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T19:04:00.000Z",
+      "lat": 44.11186400472672,
+      "lon": -69.92871799922742
+    },
+    {
+      "fireNumber": "2026-MEMES-26003509.2",
+      "name": "Fall Foliage Fires",
+      "state": "ME",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T19:03:00.000Z",
+      "lat": 44.10275400169834,
+      "lon": -69.97279600344936
+    },
+    {
+      "fireNumber": "2026-MEMES-26003509.4",
+      "name": "Fall Foliage Fires",
+      "state": "ME",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T19:06:00.000Z",
+      "lat": 44.09950300067331,
+      "lon": -69.98671399791667
+    },
+    {
+      "fireNumber": "2026-MEMES-26003509.1",
+      "name": "Fall Foliage Fires",
+      "state": "ME",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T18:59:00.000Z",
+      "lat": 44.10292600136581,
+      "lon": -69.98446499736886
+    },
+    {
+      "fireNumber": "2026-WAGPF-001275",
+      "name": "PLACID",
+      "state": "WA",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-23T23:14:07.000Z",
+      "lat": 46.041388583944254,
+      "lon": -121.81921445638056
+    },
+    {
+      "fireNumber": "2026-MEMES-26003509.5",
+      "name": "Fall Foliage Fires",
+      "state": "ME",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T19:12:00.000Z",
+      "lat": 44.09978800072531,
+      "lon": -69.98670699793139
+    },
+    {
+      "fireNumber": "2026-MEMES-26003509.6",
+      "name": "Fall Foliage Fires",
+      "state": "ME",
+      "hectares": 0.2,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T19:11:00.000Z",
+      "lat": 44.095930999970044,
+      "lon": -69.98844099828055
+    },
+    {
+      "fireNumber": "2026-MEMES-26003509.7",
+      "name": "Fall Foliage Fires",
+      "state": "ME",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T19:14:00.000Z",
+      "lat": 44.09602991998615,
+      "lon": -69.98850210830696
+    },
+    {
+      "fireNumber": "2026-MIMIS-660002",
+      "name": "Grade",
+      "state": "MI",
+      "hectares": 0.5,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-10-24T18:35:00.000Z",
+      "lat": 46.72059999576421,
+      "lon": -89.18890000319739
+    },
+    {
+      "fireNumber": "2026-MIMIS-360014",
+      "name": "Section 3",
+      "state": "MI",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-24T19:11:00.000Z",
+      "lat": 46.14053000146422,
+      "lon": -88.562290002886
+    },
+    {
+      "fireNumber": "2026-MIMIS-070008",
+      "name": "Dog Patch",
+      "state": "MI",
+      "hectares": 0.3,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-24T22:40:00.000Z",
+      "lat": 46.69560000223707,
+      "lon": -88.43139999856353
+    },
+    {
+      "fireNumber": "2026-WACOA-260223",
+      "name": "Cemetery",
+      "state": "WA",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-25T02:10:00.000Z",
+      "lat": 48.32060610995423,
+      "lon": -118.19581435374756
+    },
+    {
+      "fireNumber": "2026-MIMIS-520023",
+      "name": "Game 2",
+      "state": "MI",
+      "hectares": 1.9,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-25T04:30:00.000Z",
+      "lat": 46.60370000087393,
+      "lon": -87.46900000010604
     }
   ]
 }
