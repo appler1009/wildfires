@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-11-07T17:20:26.477Z",
+  "generatedAt": "2026-11-08T17:32:08.082Z",
   "points": [
     {
       "fireNumber": "2026-WAOWF-260420",
@@ -32,7 +32,7 @@
       "name": "SISI",
       "state": "WA",
       "hectares": 1949,
-      "percentContained": 60,
+      "percentContained": 65,
       "cause": "Natural",
       "discoveryDate": "2026-08-14T18:03:23.000Z",
       "lat": 48.346672822151575,
@@ -380,28 +380,6 @@
       "lon": -121.9313814374374
     },
     {
-      "fireNumber": "2026-WAGPF-001304",
-      "name": "Opal Piles Rx -South",
-      "state": "WA",
-      "hectares": 29.5,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-29T20:24:56.000Z",
-      "lat": 45.915088573123285,
-      "lon": -121.85126443459042
-    },
-    {
-      "fireNumber": "2026-IDBOF-001171",
-      "name": "RX FAWN TUSSOCK",
-      "state": "ID",
-      "hectares": 34.8,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-22T18:12:24.000Z",
-      "lat": 44.44624603827343,
-      "lon": -116.07120313588541
-    },
-    {
       "fireNumber": "2026-MTHLF-000752",
       "name": "Bonanza Ridge RX",
       "state": "MT",
@@ -422,17 +400,6 @@
       "discoveryDate": "2026-10-05T14:04:00.000Z",
       "lat": 46.446389571056926,
       "lon": -112.31654577416917
-    },
-    {
-      "fireNumber": "2026-MTLNF-260506",
-      "name": "RX D5 2 Short #17",
-      "state": "MT",
-      "hectares": 13.4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-05T13:18:28.000Z",
-      "lat": 47.58193935088507,
-      "lon": -115.44174665474797
     },
     {
       "fireNumber": "2026-NHWMF-000182",
@@ -556,17 +523,6 @@
       "lon": -113.41463015010267
     },
     {
-      "fireNumber": "2026-MTLNF-260556",
-      "name": "RX D5 Henry Deemer",
-      "state": "MT",
-      "hectares": 4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-03T14:46:06.000Z",
-      "lat": 47.43303940929234,
-      "lon": -114.7645634867608
-    },
-    {
       "fireNumber": "2026-MTLNF-260557",
       "name": "RX D6 Horseshoe West 54",
       "state": "MT",
@@ -609,28 +565,6 @@
       "discoveryDate": "2026-10-13T23:03:08.000Z",
       "lat": 47.12663652465535,
       "lon": -113.38259313857016
-    },
-    {
-      "fireNumber": "2026-WAOLP-000698",
-      "name": "Hurricane Ridge RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-03T15:10:47.000Z",
-      "lat": 47.97405550611164,
-      "lon": -123.4957311665102
-    },
-    {
-      "fireNumber": "2026-MTHLF-000811",
-      "name": "Elk Creek Road Piles RX",
-      "state": "MT",
-      "hectares": 0.4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-03T15:56:36.000Z",
-      "lat": 47.33941662483119,
-      "lon": -112.5609130128822
     },
     {
       "fireNumber": "2026-MTLNF-260559",
@@ -732,39 +666,6 @@
       "lon": -115.62109645591158
     },
     {
-      "fireNumber": "2026-WAMSF-000700",
-      "name": "Darrington Pile RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-04T17:08:39.000Z",
-      "lat": 48.26132073188525,
-      "lon": -121.60124393479674
-    },
-    {
-      "fireNumber": "2026-MTLG18-266449",
-      "name": "LG18 6449",
-      "state": "MT",
-      "hectares": 1.2,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-12T19:29:29.000Z",
-      "lat": 45.061673354291415,
-      "lon": -113.27899570359924
-    },
-    {
-      "fireNumber": "2026-WAMSF-000701",
-      "name": "Verlot Pile RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-04T18:55:49.000Z",
-      "lat": 48.09312370315376,
-      "lon": -121.77979292246167
-    },
-    {
       "fireNumber": "2026-MNSUF-003161",
       "name": "Reindeer Piles RX",
       "state": "MN",
@@ -785,17 +686,6 @@
       "discoveryDate": "2026-10-29T16:32:09.000Z",
       "lat": 46.92057339734829,
       "lon": -114.48196331813833
-    },
-    {
-      "fireNumber": "2026-MTFNF-000606",
-      "name": "HH Lake 5 RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-04T22:06:54.000Z",
-      "lat": 48.48996857528068,
-      "lon": -113.95203656456269
     },
     {
       "fireNumber": "2026-MTLNF-260563",
@@ -820,50 +710,6 @@
       "lon": -115.0531964719346
     },
     {
-      "fireNumber": "2026-WAPCS-000182",
-      "name": "WAREHOUSE",
-      "state": "WA",
-      "hectares": 0.8,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-08-26T20:20:28.000Z",
-      "lat": 45.66504648915807,
-      "lon": -122.52227248814317
-    },
-    {
-      "fireNumber": "2026-WAPCS-000183",
-      "name": "PADDEN",
-      "state": "WA",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-08-26T20:54:54.000Z",
-      "lat": 45.68204648702627,
-      "lon": -122.55249449643473
-    },
-    {
-      "fireNumber": "2026-PAALF-000440",
-      "name": "Tracy Run",
-      "state": "PA",
-      "hectares": 27.2,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-04T20:36:08.000Z",
-      "lat": 41.96305530115707,
-      "lon": -78.92754309928434
-    },
-    {
-      "fireNumber": "2026-WANCP-000687",
-      "name": "Marblemount Pile RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-21T23:01:50.000Z",
-      "lat": 48.540445764037116,
-      "lon": -121.44516097918515
-    },
-    {
       "fireNumber": "2026-MTHLF-000812",
       "name": "South Fork Piles RX",
       "state": "MT",
@@ -875,39 +721,6 @@
       "lon": -112.48521289470291
     },
     {
-      "fireNumber": "2026-MTFNF-000608",
-      "name": "TL Big Mountain RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-05T15:41:20.000Z",
-      "lat": 48.488093531906436,
-      "lon": -114.36306464868295
-    },
-    {
-      "fireNumber": "2026-MTKNF-000440",
-      "name": "D7 Saw Creek - RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-23T16:12:05.000Z",
-      "lat": 47.671706347349755,
-      "lon": -115.54058369461355
-    },
-    {
-      "fireNumber": "2026-MTBFA-000090",
-      "name": "STOCK YARD",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": null,
-      "discoveryDate": "2026-11-05T02:00:00.000Z",
-      "lat": 48.450839972942106,
-      "lon": -112.98723555348076
-    },
-    {
       "fireNumber": "2026-IDNCF-000660",
       "name": "RX Florence Fuels - SRRD",
       "state": "ID",
@@ -917,17 +730,6 @@
       "discoveryDate": "2026-11-05T16:00:00.000Z",
       "lat": 45.469123124659255,
       "lon": -116.05113032628509
-    },
-    {
-      "fireNumber": "2026-WANCP-000670",
-      "name": "Hozomeen Piles RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-09T17:56:30.000Z",
-      "lat": 48.97228882748689,
-      "lon": -121.08303202955601
     },
     {
       "fireNumber": "2026-WANCP-000702",
@@ -950,39 +752,6 @@
       "discoveryDate": "2026-10-16T14:55:04.000Z",
       "lat": 48.79137208738784,
       "lon": -118.66948455769811
-    },
-    {
-      "fireNumber": "2026-MTCGF-261596",
-      "name": "BMW Unit 25A RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-05T16:19:22.000Z",
-      "lat": 45.56742360980997,
-      "lon": -111.04967933298234
-    },
-    {
-      "fireNumber": "2026-IDNCF-000661",
-      "name": "RX Little Boulder PALRD",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-05T16:30:23.000Z",
-      "lat": 46.789446189422286,
-      "lon": -116.4326696713167
-    },
-    {
-      "fireNumber": "2026-WANCP-000669",
-      "name": "Lightning Creek Piles RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-09T17:55:11.000Z",
-      "lat": 48.8771228294227,
-      "lon": -121.02166499435238
     },
     {
       "fireNumber": "2026-MTLNF-260564",
@@ -1203,6 +972,28 @@
       "discoveryDate": "2026-11-07T00:39:12.000Z",
       "lat": 45.964924628616785,
       "lon": -121.34348636300993
+    },
+    {
+      "fireNumber": "2026-WAOWF-260917",
+      "name": "UPPER VALLEY PILES RX",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-29T00:56:00.000Z",
+      "lat": 47.80265980323355,
+      "lon": -120.72448267552944
+    },
+    {
+      "fireNumber": "2026-IDBOF-001171",
+      "name": "RX FAWN TUSSOCK",
+      "state": "ID",
+      "hectares": 34.8,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-22T18:12:00.000Z",
+      "lat": 44.44624603827343,
+      "lon": -116.07120313588541
     }
   ]
 }
