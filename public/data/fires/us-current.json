@@ -3,14 +3,14 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-11-08T17:32:08.082Z",
+  "generatedAt": "2026-11-09T21:53:39.258Z",
   "points": [
     {
       "fireNumber": "2026-WAOWF-260420",
       "name": "THREE QUEENS",
       "state": "WA",
       "hectares": 3875,
-      "percentContained": 90,
+      "percentContained": 95,
       "cause": "Natural",
       "discoveryDate": "2026-07-16T04:28:00.000Z",
       "lat": 47.414005722733734,
@@ -32,7 +32,7 @@
       "name": "SISI",
       "state": "WA",
       "hectares": 1949,
-      "percentContained": 65,
+      "percentContained": 75,
       "cause": "Natural",
       "discoveryDate": "2026-08-14T18:03:23.000Z",
       "lat": 48.346672822151575,
@@ -87,7 +87,7 @@
       "name": "KING",
       "state": "WA",
       "hectares": 1386.9,
-      "percentContained": 72,
+      "percentContained": 95,
       "cause": "Undetermined",
       "discoveryDate": "2026-08-19T23:09:24.000Z",
       "lat": 47.470805726545464,
@@ -288,8 +288,8 @@
       "percentContained": null,
       "cause": "Undetermined",
       "discoveryDate": "2026-09-22T15:38:11.000Z",
-      "lat": 48.88766721657093,
-      "lon": -117.55167337442298
+      "lat": 48.93065022422388,
+      "lon": -117.50704937685664
     },
     {
       "fireNumber": "2026-IDIPF-000113",
@@ -317,12 +317,12 @@
       "fireNumber": "2026-WACOF-002153",
       "name": "TON RX - BAILEY LOST HP",
       "state": "WA",
-      "hectares": 299.5,
+      "hectares": 336.3,
       "percentContained": null,
       "cause": "Undetermined",
       "discoveryDate": "2026-09-01T16:10:46.000Z",
-      "lat": 48.532732029166425,
-      "lon": -119.055219562617
+      "lat": 48.54801203247525,
+      "lon": -119.03354756252911
     },
     {
       "fireNumber": "2026-WACOF-002225",
@@ -405,8 +405,8 @@
       "fireNumber": "2026-NHWMF-000182",
       "name": "Wild River",
       "state": "NH",
-      "hectares": 346.4,
-      "percentContained": 20,
+      "hectares": 332.3,
+      "percentContained": 29,
       "cause": "Undetermined",
       "discoveryDate": "2026-11-01T17:15:00.000Z",
       "lat": 44.330592038888476,
@@ -699,50 +699,6 @@
       "lon": -115.02951346775795
     },
     {
-      "fireNumber": "2026-MTLNF-260562",
-      "name": "RX D7 Barber Gulch 97 128",
-      "state": "MT",
-      "hectares": 2,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-04T22:15:39.000Z",
-      "lat": 47.10507335419607,
-      "lon": -115.0531964719346
-    },
-    {
-      "fireNumber": "2026-MTHLF-000812",
-      "name": "South Fork Piles RX",
-      "state": "MT",
-      "hectares": 0.4,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-05T15:11:11.000Z",
-      "lat": 46.85903959096493,
-      "lon": -112.48521289470291
-    },
-    {
-      "fireNumber": "2026-IDNCF-000660",
-      "name": "RX Florence Fuels - SRRD",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-05T16:00:00.000Z",
-      "lat": 45.469123124659255,
-      "lon": -116.05113032628509
-    },
-    {
-      "fireNumber": "2026-WANCP-000702",
-      "name": "Stehekin Sisi Handpile RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-05T16:21:15.000Z",
-      "lat": 48.366672831692256,
-      "lon": -120.75468181891124
-    },
-    {
       "fireNumber": "2026-WASPD-002301",
       "name": "SPD RX - MT ELIZABETH",
       "state": "WA",
@@ -752,28 +708,6 @@
       "discoveryDate": "2026-10-16T14:55:04.000Z",
       "lat": 48.79137208738784,
       "lon": -118.66948455769811
-    },
-    {
-      "fireNumber": "2026-MTLNF-260564",
-      "name": "RX D6 Horseshoe West 40",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-05T16:48:31.000Z",
-      "lat": 47.1637395259875,
-      "lon": -113.40013015018393
-    },
-    {
-      "fireNumber": "2026-WAOLP-000685",
-      "name": "Hoh Pile RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-20T16:27:43.000Z",
-      "lat": 47.84328844696213,
-      "lon": -123.97039820685268
     },
     {
       "fireNumber": "2026-IDNCF-000349",
@@ -787,50 +721,6 @@
       "lon": -115.21671343289105
     },
     {
-      "fireNumber": "2026-IDNCF-000656",
-      "name": "RX Washington Creek - NFRD",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-30T16:25:57.000Z",
-      "lat": 46.70439627195763,
-      "lon": -115.55554348412583
-    },
-    {
-      "fireNumber": "2026-IDNCF-000650",
-      "name": "RX Parachute Hand Piles - PWRD",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-28T15:02:25.000Z",
-      "lat": 46.54137334412632,
-      "lon": -114.7065632826559
-    },
-    {
-      "fireNumber": "2026-IDNCF-000651",
-      "name": "RX - North Side Powell Unit 15 - PWRD",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-28T15:04:22.000Z",
-      "lat": 46.527006336100115,
-      "lon": -114.7753802933113
-    },
-    {
-      "fireNumber": "2026-IDNCF-000657",
-      "name": "RX French Larch TS - NFRD",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-30T16:35:11.000Z",
-      "lat": 46.499789241931616,
-      "lon": -115.69481346779533
-    },
-    {
       "fireNumber": "2026-IDIPF-000697",
       "name": "Silver",
       "state": "ID",
@@ -842,28 +732,6 @@
       "lon": -116.66029713969402
     },
     {
-      "fireNumber": "2026-IDCTF-000229",
-      "name": "Yale Creek RX",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-07T22:16:15.000Z",
-      "lat": 44.47583945861732,
-      "lon": -111.5354292374219
-    },
-    {
-      "fireNumber": "2026-MTLNF-260565",
-      "name": "RX D7 Hall Wood J27 J31",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-06T00:29:32.000Z",
-      "lat": 47.243406391784205,
-      "lon": -114.7906634500201
-    },
-    {
       "fireNumber": "2026-MNSUF-003163",
       "name": "Echo Campground Piles RX",
       "state": "MN",
@@ -873,61 +741,6 @@
       "discoveryDate": "2026-11-06T14:03:26.000Z",
       "lat": 48.169991493050496,
       "lon": -92.49217501183993
-    },
-    {
-      "fireNumber": "2026-NDSRA-000172",
-      "name": "Hwy24SBC",
-      "state": "ND",
-      "hectares": 0,
-      "percentContained": null,
-      "cause": "Human",
-      "discoveryDate": "2026-11-06T00:15:00.000Z",
-      "lat": 46.08675357914311,
-      "lon": -100.68240395319295
-    },
-    {
-      "fireNumber": "2026-IDIPF-001038",
-      "name": "D1 Lamb Chop RX",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-06T16:58:19.000Z",
-      "lat": 47.756923270979165,
-      "lon": -116.3306968681245
-    },
-    {
-      "fireNumber": "2026-IDIPF-001040",
-      "name": "D1 Magee RX",
-      "state": "ID",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-06T17:00:53.000Z",
-      "lat": 47.843839285486915,
-      "lon": -116.25209687307736
-    },
-    {
-      "fireNumber": "2026-MTLNF-260566",
-      "name": "RX D4 Sawmill Petty 928",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-06T17:35:56.000Z",
-      "lat": 46.94167339910067,
-      "lon": -114.48146332256475
-    },
-    {
-      "fireNumber": "2026-AKKKS-260003",
-      "name": "2026 Royal Crest Fuels RX",
-      "state": "AK",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-30T18:21:01.000Z",
-      "lat": 60.48396874977165,
-      "lon": -149.49709254920876
     },
     {
       "fireNumber": "2026-MTNWS-260527",
@@ -994,6 +807,413 @@
       "discoveryDate": "2026-09-22T18:12:00.000Z",
       "lat": 44.44624603827343,
       "lon": -116.07120313588541
+    },
+    {
+      "fireNumber": "2026-MTBFA-000091",
+      "name": "BLACKFOOT",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": null,
+      "discoveryDate": "2026-11-05T18:00:00.000Z",
+      "lat": 48.57306229259845,
+      "lon": -112.89168006200165
+    },
+    {
+      "fireNumber": "2026-MTLNF-260570",
+      "name": "RX D6 Horseshoe Hills West Unit 29a",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T14:40:32.000Z",
+      "lat": 47.14780652260398,
+      "lon": -113.42064615098539
+    },
+    {
+      "fireNumber": "2026-MTLNF-260569",
+      "name": "RX D4 Sawmill Petty 927",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T14:33:33.000Z",
+      "lat": 46.94617339898331,
+      "lon": -114.4862303244876
+    },
+    {
+      "fireNumber": "2026-MTLNF-260564",
+      "name": "RX D6 Horseshoe West 40",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-05T16:48:31.000Z",
+      "lat": 47.1637395259875,
+      "lon": -113.40013015018393
+    },
+    {
+      "fireNumber": "2026-MTLNF-260558",
+      "name": "RX D3 Granite Graves 240",
+      "state": "MT",
+      "hectares": 4,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-03T15:32:41.000Z",
+      "lat": 46.833256396809354,
+      "lon": -114.41696328643681
+    },
+    {
+      "fireNumber": "2026-WANWS-000197",
+      "name": "BOWMAN HILL RX",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T15:28:38.000Z",
+      "lat": 48.758838703733694,
+      "lon": -122.07901514008257
+    },
+    {
+      "fireNumber": "2026-WAPCS-000230",
+      "name": "SUPER TRUCKIN RX",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T15:52:51.000Z",
+      "lat": 46.19093343661975,
+      "lon": -123.30741272216058
+    },
+    {
+      "fireNumber": "2026-WAPCS-000231",
+      "name": "STAIRWAY TO HEMLOCK RX",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T15:55:30.000Z",
+      "lat": 46.24802544405919,
+      "lon": -123.26585472830304
+    },
+    {
+      "fireNumber": "2026-MTLNF-260571",
+      "name": "RX D3 Granite Graves 250",
+      "state": "MT",
+      "hectares": 4,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T15:46:08.000Z",
+      "lat": 46.78692339458087,
+      "lon": -114.40159627350131
+    },
+    {
+      "fireNumber": "2026-IDPAF-265836",
+      "name": "Sloans Point RX",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T16:26:18.000Z",
+      "lat": 44.78155608500057,
+      "lon": -115.87498016090427
+    },
+    {
+      "fireNumber": "2026-MTBRF-000418",
+      "name": "RX D4 West Fork Hand Piles North",
+      "state": "MT",
+      "hectares": 2,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-27T18:14:47.000Z",
+      "lat": 45.720255317526465,
+      "lon": -114.27864603078258
+    },
+    {
+      "fireNumber": "2026-IDIPF-001041",
+      "name": "D4 RX Bechtel Beauty",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T16:39:22.000Z",
+      "lat": 47.02847321927964,
+      "lon": -116.31543070104082
+    },
+    {
+      "fireNumber": "2026-WAPCS-000232",
+      "name": "MAYFIELD RX",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T16:42:29.000Z",
+      "lat": 46.4817165376397,
+      "lon": -122.50136266102189
+    },
+    {
+      "fireNumber": "2026-WACOF-002230",
+      "name": "3R RX - ROCKY MP",
+      "state": "WA",
+      "hectares": 20.2,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-22T15:37:56.000Z",
+      "lat": 48.40206218709336,
+      "lon": -117.5331432503428
+    },
+    {
+      "fireNumber": "2026-MTLNF-260572",
+      "name": "RX D5 Swampy Moth",
+      "state": "MT",
+      "hectares": 4.9,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T16:51:24.000Z",
+      "lat": 47.41442338689871,
+      "lon": -114.96873052339011
+    },
+    {
+      "fireNumber": "2026-NDSRA-000173",
+      "name": "Lazy",
+      "state": "ND",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-11-08T17:45:17.000Z",
+      "lat": 46.095579584032734,
+      "lon": -100.63625294262846
+    },
+    {
+      "fireNumber": "2026-MN2QS-002505",
+      "name": "Poplar Lake",
+      "state": "MN",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-07-14T22:37:13.000Z",
+      "lat": 48.05380062089534,
+      "lon": -90.53217940184845
+    },
+    {
+      "fireNumber": "2026-MN2KS-003028",
+      "name": "Long Lake Rd",
+      "state": "MN",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T21:20:00.000Z",
+      "lat": 46.43546517328749,
+      "lon": -93.64241307150745
+    },
+    {
+      "fireNumber": "2026-WAGPF-001335",
+      "name": "Ursa Piles Rx - South",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T17:35:03.000Z",
+      "lat": 45.783122576459306,
+      "lon": -121.74231438920816
+    },
+    {
+      "fireNumber": "2026-IDNCF-000663",
+      "name": "RX Run of the Mill TS - SRRD",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T17:34:37.000Z",
+      "lat": 45.73618815341467,
+      "lon": -115.976843365151
+    },
+    {
+      "fireNumber": "2026-MN2KS-003029",
+      "name": "Tame Fish 2",
+      "state": "MN",
+      "hectares": 0.1,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-11T00:30:00.000Z",
+      "lat": 46.399920160511144,
+      "lon": -93.74981609703745
+    },
+    {
+      "fireNumber": "2026-IDNCF-000660",
+      "name": "RX Florence Fuels - SRRD",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-05T16:00:00.000Z",
+      "lat": 45.469123124659255,
+      "lon": -116.05113032628509
+    },
+    {
+      "fireNumber": "2026-IDIPF-001038",
+      "name": "D1 RX Lamb Chop",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-06T16:58:19.000Z",
+      "lat": 47.756923270979165,
+      "lon": -116.3306968681245
+    },
+    {
+      "fireNumber": "2026-MTLNF-260566",
+      "name": "RX D4 Sawmill Petty 928",
+      "state": "MT",
+      "hectares": 15.4,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-06T17:35:56.000Z",
+      "lat": 46.94167339910067,
+      "lon": -114.48146332256475
+    },
+    {
+      "fireNumber": "2026-WAOLS-000119",
+      "name": "RIVER",
+      "state": "WA",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-10T17:46:28.000Z",
+      "lat": 48.05707550883329,
+      "lon": -123.5064451888086
+    },
+    {
+      "fireNumber": "2026-MN3SS-002975",
+      "name": "Jack Pine Lane",
+      "state": "MN",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Human",
+      "discoveryDate": "2026-09-28T18:58:20.000Z",
+      "lat": 46.33976622460008,
+      "lon": -92.75006579824831
+    },
+    {
+      "fireNumber": "2026-MTLNF-260556",
+      "name": "RX D5 Henry Deemer",
+      "state": "MT",
+      "hectares": 6.1,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-03T14:46:06.000Z",
+      "lat": 47.43303940929234,
+      "lon": -114.7645634867608
+    },
+    {
+      "fireNumber": "2026-WAGPF-001305",
+      "name": "Horse Piles Rx - North",
+      "state": "WA",
+      "hectares": 18.2,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-29T22:41:20.000Z",
+      "lat": 46.71324961796487,
+      "lon": -121.86680961142866
+    },
+    {
+      "fireNumber": "2026-MTLNF-260562",
+      "name": "RX D7 Barber Gulch 97 128",
+      "state": "MT",
+      "hectares": 4.5,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-04T22:15:39.000Z",
+      "lat": 47.10507335419607,
+      "lon": -115.0531964719346
+    },
+    {
+      "fireNumber": "2026-IDIPF-001039",
+      "name": "D1 RX Lookout Fuels Management",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-06T16:58:39.000Z",
+      "lat": 47.4509063122275,
+      "lon": -115.71996367977518
+    },
+    {
+      "fireNumber": "2026-IDIPF-001040",
+      "name": "D1 RX Magee",
+      "state": "ID",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-06T17:00:53.000Z",
+      "lat": 47.843839285486915,
+      "lon": -116.25209687307736
+    },
+    {
+      "fireNumber": "2026-MTSWS-000816",
+      "name": "Little Moose Hand Piles RX",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T20:10:53.000Z",
+      "lat": 46.93263657268837,
+      "lon": -112.73501296258853
+    },
+    {
+      "fireNumber": "2026-WAGPF-001306",
+      "name": "Packwood Lake Piles Rx - North",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-29T22:43:08.000Z",
+      "lat": 46.59528764259175,
+      "lon": -121.57017853694799
+    },
+    {
+      "fireNumber": "2026-MTFNF-000575",
+      "name": "TL Hell Roaring Hand Piles RX",
+      "state": "MT",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-10-26T14:35:06.000Z",
+      "lat": 48.51051553282725,
+      "lon": -114.37034165552463
+    },
+    {
+      "fireNumber": "2026-MN2NS-003167",
+      "name": "Last Call",
+      "state": "MN",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T19:39:09.000Z",
+      "lat": 47.86252841961228,
+      "lon": -92.9281080901752
+    },
+    {
+      "fireNumber": "2026-WACOF-002156",
+      "name": "TON RX - MT HULL LP",
+      "state": "WA",
+      "hectares": null,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-09-01T16:11:17.000Z",
+      "lat": 48.90882702334106,
+      "lon": -119.30925970344934
+    },
+    {
+      "fireNumber": "2026-WACOA-260226",
+      "name": "21 Mile",
+      "state": "WA",
+      "hectares": 0,
+      "percentContained": null,
+      "cause": "Undetermined",
+      "discoveryDate": "2026-11-09T21:07:00.000Z",
+      "lat": 48.40354906452576,
+      "lon": -118.66071445919302
     }
   ]
 }
