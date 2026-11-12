@@ -2,12 +2,8 @@
   "source": "Natural Resources Canada / CWFIS - satellite-detected hotspots (Canada + US border states)",
   "licence": "Open Government Licence - Canada",
   "note": "Satellite hotspot detections grid-clustered to ~11km cells per day, across Canada and the 13 US states/territories bordering it. Reflects detected thermal activity, not official incident boundaries or status - cross-reference with the BC/Ontario/Quebec status layers where available.",
-  "generatedAt": "2026-11-11T19:11:46.334Z",
+  "generatedAt": "2026-11-12T19:28:52.668Z",
   "days": [
-    {
-      "date": "2025-11-11",
-      "count": 891
-    },
     {
       "date": "2025-11-12",
       "count": 650
@@ -1443,6 +1439,10 @@
     {
       "date": "2026-11-10",
       "count": 625
+    },
+    {
+      "date": "2026-11-11",
+      "count": 719
     }
   ]
 }
