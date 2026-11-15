@@ -3,7 +3,7 @@
   "licence": "US federal government work - public domain (17 U.S.C. §105)",
   "kind": "operational_live_reference",
   "note": "Limited to the 13 US states/territories bordering Canada. Percent-contained is NIFC's own containment metric, not a status code.",
-  "generatedAt": "2026-11-14T17:37:21.627Z",
+  "generatedAt": "2026-11-15T18:26:02.481Z",
   "points": [
     {
       "fireNumber": "2026-WAOWF-260664",
@@ -336,17 +336,6 @@
       "lon": -116.66029713969402
     },
     {
-      "fireNumber": "2026-MTNWS-260527",
-      "name": "RX PLN Rocky Swamp",
-      "state": "MT",
-      "hectares": 16.2,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-10-22T21:57:34.000Z",
-      "lat": 47.506889393119714,
-      "lon": -114.97764654583862
-    },
-    {
       "fireNumber": "2026-IDBOF-001171",
       "name": "RX FAWN TUSSOCK",
       "state": "ID",
@@ -567,17 +556,6 @@
       "lon": -121.54122640237148
     },
     {
-      "fireNumber": "2026-MTCGF-261467",
-      "name": "North Derby Unit 3 RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-09-25T20:33:04.000Z",
-      "lat": 45.608506724492194,
-      "lon": -109.85287908043179
-    },
-    {
       "fireNumber": "2026-WAGPF-001345",
       "name": "Grouse Piles RX - South",
       "state": "WA",
@@ -587,39 +565,6 @@
       "discoveryDate": "2026-11-12T00:52:00.000Z",
       "lat": 45.97217259420497,
       "lon": -121.68051441925431
-    },
-    {
-      "fireNumber": "2026-WAMCR-260928",
-      "name": "CONBOY NWR PILES RX",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-07T00:39:12.000Z",
-      "lat": 45.964924628616785,
-      "lon": -121.34348636300993
-    },
-    {
-      "fireNumber": "2026-VTVTS-2026083",
-      "name": "2026083",
-      "state": "VT",
-      "hectares": 0.1,
-      "percentContained": null,
-      "cause": null,
-      "discoveryDate": "2026-10-27T21:27:14.000Z",
-      "lat": 44.44624360090171,
-      "lon": -72.7262726753871
-    },
-    {
-      "fireNumber": "2026-VTVTS-2026085",
-      "name": "2026085",
-      "state": "VT",
-      "hectares": 0.2,
-      "percentContained": null,
-      "cause": null,
-      "discoveryDate": "2026-10-25T18:44:23.000Z",
-      "lat": 43.693155952659176,
-      "lon": -73.07658913907538
     },
     {
       "fireNumber": "2026-PAPAS-000461",
@@ -642,28 +587,6 @@
       "discoveryDate": "2026-11-12T15:30:37.000Z",
       "lat": 46.94617339898331,
       "lon": -114.4862303244876
-    },
-    {
-      "fireNumber": "2026-WAOLS-000128",
-      "name": "RX JOYCE ACCESS",
-      "state": "WA",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-12T16:05:06.000Z",
-      "lat": 48.07868948926138,
-      "lon": -123.68991622247752
-    },
-    {
-      "fireNumber": "2026-MTFNF-000619",
-      "name": "TL Twisted Tree Landing Pile RX",
-      "state": "MT",
-      "hectares": null,
-      "percentContained": null,
-      "cause": "Undetermined",
-      "discoveryDate": "2026-11-12T15:57:25.000Z",
-      "lat": 48.34999750220918,
-      "lon": -114.54636665327538
     },
     {
       "fireNumber": "2026-WACOF-002229",
@@ -741,17 +664,6 @@
       "discoveryDate": "2026-11-07T23:27:00.000Z",
       "lat": 46.48524568158823,
       "lon": -121.13782444169995
-    },
-    {
-      "fireNumber": "2026-IDBOD-001335",
-      "name": "MUD",
-      "state": "ID",
-      "hectares": 848.3,
-      "percentContained": 100,
-      "cause": "Human",
-      "discoveryDate": "2026-11-12T18:04:00.000Z",
-      "lat": 42.71286285393239,
-      "lon": -116.44479290613911
     },
     {
       "fireNumber": "2026-WANCP-000702",
